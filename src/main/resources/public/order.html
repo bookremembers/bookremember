@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)https://www.shiqichuban.com/order/all -->
+<html class=" js csstransforms csstransforms3d"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>拾柒-REFLECT &amp; RELEARN</title>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=9">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/template.css">
+            <link rel="stylesheet" href="css/font.css">
+    	<link rel="shortcut icon" href="https://www.shiqichuban.com/favicon.ico">
+    <!--[if lt IE 9]>
+    <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script async="" charset="utf-8" src="js/udeskApi.js.下载"></script><script src="js/aliyun-oss-sdk.min.js.下载"></script>
+    <script src="js/FileUploadManager.js.下载"></script>
+    <script src="js/base64.js.下载"></script>
+    <script src="js/jquery2.2.3.js.下载"></script>
+    <script src="js/fetcher.js.下载"></script>
+    <script src="js/main.js.下载"></script>
+    <script src="js/modernizr.2.5.3.min.js.下载"></script>
+    <script>
+        var csrf='ugWCGaddUHwyBKtUBVFBOfJH57pmd7kCgIQ1vuSu';
+    </script>
+            <script>
+            var data = {
+                "level": parseInt('4'),   // 0为无限，1为非会员，2为普通会员，3为高级会员
+                "level_desc": '非会员',   // 会员描述： 普通会员、高级会员
+                "level_icon": '',          // 过期时间，自1970年以来的秒数
+                "expire_at": '0',          // 过期时间，自1970年以来的秒数
+                "rights": {
+                    "is_top":parseInt('0'),
+                    "images": parseInt('5'),  // 文章中上传的图片数量上限
+                    "audios": parseInt('1'),  // 文章中上传的音频数量上限
+                    "audio_duration": parseInt('600'),  // 文章中上传的单个音频时长上限
+                    "videos": parseInt('1'),  // 文章中上传的视频数量上限
+                    "video_duration": parseInt('30'),  // 文章中上传的单个视频时长实现-
+                    "pdfs": parseInt('0'),    // 赠送的免费的pdf下载次数
+                    "more_font": parseInt('0'),   // 能否用会员字体，0表示不能用，非0可用
+                }
+            };
+            try{
+                window.sessionStorage.setItem('user_member_level',JSON.stringify(data)) ;
+            }catch(e){
+                window.sessionStorage.clear();
+                window.sessionStorage.setItem('user_member_level',JSON.stringify(data)) ;
+            }
+        </script>
+        	<link rel="stylesheet" type="text/css" href="css/response.css">
+	<style type="text/css">
+		.public_head span{
+			color: #7d7d7d;
+			font-size: 14px;
+			padding: 0 15px;
+			cursor: pointer;
+			letter-spacing: 1px;
+		}
+
+        input[type='radio']:after {
+            width: 15px;
+            height: 15px;
+            border-radius: 15px;
+            top: -2px;
+            left: -1px;
+            position: relative;
+            background-color: white;
+            content: '';
+            display: inline-block;
+            visibility: visible;
+            border: 1px solid #8d8d8d;
+        }
+
+        input[type='radio']:checked:after {
+            width: 15px;
+            height: 15px;
+            border-radius: 15px;
+            top: -2px;
+            left: -1px;
+            position: relative;
+            background-color: white;
+            content: '';
+            display: inline-block;
+            visibility: visible;
+            border: 5px solid #333;
+        }
+	</style>
+
+<script src="js/out_config"></script><link type="text/css" rel="stylesheet" href="css/emotion.css"><style type="text/css">#udesk_pop_dialog .emoji { background-image: url("https://shiqi.udesk.cn/im_client/images/im-emoji-big-1.png")}</style><script src="js/free"></script></head>
+<body>
+<div class="container-fluid" style="overflow: hidden">
+    <div class="row header" style="box-shadow: rgb(238, 238, 238) 0px 10px 10px; margin-bottom: 15px;">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1" style="line-height: 35px;">
+            <div class="col-xs-2 col-sm-2">
+                <a href="https://www.shiqichuban.com/?fp=1" class="col-xs-12" style="padding-top: 10px;padding-bottom: 5px">
+                    <img class="logo" src="images/logo40.png" alt="拾柒">
+                </a>
+            </div>
+
+                            <div class="col-xs-9 col-sm-9 public_head" style="padding-top: 15px;text-align: right;float: right;color: #8d8d8d;">
+                	
+                	<span>
+                		<a class="header-btn" href="https://www.shiqichuban.com/portal/writing">个人主页</a>
+                    </span>
+                    <span><a href="https://www.shiqichuban.com/simple/app/#/center">印制中心</a></span>
+                	<span><a href="https://www.shiqichuban.com/order/all">我的订单</a></span>
+                    <span><a href="https://www.shiqichuban.com/simple/app/#/shelf">我的作品</a></span>
+                    <span id="my_shiqi" style="position: relative;">
+                		<a>我的拾柒</a>
+                        <i><img class="my_icon_img" src="images/card_info_desc_icon.png"></i>
+                        <div id="my_list" style="display: none;position:absolute;z-index:1000;width:120px;right:0;top:0">
+                            <div style="background-color: #fff;border-radius: 4px;box-shadow: 0 1px 4px #ccc;margin-top: 40px"><p style="text-align: center;"><a href="https://www.shiqichuban.com/user/webscore">我的积分</a></p>
+                                <p style="text-align: center;" id="messagebox">我的消息</p>
+                                <p style="position: absolute;left:50%;top:20px;width:0;height: 0;border:10px solid rgba(0,0,0,0);border-bottom-color:#fff;"></p>
+                		    </div>
+                        </div>
+                	</span>
+                	<span>|</span>
+                	<span id="my_seting" style="position: relative;">
+                		<a>我的设置</a>
+                        <i><img class="my_icon_img" src="images/card_info_desc_icon.png"></i>
+                        <div id="setting_ul" style="display: none;position:absolute;z-index:1000;width:120px;right:0;top:0">
+                            <div style="background-color: #fff;border-radius: 4px;box-shadow: 0 1px 4px #ccc;margin-top: 40px">
+                                 <p style="text-align: center;"><a href="https://www.shiqichuban.com/user/profile">账户设置</a></p>
+                                                                            <p style="text-align: center;"><a href="https://www.shiqichuban.com/order/member">会员中心</a></p>
+                                                                        <p style="text-align: center;" id="logout_btn"><a href="javascript:void(0)">退出登录</a></p>
+                                 <p style="position: absolute;left:50%;top:20px;width:0;height: 0;border:10px solid rgba(0,0,0,0);border-bottom-color:#fff;pointer-events:none "></p>
+                		    </div>
+                        </div>
+                	</span>
+                </div>
+                    </div>
+    </div>
+    <div class="row article" style="padding: 0px; margin-left: -25px; margin-right: -25px; min-height: 706px;">
+        <style>
+
+    th,td{
+        font-weight:normal;
+        color: #8d8d8d;
+    }
+    .clearfix:after{
+		content: '';
+		display: block;
+		clear: both;
+	}
+	*.clearfix{
+		zoom:1;
+	}
+    .nav a {
+	    font-family: SimHei;
+	    padding: 12px 50px;
+	    font-weight: 500;
+	    color: #2c2c2c;
+	    font-size: 14px;
+	    line-height: 38px;
+	    text-decoration: none;
+	   	cursor: pointer; 
+	   
+    }
+
+    .search_bar input {
+        font-size: 12px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        outline: none;
+        border: 1px solid #e4e4e4;
+    }
+
+    .searchBtn {
+        height: 30px;
+        font-size: 12px;
+        text-align: center;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        outline: none;
+        border: 1px solid #e4e4e4;
+    }
+
+    .status_line{
+         border-bottom: 2px solid #9a9a9a;
+        opacity: 1;
+    }
+    
+	@media  screen and (max-width: 1230px) {
+		.nav a{
+			padding-bottom: 4px;
+		}
+		.status_line{
+			padding-bottom: 0 !important;
+		}
+	}
+	.order_title span{
+		text-align: center;
+	}
+	.down_tit{
+		background: #e4e4e4;
+		height: 42px;
+		margin-bottom: 8px;
+		line-height: 42px; 
+		border-radius: 10px; 
+		font-family: "SimHei";
+		font-size: 12px;
+		margin-top: 40px;
+		
+	
+	}
+	.down_tit span{
+		text-align: center;
+		font-weight: 500;
+		color: #8d8d8d;
+	}
+	.trace_express_info{
+	    padding: 5px 20px;
+        background: #e4e4e4;
+   		border-radius: 40px;
+	    margin-top: 20px;
+   		display: inline-block;
+	}
+	.remove_order{
+		cursor:pointer;
+	}
+</style>
+
+
+
+
+<div class="container-fluid">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1" style="margin-top: 10px;margin-bottom: 10px;padding-left:10px;padding-right:10px;font-family: &#39;microsoft yahei&#39;;">
+       <div class="col-xs-12" style="background-color: white;border-radius:5px;padding:10px 30px">
+            <div class="col-xs-12">
+                <span class="col-sm-8 nav" style="white-space:nowrap">
+                   
+                    <a class="order_all status_line">全部</a>
+                    <a class="wait_pay">等待付款</a>
+                    <a class="wait_print">等待印制</a>
+                    <a class="printing">印制中</a>
+                     <a class="trace_express_status">物流运输中</a>
+               		<!--      <a href="?last_months=0&amp;status=4">物流运输中</a>-->
+                    <a class="finished">已完成</a>
+               		<!--      <a href="?last_months=0&amp;status=6">已取消</a>-->
+                </span>
+
+                <!--<form action="https://www.shiqichuban.com/order/all" class="col-sm-3 col-sm-offset-1 search_bar" method="get">
+                    <input class="col-sm-9" type="text" placeholder="商品名称／订单编号" name="query">
+                    <button class="col-sm-3 searchBtn" tyle="submit" style="background-color: #e4e4e4">搜索</button>
+                </form>-->
+            </div>
+            
+            <h3 class="col-xs-12 down_tit">
+				<span class="col-xs-4">书籍</span>
+				<span class="col-xs-2">数量</span>
+				<span class="col-xs-2">单价</span>
+				
+				<span class="col-xs-2">订单状态</span>
+				<span class="col-xs-2">操作</span>
+			</h3>
+            <div class="col-xs-12 table_container" style="margin-top: 20px"><table class="table" style="border-collapse: separate;border:1px solid #e4e4e4;border-radius: 5px"><tbody><tr style="background-color: #e4e4e4"><th colspan="5" style="border-top:none"><div style="float: left"><span style="display:inline-block;">订单编号：20190712163204e4f9c888006834ff</span><span style="display:inline-block;margin-left: 30px;color:#8d8d8d" "="">下单时间：2019-07-12 16:32:04</span> </div><div style="float:right;margin-right: 30px;">总价： ¥&nbsp;102.00</div></th></tr><tr><td class="col-sm-4"><div class="col-sm-12"><a class="bg"><img class="col-sm-3" src="./order_files/5e8eobmF9kYm4nRXBbXMeCcH_rdtno5nfvStqSV5y7tbqFeVGyL8C9WgsfxwDckZvnlQAsVvoPx_AU8YetD1KQ" style="max-height:160px ;padding:0;border:1px solid #e8e8e8 " alt="封面图片"></a><div class="col-sm-9" style="padding-left:12px"><p style=";font-size: 16px;">寂静流年遍开花</p><p style="margin-top: 10px;font-size: 12px;">页数：34</p><p style="margin-top: 10px;font-size: 12px;">装帧方式：拾柒书/精装</p><p style="margin-top: 10px;font-size: 12px;">书籍尺寸：170mm*230mm</p><p style="margin-top: 10px;font-size: 12px;">印制方式：双面印制</p></div></div></td><td class="col-sm-2" valign="middle" style="vertical-align:middle ;height:150px ;border-left:1px solid #e4e4e4;border-right:1px solid #e4e4e4"><span class="col-sm-12" style="width:100%;text-align: center;">数量 : x1</span> </td><td class="col-sm-2" valign="middle" style="vertical-align:middle ;height:150px ;border-right:1px solid #e4e4e4"><span class="col-sm-12" style="text-align: center;">单价：¥ 79.00</span></td><td class="col-sm-2" valign="middle" style="vertical-align:middle ;height:150px ;border-right:1px solid #e4e4e4"><span class="col-sm-12" style="text-align: center;">等待付款</span></td><td class="col-sm-2" rowspan="1" valign="top" style="vertical-align:middle;text-align: center"> <p><a href="https://www.shiqichuban.com/order/create/step2/2234002" style="padding:5px 20px; background:#e4e4e4;border-radius:40px;">立即付款</a></p><p style="margin-top:15px;"><a href="https://www.shiqichuban.com/order/order_update/?2234002">修改地址/快递</a></p><p><a href="https://www.shiqichuban.com/order/cancel/2234002">取消订单</a></p> </td></tr><tr><th colspan="5"><span><span style="display:inline-block;">收货人：CTT</span><span style="display:inline-block;margin-left: 30px">联系方式：18273061353</span><span style="display:inline-block;margin-left: 30px">地址：湖南省长沙市芙蓉区五一广场，牛耳教育</span></span></th></tr></tbody></table></div>
+            
+            <div class="col-xs-12" style="margin: 10px 0;background-color: white ;padding:10px 5px ;border-radius: 5px;">
+                <div class="col-xs-12 pagination-container"></div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+
+    $(document).ready(function () {
+	var data_arr=[];
+	var wait_pay_arr=[]; 
+	var wait_print_arr=[]; 
+	var printing_arr=[]; 
+	var finished_arr=[]; 
+	var trace_express_status_arr=[];   
+	function getOrderlist(backcall) {
+		showLoading("数据加载中...",true);
+        sendData({
+            is_api: true,
+            url: '/v1/order/list',
+            method: 'get',
+            callback: function (data) {
+                if (data.err_code === 0) {
+                    if(backcall){
+                    	$('.table_container').html('');
+                    	backcall(data);
+                    	
+                    }
+                }
+            },
+            errorFun: function (data) {
+              
+            }
+        });
+    }
+    
+    getOrderlist(function(data){
+    	
+    	if(data.orders.length==0){
+	    		var default_str='<div class="default_info" style="text-align: center;margin-top:40px;"><a href="https://www.shiqichuban.com/portal/books">您还没有订单，请移步书架，选择"印制"></a></div>';
+    		$('.table_container').append(default_str);
+    		showLoading("数据加载中...",false);
+    		return;
+    	}
+    	
+    	
+    	for(var i=0;i<data.orders.length;i++){
+    		
+    		(function(index){
+    			var order_id=data.orders[index].id;
+    			
+    			getOrderinfo(order_id,function(detail_order_info){
+    				
+		    		if(data && data.orders.length > 0){
+		    			
+		    			detail_order_info.id=order_id;
+		    			
+		    			data_arr[index]=detail_order_info;
+	               	}	
+	               	
+               		if(data_arr.length==data.orders.length){
+               			
+               			for(var j in data_arr ){
+               				(function(index_num){
+               					var item=data_arr[index_num];
+	               				if(item.status=='等待付款'){
+	               					
+					    			wait_pay_arr.push(item);
+						    	}
+						    	
+						    	if(item.status=='等待印制'){
+					    			wait_print_arr.push(item);
+						    	}
+						    	
+						    	if(item.status=='印制中'){
+					    			printing_arr.push(item);
+						    	}
+						    	
+						    	if(item.status=='物流运输中'){
+						    		trace_express_status_arr.push(item);
+						    	}
+						    	
+						    	if(item.status=='已完成'){
+					    			finished_arr.push(item);
+						    	}
+						    	
+               				})(j)
+               			}
+               			
+			    		showLoading("数据加载中...",false);
+			    		addStr(null,data_arr,'您还没有订单，请移步书架，选择"印制');
+       
+			    	}
+			    	
+	    		});
+    		})(i)
+    		
+    	}
+    	
+    });
+    
+    function getOrderinfo(order_id,backcall) {
+        sendData({
+            is_api: true,
+            url: '/v1/order/'+order_id,
+            method: 'get',
+            callback: function (data) {
+                if (data.err_code === 0) {
+                    if(backcall){
+                    	backcall(data);
+                    }
+                }
+            },
+            errorFun: function (data) {
+              
+            }
+        });
+    }
+	    
+	function deleteOrder(order_id,backcall){
+		
+		sendData({
+            is_api: true,
+            url: '/v1/order/delete/'+order_id,
+            method: 'get',
+            callback: function (data) {
+                if (data.err_code === 0) {
+                    if(backcall){
+                    	backcall(data);
+                    }
+                }
+            },
+            errorFun: function (data) {
+              
+            }
+        });
+	}
+      
+       
+        function createTableCell(order_info) {
+        	
+            var str = '';
+
+            str += '<table class="table" style="border-collapse: separate;border:1px solid #e4e4e4;border-radius: 5px">';
+            str += '<tbody>';
+
+            str += '<tr style="background-color: #e4e4e4">';
+            str += '<th colspan="5" style="border-top:none">';
+            str += '<div style="float: left">';
+          
+            if(order_info.goods_type==2){
+                str+='';
+                str+='<span style="display:inline-block;color:#8d8d8d"">下单时间：' + order_info.ctime + '</span></div>';
+            }else{
+                str+='<span style="display:inline-block;">订单编号：' + order_info.orderno + '</span>';
+                str+='<span style="display:inline-block;margin-left: 30px;color:#8d8d8d"">下单时间：' + order_info.ctime + '</span>';
+                if(order_info.delivery_time.length>1){
+                	str+='<span style="display:inline-block;margin-left: 30px;color:#8d8d8d"">预计发货时间：<span style="color:#f00;">' + order_info.delivery_time + '</span></span>'
+                }
+               str+=' </div>';
+            }
+            str += '<div style="float:right;margin-right: 30px;">总价： &yen;&nbsp' + order_info.price + '</div>';
+            str += '</th>';
+            str += '</tr>';
+
+
+            for(var j in order_info.books){
+
+                var book_data = order_info.books[j] ;
+                str += '<tr>' ;
+                    str += '<td class="col-sm-4">';
+                        str += '<div class="col-sm-12">';
+                        	if(order_info.goods_type==2){
+                        		str+='<a class="bg" style="position:absolute;width:18px;height:18px;left:18px;top:20px; "><img src="https://static.shiqichuban.com/assets/img/icon/order_ebook_icon.png"></a>';
+                        		str += '<div class="col-sm-9" style="margin-left:36px">' ;
+                        	}else{
+                        		str += '<a class="bg" ><img class="col-sm-3" src="' + order_info.books[j].thumbnail +'" style="max-height:160px ;padding:0;border:1px solid #e8e8e8 " alt="封面图片"/></a>' ;
+								str += '<div class="col-sm-9" style="padding-left:12px">' ;
+                        	}
+                           
+                                str += '<p style=";font-size: 16px;">' + order_info.books[j].title +'</p>' ;
+                                str += '<p style="margin-top: 10px;font-size: 12px;">页数：' + order_info.books[j].page_count +'</p>' ;
+                                if(order_info.goods_type==1){
+                                    str += '<p style="margin-top: 10px;font-size: 12px;">装帧方式：' + order_info.books[j].binding +'</p>' ;
+                                     str += '<p style="margin-top: 10px;font-size: 12px;">书籍尺寸：' + order_info.books[j].size_desc +'</p>' ;
+                                      str += '<p style="margin-top: 10px;font-size: 12px;">印制方式：' + order_info.books[j].printing +'</p>' ;
+                                }
+                                if(order_info.goods_type==2){
+                                str+='<p style="margin-top: 10px;font-size: 12px;">格式：PDF格式</p>' ;
+                                }
+                            str += '</div>';
+                        str += '</div>';
+                    str += '</td>';
+
+                    str += '<td class="col-sm-2" valign="middle" style="vertical-align:middle ;height:150px ;border-left:1px solid #e4e4e4;border-right:1px solid #e4e4e4">' ;
+                    str += '<span class="col-sm-12" style="width:100%;text-align: center;">数量 : x'+order_info.books[j].amount +'</span> ';
+                    str += '</td>';
+
+                    str += '<td class="col-sm-2" valign="middle"  style="vertical-align:middle ;height:150px ;border-right:1px solid #e4e4e4">';
+                    str += '<span class="col-sm-12" style="text-align: center;">单价：&yen; ' +  order_info.books[j].price  + '</span>' ;
+                    str += '</td>';
+                    
+                    str += '<td class="col-sm-2" valign="middle"  valign="top"  style="vertical-align:middle ;height:150px ;border-right:1px solid #e4e4e4">';
+                    str += '<span class="col-sm-12" style="text-align: center;">';
+                    
+                    str+= order_info.goods_type==2?(order_info.status=="等待印制"?"已付款":order_info.status||"正在为您处理，请稍候") :order_info.status||"正在为您处理，请稍候"+'</span>' ;
+                   
+                    if(order_info.goods_type==1 && order_info.books[j].query_url!=''){
+                    	 str += '<span class="col-sm-12" style="text-align: center;">';
+                   		 str+= '<a class="trace_express_info" style="cursor:pointer;"  query_url="'+order_info.books[j].query_url+'">查看物流</a></span>' ;
+                   		 
+                    }
+                   
+                    str += '</td>';
+					
+
+                if(j == 0){
+                    
+                    var order_url = 'https://www.shiqichuban.com/order/create/step2' +  "/" + order_info.id ;
+                    var remove_url = 'https://www.shiqichuban.com/order/cancel' +  "/" + order_info.id ;
+                    var refund_url = 'https://www.shiqichuban.com/order/refund' +  "/?order_id=" + order_info.id ;
+ 					var update_addr = 'https://www.shiqichuban.com/order/order_update' +  "/?" + order_info.id ;
+                    str += '<td class="col-sm-2" rowspan="' + order_info.books.length +'" valign="top" style="vertical-align:middle;text-align: center"> ';
+                  
+                  	if(order_info.status == '等待付款' &&  order_info.pay_status == 0){
+                  	 	
+                        str += '<p><a href="' + order_url +'"  style="padding:5px 20px; background:#e4e4e4;border-radius:40px;">立即付款</a></p>';
+                        if(order_info.goods_type==1 && order_info.modify_address==1){
+                        	str += '<p style="margin-top:15px;"><a href="'+update_addr+'" >修改地址/快递</a></p>';
+                        }
+                        str += '<p><a href="' + remove_url +'">取消订单</a></p> ';
+                        
+                    }else if(order_info.status == '等待印制' &&  order_info.pay_status == 1){
+                    	
+                    	if(order_info.goods_type==2){
+                    		str += '<p><a href="/ebook/download/list" style="padding:5px 20px; background:#e4e4e4;border-radius:40px;">下载管理</a></p>';
+                    	}else{
+                    		str += '<p>已付款</p>';
+                    		if(order_info.goods_type==1 && order_info.modify_address==1){
+	                        	str += '<p style="margin-top:15px;"><a href="'+update_addr+'" >修改地址/快递</a></p>';
+	                        }
+                    		str += '<a class="refound" style="padding: 5px 20px;cursor:pointer; background: #e4e4e4; border-radius: 40px;" id="'+order_info.id+'">申请退款</a>';
+                    	}
+                        
+                        
+                    }else if(order_info.status == '取消中' &&  order_info.pay_status == 3){
+                        str += '<p>取消中 (退款1-3工作日到账)</p>';
+                    }else if(order_info.status == '印制中' &&  order_info.pay_status == 1){
+                    	
+                        str += '<p>已付款</p>';
+                        
+                        if(order_info.goods_type==1 && order_info.modify_address==1){
+                        	str += '<p style="margin-top:15px;"><a href="'+update_addr+'" >修改地址/快递</a></p>';
+                        }
+                        
+                    }else if(order_info.status == '物流运输中' && order_info.express !== null &&  order_info.pay_status == 1){
+                        str += '<p>已发货</p>';
+//                      str += '<p><a href="'+order_info.express.query_url+'" target="_blank">查看物流</a></p>';
+                    }else if(order_info.status == '已完成' &&  order_info.pay_status == 1){
+                    	if(order_info.goods_type==2){
+                    		str += '<p><a href="/ebook/download/list" style="padding:5px 20px; background:#e4e4e4;border-radius:40px;">下载管理</a></p>';
+                    	}else{
+                    		 str += '<p>已完成</p>';
+                    		  str+='<a class="remove_order" id="'+order_info.id+'">删除订单</a>'
+                    	}
+                       
+                    }else if(order_info.status == '已取消' &&  order_info.pay_status == 4){
+                        str += '<p>已取消</p>';
+                         str+='<a class="remove_order" id="'+order_info.id+'">删除订单</a>'
+                    }else if(order_info.status == '已取消' && order_info.pay_status !== 4){
+                        str += '<p>已取消</p>';
+                        str+='<a class="remove_order" id="'+order_info.id+'">删除订单</a>'
+
+                    }else{
+                    	 str += '<p>正在为您处理，请稍候...</p>';
+                    }
+                  
+                  
+                    str += '</td>';
+                }
+
+                str += '</tr>' ;
+
+
+            }
+
+			if(order_info.goods_type==2){
+            	str+='';
+        	}else{
+        		
+	            str += '<tr>';
+	            str += '<th colspan="5">';
+	            
+	            	str += '<span><span style="display:inline-block;">收货人：'+ order_info.address.name +'</span><span style="display:inline-block;margin-left: 30px">联系方式：'+ order_info.address.mobile +'</span><span style="display:inline-block;margin-left: 30px">地址：' +order_info.address.province + order_info.address.city + order_info.address.district + order_info.address.detail_addr + '</span>';
+//						str+='<span class="refund_money" style="display:inline-block;background:#eee;padding:0 10px;cursor:pointer;float:right;border-radius:4px;">申请退款</span>';
+	           		str+='</span>';
+	            str += '</th>';
+	            str += '</tr>';
+			}
+            str += '</tbody>';
+            str += '</table>';
+
+            return str;
+
+        }
+
+
+
+	$(document).on('click','.refound',function(){
+		var api_url='/v1/order/refund/'+$(this).attr('id');
+			showLoading("数据加载中...",true);
+			sendData({
+	            is_api: true,
+	            url: api_url ,
+	            method: 'get',
+	            callback: function (data) {
+	            	if(data.err_code == 0){
+	            		 showLoading("",false);
+	            		 window.location.href=window.location.href;
+	            	}
+	            },
+	            errorFun: function (error) {
+	            	 showLoading("",false);
+	               showAlert(error.err_msg); 
+	            }
+	        });
+	}).on('click','.order_all',function(){
+		
+		addStr($(this),data_arr,'您还没有订单，请移步书架，选择"印制');		
+		
+	}).on('click','.wait_pay ',function(){
+		
+		addStr($(this),wait_pay_arr,'您还没有"等待付款 "的订单。');		
+	   
+	}).on('click','.wait_print',function(){
+		
+		addStr($(this),wait_print_arr,'您还没有"等待印制 "的订单。');
+		
+	}).on('click','.printing',function(){
+		
+		addStr($(this),printing_arr,'您还没有"印制中 "的订单。');
+	    
+	}).on('click','.trace_express_status',function(){
+		addStr($(this),trace_express_status_arr,'您还没有"物流运输中 "的订单。');
+	}).on('click','.finished',function(){
+		
+		addStr($(this),finished_arr,'您还没有"已完成 "的订单。');
+
+	}).on('click','.trace_express_info',function(){
+		
+		var query_url=$(this).attr('query_url').split('?')[1];
+		var _express_id=query_url.split('&')[0].split('=')[1];
+		var _express_no=query_url.split('&')[1].split('=')[1];
+		
+		var _this=$(this);
+         var send_data=JSON.stringify({
+        	express_no:parseInt(_express_no),
+        	express_id:parseInt(_express_id)
+        });
+        
+        if(_express_id==2){
+        	 var express_company='顺丰快递'
+        }else if(_express_id==5){
+        	 var express_company='普通快递'
+        }else{
+        	var express_company='普通快递'
+        }
+       
+		getExpressInfo(send_data,function(data){
+			
+			traceExpressStr(data.data,_this,_express_no,express_company)
+		})
+	}).on('click',function(e){
+		
+		 if($(e.target).parents(".trace_express_view").length==0){
+		 	$('.trace_express_view').remove();
+		 }
+	}).on('click','.remove_order',function(e){
+		
+		var _this_order=parseInt($(this).attr('id'));
+		var _this=$(this);
+			showConfirm('确定删除吗 ?', null, null, function () {
+		        deleteOrder(_this_order,function(data){
+					_this.parents('table').remove();
+				});			   	
+	        }, null, 'ok|cancel');
+	        
+		
+	});
+	
+	function traceExpressStr(data,_this,_express_no,express_company){
+		var new_data=data.reverse();
+    	var len=new_data.length;
+    	var i=new_data.length-1;
+    	
+    	var html_str='';
+    	var item_str='';
+    		html_str+='<div class="trace_express_view" style="position:absolute;background:#fff;z-index:9999;width: 348px;height: 372px;border: 2px solid #e0e0e0;border-radius: 6px;margin: 0 auto;padding: 10px 20px 0;text-align: justify;overflow-y:scroll;">';
+			html_str+=	'<div class="trace_express_head" style="font-size: 14px;color: #333;line-height:34px ;font-weight: bold;border-bottom: 2px solid #e0e0e0;">';
+			html_str+=		express_company+' : '+_express_no;
+			html_str+=	'</div>';
+			html_str+=	'<div class="trace_express_con" style="padding-top: 5px;">';
+			for (index in new_data){
+			
+				html_str+=		'<div class="trace_express_item clearfix" style="padding-top: 0;position: relative;padding-top: 25px;" >';
+				html_str+=			'<div class="vercital_line" style="width: 20px;margin-right: 20px;margin-top: 5px;float: left;">';
+				html_str+=				'<div class="item_round" style="position:relative;width: 20px;height: 20px;border: 1px solid #333;border-radius:10px ;">';
+					
+				if(index==0){
+					html_str+=	'<span style="position:absolute;width:10px;height:10px;margin:5px;background:#333;border-radius: 5px;left: 9px;top: 9px;margin-left: -5px;margin-top: -5px;"></span>'
+				}
+					
+				html_str+=			'</div>';
+				
+				if(index!=len-1){
+					
+					html_str+=	'<div class="item_line" style="position: absolute;background: #333;width: 1px;"></div>'					
+				}
+				
+				html_str+=			'</div>';
+				
+				if(index==0){
+					
+					html_str+=		'<div class="item_info" style="font-size: 12px;color: #fc6060;width: 244px;line-height: 22px;border-bottom: 1px solid #E0E0E0;padding-bottom: 25px;float: left;">'
+
+				}else{
+					
+					html_str+=		'<div class="item_info" style="font-size: 12px;color: #8e8e8e;width: 244px;line-height: 22px;border-bottom: 1px solid #E0E0E0;padding-bottom: 25px;float: left;">'
+
+				}
+				html_str+=						'<p>'+replacemolie(new_data[index].acceptTime)+'</p>';
+				html_str+=						'<p>'+replacemolie(new_data[index].remark)+'</p>';
+				html_str+=			'</div>';
+				html_str+=		'</div>'
+				
+			}	
+			
+			html_str+=	'</div>';
+			html_str+='</div>';
+			if($('.trace_express_view').length>0){
+				$('.trace_express_view').remove();
+			}else{
+				_this.parent('span').append(html_str);
+			}
+    		
+    		
+    		$('.item_line').each(function(index,ele){
+				$(ele).css({
+					'height':$(ele).parents('.trace_express_item').height()-$('.item_round').height()-2+25+'px',
+					'left':$('.item_round').width()/2+'px',
+				})
+			})
+	}
+	function getExpressInfo(send_data,callback){
+        	sendData({
+	            is_api: true,
+	            url: '/v1/order/traceExpress',
+	            method: 'post',
+	            data: send_data,
+	            content_type :'application/json',
+	            callback: function (data) {
+	                if (data.err_code === 0) {
+	                  if(callback){
+	                  	callback(data);
+	                  }
+	                }
+	            },
+	            errorFun: function (data) {
+	               if(callback){
+	                  	callback(data);
+	                  }
+	            }
+	        });
+        }
+    function subTimeInt(time){
+    	var day_time=time.split(' ')[0].split('-')[1]+'-'+time.split(' ')[0].split('-')[2];
+    	var day_min=time.split(' ')[1].split(':')[0]+':'+time.split(' ')[0].split('-')[1];
+    	
+    	return{
+    		'day_time':day_time,
+    		'day_min':day_min,
+    	}
+    }
+    
+      
+  	function replacemolie(str) {  
+	   var myreg = /1\d{10}/g;
+		 var new_str= str.replace(myreg,function(rs){
+	   		return '<a href="tel:'+rs+'" style="color:#679ee9;">'+rs+'</a>'
+	   });
+	 return new_str;
+	}    
+	function addStr(_this,arr,type){
+		
+		var arr_len=arr.length;
+		
+		if(_this!=null){
+			if(!_this.hasClass('status_line')){
+				$('.status_line').removeClass('status_line');
+				_this.addClass('status_line');
+			}
+		}
+		
+		$('.table_container').html('');
+		
+		if(arr.length==0){
+    		var default_str='<div class="default_info" style="text-align: center;margin-top:40px;">'+type+'</div>';
+    		$('.table_container').append(default_str);
+    		
+    		return;
+    	}else{
+    		
+    		$('.down_tit').show();	
+    	}
+    	
+    	
+		for(var i=0;i<arr_len;i++){
+			
+			$('.table_container').append(createTableCell(arr[i]));
+			
+		}
+		
+	}
+    })
+</script>
+<script src="js/tools.js.下载"></script>
+<script type="text/javascript">
+	var showCustomer=new tools();
+	showCustomer.CustomerView()
+</script>
+    </div>
+
+                    <div class="row footer" style="border-top: 2px solid rgb(200, 200, 200); background-color: rgb(54, 54, 54); padding: 10px 0px;">
+            <span class="col-xs-12  col-sm-12" style="text-align: center;color:#ccc;font-size: 8px;">
+                拾柒网络技术（北京）有限公司 &gt;&gt; 京ICP备15043038
+            </span>
+        </div>
+            </div>
+<div class="modular" style=""></div>
+<script src="js/login_register.js.下载"></script>
+<script type="text/javascript">
+	var hostname=window.location.pathname;//获取url相对地址
+	var iseject='N';//接收后端是否是跳转过来的状态
+	var old_loginurl="https://www.shiqichuban.com/user/login";//旧的登录url
+	var isjump=(document.referrer == old_loginurl)?true:false;//document.referrer上次地址是老登录地址
+	var mouse_click;
+
+	if(isPC()) {
+		mouse_click = 'click';
+		$('.header').show();
+		$('.footer').show();
+	} else {
+		mouse_click = 'touchstart';
+    }
+    
+    if(window.document.location.pathname.indexOf('/portal/writing')>=0){
+    	$('.header-btn').css('color','#333');
+    }
+    
+    function isLoginView(){
+		if(window.location.href.indexOf('popup=1')>1 || window.location.href.indexOf('agent=')>1){
+			return true;
+		}else{
+			return false;
+		}
+	}
+		if(hostname=='/'){//如果在首页
+			if(isPC()){
+				if(iseject=='Y'||isjump || isLoginView()){//如果iseject状态是Y或者由旧登录地址跳转到首页的时候  执行弹出登录层
+					$('.login_new').trigger(mouse_click);//自动触发登录按钮
+				}
+			}else{
+				window.location.href='https://www.shiqichuban.com/user/mobile_login'
+			}
+		}
+</script>
+<script>
+    $(document).ready(function () {
+        setTempleteReady();
+    });
+</script>
+
+
+<div id="udesk_container"><div id="udesk_btn"><a style="display: block; position: fixed; box-sizing: border-box; font-size: 13px; color: rgb(255, 255, 255); text-align: center; cursor: pointer; text-decoration: none; z-index: 1000000000; border-width: 1px 1px 0px; border-top-style: solid; border-right-style: solid; border-left-style: solid; border-top-color: rgba(0, 0, 0, 0.1); border-right-color: rgba(0, 0, 0, 0.1); border-left-color: rgba(0, 0, 0, 0.1); border-image: initial; border-bottom-style: initial; border-bottom-color: initial; background-color: rgb(48, 122, 232); height: 40px; right: 0px; bottom: 0px; margin: 3px 30px;"><span style="display:block;float:left;width:24px;height:24px;margin:7px 7px 0;"><img src="images/msg2@68x66.png" style="width:100%;height:100%;"></span><span style="display:block;float:left;width:1px;height:100%;background-color:rgba(0, 0, 0, .08);vertical-align:middle;background-color:#000\9;filter:alpha(opacity=10)\9;"></span><span id="udesk_btn_text" style="display:block;float:left;height:40px;margin:0 10px;line-height:40px;overflow-y:hidden; font-size: 13px; color: #fff;">联系客服，在线咨询</span><span id="udesk_btn_circle" style="display:none;position:absolute;top:-13px;right:-13px;width:26px;height:26px;text-align:center;line-height:26px;font-size:14px;color:#fff;border-radius:15px;background-color: #ff3b30;"></span></a></div><div id="udesk_panel" style="position:fixed;bottom:-574px;right:60px;z-index:-1;width:364px;height:572px;overflow:hidden;display:none;background-color:transparent;box-shadow:0px 4px 12px 0px rgba(8,23,26,0.2);border-radius: 3px 3px 0px 0px;border:1px solid #ddd\9;transition:bottom 0.3s;-webkit-transition:bottom 0.3s;-moz-transition:bottom 0.3s;-ms-transition:bottom 0.3s;-o-transition:bottom 0.3s;"><iframe id="udesk_iframe" frameborder="0" scrolling="no" allowtransparency="true" style="width:100%;height:0;border:none;padding:0;margin:0;float:none;background:none;transition:height 0.1s;-webkit-transition:height 0.1s;-moz-transition:height 0.1s;-ms-transition:height 0.1s;-o-transition:height 0.1s;" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" src="public/saved_resource.html"></iframe></div></div></body></html>
