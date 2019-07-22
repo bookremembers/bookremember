@@ -1,0 +1,168 @@
+.sj-book-new .even {
+    background-image: url(../pics/gradient-page-left.jpg);
+    background-position: right top;
+    background-repeat: repeat-y;
+}
+
+.sj-book-new .odd {
+    background-image: url(../pics/gradient-page-right.jpg);
+    background-position: left top;
+    background-repeat: repeat-y;
+}
+
+.sj-book-new .odd-m{
+    background-image: url(https://static.shiqichuban.com/assets/img/book/ebook/gradient-page-right.png);
+    background-position: left top;
+    background-repeat: repeat-y;
+}
+
+.sj-book-new .page {
+    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    -ms-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    -o-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+
+.sj-book-new .depth {
+    background-image: url(https://static.shiqichuban.com/web/assets/book/pics/pages-depth.png);
+    background-size: cover;
+    position: absolute;
+    width: 16px;
+}
+
+.preview_public_depth {
+    background-image: url(https://static.shiqichuban.com/web/assets/book/pics/pages-depth.png);
+    background-size: cover;
+    position: absolute;
+    width: 16px;
+    right:0;
+    top:0;
+}
+
+.sj-book-new .front-side .depth {
+    left: 4px;
+    background-position: 0 0;
+}
+
+.sj-book-new .back-side .depth {
+    right: 4px;
+    background-position: right 0;
+}
+
+.sj-book-new .page-wrapper {
+    -webkit-perspective: 2000px;
+    -moz-perspective: 2000px;
+    -ms-perspective: 2000px;
+    perspective: 2000px;
+}
+
+.sj-book-new .own-size {
+    overflow: hidden;
+}
+
+.sj-book-new .even {
+    background: -webkit-gradient(linear, left top, right top, color-stop(0.95, #fff), color-stop(1, #dadada));
+    background-image: -webkit-linear-gradient(left, #fff 95%, #dadada 100%);
+    background-image: -moz-linear-gradient(left, #fff 95%, #dadada 100%);
+    background-image: -ms-linear-gradient(left, #fff 95%, #dadada 100%);
+    background-image: -o-linear-gradient(left, #fff 95%, #dadada 100%);
+    background-image: linear-gradient(left, #fff 95%, #dadada 100%);
+}
+
+.sj-book-new .odd {
+    background: -webkit-gradient(linear, right top, left top, color-stop(0.95, #fff), color-stop(1, #cacaca));
+    background-image: -webkit-linear-gradient(right, #fff 95%, #cacaca 100%);
+    background-image: -moz-linear-gradient(right, #fff 95%, #cacaca 100%);
+    background-image: -ms-linear-gradient(right, #fff 95%, #cacaca 100%);
+    background-image: -o-linear-gradient(right, #fff 95%, #cacaca 100%);
+    background-image: linear-gradient(right, #fff 95%, #cacaca 100%);
+}
+
+.sj-book-new .loader {
+    background-image: url(../pics/loader.gif);
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top: 280px;
+    left: 219px;
+}
+
+.book-container .shadow {
+    -webkit-transition: -webkit-box-shadow 0.5s;
+    -moz-transition: -moz-box-shadow 0.5s;
+    -o-transition: -webkit-box-shadow 0.5s;
+    -ms-transition: -ms-box-shadow 0.5s;
+
+    -webkit-box-shadow: 0 0 10px #999;
+    -moz-box-shadow: 0 0 10px #999;
+    -ms-box-shadow: 0 0 10px #999;
+    -o-box-shadow: 0 0 10px #999;
+    box-shadow: 0 0 10px #999;
+}
+
+.ie8 .sj-book-new .even,
+.ie9 .sj-book-new .even {
+    background-image: url(../pics/gradient-page-left.jpg);
+    background-position: right top;
+    background-repeat: repeat-y;
+}
+
+.ie8 .sj-book-new .odd,
+.ie9 .sj-book-new .odd {
+    background-image: url(../pics/gradient-page-right.jpg);
+    background-position: left top;
+    background-repeat: repeat-y;
+}
+
+.book-container .next-button,
+.book-container .previous-button {
+    width: 29px;
+    height: 717px;
+    position: absolute;
+    background-color: #cccbd0;
+    top: 0;
+}
+
+.book-container .next-button {
+    right: -4px;
+    -webkit-border-radius: 0 15px 15px 0;
+    -moz-border-radius: 0 15px 15px 0;
+    -ms-border-radius: 0 15px 15px 0;
+    -o-border-radius: 0 15px 15px 0;
+    border-radius: 0 15px 15px 0;
+}
+
+.book-container .previous-button {
+    left: -4px;
+    -webkit-border-radius: 15px 0 0 15px;
+    -moz-border-radius: 15px 0 0 15px;
+    -ms-border-radius: 15px 0 0 15px;
+    -o-border-radius: 15px 0 0 15px;
+    border-radius: 15px 0 0 15px;
+}
+
+.book-container .previous-button-hover,
+.book-container .next-button-hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.book-container .previous-button-hover,
+.book-container .previous-button-down {
+    background-image: url(../pics/arrows.png);
+    background-position: -4px 284px;
+    background-repeat: no-repeat;
+}
+
+.book-container .previous-button-down,
+.book-container .next-button-down {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.book-container .next-button-hover,
+.book-container .next-button-down {
+    background-image: url(../pics/arrows.png);
+    background-position: -38px 284px;
+    background-repeat: no-repeat;
+}

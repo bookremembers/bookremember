@@ -1,0 +1,630 @@
+.CardBgShade.dlWrap .dlHd .closedhtml{background-color:#f3f3f5;height:100%;}
+/*.bannerDes{position: absolute;top:40%;left:50%; background: url(/web/assets/imgs/iconBnbg.png) no-repeat; width:280px; height:280px; }
+.bannerDes h3{color:#000;font-size: 36px; line-height:80px; text-align:left; padding: 30px 0 35px 30px;}
+.bannerDes p{color:#000;font-size: 18px; line-height:30px; text-align:right; padding-right:40px;}*/
+.btnGroups{position:absolute;text-align:center;left:5px;width:60px;top: 5em;}
+.btnGroups .btn{display:inline-block;margin:2px 8px 2px 0;border-radius:2px;padding:2px 10px;color:#8e8e8e;border:0;background-color:#e3e3e3;}
+
+/* login/register */
+.b_title{color:#2c2c2c;text-align: center;font-size: 26px;height: 110px;line-height: 110px;}
+.register_box{font-size: 12px;margin-top:0px;padding-bottom:100px;padding-top:20px;}
+.register_box h2{ font-size: 14px; margin: 30px 0;}
+ul.tabs{background: #f3f3f5;}
+ul.tabs li{color:#2c2c2c;display:inline-block;*float:left;font-size:16px;border:none;outline:none;text-align:center;height:35px;line-height:35px;cursor: pointer;}
+ul.tabs li.selected{border-bottom: 5px solid #9a9a9a;}
+.form_group{height:50px;position: relative;border-bottom:2px solid #a2a2a2;padding-left:42px;}
+.form_group i{background-image: url(https://static.shiqichuban.com/web/assets/hp_imgs/register_icons.png);background-repeat: no-repeat;width:42px;height:30px;position: absolute;top:18px;left:0;}
+.form_group i.phone{background-image:url(https://static.shiqichuban.com/assets/img/land_img/bg_icon.png);background-position: -8px -173px;margin-top: 5px;margin-left: 8px;}
+.form_group i.vcode{background-position: 0 -50px;}
+.form_group i.pass{background-position: 0 -100px;}
+.form_group i.wname{background-position: 0 -200px;}
+.form_group i.email{background:url(https://static.shiqichuban.com/web/assets/hp_imgs/email.png) no-repeat 0 5px;}
+.form_group input{ border:0; color: #8d8d8d; font-size: 12px; position: relative; top:18px; width:60%; height: 30px; line-height: 30px; }
+.form_group .btn{ height: 24px; line-height: 24px;}
+.form_group_code{ width: 358px; margin-left: 164px;}
+.form_group_code .code{ float: left; width: 144px; height: 35px; margin: 16px 0 0 -206px;}
+.form_pwd{height:50px; line-height:30px;position: relative;padding-left:42px;}
+.form_pwd .label{float: left;width: 100px;text-align:left;}
+.form_pwd .lbCon{width: 250px;}
+.form_pwd .lbCon .select{width: 250px;}
+.form_pwd .lbCon .selectDisabled{background-color: #ddd; color:#666;cursor:not-allowed;}
+.form_pwd .vcode{width:86px;height:30px; border-bottom: 1px solid #ccc;margin-right:10px;}
+.form_pwd .sendVcode{ width: 102px; position:static;height:24px;line-height:24px;}
+.vcode_group{ width: 380px;}
+.vcode_group .btn{ border-radius: 5px; width: 102px; text-align: center; float: right; margin: 0 -142px 0 0;}
+.goto_login{color: #8d8d8d;display: block;margin-top:10px;}
+.form_btns .btn{ font-size: 14px;}
+.err_tip{padding-left: 24px;background: url(https://static.shiqichuban.com/web/assets/hp_imgs/error.png) no-repeat 0 2px;position: absolute;right: 0;top: 22px;color: #eb7f88;line-height: 22px;}
+.tab_contents > div{display: none;}
+.tab_contents .selected{display: block;}
+#btn-verify-send{position: absolute;right:0;top:21px;cursor: pointer;background-color:#2c2c2c;color:#e0e0e0;}
+#send_vcode{position: absolute;right:0;top:21px;cursor: pointer;}
+.vcode_error{right:135px;}
+/* login/register end */
+
+/* index */
+.hdAct{width: 90%; position: absolute; top: 0; left: 0; text-align:left; z-index: -1;}
+.hdAct li{ float:left; width: 390px; line-height: 40px;}
+.hdAct li .lb{ color:#8d8d8d;}
+.hdAct li .lb .l{ padding-right:5px; vertical-align: 4px; }
+.hdAct li .lb .r{ padding-left:5px; padding-right:10px; vertical-align: -4px; }
+.autosize{position:relative;}
+.autosize img{height:100%;position: absolute;top:50%;left:50%;}
+.autosize .logo{ position: absolute;top:10px;left:35px; z-index:2; width: 42px; height: 42px;}
+.autosize .logo img{width:42px;}
+.h_div{ position: absolute; top:100%; border-top:5px solid #2c2c2c; width: 100%; margin-top:-55px; z-index: 2; background-color:#f3f3f5; height: 90%;overflow: hidden}
+
+.banner .btn {
+    display: inline-block;
+    margin: 25px 0 0;
+    padding: 9px 22px 7px;
+    clear: both;
+
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    border: 2px solid rgba(255,255,255,.4);
+    border-radius: 5px;
+}
+.banner .btn:hover {
+    background: rgba(255,255,255,.05);
+}
+.banner .btn:active {
+    -webkit-filter: drop-shadow(0 -1px 2px rgba(0,0,0,.5));
+    -moz-filter: drop-shadow(0 -1px 2px rgba(0,0,0,.5));
+    -ms-filter: drop-shadow(0 -1px 2px rgba(0,0,0,.5));
+    -o-filter: drop-shadow(0 -1px 2px rgba(0,0,0,.5));
+    filter: drop-shadow(0 -1px 2px rgba(0,0,0,.5));
+}
+
+.banner .btn, .banner .dot {
+    -webkit-filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
+    -moz-filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
+    -ms-filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
+    -o-filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
+}
+
+.banner .dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 35px;
+}
+.banner .dots li {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin: 0 4px;
+
+    text-indent: -999em;
+
+    border: 2px solid #fff;
+    border-radius: 6px;
+
+    cursor: pointer;
+    opacity: .4;
+
+    -webkit-transition: background .5s, opacity .5s;
+    -moz-transition: background .5s, opacity .5s;
+    transition: background .5s, opacity .5s;
+}
+.banner .dots li.active {
+    background: #fff;
+    opacity: 1;
+}
+
+.banner .arrows {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: #fff;
+}
+.banner .arrow {
+    display: inline;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.btShare{ display: table; min-width: 1000px; max-width: 1300px; margin: 50px auto;}
+.btShare li{ display: table-cell; width: 33%; *float:left;}
+.btShare li a{ color: #e4e4e4; display: block;}
+.btShare li a:hover{ color: #666;}
+.btShare li a img{ float: left;}
+.btShare .ewm{ display: inline-block; float:left; margin-left: 20px; text-align: center; vertical-align: top;}
+.btShare .ewm i,.btShare .ewm em{ display: block; margin: 0 auto;} 
+.btShare .ewm em{ line-height: 23px;}
+
+/* person */
+.comForm,.userForm{ color: #8d8d8d; font-size: 12px; padding: 10px 50px 20px; position: relative;}
+.comForm h5,.userForm h5{padding-bottom: 20px; }
+.comForm .fmL{ padding-bottom: 10px; overflow: hidden; }
+.comForm .fmL .label,.comForm .fmL .r{ float: left; }
+.comForm .fmL .label{ width: 80px; line-height: 32px;}
+.comForm .add_address_btn{ cursor: pointer;}
+.userForm .fmL{ padding-bottom: 10px; overflow: hidden; position:relative;}
+.userForm .fmL .err_tip{left:295px;top:27px;}
+.userForm .fmL .label,.userForm .fmL .r{ display: block; }
+.userForm .fmL .label{ line-height: 24px;}
+.userForm .fmL .r{float:left; width: 260px;}
+.userForm .fmL .r .ipt{width: 240px;height:20px;}
+.userForm .fmL .btnR{font-size: 14px; line-height: 28px; float:left; border-radius: 5px; margin-left:30px; padding: 1px 20px;}
+.userForm .fmL .tipForm{ clear:both; font-size: 10px; line-height: 24px;}
+.wrapAddrss{ overflow: hidden; margin-left: -20px; }
+.tbAddress{ border-radius: 5px; border: 2px solid #eaeaea; float: left; width: 465px; overflow: hidden; position: relative; margin: 0 0 20px 20px; }
+.tbAddress .tbHd{ background-color: #e4e4e4; line-height: 40px; padding: 0 40px; overflow: hidden;}
+.tbAddress .tbHd dt,.tbAddress .tbHd dd{ float: left; width: 50%;}
+.tbAddress .tbHd dd{ text-align: right;}
+.tbAddress .tbHd dd span{ display: inline-block; margin: 0 6px;width:auto;}
+.tbAddress .tbCon{ padding: 10px 0;}
+.tbAddress .tbCon dl{ overflow: hidden;}
+.tbAddress .tbCon dt{ text-align: right; width: 20%; padding-right: 30px;}
+.tbAddress .tbCon dt,.tbAddress .tbCon dd{ color: #8d8d8d; float: left; line-height: 26px;}
+.tbAddress .tbCon dd{ width: 66%; }
+.pagePop{ position: absolute; top: 50%; left: 50%; margin-left: -50px; margin-top: -15px; box-shadow: 0 0 3px #ccc; background-color: #fff; border-radius: 5px; border: 1px solid #eee; padding: 5px 20px; }
+.pagePop p{ text-align: center;line-height: 16px;}
+.pagePop p .icon{ margin-right: 10px; vertical-align: -2px; }
+.bgBlack{ background-color: #2c2c2c; color: #dedede;}
+.comInner{ }
+.upWrap{ position: relative; overflow: hidden; width: 600px; margin: 0 auto;}
+.upWrap .upPic{ border: 1px solid #d8d8d8; float: left; width: 300px; height: 300px;} 
+.upWrap .upPic img{ width: 100%; height: 100%;}
+.upWrap .upR{ position: absolute; bottom: 0; left: 340px; }
+.upWrap .upR .tip{ color: #e4e4e4; font-size: 12px; margin-top: 10px;}
+.upWrap .upR .btnUpPic{position: absolute;width: 98px;top: 0;left: 0;height: 28px;opacity: 0;filter:alpha(opacity=0)}
+.userSafe{  }
+.userSafe li{ background-color: #e4e4e4; border-radius: 5px; color: #7d7d7d; line-height: 40px; padding: 0 50px; margin-bottom: 10px;}
+.userSafe li.contents{padding:0;background-color:none;}
+.userSafe .tb{ display: inline-block; width: 33%;}
+.userSafe .mid{ font-size: 14px; }
+.userSafe  .blue{display: inline-block;}
+/* person end */
+
+/* book */
+.step{ background: url(https://static.shiqichuban.com/web/assets/imgs/iconstep.png) no-repeat; clear: both; width: 100%; height: 42px; margin-bottom: 40px; }
+.step a{ color: #565656; cursor: default; font-size: 16px; float: left; height: 42px; line-height: 42px; width: 25%; text-align: center; text-decoration: none; }
+.step.cur1 a.cur,.step.cur2 a.cur,.step.cur3 a.cur,.step.cur4 a.cur{ color: #565656; }
+.step.cur1{ background-position: 0 0;}
+.step.cur2{ background-position: 0 -42px;}
+.step.cur3{ background-position: 0 -84px;}
+.step.cur4{ background-position: 0 -126px;}
+.stepCon{ overflow: hidden; margin-top: -15px;}
+.stepBox{ margin-top: 0;}
+.stepBox .l,.stepBox .r{ float: left; width: 540px; height: 456px; }
+.stepBox .r{ float: right; }
+.stepBox .sMd{ background-color: #fff; padding: 30px;}
+.sMd h3{ color: #2c2c2c; font-size: 22px; margin-bottom: 20px;}
+.sMd .logo{ padding: 20px 0;}
+.sMd .logo img{ }
+.sMd .tagBar{ min-height: 192px;}
+.sMd .shareBar{ padding: 20px 0;}
+.sMd .shareBar a{ position: relative; margin-right:15px;}
+.sMd .shareBar .checkboxs{ position: absolute; top: -5px; right: -10px;}
+.sMd .shareBar .iconDisabled{cursor: default;opacity: .5;}
+.sMd .shareBar .iconDisabled .checkboxs{cursor: default;}
+.sline{ border-bottom: 2px solid #acadad;}
+.sMd .btnBar{ text-align: center; padding: 20px 0;}
+.importArt{ width: 340px; margin: 60px auto 0; }
+.importArt li,.importArt a{ display:block; }
+.importArt li{ margin-bottom: 40px; }
+.importArt a{ border-radius: 5px; background-color:#2c2c2c; color:#fff; font-size: 14px; line-height: 46px; padding: 0 20px; }
+.importArt a .icon{ vertical-align: -6px;}
+.stepMain{ /*background: url(/web/assets/imgs/iconbookbg.png);*/ width: 1100px; height: 750px;position:relative;}
+.stepMain *{font-family:"宋体";color:#333;line-height:1.5em;}
+.stepMain p{text-indent:2em;}
+.stepMain .txtL,.stepMain .txtR{ float: left; width: 347px; }
+.stepMain .txtL{ float: left; width: 327px; padding: 120px 100px 120px 120px; }
+.stepMain .txtR{ float: left; width: 327px; padding: 120px 130px 120px 90px ; }
+.stepMain .txtR .fh{position:relative}
+.bookWrap{ width: 1100px; height: 720px; }
+.bookWrap .cover{background: url(https://static.shiqichuban.com/web/assets/imgs/cover.jpg);background-size:cover;width:530px;height:717px;float:right;position:relative;}
+.bookWrap .back{background: url(https://static.shiqichuban.com/web/assets/imgs/backCover.jpg);background-size:cover;width:530px;height:717px;float:left;}
+.bookWrap  .coverBuild{ float: none; margin: 0 auto;}
+/*
+.cover .alter{ position: absolute; top: 0; right: 55px; text-align: right;}
+.cover .alter .title{ background-color: rgba(140,140,140,.6); border: 1px dotted #fc6b6b; color: #fff; display: inline-block; font-size: 30px; line-height: 36px; margin: 420px 0 18px 0; padding: 0 5px;}
+.cover .alter .author{ background-color: rgba(140,140,140,.6); border: 1px dotted #fc6b6b; color: #fff; display: inline-block; margin-bottom: 160px; font-size: 16px; margin-right: 36px; line-height: 22px; padding: 0 5px;}
+.cover .alter .chageBf{ background-color: #8c8c8c; border-radius: 14px; color: #fff; display: inline-block; padding: 0 15px; line-height: 28px; }
+ */
+.alter .chageBf{ background-color: #8c8c8c; border-radius: 14px; color: #fff; display: inline-block; padding: 0 15px; line-height: 28px; position: absolute; bottom: 25px; right: 40px;}
+.stepMore{ position: fixed; top: 0; right: -375px; border-left: 5px solid #2c2c2c;z-index: 100; -webkit-transition: all .5s ease-in; -moz-transition: all .5s ease-in; transition: all .5s ease-in;}
+.stepMore .btnMore{ position: absolute; left: -45px; top: 35%; background-color: #2c2c2c; color: #fff; width: 14px; padding: 11px 13px; }
+.stepSide{ background-color: #fff; width: 335px; min-height: 860px; padding:140px 20px 0; }
+.hdBar{ border: 1px solid #cacaca; background-color:#e3e3e3; color:#565656; font-size: 14px; line-height: 40px; padding: 0 40px; margin-bottom: 20px;}
+.selStyle{ width: 100%; height: 114px; padding: 2px 0; margin-bottom: 20px;position:relative;}
+.selStyle ul{ margin-left: -5px; height:100%;overflow:hidden;}
+.selStyle li{ border-radius: 5px; float: left; margin-left: 10px; padding: 0px; margin-bottom: 5px;}
+.selStyle li a{ border: 1px solid #eaeaeb; border-radius: 5px; display: block; width: 72px; height: 110px;}
+.selStyle li a img{border-radius: 5px;width:100%;height:100%;}
+.selStyle li a:hover{ border: 1px solid #f09ba1; box-shadow: 0 0 5px #fff0f0;}
+.selStyle .iconPre{
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    margin-top: -15px;
+}
+.selStyle .iconNext{
+
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    margin-top: -12px;
+    cursor: pointer;
+
+}
+.selpage{ min-height: 56px;}
+.selpage li a{ height: 50px;}
+.selShare{ height: 142px;}
+.selShare li a{ width: 66px; height: 66px;}
+.selForm{ margin-bottom: 20px;}
+.selForm li{ margin-bottom: 10px; overflow: hidden; }
+.selForm li .label{ color: #666; float: left; width: 80px; }
+.selForm li .label .checkbox{ margin-right: 5px; vertical-align: -2px;}
+.selForm li .iptData{ border: 1px solid #c7c7c7; background-color: #e3e3e3; color:#333; font-weight:normal; width: 92px; height: 20px; line-height: 20px; padding: 0 5px;}
+.selForm li .m{ color: #b9baba; display: inline-block; padding: 0 8px;}
+.ckbox{ border: 1px solid #ccc; background-color: #fff; clear: both; padding: 10px 10px 0; width: 314px; overflow: hidden; margin-top: 10px; }
+.ckbox label{ float: left; margin: 0 10px 10px 0; }
+.ckbox label .checkboxs{ vertical-align: -2px;}
+.checkboxs{ margin: 0 5px 0 0;}
+.stepSide .tagBar,.sMd .tagBar{ float:none;}
+.stepSide .tagBar span,.sMd .tagBar span{ border-radius: 16px; border: 1px solid #d1d1d1; color:#8d8d8d; line-height: 20px; padding: 0 20px; float: left; margin-right: 10px; margin-bottom: 12px; cursor: pointer; }
+.sMd .tagBar span.checked{ background-color: #2c2c2c; color: #fff;}
+.artLst{ margin-left: -20px; overflow: hidden; }
+.artLst li{ border-radius: 5px; border: 1px solid #d8d8d8; float: left; padding: 17px 35px; margin: 0 0 20px 20px; overflow: hidden; width: 41.4%; position: relative; }
+.artLst .artHd h1{ color: #606060; font-size: 26px;}
+.artLst .artHd .m{ float: left; font-size: 22px; margin: 4px 10px 0;}
+.artLst .artHd .dataBar{ margin-top: 15px; }
+.artLst .detail{ color: #747474; font-size: 12px; height: 30px; line-height: 30px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.artLst .checkboxO{ position: absolute; top: 10px; right: 10px;}
+.foldingWrap{ position: relative; padding-bottom: 20px;}
+.foldingWrap .fdPre,.foldingWrap .fdNext{ background: url(https://static.shiqichuban.com/web/assets/imgs/iconPageFd.png) no-repeat; width: 50px; height: 80px; display: inline-block; position: absolute; top: 50%; margin-top: -40px;}
+.foldingWrap .fdPre{ left: 30px; background-position: 0 0;}
+.foldingWrap .fdPre:hover,.foldingWrap .fdPreDisabled,.foldingWrap .fdPreDisabled:hover{ background-position: 0 -80px;}
+.foldingWrap .fdNext{ right: 30px; background-position: -50px 0;}
+.foldingWrap .fdNext:hover,.foldingWrap .fdNextDisabled,.foldingWrap .fdNextDisabled:hover{ background-position: -50px -80px;}
+.MsgWrap .fdPre{ left: 130px;}
+.MsgWrap .fdNext{ right: 130px;}
+.foldingCon{ width: 80%; height: 600px; margin: 0 auto; overflow: hidden; box-shadow: 0 0 10px #ccc; }
+.fdL,.fdC,.fdR{ float: left; width: 282px; height:100%; }
+.fdC{ border-left: 1px solid #ccc; border-right: 1px solid #d9d9d9;}
+.fdTxt p{ padding: 70px 25px;}
+.MsgBgShade{ box-shadow: 0 0 30px #666; width: 425px; height: 583px; margin: 0 auto; }
+.MsgCon{ background: url(https://static.shiqichuban.com/web/assets/imgs/iconMsgBg.png) no-repeat; width: 425px; height: 583px; overflow: hidden; }
+.MsgTxt p{ padding: 70px 50px;}
+.CardBgShade{ border-radius: 10px; box-shadow: 0 0 30px #999; background-color: #fefcf7; width: 878px; height: 593px; margin: 0 auto; }
+.CardCon{ width: 878px; height: 593px; overflow: hidden;}
+.CardTxt{position: relative;}
+.CardTxt .imgCard{ position: relative; margin: 65px 60px; width: 570px; height: 460px;}
+.CardTxt .imgCard img{ width: 570px; height: 460px;}
+.CardTxt .txt{ position: absolute; top:65px; right: 40px; width: 150px; height: 300px; overflow: hidden;}
+.CardTxt .txt p{ float: right; width: 40px;  font-size: 16px; word-wrap: break-word; letter-spacing: 20px; }
+.btnRevise{ background-color: rgba(255,255,255,.8); padding: 0 8px; height: 20px; line-height: 20px;}
+.CardTxt .imgCard .btnRevise,.CardTxt .txt .btnRevise{ position: absolute; top: 50%; left: 50%; z-index: 2; margin: -10px 0 0 -24px; }
+.CardTxt .cardTransform{ position: absolute; bottom:0; right: 50px;}
+.fdSide .selStyle{ height: 400px; max-height: 400px;}
+/* book end */
+
+/* order */
+.odTit{ border-radius: 5px 5px 0 0; background-color: #e4e4e4; color: #8d8d8d; line-height: 40px; height: 40px; padding: 0 20px;}
+.orderWrap{ padding: 20px; }
+.orderTb > thead th{ border-bottom: 2px solid #d5d5d5; color: #2c2c2c; line-height: 30px; }
+.orderTb > tbody td{ color: #8d8d8d; font-size: 12px; line-height: 24px; }
+.tb .col0{ width: 10%;}
+.tb .col1{ width: 15%;}
+.tb .col2{ width: 20%;}
+.tb .col3{ width: 25%;}
+.tb .col4{ width: 30%;}
+.tb .col5{ width: 40%;}
+.tb .col6{ width: 50%;}
+.tb .col7{ width: 60%;}
+.tbInform dl{ overflow: hidden;}
+.tbInform dt,.tbInform dd{ float: left;}
+.detailedTb{ margin-top: 20px;}
+.detailedTb > thead th,.listTb > thead th{ background-color: #e4e4e4; line-height: 40px; text-align: center; }
+.detailedTb > thead th:first-child{ border-radius: 5px 0 0 0; }
+.detailedTb > thead th:last-child{ border-radius: 0 5px 0 0; }
+.detailedTb > tbody td,.listTb > tbody td{ border: 1px solid #e4e4e4; line-height: 20px; text-align: center; }
+.detailedTb .type{ padding: 40px; text-align: left;}
+.listTb{ margin-bottom: 10px; }
+.listTb > thead th:first-child{ border-radius: 5px 0 0 5px; }
+.listTb > thead th:last-child{ border-radius: 0 5px 5px 0; }
+.listTb > tbody th:first-child{ border-radius: 5px 5px 0 0; }
+.listTb > tbody th{ background-color: #e4e4e4; font-weight: 100; line-height: 40px; text-align: left; padding-left: 30px; }
+.listTb > tbody td{ padding: 20px 0; vertical-align: middle; }
+.listTb .dataReact{ text-align: left; width: 50%; margin: 0 auto; }
+.listTb .userCtrl a{ color:#8d8d8d; display: inline-block; height: 28px; line-height: 28px; }
+.listTb .userCtrl a:hover{border-radius: 15px; background-color: #e4e4e4; color:#6d6d6d; display: inline-block; height: 28px; line-height: 28px; padding: 0 15px;}
+.searchPage{ float: right; border: 1px solid #f0f0f0; border-radius: 5px; *width:391px; height: 30px; overflow: hidden;}
+.searchPage form{ float: left; }
+.searchPage form .ipt{ font-size: 12px; width: 200px; height: 30px; line-height: 30px; text-align: center;}
+.searchPage form .searchBtn{ background-color: #e4e4e4; background-position: 35px -293px; border-width: 0; border-left: 1px solid #e7e7e7; cursor: pointer; width: 85px; height: 30px; text-align: center; vertical-align: top;}
+.searchPage form .searchBtn:hover,.searchPage .pageNumber:hover{ opacity: .8;filter:alpha(opacity=80)}
+.searchPage .pageNumber{ border-left: 1px solid #e7e7e7; background-color: #e4e4e4; cursor: pointer; font-size: 12px; float: right; width: 85px; height: 30px; line-height: 30px; text-align: center;}
+.searchPage .pageNumber .icon{ margin-left: 5px; vertical-align: -2px; *vertical-align: 1px;}
+.detailsItem{ padding: 0 20px; }
+.detailsItem .pic{ float: left; width: 78px; height: 104px; margin-right: 10px;}
+.detailsItem .con{ float: left; width: 200px; text-align: left;margin: 30px auto 0;}
+.detailsItem  h3{ font-size: 16px; margin-bottom: 10px;}
+.detailsItem  p{ font-size: 12px;}
+.detailsItem .num{ height: 110px; display:table-cell; vertical-align: middle;}
+.tbBtSum,.tbBtBtn{ font-size: 14px; text-align: right; padding-top: 20px; }
+.tbBtSum .price{ color: #fc6b6b; font-size: 18px;}
+.tbBtdis{
+    padding-top: 20px;
+}
+.dis_tit,.dis_con{
+    height:40px;
+    line-height: 40px;
+    position: relative;
+    text-align: right;
+}
+
+.dis_tit span{
+    position: absolute;
+    right: 20px;
+    top:0;
+    height:40px;
+    line-height: 40px;
+    font-size: 14px;
+}
+.icon_pic{
+    position: absolute;
+    right: 0;
+    top: 16px;
+    width: 14px;
+    height: 8px;
+    cursor: pointer;
+    background: url("https://static.shiqichuban.com/web/assets/imgs/arrow-up.png") no-repeat;
+    overflow: hidden;
+}
+.dis_down{
+    background: url("https://static.shiqichuban.com/web/assets/imgs/arrow-down.png") no-repeat;
+}
+.dis_text{
+    height:20px;
+    width: 120px;
+    line-height: 20px;
+    padding: 0;
+    vertical-align: middle;
+    padding-left: 10px;
+}
+.dis_ver{
+    color: #e0e0e0;
+    font-size: 12px;
+    line-height: 16px;
+    padding: 3px 14px;
+    border-radius:15px;
+    margin-left: 5px;
+    outline: none;
+    cursor: pointer;
+    border: 1px solid #2c2c2c;
+    background-color: #2c2c2c;
+    color: #e0e0e0;
+}
+
+.dis_pro{
+    position: static;
+
+    display:none;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 10px 0 30px;
+    vertical-align: middle;
+    color: #e4393c;
+
+}
+.dis_pro2{
+    display:inline-block;
+
+    background: url("https://static.shiqichuban.com/web/assets/imgs/ch_icon.png") no-repeat;
+    background-position-y:4px ;
+}
+.dis_pro1{
+    display:inline-block;
+    background: url("https://static.shiqichuban.com/web/assets/imgs/duihao_icon.png") no-repeat;
+    background-position-y:4px ;
+}
+.tbBtBtn_tran{
+    display: none;
+    font-size: 12px;
+    text-center: right;
+    color: #fc6b6b;
+}
+.btnPrimary {
+    border: 0px;
+    outline: none;
+    margin-left:10px;
+
+}
+.add_addrtp{
+    color: #fc6b6b;
+    font-size:12px;
+    background: url("https://static.shiqichuban.com/web/assets/imgs/ch_ico.png") no-repeat;
+    display: none;
+    padding: 0 10px 0 30px;
+    vertical-align: middle;
+    line-height: 32px;
+    height: 32px;
+    background-position: 4px;
+}
+.logPos{ position: absolute; top: 30px; left: 50%; margin-left: -212px; z-index: 99; }
+.logPop{ border: 1px solid #e4e4e4; border-radius: 5px; background-color: #fff; padding: 10px 20px; width: 350px; position: relative; }
+.logPop >.icon{ position: absolute; top: -10px; left: 50%; margin-left: -11px;}
+.logTit{ border-bottom: 1px solid #e4e4e4; line-height: 40px; font-size: 16px;}
+.logLst{ margin: 10px 0; padding: 0 7px; height: 288px; overflow-y: auto; }
+.logLst li{ border-left: 1px solid #000; position: relative; padding: 0 0 10px 20px;}
+.logLst li p{ color: #9c9c9c; line-height: 20px; min-height: 60px; }
+.logLst li.red p{ color: #f1a5ab; }
+.logLst li.last{ border-left: 1px solid #fff;}
+.logLst li .line{ border-bottom: 1px solid #e4e4e4; margin-bottom: 10px;}
+.logLst .icon{ position: absolute; top: 0; left: -8px;}
+.numBox{ display: inline-block; width: 82px; margin: 0 auto; border: 1px solid #d8d8d8; color: #e4e4e4; overflow: hidden;}
+.numBox .min,.numBox .max{ background-color: #e4e4e4; color: #454545; cursor: pointer; font-size: 18px; font-weight: bold; width: 22px; height: 22px; line-height: 22px; text-align: center; float: left;}
+.numBox span.disabled{ color: #999; cursor: default; }
+.numBox .ipt{ background-color:#fff;float: left; border: 0; border-left: 1px solid #d8d8d8; border-right: 1px solid #d8d8d8; color: #8d8d8d; font-size: 14px; width: 25px; height: 22px; text-align: center; padding: 0 5px; } 
+.adressModel{ font-size:14px; overflow: hidden;}
+.adressModel .adressDt{ float: left; width: 70px;}
+.adressModel .adressLst{ float: left; width: 900px;}
+.adressLst li{ display: block; line-height: 24px; margin-bottom: 5px;}
+.adressLst li label{ display: inline-block; margin: 0 20px;}
+.adressLst li .checkboxs{ display: inline-block; vertical-align: -1px;}
+.adressLst li > span{ display: inline-block; }
+.payTb > tbody td{ border: 0; padding: 10px 0; vertical-align: middle;}
+.payTb .detailsItem{ padding: 0; }
+.payTb .sumPrice{ text-align: right; }
+.payTb .sumPrice .price{ color: #fc6b6b; font-size: 18px;}
+.payModel{ padding-top: 20px;}
+.payModel .tit{ color: #000; font-size: 14px; height: 30px; line-height: 30px; margin-bottom: 20px;}
+.payModel .tit i{ margin-right: 30px; vertical-align: -5px;}
+.payLst{ border-bottom: 1px solid #d8d8d8; overflow: hidden; }
+.payLst li{ border-top: 1px solid #d8d8d8; line-height: 50px; }
+.payLst label > .radio{ margin-right: 30px;}
+.payLst label > .iconPay{ vertical-align: -11px; margin: 0 20px;}
+.payLst label > .n{ font-size: 14px;}
+.payLst .sumPrice{ display: none; float: right; }
+.payLst .sumPrice .price{ color: #fc6b6b; font-size: 18px;}
+.payLst .checked .sumPrice{ display: inline-block; }
+.payPos{ position: absolute; top: 50%; left: 50%; margin-top:-15px; margin-left: -150px;width:300px;z-index:1000}
+.payPop{ background-color: #2c2c2c; border: 1px solid #aaa; border-radius: 40px; text-align: center; display: inline-block; line-height: 38px; }
+.payPop p{ color: #f5f5f5; font-size: 14px; padding: 0 40px;}
+.payPop a{color:#fff;}
+/* order end */
+
+/* sample */
+.sampleHd{ background-color: #e4e4e4; border-radius: 5px; color: #8d8d8d; line-height: 40px; padding: 0 20px; margin-bottom: 10px;}
+.sampleModel{ margin-left: -10px; overflow: hidden;} 
+.sampleModel li{ border: 1px solid #e4e4e4; border-radius: 5px; background-color: #fff; float: left; width: 503px; padding: 10px 20px; margin: 0 0 10px 10px; }
+.sampleModel .tit{ border-bottom: 1px solid #e4e4e4; height: 26px; line-height: 26px; }
+.sampleCon{ padding: 20px 0; overflow: hidden;}
+.sampleCon .main{ font-size: 12px; float: left; width: 360px;}
+.sampleCon .main .picBdr{ border: 1px solid #e4e4e4; border-radius: 5px; margin-bottom: 16px; display: block; width: 98px; height: 98px; }
+.sampleCon .main p{ line-height: 20px;}
+.sampleCon .cover{ float: left; width: 130px; height: 176px; position: relative; }
+.sampleCon .cover img{ width: 100%; height: 100%;}
+.sampleCon .cover .coverMask{ display: block; width: 100%;height: 100%; opacity: 0;filter:alpha(opacity=0); position: absolute; top: 0; -webkit-transition: all 0.3s ease-in; -moz-transition: all 0.3s ease-in;transition: all 0.3s ease-in; }
+.sampleCon .cover:hover .coverMask{ background: rgba(0,0,0,0.5); opacity: 1;filter:alpha(opacity=100)}
+.cover .coverMask a{ background-color: #000; display: inline-block; padding: 0 16px; color: #fff; font-size: 12px; margin: 78px 0 0 35px; line-height: 20px; }
+.bookPos{ position: absolute; top: 50%; left: 50%; margin: -305px 0 0 -435px; z-index: 1002;}
+.bookPos .closed{ position: absolute; right: -30px; top: -30px; text-indent: -10000px;}
+.bookBg{ background: url(https://static.shiqichuban.com/web/assets/imgs/bookBg.jpg); box-shadow: 0 0 10px #ccc; width: 870px; height: 610px; margin-bottom: 18px;}
+.bookBg .bookCon .l,.bookBg .bookCon .r{ float: left; width: 274px; height: px; margin: 60px 64px 40px 84px;}
+.bookBg .bookCon h5{ color: #8d8d8d; font-size: 12px; padding-left: 20px; }
+.bookBg .bookCon h5{ color: #8d8d8d; font-size: 12px; padding-left: 20px; }
+.bookBg .bookCon .bookArticle{ width: 100%; height: 400px; margin: 52px 0 24px;}
+.pageNum{ color: #8d8d8d; font-size: 12px; text-align: center; }
+.bookPage{ text-align: center;}
+.bookPage span{ border-radius: 18px; border: 1px solid rgba(0,0,0,0.6); background-color: #fff; color:#848484; display: inline-block; padding: 0 16px; line-height: 18px;}
+.bookPage span i{ font-style: normal;}
+/* sample end */
+
+/* bookrack */
+.rackModel{ background: url(https://static.shiqichuban.com/web/assets/imgs/bookRackBg.png) 0 bottom; width: 1042px; height: 250px; position: relative; margin: 40px 6px 0;}
+.rackModel .iconPos{ display: inline-block; width: 30px; height: 117px; vertical-align: middle; position: absolute; top: 0; }
+.rackModel .l{ left: 10px; }
+.rackModel .r{ right: 10px; }
+.rackModel .iconPos i{ margin-top: 40px;}
+.rackModel h5{ color: #c8c9c9; font-size: 12px; margin: 10px 0 0 50px; width: 80px; text-align: center; }
+.rackDetails .stepMain{ margin: 20px 0 0 -10px;}
+.bookRack{ width: 1000px; height: 186px; overflow: hidden;}
+.bookLst{ display: block; width: 10000px; height: 186px; margin: 0 65px; padding-top: 10px; }
+.bookLst li{ float: left; margin-right: 40px; position:relative;}
+.bookLst li input{position:absolute;top:-6px;right:-6px;}
+.bookLst .bg{ background-color: #f3f3f5; display: inline-block; width: 116px; height: 160px; border:2px solid #ededed;overflow: hidden;}
+.bookLst .bg img{ height: 100%;}
+/* bookrack end */
+
+/* share page */
+.shareWrap{ padding:45px 30px;}
+.shareTop{ padding-bottom: 60px;}
+.shareTop h4{ font-size: 14px; padding-bottom: 15px; }
+.shareTop p{ font-size: 12px; padding-bottom: 25px;}
+.shareCon{ border-top: 1px solid #a2a2a2; padding: 20px 0; overflow: hidden;}
+.shareCon img{ float: left;}
+.shareCon .imgMr{ margin-right: 90px;}
+
+.cover_main{
+    position:relative;
+    width:942px;
+    height:600px;
+    margin:auto;
+}
+.cover_child{
+
+    width:471px;
+    height:600px;
+}
+.cover_left{
+    left:0;
+    background-position:-471px 0;
+}
+.cover_right{
+    right:0;
+    background-position:0 0;
+}
+.cover_text{
+    border:1px dashed #fc6b6b;
+    position:absolute;
+}
+.loading .loading-txt{
+
+    position: absolute;
+    z-index: 1000;
+    width: 100px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    background-color: #000;
+    text-align: center;
+    border-radius: 8px;
+    line-height: 50px;
+    font-weight: bold;
+    color: #fff;
+
+}
+.loading {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display:none;
+}
+
+/* forgetpass renfei */
+ .white_background{margin:0 auto;}
+.pross{margin-bottom:20px;}
+.pross li{display:inline-block;height:50px;background: url(https://static.shiqichuban.com/web/assets/imgs/forgtpass.png); font-size: 14px;
+    line-height: 42px;text-align: center;vertical-align: text-bottom;}
+.pross li.a.on{background-position:0 0;}
+.pross li.a {background-position:-316px 0;}
+.pross li.b{background-position:-316px -64px;margin-left: -17px;}
+.pross li.b.on{ background-position: 0 -64px;}
+.pross li.c{background-position: -316px -125px;margin-left: -17px;}
+.pross li.c.on{background-position: 0 -125px;}
+.pross li.d{background-position: -316px -192px;margin-left: -17px;}
+.pross li.d.on{background-position: 0 -192px;}
+.black-button{width: 280px;margin: 30px auto;display: block;height: 46px;border: 0;background: url(https://static.shiqichuban.com/web/assets/imgs/forgtpass.png) 0 -272px}
+.verify_codeimg{background: #fff none repeat scroll 0 0;border: 2px solid #c6c6c6;cursor: pointer;
+    height: 38px;position: absolute;right: 0;top: 10px;width: 146px;z-index: 2;}
+.white{ background: #fff none repeat scroll 0 0;height: 49px;position: absolute;right: 150px;top: 10px;width: 20px;}
+.tishi{   background: rgba(0, 0, 0, 0) url("https://static.shiqichuban.com/web/assets/imgs/forgtpass.png") repeat scroll 0 -346px;
+    color: #eb7f88;font-size: 16px; height: 55px; padding: 0 0 0 27px; position: absolute; right: 168px;
+    top: 26px;}
+.lock{margin: 0 auto;margin-top: 50px;margin-bottom:20px;padding:0;background: rgba(0, 0, 0, 0) url("https://static.shiqichuban.com/web/assets/imgs/lock.png") no-repeat scroll 0 0;width: 100px;border:0px;height: 90px;}
+.gotologin{margin: 0 auto; width: 196px;}
+.gotologin a{    text-decoration: underline;font-size: 16px;cursor: pointer;color:#2566b4;}
+.forgetpass2 .tishi{position: static;margin-left: 180px;height: auto;}
+.forgetpass2 .sigin label{display: inline-block;font-size: 14px; margin-bottom: 20px;margin-left: 80px;margin-right:10px;width:66px;text-align: right;}
+.forgetpass2 .sigin select{width:248px;}
+.forgetpass2 fieldset{margin-top:50px;}
+.forgetpass2 .sigin .user{border: 0px;font-size: 14px;}
+.forgetpass2 .sigin .vcode{border: 0px;border-bottom: 1px solid #000000;font-size: 14px;}
+.forgetpass2 .sigin #send_vcode{background: #000;border-radius: 6px;color: #fff;padding: 6px 16px;position: static;vertical-align: super;margin-left: 12px;}
+.headlink{background: url(https://static.shiqichuban.com/web/assets/imgs/forgtpass.png) 5px -386px;padding-left: 30px;cursor: pointer;}
+.headlink.lin{margin-right:66px;background: url(https://static.shiqichuban.com/web/assets/imgs/forgtpass.png) 5px -442px;margin-left: 10px;}
+.headlink.pen{margin-right: 10px;}
+.h-page{background-image: url(https://static.shiqichuban.com/web/assets/hp_imgs/page_foot.png);background-size: cover;padding-bottom: 1.2em;background-position: 0 1.5em;background-repeat: no-repeat;bottom:0;}

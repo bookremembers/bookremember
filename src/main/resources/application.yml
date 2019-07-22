@@ -1,0 +1,14 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    password: 123456
+    username: root
+    url: jdbc:mysql://localhost/newerstu?useLL=false&serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=true
+mybatis:
+  type-aliases-package: com.newer.springbootpage.domain
+  mapper-locations: classpath:com/newer/springbootpage/mapper/*.xml
+
+
+
+
