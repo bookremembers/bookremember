@@ -1,0 +1,43 @@
+function AlbumUploadPlugin() {
+    PhotoUploadPlugin.call(this);
+    this.title = '方形相册';
+    this.content_theme_type = 5;
+    this.cus_cover = 1;
+}
+inheritPrototype(AlbumUploadPlugin, PhotoUploadPlugin);
+AlbumUploadPlugin.prototype.showModelView = function () {
+    if (document.getElementsByClassName("photo-upload-plugin").length > 0) return;
+    var html = "";
+    html += '<div class="photo-upload-plugin" style="position:fixed;z-index:9007199254740991;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.55)">';
+    html += '<div class="create_photo_book" style="position:absolute;width:597px;background:#fff;left:50%;top:100px;margin-left:-16%;border-radius:6px;;padding:12px 30px;">';
+    html += '<div class="create_photo_book_tit" style="font-size:16px;color:#2c2c2c;border-bottom:1px solid #ccc;line-height:34px;height:34px;">选择单页/批量上传</div>';
+    html += '<div class="create_photo_wrap" style="display: flex; flex-direction: row; justify-content: space-around; padding-bottom: 32px;">';
+    html += '<div class="single" class="create_photo_left" style="display: flex; flex-direction: column; align-items: center;">';
+    html += '<span class="single" style="margin-top: 16px; font-size: 12px; color: #333;">添加至单页</span>';
+    html += '<img class="single" src="https://static.shiqichuban.com/assets/img/photo_upload/single2.png?t=1551947002" width="166px" height="166px">';
+    html += '<div id="single" class="single" style="margin-top: 14px; display: flex;">';
+    html += '<div class="radio_two single" style="position: relative; display: inline-block;  width: 12px; height: 12px; border: solid 1px #454545; border-radius: 8px;">';
+    html += '<div class="single" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: inline-block; width: 8px; height: 8px; background-color: #454545; border-radius: 4px;"></div>';
+    html += '</div>';
+    html += '<div class="radio_one single" style="display: none;  width: 12px; height: 12px; border: solid 1px #454545; border-radius: 8px;"></div>';
+    html += '<span class="single" style="color: #454545; font-size: 12px; letter-spacing: 6px; margin-left: 4px; line-height: 17px; position: relative; bottom: 2.5px;">选中</span>';
+    html += '</div>';
+    html += '<input class="cancel" type="button" value="取消" style="width: 92px; height: 30px; border-radius: 20px; letter-spacing: 4px; margin-top: 24px; background-color: #ABABAB; color: white; font-size: 12px;" />';
+    html += '</div>';
+    html += '<div class="create_photo_right" style="display: flex; flex-direction: column; align-items: center;">';
+    html += '<span class="multi" style="margin-top: 16px; font-size: 12px; color: #333;">随机排版</span>';
+    html += '<img class="multi" src="https://static.shiqichuban.com/assets/img/photo_upload/multy2.png?t=1551947002" width="260px" height="140px" style="margin-top: 16px; margin-bottom: 9px;">';
+    html += '<div id="multi" class="multi" style="margin-top: 14px; display: flex;">';
+    html += '<div class="radio_two multi" style="position: relative; display: none;  width: 12px; height: 12px; border: solid 1px #454545; border-radius: 8px;">';
+    html += '<div class="multi" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: inline-block; width: 8px; height: 8px; background-color: #454545; border-radius: 4px;"></div>';
+    html += '</div>';
+    html += '<div class="radio_one multi" style="display: inline-block;  width: 12px; height: 12px; border: solid 1px #454545; border-radius: 8px;"></div>';
+    html += '<span class="multi" style="color: #454545; font-size: 12px; letter-spacing: 6px; margin-left: 4px; line-height: 17px; position: relative; bottom: 2.5px;">选中</span>';
+    html += '</div>';
+    html += '<input class="start_upload" type="button" value="开始上传" style="width: 92px; height: 30px; border-radius: 20px; letter-spacing: 2px; margin-top: 24px; background-color: #454545; color: white; font-size: 12px;" />';
+    html += '</div></div></div></div>';
+    var pan = document.createElement("div");
+    pan.innerHTML = html;
+    document.body.appendChild(pan);
+    document.getElementsByClassName("photo-upload-plugin")[0].addEventListener('click', this.modelClickHandler.bind(this));
+};
