@@ -1,63 +1,47 @@
-
 <!DOCTYPE html>
-<html>
+<html class=" js csstransforms csstransforms3d">
 <head>
-    <title>拾柒-REFLECT & RELEARN</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-    <meta name="Keywords"
-          content="微博书,豆瓣书,博客书,微信书,照片书,个人出书,自费,朋友圈,一键成书,个性数字化印制,有道云笔记,印象笔记,时光流影,小记,简书,知乎,良仓,宝宝,日记,笔记,随手记,分享生活"/>
-    <meta name="description"
-          content=' 拾柒，是一款提供"多平台记录、一键排版、精美印制"的文化生活服务工具，你的生活驿站!
-                    欢迎来到拾柒小憩！'/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>拾柒-REFLECT &amp; RELEARN</title>
 
-    <link rel="stylesheet" href="https://static.shiqichuban.com/assets/css/bootstrap3/bootstrap.css?t=1506658461"/>
-    <link rel="stylesheet" href="https://static.shiqichuban.com/assets/css/template.css?t=1526875722"/>
-    <link rel="stylesheet" href="https://static.shiqichuban.com/assets/css/font.css?t=1545187458"/>
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <!--[if lt IE 9]>
-    <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
-    <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <script src="https://static.shiqichuban.com/assets/js/jssdk/aliyun-oss-sdk.min.js"></script>
-    <script src="https://static.shiqichuban.com/assets/js/global/FileUploadManager.js?t=1563273162"></script>
-    <script src="https://static.shiqichuban.com/assets/js/base64.js"></script>
-    <script src="https://static.shiqichuban.com/assets/js/jquery/jquery2.2.3.js"></script>
-    <script src="https://static.shiqichuban.com/assets/js/fetcher.js?t=1556583670"></script>
-    <script src="https://static.shiqichuban.com/assets/js/main.js?t=1560404098"></script>
-    <script src="https://static.shiqichuban.com/assets/js/modernizr/modernizr.2.5.3.min.js"></script>
-    <script>
-        var csrf='fpbHsyrX5s8g1SydgnoFgWdPjSx23fBuQHJWKH3U';
-    </script>
-    <script>
-        var data = {
-            "level": parseInt('4'),   // 0为无限，1为非会员，2为普通会员，3为高级会员
-            "level_desc": '非会员',   // 会员描述： 普通会员、高级会员
-            "level_icon": '',          // 过期时间，自1970年以来的秒数
-            "expire_at": '0',          // 过期时间，自1970年以来的秒数
-            "rights": {
-                "is_top":parseInt('0'),
-                "images": parseInt('5'),  // 文章中上传的图片数量上限
-                "audios": parseInt('1'),  // 文章中上传的音频数量上限
-                "audio_duration": parseInt('600'),  // 文章中上传的单个音频时长上限
-                "videos": parseInt('1'),  // 文章中上传的视频数量上限
-                "video_duration": parseInt('30'),  // 文章中上传的单个视频时长实现-
-                "pdfs": parseInt('0'),    // 赠送的免费的pdf下载次数
-                "more_font": parseInt('0'),   // 能否用会员字体，0表示不能用，非0可用
-            }
-        };
-        try{
-            window.sessionStorage.setItem('user_member_level',JSON.stringify(data)) ;
-        }catch(e){
-            window.sessionStorage.clear();
-            window.sessionStorage.setItem('user_member_level',JSON.stringify(data)) ;
-        }
-    </script>
-    <link rel="stylesheet" type="text/css" href="https://static.shiqichuban.com/assets/css/response.css"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=9">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/template.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link href="css/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css">
+    <link href="css/cropper.min.css" rel="stylesheet" type="text/css">
+    <!--<script>-->
+    <!--var csrf = 'qThTzn9dsGWMeusr7GBb0D2iMhxd5sgEP2vGR5XX';-->
+    <!--</script>-->
+    <!--<script>-->
+    <!--var data = {-->
+    <!--"level": parseInt('4'),   // 0为无限，1为非会员，2为普通会员，3为高级会员-->
+    <!--"level_desc": '非会员',   // 会员描述： 普通会员、高级会员-->
+    <!--"level_icon": '',          // 过期时间，自1970年以来的秒数-->
+    <!--"expire_at": '0',          // 过期时间，自1970年以来的秒数-->
+    <!--"rights": {-->
+    <!--"is_top": parseInt('0'),-->
+    <!--"images": parseInt('5'),  // 文章中上传的图片数量上限-->
+    <!--"audios": parseInt('1'),  // 文章中上传的音频数量上限-->
+    <!--"audio_duration": parseInt('600'),  // 文章中上传的单个音频时长上限-->
+    <!--"videos": parseInt('1'),  // 文章中上传的视频数量上限-->
+    <!--"video_duration": parseInt('30'),  // 文章中上传的单个视频时长实现- -->
+    <!--"pdfs": parseInt('0'),    // 赠送的免费的pdf下载次数-->
+    <!--"more_font": parseInt('0'),   // 能否用会员字体，0表示不能用，非0可用-->
+    <!--}-->
+    <!--};-->
+    <!--try {-->
+    <!--window.sessionStorage.setItem('user_member_level', JSON.stringify(data));-->
+    <!--} catch (e) {-->
+    <!--window.sessionStorage.clear();-->
+    <!--window.sessionStorage.setItem('user_member_level', JSON.stringify(data));-->
+    <!--}-->
+    <!--</script>-->
+    <link rel="stylesheet" type="text/css" href="css/response.css">
     <style type="text/css">
-        .public_head span{
+        .public_head span {
             color: #7d7d7d;
             font-size: 14px;
             padding: 0 15px;
@@ -94,33 +78,39 @@
         }
     </style>
 
+    <link href="css/default.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/emotion.css">
+    <style type="text/css">#udesk_pop_dialog .emoji {
+        background-image: url("https://shiqi.udesk.cn/im_client/images/im-emoji-big-1.png")
+    }</style>
 </head>
 <body>
 <div class="container-fluid" style="overflow: hidden">
-    <div class="row header" style="display:none;box-shadow: 0 10px 10px #eee;margin-bottom: 15px;">
+    <div class="row header" style="box-shadow: rgb(238, 238, 238) 0px 10px 10px; margin-bottom: 15px;">
         <div class="col-xs-12 col-sm-10 col-sm-offset-1" style="line-height: 35px;">
-            <div class='col-xs-2 col-sm-2'>
-                <a href="/?fp=1" class='col-xs-12' style="padding-top: 10px;padding-bottom: 5px">
-                    <img class="logo" src="https://static.shiqichuban.com/assets/img/logo40.png" alt="拾柒"/>
+            <div class="col-xs-2 col-sm-2">
+                <a href="https://www.shiqichuban.com/?fp=1" class="col-xs-12"
+                   style="padding-top: 10px;padding-bottom: 5px">
+                    <img class="logo" src="images/logo40.png" alt="拾柒">
                 </a>
             </div>
 
-            <div class='col-xs-9 col-sm-9 public_head' style="padding-top: 15px;text-align: right;float: right;color: #8d8d8d;">
+            <div class="col-xs-9 col-sm-9 public_head"
+                 style="padding-top: 15px;text-align: right;float: right;color: #8d8d8d;">
                 	
                 	<span>
-                		<a class="header-btn" href="https://www.shiqichuban.com/portal/writing">个人主页</a>
+                		<a class="header-btn" href="sy_index.html" style="color: rgb(51, 51, 51);">个人主页</a>
                     </span>
-                <span><a href="https://www.shiqichuban.com/simple/app/#/center">印制中心</a></span>
-                <span><a href="https://www.shiqichuban.com/order/all">我的订单</a></span>
-                <span><a href="https://www.shiqichuban.com/simple/app/#/shelf">我的作品</a></span>
+                <span><a href="sq_copy.html">印制中心</a></span>
+                <span><a href="order.html">我的订单</a></span>
+                <span><a href="zuoping.html">我的作品</a></span>
                 <span id="my_shiqi" style="position: relative;">
                 		<a>我的拾柒</a>
-                        <i><img class="my_icon_img" src="https://static.shiqichuban.com/assets/img/icon/card_info_desc_icon.png"/></i>
-                        <div id="my_list" style="display: none;position:absolute;z-index:1000;width:120px;right:0;top:0">
+                        <i><img class="my_icon_img" src="images/card_info_desc_icon.png"></i>
+                        <div id="my_list"
+                             style="display: none;position:absolute;z-index:1000;width:120px;right:0;top:0">
                             <div style="background-color: #fff;border-radius: 4px;box-shadow: 0 1px 4px #ccc;margin-top: 40px">
-                                <p style="text-align: center;"><a href="https://www.shiqichuban.com/share/list">我的分享</a></p>
-                                <p style="text-align: center;"><a href="https://www.shiqichuban.com/user/webscore">我的积分</a></p>
-                                <p style="text-align: center;"><a href="https://www.shiqichuban.com/simple/app/#/portal/coupon">我的卡券</a></p>
+                                <p style="text-align: center;"><a href="integral.html">我的积分</a></p>
                                 <p style="text-align: center;" id="messagebox">我的消息</p>
                                 <p style="position: absolute;left:50%;top:20px;width:0;height: 0;border:10px solid rgba(0,0,0,0);border-bottom-color:#fff;"></p>
                 		    </div>
@@ -129,12 +119,14 @@
                 <span>|</span>
                 <span id="my_seting" style="position: relative;">
                 		<a>我的设置</a>
-                        <i><img class="my_icon_img" src="https://static.shiqichuban.com/assets/img/icon/card_info_desc_icon.png"/></i>
-                        <div id="setting_ul" style="display: none;position:absolute;z-index:1000;width:120px;right:0;top:0">
+                        <i><img class="my_icon_img" src="images/card_info_desc_icon.png"></i>
+                        <div id="setting_ul"
+                             style="display: none;position:absolute;z-index:1000;width:120px;right:0;top:0">
                             <div style="background-color: #fff;border-radius: 4px;box-shadow: 0 1px 4px #ccc;margin-top: 40px">
-                                 <p style="text-align: center;"><a href="https://www.shiqichuban.com/user/profile">账户设置</a></p>
-                                                                            <p style="text-align: center;"><a href="https://www.shiqichuban.com/order/member">会员中心</a></p>
-                                                                        <p style="text-align: center;" id="logout_btn"><a href="javascript:void(0)">退出登录</a></p>
+                                 <p style="text-align: center;"><a href="account.html">账户设置</a></p>
+                                 <p style="text-align: center;"><a href="#">会员中心</a></p>
+                                 <p style="text-align: center;" id="logout_btn"><a
+                                         href="javascript:void(0)">退出登录</a></p>
                                  <p style="position: absolute;left:50%;top:20px;width:0;height: 0;border:10px solid rgba(0,0,0,0);border-bottom-color:#fff;pointer-events:none "></p>
                 		    </div>
                         </div>
@@ -142,8 +134,8 @@
             </div>
         </div>
     </div>
-    <div class="row article" style="padding:0;margin-left: -25px;margin-right:-25px;">
-        <link href="https://static.shiqichuban.com/assets/css/jquery/plugin/jquery.simplePagination.css" rel="stylesheet">
+    <div class="row article" style="padding: 0px; margin-left: -25px; margin-right: -25px; min-height: 754px;">
+        <link href="css/jquery.simplePagination.css" rel="stylesheet">
 
         <style>
             .left-board p,
@@ -229,12 +221,13 @@
             }
 
             /* 左侧轮播图style*/
-            .sider{
+            .sider {
                 width: 100%;
                 position: relative;
 
             }
-            #parentID{
+
+            #parentID {
                 position: absolute;
                 margin: 0;
                 list-style: none;
@@ -242,15 +235,18 @@
                 height: 100%;
                 padding: 0;
             }
-            #parentID li{
+
+            #parentID li {
                 width: 100%;
                 position: absolute;
                 height: 100%;
             }
-            #parentID li img{
+
+            #parentID li img {
                 width: 100%;
             }
-            .list_num{
+
+            .list_num {
                 position: absolute;
                 height: 30px;
                 width: 100%;
@@ -258,7 +254,8 @@
 
                 text-align: center;
             }
-            .list_num span{
+
+            .list_num span {
                 display: inline-block;
                 width: 10px;
                 height: 10px;
@@ -268,16 +265,19 @@
                 cursor: pointer;
                 margin-left: 10px;
             }
-            #parentID li a{
+
+            #parentID li a {
                 position: absolute;
                 width: 100%;
                 top: 0;
                 left: 0;
             }
-            .photo_list::-webkit-scrollbar{
-                display:none;
+
+            .photo_list::-webkit-scrollbar {
+                display: none;
             }
-            @media  screen and (max-width: 478px) {
+
+            @media screen and (max-width: 478px) {
 
                 .top-pic,
                 .left-board {
@@ -294,7 +294,7 @@
                 }
             }
 
-            @media  screen and (min-width: 479px) {
+            @media screen and (min-width: 479px) {
 
                 .article_pen_title {
 
@@ -303,14 +303,12 @@
             }
 
         </style>
-        <script src="https://static.shiqichuban.com/assets/js/photo_book/controller/bookViewController.js?t=1560404098"></script>
-
         <div class="container-fluid sq_mob_container">
             <!-- 顶部图片 start-->
             <div class="col-xs-12 col-sm-10 col-sm-offset-1 top-pic"
                  style="padding: 10px 10px 10px !important;position:relative;overflow: hidden">
-                <img src="https://static.shiqichuban.com/web/assets/imgs/portal_banner/6.jpg" width="100%" id='bg-img'
-                     style="border-radius: 5px;cursor:pointer;" alt="拾柒-背景图片"/>
+                <img src="images/6.jpg" width="100%" id="bg-img" style="border-radius: 5px;cursor:pointer;"
+                     alt="拾柒-背景图片">
             </div>
 
             <!-- 顶部图片 end-->
@@ -320,11 +318,11 @@
                     <div class="col-xs-12 left-board-top"
                          style="background-color: white;border: 1px solid #c8c8c8 ;border-radius: 5px;padding:5px 0">
                         <div class="col-xs-4" style="text-align: center ;border-right:1px solid #ccc;">
-                            <p>0</p>
+                            <p>29</p>
                             <p>作品</p>
                         </div>
                         <div class="col-xs-4" style="text-align: center;border-right:1px solid #ccc;">
-                            <p>0</p>
+                            <p>497</p>
                             <p>字数</p>
                         </div>
                         <div class="col-xs-4" style="text-align: center">
@@ -333,111 +331,20 @@
                         </div>
                     </div>
 
-                    <!-- <div class="col-xs-12  left-board" style="padding:10px 0 5px !important;color:white;">
-                        <div class="col-xs-12 toggle"
-                             style="background-color: #2c2c2c;border-top-right-radius: 5px;border-top-left-radius: 5px;">
-                            <p style="padding:10px;"><span class="arrow"></span>制作<img
-                                        style="position: absolute;right: 40px;"
-                                        src="https://static.shiqichuban.com/assets/img/icon/icon_make.png"></p>
-                        </div>
 
-                        <div class="col-xs-12 item shiqi_create_btn"
-                             style="background-color: #c8c8c8;margin-bottom:1px">
-                            <a><p style="padding:10px"><span class="circle"></span>拾柒书<img
-                                            style="position: absolute;right: 40px;" src="https://static.shiqichuban.com/assets/img/icon/icon_book.png"></p>
-                            </a>
-                        </div>
-                        <div class="col-xs-12 item photos_book_btn"
-                             style="background-color: #c8c8c8;margin-bottom:1px">
-                            <p style="padding:10px"><span class="circle"></span>照片书<img style="position: absolute;right: 40px;" src="https://static.shiqichuban.com/assets/img/icon/photo_book_icon.png"></p>
-                        </div>
-                        <div class="col-xs-12 item album_book_btn"
-                             style="background-color: #c8c8c8;margin-bottom:1px">
-                            <p style="padding:10px"><span class="circle"></span>相册书<img width="20px" height="20px" style="position: absolute;right: 40px;" src="https://static.shiqichuban.com/assets/img/icon/album_book_icon.png?t=1551947002"></p>
-                        </div>
-                        <div class="col-xs-12 item wechat_book_btn"
-                             style="background-color: #c8c8c8;margin-bottom:1px">
-                            <p style="padding:10px"><span class="circle"></span>微信书<img id="wechat_loading"
-                                                                                        src="https://static.shiqichuban.com/assets/img/loading_circle.gif"
-                                                                                        style="position: absolute;right: 80px;top:15px;width:15px;height:15px"/><img
-                                        style="position: absolute;right: 40px;" src="https://static.shiqichuban.com/assets/img/icon/weixin_icon.png"></p>
-                        </div>
-                        <div class="col-xs-12 item"
-                             style="background-color: #c8c8c8;margin-bottom:1px">
-                            <a href="https://www.shiqichuban.com/p/weibo" target="_blank"><p style="padding:10px"><span class="circle"></span>微博书<img
-                                            style="position: absolute;right: 40px;" src="https://static.shiqichuban.com/assets/img/icon/weibo.png"></p>
-                            </a>
-                        </div>
-                        <div class="col-xs-12 item"
-                             style="background-color: #c8c8c8;margin-bottom: 1px;">
-                            <a href="https://www.shiqichuban.com/p/douban" target="_blank"><p style="padding:10px"><span class="circle"></span>豆瓣书<img
-                                            style="position: absolute;right: 40px;" src="https://static.shiqichuban.com/assets/img/icon/dou_icon.png"></p>
-                            </a>
-                        </div>
-                        <div class="col-xs-12 item"
-                             style="background-color: #c8c8c8;margin-bottom: 1px;">
-                            <a href="https://www.shiqichuban.com/p/wechat_public" target="_blank"><p style="padding:10px"><span class="circle"></span>公众号
-                                    <img
-                                            style="position: absolute;right: 40px;" src="https://static.shiqichuban.com/assets/img/icon/public_num_icon.png"></p>
-                            </a>
-                        </div>
-
-                           <div class="col-xs-12 item qqzone_book_btn"
-                             style="background-color: #c8c8c8;margin-bottom:1px">
-                            <p style="padding:10px"><span class="circle"></span>QQ书<img id="qqzone_loading"
-                                                                                        src="https://static.shiqichuban.com/assets/img/loading_circle.gif"
-                                                                                        style="display: none;position: absolute;right: 80px;top:15px;width:15px;height:15px"/><img
-                                        style="position: absolute;right: 40px;" src="https://static.shiqichuban.com/assets/img/icon/qqzone_icon.png"></p>
-                        </div>
-                    </div> -->
-
-                    <!--<div class="col-xs-12  left-board" style="padding:5px 0 !important;color:white">
+                    <div class="col-xs-12  left-board"
+                         style="padding:5px 0 !important;color:white;overflow: -webkit-paged-x;">
                         <div class="col-xs-12 toggle"
                              style="background-color: #2c2c2c;border-top-right-radius: 5px;border-top-left-radius: 5px">
-                            <p style="padding:10px;"><span class="arrow"></span>一起写<img style="position: absolute;right: 40px;"
-                                                                                         src="/assets/img/group_write/1_22.png">
+                            <p style="padding:10px;"><span class="arrow"></span>个人中心<img
+                                    style="position: absolute;right: 40px;" src="images/icon_write.png">
                             </p>
                         </div>
-                        <div class="col-xs-12 item" style="background-color: #c8c8c8;margin-bottom:1px">
-                            <a href="https://www.shiqichuban.com/book/zone"><p style="padding:10px"><span class="circle"></span>主题<img
-                                            style="position: absolute;right: 40px;" src="/assets/img/group_write/2_24.png"></p>
-                            </a>
-                        </div>
-                        <div class="col-xs-12 item" style="background-color: #c8c8c8;margin-bottom:1px">
-                            <a href="https://www.shiqichuban.com/portal/share_books"><p style="padding:10px"><span class="circle"></span>和朋友的书<img
-                                            style="position: absolute;right: 40px;" src="https://static.shiqichuban.com/assets/img/icon/icon_book.png"></p>
-                            </a>
-                        </div>
-                    </div>-->
-                    <div class="col-xs-12  left-board" style="padding:5px 0 !important;color:white;overflow: -webkit-paged-x;">
-                        <div class="col-xs-12 toggle"
-                             style="background-color: #2c2c2c;border-top-right-radius: 5px;border-top-left-radius: 5px">
-                            <p style="padding:10px;"><span class="arrow"></span>个人中心<img style="position: absolute;right: 40px;"
-                                                                                         src="/assets/img/icon/icon_file.png">
-                            </p>
-                        </div>
-                        <!--<div class="col-xs-12 item" style="background-color: #c8c8c8;margin-bottom:1px">
-                            <a href="https://www.shiqichuban.com/portal/books"><p style="padding:10px"><span class="circle"></span>我的书架<img
-                                            style="position: absolute;right: 40px;" src="/assets/img/icon/icon_books.png"></p>
-                            </a>
-                        </div>-->
-                        <div class="col-xs-12 item" style="background-color: #c8c8c8;margin-bottom:1px">
-                            <a href="https://www.shiqichuban.com/book/zone"><p style="padding:10px"><span class="circle"></span>主题<img
-                                    style="position: absolute;right: 40px;" src="/assets/img/group_write/2_24.png"></p>
-                            </a>
-                        </div>
-
-                        <!--<div class="col-xs-12 item" style="background-color: #c8c8c8;margin-bottom:1px">
-                            <a href="https://www.shiqichuban.com/portal/share_books"><p style="padding:10px"><span class="circle"></span>和朋友的书<img
-                                            style="position: absolute;right: 40px;" src="https://static.shiqichuban.com/assets/img/icon/icon_book.png"></p>
-                            </a>
-                        </div>-->
 
 
-                        <div class="col-xs-12 item"
-                             style="background-color: #c8c8c8;margin-bottom:1px">
-                            <a href="https://www.shiqichuban.com/user/recycle"><p style="padding:10px"><span class="circle"></span>回收站<img
-                                    style="position: absolute;right: 40px;" src="/assets/img/icon/writing_icon_recycle.png"></p>
+                        <div class="col-xs-12 item" style="background-color: #c8c8c8;margin-bottom:1px">
+                            <a href="recycle.html"><p style="padding:10px"><span class="circle"></span>回收站<img
+                                    style="position: absolute;right: 40px;" src="images/writing_icon_recycle.png"></p>
                             </a>
                         </div>
 
@@ -445,7 +352,8 @@
                         <div class="col-xs-12  left-board" style="padding:5px 0 !important;color:white">
                             <div class="sider">
                                 <ul id="parentID">
-                                    <li><a href="/event/share2" target="_blank"><img src="https://static.shiqichuban.com/assets/img/icon/event_index_sharebox.png"/></a></li>
+                                    <li><a href="https://www.shiqichuban.com/event/share2" target="_blank"><img
+                                            src="images/event_index_sharebox.png"></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -456,55 +364,195 @@
                 <div class="col-xs-12 col-sm-8 right-board">
                     <!-- 编辑器 start -->
                     <div id="kind-editor" style="width:100%">
-                <textarea id="editor"
-                          style="width:100%;display:none;"></textarea>
+                        <div class="ke-container ke-container-default" style="width: 99.8%;">
+                            <div style="display:block;" class="ke-toolbar" unselectable="on"><span class="ke-outline"
+                                                                                                   data-name="upload_pic"
+                                                                                                   title="上传媒体文件"
+                                                                                                   unselectable="on"><span
+                                    class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-upload_pic"
+                                    unselectable="on"></span></span><span class="ke-outline" data-name="upload_audio"
+                                                                          title="插入音乐" unselectable="on"><span
+                                    class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-upload_audio"
+                                    unselectable="on"></span></span><span
+                                    class="ke-inline-block ke-separator"></span><span class="ke-outline ke-selected"
+                                                                                      data-name="justifyleft"
+                                                                                      title="左对齐"
+                                                                                      unselectable="on"><span
+                                    class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-justifyleft"
+                                    unselectable="on"></span></span><span class="ke-outline" data-name="justifycenter"
+                                                                          title="居中" unselectable="on"><span
+                                    class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-justifycenter"
+                                    unselectable="on"></span></span><span class="ke-outline" data-name="justifyright"
+                                                                          title="右对齐" unselectable="on"><span
+                                    class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-justifyright"
+                                    unselectable="on"></span></span><span
+                                    class="ke-inline-block ke-separator"></span><span class="ke-outline"
+                                                                                      data-name="fontname" title="字体"
+                                                                                      unselectable="on"><span
+                                    class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-fontname"
+                                    unselectable="on"></span></span><span class="ke-outline" data-name="forecolor"
+                                                                          title="文字颜色" unselectable="on"><span
+                                    class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-forecolor"
+                                    unselectable="on"></span></span>
+                                <div class="ke-outline-time col-xs-6 col-xs-offset-4 col-sm-3 col-sm-offset-0"
+                                     style="float:right;position:relative;">
+                                    <div class="input-group date form_datetime"
+                                         style="width:87%;display: inline-block;position:absolute;padding-right:42px;right:0;"
+                                         value="1979-09-16" data-date-format="yyyy-MM-dd HH:mm"><input
+                                            class="ke-date-input" type="text"
+                                            style="height: 24px;border: 0;background: transparent ;outline: none;text-align: right"
+                                            _time="2019-07-18"> <span class="input-group-addon"
+                                                                      style="top:0;width:100%;opacity:0;position: absolute;z-index: 2"><span
+                                            class="glyphicon glyphicon-th"></span></span></div>
+                                    <span style="color: #aaaaaa;cursor: pointer;position:absolute;right:15px;">▼</span>
+                                </div>
+                            </div>
+                            <div id="add_book"
+                                 style="position:relative;height:50px;width:100%;padding:0 15px;background:#fff;"><span
+                                    class="books_title"
+                                    style="display:inline-block;border-bottom: 2px dotted #ccc;width:100%;line-height: 50px;color:#666; height: 50px;font-size: 18px;cursor:pointer;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">添加至书册</span><span
+                                    style="position:absolute;right:0;top:16px;text-align:right;margin-right:20px;width:10%"><img
+                                    src="images/add_bookto.icon.png"></span></div>
+                            <div id="ke-title" style="position:relative"><input id="title-input" placeholder="点击输入标题"
+                                                                                style="height:50px;"><label
+                                    id="title_notice"
+                                    style="position:absolute;right:15px;bottom:5px;font-size: 12px;color:#ccc">还可以输入20个字符</label>
+                            </div>
+                            <div id="pic_preview" style="position:absolute;display:none;width:100%;top:30px">
+                                <div class="col-xs-12"
+                                     style="padding:5px;position:absolute;background-color: rgba(209,209,209,0.9)">
+                                    <div style="overflow: hidden;width:0;height:0"><input id="file_input" type="file"
+                                                                                          multiple="" style=""
+                                                                                          accept="image/jpeg,image/jpg,image/png,video/mp4,video/*">
+                                    </div>
+                                    <div id="thumb_preview" class="col-xs-12" style="margin-bottom: 5px"></div>
+                                    <div class="col-xs-12">
+                                        <div class="updata_img_tips" style="float:left;color:#fc6b6b;font-size: 14px;">
+                                            温馨提示：每次最多只能上传9个媒体文件哦~
+                                        </div>
+                                        <div id="add_to_content_btn" class="sq_btn sq_btn_black" style="float:right">
+                                            确定
+                                        </div>
+                                        <div id="cancel_add_to_content_btn" class="sq_btn sq_btn_black"
+                                             style="float:right;margin-right:5px">取消
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display: block; height: auto;" class="ke-edit">
+                                <iframe class="ke-edit-iframe" hidefocus="true" frameborder="0" tabindex=""
+                                        style="width: 100%; height: 250px;" src="" type="text"></iframe>
+                                <textarea class="ke-edit-textarea" hidefocus="true" tabindex=""
+                                          style="width: 100%; height: 250px; display: none;"></textarea></div>
+                            <div class="tag_container" id="tag_container">
+                                <div class="h_tag" style="overflow: auto;padding:0 15px">
+                                    <div style="border-bottom: 1px dotted #ccc;border-top: 2px dotted #ccc;overflow: hidden">
+                                        <div class="selected_tag_container"
+                                             style="float:left;margin-bottom: 5px;"></div>
+                                        <div><img src="images/tag.png"
+                                                  style="width: 15px;float:left;margin-top: 12px;margin-left:10px;"><input
+                                                class="input_tag" contenteditable="false" maxlength="14"
+                                                placeholder="输入文字,按回车键添加标签,小于14个字符"
+                                                style="float:left;width:50%;padding:10px 15px;outline: none;border:none">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 tag_bar" style="height:60px;overflow-y: scroll ;">
+                                        <div class="col-xs-12 col-sm-1" style="text-align:left ;margin-top: 15px;">
+                                            历史标签:
+                                        </div>
+                                        <div class="col-xs-12 col-sm-10 tag_thumb_container"
+                                             style="text-align: left;margin-bottom:10px;padding:0">
+                                            <div id="ke_tag_0" class="sq_tag ke_history_tag " style="cursor: pointer;">
+                                                原创
+                                            </div>
+                                            <div id="ke_tag_1" class="sq_tag ke_history_tag " style="cursor: pointer;">
+                                                拾柒书
+                                            </div>
+                                            <div id="ke_tag_2" class="sq_tag ke_history_tag " style="cursor: pointer;">
+                                                杂记
+                                            </div>
+                                            <div id="ke_tag_3" class="sq_tag ke_history_tag " style="cursor: pointer;">
+                                                旅行
+                                            </div>
+                                            <div id="ke_tag_4" class="sq_tag ke_history_tag " style="cursor: pointer;">
+                                                亲子
+                                            </div>
+                                            <div id="ke_tag_5" class="sq_tag ke_history_tag " style="cursor: pointer;">
+                                                情感
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="border-top:1px dotted #ccc ;clear: both;">
+                                        <div class="sq_btn sq_btn_black submit_btn" style="margin: 5px;float:right;">
+                                            保存文章
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ke-statusbar">
+                                <div style="text-align: left"><span class="ke-status-notice"
+                                                                    style="margin-left: 5px;"></span><span
+                                        class="ke-inline-block ke-statusbar-center-icon"></span></div>
+                            </div>
+                            <div class="mask"
+                                 style="display:none;width:100%;height:100%;position:absolute;top:0;left:0;background-color: rgba(0,0,0,0.5)"></div>
+                        </div>
+                        <textarea id="editor" style="width:100%;display:none;"></textarea>
                     </div>
                     <!-- 编辑器 end -->
                     <div style="margin-top:20px;width:100%;height:36px;position:relative">
-                        <img src="https://static.shiqichuban.com/web/assets/imgs/pen_07.png" style="position:absolute;top:0;left:0;width: 100%" />
+                        <img src="images/pen_07.png" style="position:absolute;top:0;left:0;width: 100%">
                         <p class="article_pen_title col-xs-12" style="text-align: center;font-size: 16px;">
-                    <span class="col-xs-6 col-xs-offset-3 col-sm-2 col-sm-offset-5"
-                          style="display:inline-block;background-color: #f3f3f5">我的文章 &nbsp <span style="display:inline-block ;transform:rotate(90deg)">≫</span></span></p>
+                            <span class="col-xs-6 col-xs-offset-3 col-sm-2 col-sm-offset-5"
+                                  style="display:inline-block;background-color: #f3f3f5">我的文章 &nbsp; <span
+                                    style="display:inline-block ;transform:rotate(90deg)">≫</span></span></p>
                     </div>
                     <!--搜索框 start -->
                     <div class="col-xs-12"
                          style="margin-top:20px;background-color: white;border:1px solid #ccc;border-radius: 5px;padding-right:0 !important;padding-left:0 !important">
                         <div class="dropdown col-xs-6" style="padding-right:0 !important;padding-left:0 !important">
-                            <button class="btn btn-default dropdown-toggle" style="border:none;height: 40px;" type="button"
-                                    id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                <a href="/portal/writing?tag=全部">全部</a><span class="caret"
-                                                                             style="margin-left: 5px"></span>
+                            <button class="btn btn-default dropdown-toggle" style="border:none;height: 40px;"
+                                    type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                <a href="https://www.shiqichuban.com/portal/writing?tag=%E5%85%A8%E9%83%A8">全部</a><span
+                                    class="caret" style="margin-left: 5px"></span>
                             </button>
                             <ul class="dropdown-menu tag_list" aria-labelledby="dropdownMenu1" style="padding:5px 0">
-                                <li style="text-align: left;font-size: 16px" data="全部"><a href="/portal/writing">全部</a></li>
+                                <li style="text-align: left;font-size: 16px" data="全部"><a
+                                        href="https://www.shiqichuban.com/portal/writing">全部</a></li>
+                                <li style="text-align: left;font-size: 16px" data="原创"><a href="#">原创</a></li>
+                                <li style="text-align: left;font-size: 16px" data="拾柒书"><a
+                                        href="https://www.shiqichuban.com/portal/writing?tag=%E6%8B%BE%E6%9F%92%E4%B9%A6">拾柒书</a>
+                                </li>
                                 <li style="text-align: left;font-size: 16px" data="杂记"><a
-                                        href="/portal/writing?tag=杂记">杂记</a></li>
-                                <li style="text-align: left;font-size: 16px" data="原创"><a
-                                        href="/portal/writing?tag=原创">原创</a></li>
+                                        href="https://www.shiqichuban.com/portal/writing?tag=%E6%9D%82%E8%AE%B0">杂记</a>
+                                </li>
                                 <li style="text-align: left;font-size: 16px" data="旅行"><a
-                                        href="/portal/writing?tag=旅行">旅行</a></li>
+                                        href="https://www.shiqichuban.com/portal/writing?tag=%E6%97%85%E8%A1%8C">旅行</a>
+                                </li>
                                 <li style="text-align: left;font-size: 16px" data="亲子"><a
-                                        href="/portal/writing?tag=亲子">亲子</a></li>
+                                        href="https://www.shiqichuban.com/portal/writing?tag=%E4%BA%B2%E5%AD%90">亲子</a>
+                                </li>
                                 <li style="text-align: left;font-size: 16px" data="情感"><a
-                                        href="/portal/writing?tag=情感">情感</a></li>
+                                        href="https://www.shiqichuban.com/portal/writing?tag=%E6%83%85%E6%84%9F">情感</a>
+                                </li>
                             </ul>
                         </div>
 
-                        <form class="col-xs-6" style="margin-top: 3px" action="https://www.shiqichuban.com/portal/article/search"
-                              method="get">
-                            <!--<input type="hidden" name="_token" value="fpbHsyrX5s8g1SydgnoFgWdPjSx23fBuQHJWKH3U">-->
+                        <form class="col-xs-6" style="margin-top: 3px" action="#" method="get">
+                            <!--<input type="hidden" name="_token" value="qThTzn9dsGWMeusr7GBb0D2iMhxd5sgEP2vGR5XX">-->
                             <div class="input-group">
                                 <style type="text/css">
-                                    .search input[type="text"]{
-                                        background:no-repeat 0 0 scroll ＃EEEEEE;
-                                        border:none;
-                                        outline:medium;
+                                    .search input[type="text"] {
+                                        background: no-repeat 0 0 scroll ＃EEEEEE;
+                                        border: none;
+                                        outline: medium;
                                     }
                                 </style>
-                                <input type="text" class="form-control" autofocus="autofocus" name="query" placeholder="请输入搜索的内容"
-                                       style="z-index: auto;" value="">
+                                <input type="text" class="form-control" autofocus="autofocus" name="query"
+                                       placeholder="请输入搜索的内容" style="z-index: auto;" value="">
                                 <span class="input-group-btn">
-                        <input class="btn btn-default" type="submit" style="z-index: auto" value="搜索"/>
+                        <input class="btn btn-default" type="submit" style="z-index: auto" value="搜索">
                         </span>
                             </div>
                         </form>
@@ -512,40 +560,32 @@
                     <!--搜索框 end -->
                     <!-- 文章列表 start -->
                     <div clas="col-xs-12">
-                        <div id="artWrap118882140" class="col-xs-12" weather="Sun"
-                             time="2019-07-22 09:25:07"
+                        <div id="artWrap117162890" class="col-xs-12" weather="Sun" time="2019-07-12 16:19:49"
                              style="padding: 15px 25px 5px;overflow: hidden;background-color: white ;border-radius: 5px ;border: 1px solid #c8c8c8;margin-top: 10px">
                             <div class="col-xs-12 article_title"
                                  style="overflow: hidden;padding: 0 20px !important;margin-top: 20px">
-                                <a href="/portal/article/detail/118882140">
-                                    <h1 style="font-family: 宋体;font-weight: normal">出一本自己的书</h1>
+                                <a href="https://www.shiqichuban.com/portal/article/detail/117162890">
+                                    <h1 style="font-family: 宋体;font-weight: normal">2019年07月12日</h1>
                                 </a>
                                 <i class="m">/</i>
                                 <span class="dataBar">
-                                <span>2019-07-22 </span>
+                                <span>2019-07-12 </span>
                                 <span><i class="icon iconSun"></i></span>
                             </span>
                                 <dl class="col-xs-12" style="padding-left:0 !important">
                                     <dd>
+                                        <span class="sq_tag"
+                                              style="margin-left:0;margin-top: 5px;margin-right: 5px">拾柒书</span>
                                     </dd>
                                 </dl>
                             </div>
                             <div class="col-xs-12 article_content" style="color: #8d8d8d;padding: 0 20px !important;">
 
                                 <div class="col-xs-12"
-                                     style="text-align: justify;overflow: hidden;word-wrap: break-word;padding:0">“旧学商量加邃密，新知涵养转深沉”，梳理过往，获取新知。拾柒，希望你拾起过往，整理细碎，遇见更好的自己！👏咳咳~那个~调起的有点高了....其实吧，就是想告诉你，拾柒可以这么玩。</div>
-
-                                <div class="col-xs-12" style="margin-top: 15px;padding: 0">
-                                    <div class="col-xs-4" style="width:140px;height: 140px;margin-right: 10px;padding: 0">
-                                        <img src="/web/assets/imgs/default_article1.png" style="max-width:100%;max-height:140px"/>
-                                    </div>
-                                    <div class="col-xs-4" style="width:140px;height: 140px;margin-right: 10px;padding: 0">
-                                        <img src="/web/assets/imgs/default_article2.png" style="max-width:100%;max-height:140px"/>
-                                    </div>
-                                    <div class="col-xs-4" style="width:140px;height: 140px;margin-right: 10px;padding: 0">
-                                        <img src="/web/assets/imgs/default_article3.png" style="max-width:100%;max-height:140px"/>
-                                    </div>
+                                     style="text-align: justify;overflow: hidden;word-wrap: break-word;padding:0">SDF
+                                    A是的爱的afghhlioafghhlio9o&nbsp;
                                 </div>
+
                             </div>
 
                             <div class="col-xs-12 article_content"
@@ -553,547 +593,315 @@
                             </div>
 
                         </div>
-                    </div>
-                    <!-- 文章列表 end -->
-                    <div class="col-xs-12"
-                         style="margin: 10px 0;background-color: white ;padding:10px 5px ;border-radius: 5px;border :1px solid #ccc">
-                        <div class="col-xs-12 col-sm-8 pagination-container"></div>
-                        <div class="col-xs-12 col-sm-4 ">
-                            <input id="goPageBtn" type="button"
-                                   style="outline:none;text-align:center;float: right;width: 30%;height:30px;background-color:white;border-top-right-radius: 5px;border-bottom-right-radius: 5px;border:1px solid #ccc"
-                                   value="前往"/>
-                            <input id="pageInput" type="tel"
-                                   style="outline:none;text-align: center;float: right;width: 70%;line-height:30px;height:30px;border-top-left-radius: 5px;border-bottom-left-radius: 5px;border:1px solid #ccc"/>
+                        <div id="artWrap117162856" class="col-xs-12" weather="Sun" time="2019-07-12 16:19:37"
+                             style="padding: 15px 25px 5px;overflow: hidden;background-color: white ;border-radius: 5px ;border: 1px solid #c8c8c8;margin-top: 10px">
+                            <div class="col-xs-12 article_title"
+                                 style="overflow: hidden;padding: 0 20px !important;margin-top: 20px">
+                                <a href="https://www.shiqichuban.com/portal/article/detail/117162856">
+                                    <h1 style="font-family: 宋体;font-weight: normal">2019年07月12日</h1>
+                                </a>
+                                <i class="m">/</i>
+                                <span class="dataBar">
+                                <span>2019-07-12 </span>
+                                <span><i class="icon iconSun"></i></span>
+                            </span>
+                                <dl class="col-xs-12" style="padding-left:0 !important">
+                                    <dd>
+                                        <span class="sq_tag"
+                                              style="margin-left:0;margin-top: 5px;margin-right: 5px">拾柒书</span>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="col-xs-12 article_content" style="color: #8d8d8d;padding: 0 20px !important;">
+
+                                <div class="col-xs-12"
+                                     style="text-align: justify;overflow: hidden;word-wrap: break-word;padding:0">
+                                    是的上个碍事干啥的发送到
+                                </div>
+
+                            </div>
+
+                            <div class="col-xs-12 article_content"
+                                 style="padding: 10px 25px 10px !important;text-align: right">
+                            </div>
+
                         </div>
+
+                        <div class="col-xs-12 article_content"
+                             style="padding: 10px 25px 10px !important;text-align: right">
+                        </div>
+
+                    </div>
+
+                    <div class="col-xs-12 article_content"
+                         style="padding: 10px 25px 10px !important;text-align: right">
                     </div>
 
                 </div>
-                <!-- 右侧边栏 start -->
             </div>
 
-            <div class="col-sm-12 pic-bg-ul" style="position: fixed;top:0;left:0;width:100%;height:100%;display: none">
-                <div class="pic-bg-mask" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index: 1;"></div>
-                <div class="col-sm-12" style="position:absolute;bottom:0;left:0 ;padding-top:20px;background-color: rgba(0,0,0,0.7);z-index: 2">
-                    <ul class="col-sm-10 col-sm-offset-1 " style="padding:5px 5px !important;">
-                        <li style="list-style: none;padding:5px 5px !important" class="col-xs-4 bg-select-item"
-                            data="0"><img style="width:100%;" src='0'/></li>
-                        <li style="list-style: none;padding:5px 5px !important" class="col-xs-4 bg-select-item"
-                            data="0"><img style="width:100%;" src='0'/></li>
-                        <li style="list-style: none;padding:5px 5px !important" class="col-xs-4 bg-select-item"
-                            data="0"><img style="width:100%;" src='0'/></li>
-                        <li style="list-style: none;padding:5px 5px !important" class="col-xs-4 bg-select-item"
-                            data="0"><img style="width:100%;" src='0'/></li>
-                        <li style="list-style: none;padding:5px 5px !important" class="col-xs-4 bg-select-item"
-                            data="0"><img style="width:100%;" src='0'/></li>
-                        <li style="list-style: none;padding:5px 5px !important" class="col-xs-4 bg-select-item"
-                            data="0"><img style="width:100%;" src='0'/></li>
-                    </ul>
-                </div>
-            </div>
+
         </div>
-        <script src="https://static.shiqichuban.com/assets/js/jquery/plugin/jquery.simplePagination.js"></script>
-        <script src="https://static.shiqichuban.com/assets/js/kindEditor/editors/write_editor_2.2.1.js?t=1558492600"></script>
-        <script src="https://static.shiqichuban.com/assets/js/global/plugin/PhotoUploadPlugin.js?t=1560404098"></script>
-        <script src="https://static.shiqichuban.com/assets/js/global/plugin/AlbumUploadPlugin.js?t=1560404098"></script>
-        <script>
-            $(document).ready(function () {
-                var tags_arr = ["\u6742\u8bb0","\u539f\u521b","\u65c5\u884c","\u4eb2\u5b50","\u60c5\u611f"];
-                var weather_tags = ["\u5c0f\u96e8","\u5927\u96e8","\u6674\u5929","\u591a\u4e91","\u9634\u5929","\u96ea"] ;
-                var saveCom = function () {
-                    location.reload(true);
-                };
-
-                var mykindEditor = new MyKindEditor({
-                    width: '99.8%',
-                    height: '250',
-                    token: 'fpbHsyrX5s8g1SydgnoFgWdPjSx23fBuQHJWKH3U',
-                    tags: tags_arr,
-                    weather_tag: weather_tags,
-                    rights:JSON.parse(window.sessionStorage.getItem('user_member_level')),
-                    save_com: saveCom,
-                });
-                mykindEditor.init('#editor');
-
-                var isAgent='';
-                //是否有agent注册账户
-                if(!isPC()){
-                    //只有载手机上打开并且是agent注册用户才显示改banner图
-                    $('.modular').css({
-                        'position':'fixed',
-                        'left':'0',
-                        'top':'0',
-                        'width':'100%'
-                    });
-
-                    $('.modular').html('<a style="display:block" href="https://www.shiqichuban.com/getApps"><img ismap="ismap" style="width:100%" src="https://static.shiqichuban.com/assets/img/icon/mobile_agent_user_banner.png"></a><span class="close_banner" style="position:absolute;width:10%;height:100%;right:0;top:0;zoom:9"></span>');
-
-                    $(document).on('touchstart','.close_banner',function(e){
-                        $('.modular').html('');
-                        $('.modular').height('0');
-                    });
-                }
-
-                $(".pic-bg-mask").on("click",function(e){
-                    $(this).parent().hide();
-                });
-
-
-                if (cookie.get('author_id')) {
-                    $('#wechat_loading').show();
-                } else {
-                    $('#wechat_loading').hide();
-                }
-
-                var $currentPageUrl = "/portal/writing?page=";
-                if (isPC() && getBrowserType() === 'ie') {
-
-                    var notice_tag = '<div class="col-xs-12 notice_tag">推荐使用chorme、firefox、safari浏览器,其他浏览器图片上传可能会失败</div>';
-
-                    $('.right-board').prepend(notice_tag);
-
-                    $('.notice_tag').on('click', function () {
-
-                        $(this).remove();
-                    })
-                }
-
-                var tag = '';
-                var hrefTextSuffix;
-                if (tag) {
-                    hrefTextSuffix = '&tag=' + "";
-                } else {
-                    hrefTextSuffix = '';
-                }
-
-                $('.pagination-container').pagination({
-                    pages:1,
-                    cssStyle: 'light-theme',
-                    prevText: '<',
-                    nextText: '>',
-                    currentPage:1 ,
-                    displayedPages: isPC() ? 5 : 3,
-                    edges: 1,
-                    hrefTextPrefix: "https://www.shiqichuban.com" + $currentPageUrl,
-                    hrefTextSuffix: hrefTextSuffix,
-                    onPageClick: function (pageNumber, event) {
-
-                    },
-                });
-
-                $('#bg-img').on('click', function () {
-
-                    if ($(".pic-bg-ul").is(":hidden")) {
-                        $(".pic-bg-ul").show();
-                    } else {
-                        $(".pic-bg-ul").hide();
-                    }
-                });
-
-                $('.pic-bg-ul').on('click', 'li', function () {
-                    var url = $(this).attr('data');
-                    Fetcher.fetchData(
-                        API_CHANGE_PERSONAL_BG,
-                        null,
-                        "post",
-                        {url: url},
-                        function (data) {
-                            $('.top-pic img').attr('src', url);
-                        },
-                        function (data) {
-                            showAlert('选择图片失败');
-                        }
-                    );
-                });
-
-                $('#goPageBtn').on('click', function () {
-
-                    var page = parseInt($('#pageInput').val());
-
-                    if (page > 1) {
-
-                        showAlert('请输入正确页码数');
-                        return;
-                    }
-
-                    var url;
-                    if (tag)
-                        url = 'https://www.shiqichuban.com/portal/writing?page=' + page + '&tag=' + "";
-                    else
-                        url = 'https://www.shiqichuban.com/portal/writing?page=' + page;
-
-                    location.href = url;
-
-                });
-
-                $('.tag_list').on('click', 'li', function () {
-                    console.log($(this).attr('data'));
-                });
-
-                $('#pageInput').on('input', function () {
-
-                    $('#pageInput').val($('#pageInput').val().replace(/[^0-9]/g, ''));
-                });
-
-                $('.shiqi_create_btn').on('click', function () {
-                    $('.loading_mask').show();
-                    $('.import_btn').unbind();
-
-                    Fetcher.fetchData(
-                        "/v1/book/create/empty_mybook",
-                        null,
-                        'post',
-                        JSON.stringify({
-                            type:0,
-                            content_theme_type:3
-                        }),
-                        function (data) {
-                            $('.loading_mask').hide();
-                            $(".create-pan").hide();
-                            if(data.content_theme_type==3){
-                                location.href=getCurrentWWWDomain()+'/book/new_contents/'+ data.book_id ;
-                            }else{
-                                location.href=getCurrentWWWDomain()+'/book/preview/'+ data.book_id +'#page/1' ;
-                            }
-                            location.load();
-                        },
-                        function(error){
-                            alert("请求失败")
-                        },
-                        "application/json"
-                    );
-                });
-                $('.photos_book_btn').on('click', function (e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    var imgLoadPlugin = new PhotoUploadPlugin();
-                    imgLoadPlugin.showModelView();
-                });
-
-                $('.album_book_btn').on('click', function (e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    var imgLoadPlugin = new AlbumUploadPlugin();
-                    imgLoadPlugin.showModelView();
-                });
-
-                $(document).on('click', '.wechat_book_btn', function () {
-
-                    if (cookie.get('author_id') != null) {
-                        showConfirm('正在处理您提交的微信号',null,null,null,null,'ok');
-                        return;
-                    }
-
-                    var frame = '<div id="book_confirm_mask" style="position:fixed;top:0;left:0;background-color: rgba(0,0,0,0.5);width:100%;height:' + $(document).height() + 'px ">' +
-                        "<div class='col-sm-12 col-sm-6 col-sm-offset-3 step_frame' style='margin-top:70px'>" +
-                        '</div>';
-                    var step_1 =
-                        [
-                            "<div class='col-xs-12 col-sm-8 col-sm-offset-2' style='position:relative;padding:5px;background-color: white;border-radius: 5px;'>",
-                            "<img class='icon_close' src='https://static.shiqichuban.com/assets/img/icon/close_land.png' style='position:absolute;right:-10px;top:-10px;width:30px;'/>",
-                            "<p class='col-xs-12 col-sm-10 col-sm-offset-1' style='color:#ff6262;margin-top: 30px;padding:0;font-size:16px;letter-spacing: 3px'>第一步:输入您的微信号~</p>",
-                            "<input class='col-xs-12 col-sm-10 col-sm-offset-1' id='wechat_username' placeholder='输入您的微信号码进行导入' style='margin-top:10px;font-size:12px;height:30px;border-radius: 2px;outline: none;border: 1px solid #1d1f1f;'/>",
-                            "<img class='col-xs-10 col-xs-offset-1' src='https://static.shiqichuban.com/assets/img/wechat_step_1.png' style='margin-top: 20px;margin-bottom: 10px'/>",
-                            "<a href='javascript:void(0)' class='col-xs-12 col-sm-10 col-sm-offset-1 sq_btn sq_btn_black wechat_next_step' style='padding-top:5px;padding-bottom:5px'>下一步</a>",
-                            "<div class='col-xs-12 ' style='margin-top:20px;height:1px;border-bottom: 1px dotted black;'></div>",
-                            "<p class='col-xs-12 col-sm-10 col-sm-offset-1' style='margin-top:20px;font-size:12px;letter-spacing:2px;'>如有疑问请拨打:<span style='color:deepskyblue;margin-left: 5px'>010-53711487</span><p>",
-                            "<div>",
-                        ].join('');
-
-                    var step_2 =
-                        [
-                            "<div id='step_2' class='col-xs-12 col-sm-8 col-sm-offset-2' style='position:relative;padding:5px;background-color: white;border-radius: 5px;'>",
-                            "<img class='icon_close' src='https://static.shiqichuban.com/assets/img/icon/close_land.png' style='z-index:100;position:absolute;right:-10px;top:-10px;width:30px;'/>",
-                            "<p class='col-xs-12 col-sm-10 col-sm-offset-1' style='color:#ff6262;margin-top: 30px;padding:0;font-size:16px;letter-spacing: 3px'>第二步:添加微信好友~</p>",
-                            "<div class='col-xs-12 col-sm-10 col-sm-offset-1' style='text-align: center;margin-top:10px;font-size:12px;'>扫描二维码,添加<span style='color:red' class='cs_account'></span>为好友</div>",
-                            "<div class='col-xs-12 col-sm-10 col-sm-offset-1' style='text-align: center;margin-top:10px;font-size:12px;'>如已添加,请点击'<a href='javascript:void(0)' class='wechat_start_createbook' style='color:dodgerblue;cursor: pointer'>确定添加好友</a>'按钮</div>",
-                            "<img id='wechat_codepic' class='col-xs-6 col-xs-offset-3' style='border:1px double #ccc ;margin-top: 10px;margin-bottom: 10px'/>",
-                            "<a href='javascript:void(0)' class='col-xs-12 col-sm-10 col-sm-offset-1 sq_btn sq_btn_black wechat_start_createbook' style='margin-top:20px;padding-top:5px;padding-bottom:5px'>确定添加好友</a>",
-                            "<div class='col-xs-12 ' style='margin-top:20px;height:1px;border-bottom: 1px dotted black;'></div>",
-                            "<p class='col-xs-12 col-sm-10 col-sm-offset-1' style='margin-top:20px;font-size:12px;letter-spacing:2px;'>如有疑问请拨打:<span style='color:deepskyblue;margin-left: 5px'>010-53711487</span><p>",
-                            "<div>",
-                        ].join('');
-
-                    var loading_mask =
-                        [
-                            "<div id='wechat_loading_mask' style='text-align:center;border:1px solid #ccc ;width: 100%;height: 100%;background-color: rgba(0,0,0,0.9);position: absolute;top: 0;left: 0;border-radius: 5px;'>" +
-                            "<img src='https://static.shiqichuban.com/assets/img/loading.gif' style='width:60px;margin-top: 190px' />",
-                            "<p class='col-xs-12' style='margin-top:50px;text-align: center;color:white'>正在处理您提交的微信号, 需要大约10-30分钟时间<p>",
-                            "<p class='col-xs-12' style='text-align: center;color:white'>建议您关闭此弹窗, 制作完成您将收到消息提醒<p>",
-                            "</div>",
-                        ].join('');
-
-
-                    var author_id;
-                    $(document.body).append(frame);
-                    $('.step_frame').append(step_1);
-                    $('.wechat_next_step').on('click', function () {
-                        sendData({
-                            is_api: true,
-                            url: '/v1/thirdparty/add_account_nocs/wechat',
-                            data: {
-                                wechat_account: $('#wechat_username').val(),
-                            },
-                            callback: function (data) {
-                                var date = new Date();
-                                $('.step_frame').children().remove();
-                                $('.step_frame').append(step_2);
-                                $('#wechat_codepic').attr('src', data.cs_qrcode_url);
-                                $('.cs_account').html(data.cs_account);
-                                author_id = data.author_id;
-
-                                $('.wechat_start_createbook').on('click', function () {
-                                    if (author_id) {
-                                        cookie.set('author_id', '' + author_id);
-                                        $('#wechat_loading').show();
-                                        isPrintingBook();
-                                    }
-
-                                    $('#step_2').append(loading_mask);
-                                })
-                            },
-
-                            errorFun: function (data) {
-
-                                if (data.err_msg)
-                                    showConfirm(data.err_msg,null,null,null,null,'ok');
-                            }
-                        });
-                    });
-
-                });
-
-                $(document).on('click', '.icon_close', function () {
-                    $('#book_confirm_mask').remove();
-                    $('#qqzone_loading').hide();
-                });
-
-                qqzone_book_btn();
-                function qqzone_book_btn(){
-
-                    var str='<div id="qqzonek_confirm_mask" style="position:fixed;top:0;left:0;background-color: rgba(0,0,0,0.5);width:100%;height: 2100px "><div class="col-sm-12 col-sm-6 col-sm-offset-3" style="margin-top:70px;font-family:Microsoft Yahei"><div class="col-xs-12 col-sm-8 col-sm-offset-2 step_succ" style="position:relative;padding:5px;background-color: white;border-radius: 5px;"><img class="icon_close" src="https://static.shiqichuban.com/assets/img/icon/close_land.png" style="position:absolute;right:-10px;top:-10px;width:30px;" /><h4 class="col-xs-12 col-sm-10 col-sm-offset-1" style="margin-top: 30px;padding:0;color:#2c2c2c;height:26px;line-height:26px;font-size:22px;background:url(https://static.shiqichuban.com/assets/img/icon/qqzone_add_icon.png) no-repeat;padding-left:38px;">QQ空间导入</h4><p class="col-xs-12 col-sm-10 col-sm-offset-1" style="color:#5d5d5d;padding:0;letter-spacing: 3px;margin-top: 30px;font-size: 14px;"><i style="display: inline-block;background: #f66a6d;border: 1px solid #fff;border-radius: 50%;width: 10px;height: 10px;margin-right: 10px;"></i>第一步输入QQ号</p><p class="col-xs-12 col-sm-9 col-sm-offset-1"><label style="width:66px;float:left;margin-top:10px;margin-left:10px;height:40px;line-height:40px;font-weight:normal" for="qq_username">QQ&nbsp;&nbsp;号 : </label><input class="col-xs-12 col-sm-9" id="qq_username" placeholder="输入您的QQ号进行导入" style="margin-top:10px;font-size:12px;height:40px;border-radius: 2px;outline: none;border: 1px solid #a5a5a5;padding-left:12px;letter-spacing:1px;" /></p><p class="col-xs-12 col-sm-9 col-sm-offset-1"><label style="width:66px;float:left;margin-top:10px;margin-left:10px;height:40px;line-height:40px;font-weight:normal;" for="qq_nickname">QQ昵称 : </label><input class="col-xs-12 col-sm-9" id="qq_nickname" placeholder="输入您的QQ昵称" style="margin-top:10px;font-size:12px;height:40px;border-radius: 2px;outline: none;border: 1px solid #a5a5a5;padding-left:12px;font-weight:normal;letter-spacing:1px;" /></p><p class="col-xs-12 col-sm-10 col-sm-offset-1" style="color:#5d5d5d;padding:0;letter-spacing: 3px;margin-top: 30px;font-size: 14px;"><i style="display: inline-block;background: #f66a6d;border: 1px solid #fff;border-radius: 50%;width: 10px;height: 10px;margin-right: 10px;"></i>第二步选择导入源</p><p class="col-xs-12 col-sm-10 col-sm-offset-1" style="margin-left:54px;margin-top: 10px;" ><span style="padding-right: 50px;" class="qq_say"><i style="background:url(https://static.shiqichuban.com/assets/img/icon/qqzone_chekou_icon.png) no-repeat;width:20px;height:20px;display:inline-block;vertical-align:middle;"></i><b style="padding-left: 10px;display: inline-block;line-height: 20px;vertical-align: middle;font-weight: normal;">说说</b></span><span class="qq_data"><i style="background:url(https://static.shiqichuban.com/assets/img/icon/qqzone_chekou_icon.png) no-repeat;width:20px;height:20px;display:inline-block;vertical-align:middle;"></i><b style="padding-left: 10px;display: inline-block;line-height: 20px;vertical-align: middle;font-weight: normal;">日志</b></span></p><a href="javascript:void(0)" class="col-xs-10 col-sm-8 col-sm-offset-2 sq_btn sq_btn_black qqzone_next_step" style="padding-top:8px;padding-bottom:8px;margin-top: 30px;;margin-bottom: 40px;letter-spacing: 2px; ">开始制作</a></div></div></div>';
-                    str+='<style type="text/css">#qq_username::-webkit-input-placeholder,#qq_nickname::-webkit-input-placeholder{color: #e8e8e8;font-size:14px;letter-spacing:1px;}#qq_username::-moz-placeholder,#qq_nickname::-moz-placeholder{color: #e8e8e8;font-size:14px;letter-spacing:1px;}#qq_username:-moz-placeholder,#qq_nickname:-moz-placeholder{color: #e8e8e8;font-size:14px;letter-spacing:1px;}#qq_username:-ms-input-eplaceholder,#qq_nickname:-ms-input-eplaceholder{color: #e8e8e8;font-size:14px;letter-spacing:1px;}';
-//	  	var qqzone_loading='<img class="icon_close" src="/assets/img/icon/close_land.png" style="position:absolute;right:-10px;top:-10px;width:30px;z-index:9;"><div id="qqzone_loading_mask" style="text-align:center;border:1px solid #ccc ;width: 100%;height: 100%;background-color: rgba(0,0,0,0.9);position: absolute;top: 0;left: 0;border-radius: 5px;"><img src="/assets/img/loading.gif" style="width:60px;margin-top: 190px" /><p class="col-xs-12" style="margin-top:50px;text-align: center;color:white">我们正在制作您的QQ书, 需要大约几分钟时间</p><p class="col-xs-12" style="text-align: center;color:white">建议您关闭此弹窗, 制作完成您将收到消息提醒</p></div>';
-                    var qqzone_loading='<img class="icon_close" src="https://static.shiqichuban.com/assets/img/icon/close_land.png" style="position:absolute;right:-10px;top:-10px;width:30px;z-index:9;">';
-                    qqzone_loading+='<div class="col-xs-12 " id="qqzone_loading_mask" style="text-align:center;position: relative;border-radius: 5px;">';
-                    qqzone_loading+='<div class="col-xs-12 loading_bg" style="position: relative;height:280px;background:url(https://static.shiqichuban.com/assets/img/icon/qqzone_loading_bg.png) no-repeat;background-size:100% 100%;border:1px solid rgba(255,255,255,0);border-top-left-radius: 10px;border-top-right-radius: 10px;"><img src="https://static.shiqichuban.com/assets/img/loading.gif" style="position: absolute;left:50%;top:50%;margin-left:-30px;margin-top:-30px;width:60px;" /></div>';
-                    qqzone_loading+='<p class="col-xs-12" style="margin-top:30px;font-size:16px;color:#000;padding-left:20px;text-align:left;">Dear</p><p class="col-xs-12 qqzone_backcall_tips" style="padding-left:20px;text-align:left;color:#000;margin-bottom:30px;">我们正在制作您的QQ书,请等待...</p>';
-                    qqzone_loading+='</div><div class="col-xs-12 col-sm-12 loading_footer" style="border-top:1px dotted #000"><p class="col-xs-12 col-sm-12" style="line-height:30px;margin:0;font-size:12px;padding-left:30px;">书籍制作完成以后您可以到<a href="/portal/books">"我的书架"</a>查看,关闭此页面没有关系</p><p class="col-xs-12 col-sm-10" style="padding-left:30px;line-height:30px;margin:0;font-size:12px;">如有疑问请拨打：<a style="color:#758ac1">010-53711487</a></p></div>';
-
-                    var power_tips='<img class="icon_close" src="https://static.shiqichuban.com/assets/img/icon/close_land.png" style="position:absolute;right:-10px;top:-10px;width:30px;"><h4 class="col-xs-12 col-sm-12 col-sm-offset-2" style="margin:20px auto;letter-spacing:1px;text-align:center;">您的QQ空间未公开</h4>';
-                    power_tips+='<p class="col-xs-12 col-sm-12" style="text-align:center;"><img id="qqzone_power_tips" width="90%" src="https://static.shiqichuban.com/assets/img/icon/qqzone_power_tips.gif"></p>';
-                    power_tips+='<p class="col-xs-12 col-sm-12" style="color:#b4b7c8;font-size:16px;letter-spacing:1px;text-align:center;margin-top:20px;margin-bottom:20px;">开放QQ空间权限的动态流程</p>';
-                    power_tips+='<a class="col-xs-12 col-sm-10 col-sm-offset-1 sq_btn sq_btn_black" href="http://user.qzone.qq.com/" style="margin-bottom:32px;padding-top:8px;padding-bottom:8px;">去QQ空间设置公开权限</a>';
-                    var book_type;
-
-                    $(document).on('click','.qqzone_book_btn',function(){
-                        book_type=3;
-                        $(document.body).append(str);
-
-
-                        if (cookie.get('author_id') != null) {
-                            showConfirm('正在处理您提交的QQ书',null,null,null,null,'ok');
-
-                        }
-
-                    }).on('click','.icon_close',function(){
-                        $('#qqzonek_confirm_mask').remove();
-                    }).on('click','.qq_say i',function(){
-                        if(!$(this).parent().hasClass('cancel')){
-                            $(this).css('background','url(https://static.shiqichuban.com/assets/img/icon/qqzone_nocheckou_icon.png) no-repeat');
-                            $(this).parent().addClass('cancel');
-                            book_type-=2;
-                        }else{
-                            $(this).css('background','url(https://static.shiqichuban.com/assets/img/icon/qqzone_chekou_icon.png) no-repeat');
-                            $(this).parent().removeClass('cancel');
-                            book_type+=2;
-                        }
-                    }).on('click','.qq_data i',function(){
-                        if(!$(this).parent().hasClass('cancel')){
-                            $(this).css('background','url(https://static.shiqichuban.com/assets/img/icon/qqzone_nocheckou_icon.png) no-repeat');
-                            $(this).parent().addClass('cancel');
-                            book_type-=1;
-                        }else{
-                            $(this).css('background','url(https://static.shiqichuban.com/assets/img/icon/qqzone_chekou_icon.png) no-repeat');
-                            $(this).parent().removeClass('cancel');
-                            book_type+=1;
-                        }
-                    }).on('click','.qqzone_next_step',function(){
-
-                        var qq_data=$.trim($('#qq_username').val());
-                        var qq_nickname=$.trim($('#qq_nickname').val());
-
-                        if(!isQQ(qq_data)){
-                            if(!$('#qq_username').hasClass('show_tips')){
-                                $('.source_tips').remove();
-                                if($('.qq_tips').length==0){
-                                    $('#qq_nickname').after('<p class="col-xs-12 col-sm-10 col-sm-offset-1 qq_tips" style="margin:0;margin-top:10px;text-align:center;color:#f00">* 请输入正确的QQ号码 </p>');
-                                }else{
-                                    $('.qq_tips').html('* 请输入正确的QQ号码')
-                                }
-                                $('#qq_username').addClass('show_tips');
-                            }
-                            return ;
-                        }
-                        if(qq_nickname.length ==0){
-                            if($('.qq_tips').length==0){
-                                $('#qq_nickname').after('<p class="col-xs-12 col-sm-10 col-sm-offset-1 qq_tips" style="margin:0;margin-top:10px;text-align:center;color:#f00">* QQ昵称不能为空 </p>');
-                            }else{
-                                $('.qq_tips').html('* QQ昵称不能为空')
-                            }
-
-                            return;
-                        }
-                        if(qq_nickname.length>32){
-
-                            if($('.qq_tips').length==0){
-                                $('#qq_nickname').after('<p class="col-xs-12 col-sm-10 col-sm-offset-1 qq_tips" style="margin:0;margin-top:10px;text-align:center;color:#f00">* 您输入的字符不能大于32个字符 </p>');
-                            }else{
-                                $('.qq_tips').html('* 您输入的字符不能大于32个字符')
-                            }
-                            return;
-                        }
-                        if(book_type==0){
-                            if($('.source_tips').length==0){
-                                $('.qq_tips').remove();
-                                if($('.qq_tips').length==0){
-                                    $('.qqzone_next_step').before('<p class="col-xs-12 col-sm-10 col-sm-offset-1 source_tips" style="margin:0;margin-top:10px;text-align:center;color:#f00">*请选择导入源</p>');
-
-                                }else{
-                                    $('.source_tips').html('* 请选择导入源')
-                                }
-                            }
-                            return;
-                        }
-                        if(qq_data&&book_type){
-                            $('.step_succ').html(qqzone_loading);
-                            $('#qqzone_loading').show();
-                        }else{
-                            return;
-                        }
-
-
-                        sendData({
-                            is_api: true,
-                            url: '/v1/thirdparty/add_account_nocs/qzone',
-                            method:'post',
-                            data: {
-                                account: qq_data,
-                                nickname:qq_nickname,
-                                book_type:book_type,
-                                content_theme_type :2,
-                            },
-                            callback: function (data) {
-                                if(data.err_code=='0'){
-                                    $('#qqzone_loading').hide();
-
-                                    if(data.books.length==2){
-                                        console.log('跳转书架');
-                                        location.href=getCurrentWWWDomain()+'/portal/books';
-                                    }
-                                    if(data.books.length==1){
-                                        if(data.books[0].content_theme_type==3){
-                                            location.href=getCurrentWWWDomain()+'/book/new_contents/'+ data.books[0].book_id ;
-                                        }else{
-                                            location.href=getCurrentWWWDomain()+'/book/preview/'+ data.books[0].book_id +'#page/1' ;
-                                        }
-
-                                    }
-
-                                }
-                            },
-                            errorFun: function (data) {
-                                if(data.err_code=='-103'){
-                                    $('.step_succ').html(power_tips);
-                                }else{
-                                    $('.qqzone_backcall_tips').html('*'+data.err_msg);
-                                    $('.qqzone_backcall_tips').css('color','#f00');
-                                }
-                                if(data.err_code=='-111'){
-                                    $('.qqzone_backcall_tips').html('*'+data.err_msg);
-                                    $('.qqzone_backcall_tips').css('color','#f00');
-                                }else{
-                                    $('.qqzone_backcall_tips').html('*'+data.err_msg);
-                                    $('.qqzone_backcall_tips').css('color','#f00');
-                                }
-                            }
-                        });
-                    });
-                }
-            });
-            $.fn.serializeObject = function()
-            {
-                var o = {};
-                var a = this.serializeArray();
-                $.each(a, function() {
-                    if (o[this.name] !== undefined) {
-                        if (!o[this.name].push) {
-                            o[this.name] = [o[this.name]];
-                        }
-                        o[this.name].push(this.value || '');
-                    } else {
-                        o[this.name] = this.value || '';
-                    }
-                });
-                return o;
-            };
-        </script>
-        <script src="https://static.shiqichuban.com/assets/js/tools/tools.js"></script>
-        <script type="text/javascript">
-            var showCustomer=new tools();
-            showCustomer.CustomerView()
-        </script>
-
+        <!-- 右侧边栏 start -->
     </div>
 
-    <div class="row footer"
-         style="display:none;border-top: 2px solid #c8c8c8; background-color: #363636; padding: 10px 0 ;">
-            <span class="col-xs-12  col-sm-12" style="text-align: center;color:#ccc;font-size: 8px;">
-                拾柒网络技术（北京）有限公司 &gt;&gt; 京ICP备15043038
-            </span>
+    <div class="col-sm-12 pic-bg-ul" style="position: fixed;top:0;left:0;width:100%;height:100%;display: none">
+        <div class="pic-bg-mask"
+             style="position:absolute;top:0;left:0;width:100%;height:100%;z-index: 1;"></div>
+        <div class="col-sm-12"
+             style="position:absolute;bottom:0;left:0 ;padding-top:20px;background-color: rgba(0,0,0,0.7);z-index: 2">
+            <ul class="col-sm-10 col-sm-offset-1 " style="padding:5px 5px !important;">
+                <li style="list-style: none;padding:5px 5px !important" class="col-xs-4 bg-select-item"
+                    data="0"><img style="width:100%;" src="images/sq_01.jpg"></li>
+                <li style="list-style: none;padding:5px 5px !important" class="col-xs-4 bg-select-item"
+                    data="0"><img style="width:100%;" src="images/sq_02.jpg"></li>
+                <li style="list-style: none;padding:5px 5px !important" class="col-xs-4 bg-select-item"
+                    data="0"><img style="width:100%;" src="images/sq_03.jpg"></li>
+                <li style="list-style: none;padding:5px 5px !important" class="col-xs-4 bg-select-item"
+                    data="0"><img style="width:100%;" src="images/sq_04.jpg"></li>
+                <li style="list-style: none;padding:5px 5px !important" class="col-xs-4 bg-select-item"
+                    data="0"><img style="width:100%;" src="images/sq_05.jpg"></li>
+                <li style="list-style: none;padding:5px 5px !important" class="col-xs-4 bg-select-item"
+                    data="0"><img style="width:100%;" src="images/sq_06.jpg"></li>
+            </ul>
+        </div>
     </div>
 </div>
-<div class="modular" style=""></div>
-<script src="https://static.shiqichuban.com/assets/js/login_register.js?t=1538218762"></script>
-<script type="text/javascript">
-    var hostname=window.location.pathname;//获取url相对地址
-    var iseject='N';//接收后端是否是跳转过来的状态
-    var old_loginurl="https://www.shiqichuban.com/user/login";//旧的登录url
-    var isjump=(document.referrer == old_loginurl)?true:false;//document.referrer上次地址是老登录地址
-    var mouse_click;
 
-    if(isPC()) {
-        mouse_click = 'click';
-        $('.header').show();
-        $('.footer').show();
-    } else {
-        mouse_click = 'touchstart';
-    }
-
-    if(window.document.location.pathname.indexOf('/portal/writing')>=0){
-        $('.header-btn').css('color','#333');
-    }
-
-    function isLoginView(){
-        if(window.location.href.indexOf('popup=1')>1 || window.location.href.indexOf('agent=')>1){
-            return true;
-        }else{
-            return false;
-        }
-    }
-    if(hostname=='/'){//如果在首页
-        if(isPC()){
-            if(iseject=='Y'||isjump || isLoginView()){//如果iseject状态是Y或者由旧登录地址跳转到首页的时候  执行弹出登录层
-                $('.login_new').trigger(mouse_click);//自动触发登录按钮
-            }
-        }else{
-            window.location.href='https://www.shiqichuban.com/user/mobile_login'
-        }
-    }
-</script>
-<script>
-    $(document).ready(function () {
-        setTempleteReady();
-    });
-</script>
+<div class="datetimepicker datetimepicker-dropdown-bottom-right dropdown-menu" style="left: 1198.39px; z-index: 1010;">
+    <div class="datetimepicker-minutes" style="display: none;">
+        <table class=" table-condensed">
+            <thead>
+            <tr>
+                <th class="prev" style="visibility: visible;"> &lt;</th>
+                <th colspan="5" class="switch">18 七月 2019</th>
+                <th class="next" style="visibility: visible;"> &gt;</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td colspan="7">
+                    <fieldset class="minute">
+                        <legend>下午</legend>
+                        <span class="minute">1:00</span><span class="minute">1:05</span><span class="minute">1:10</span><span
+                            class="minute">1:15</span><span class="minute active">1:20</span><span
+                            class="minute">1:25</span><span class="minute">1:30</span><span
+                            class="minute">1:35</span><span class="minute">1:40</span><span
+                            class="minute">1:45</span><span class="minute">1:50</span><span class="minute">1:55</span>
+                    </fieldset>
+                </td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <th colspan="7" class="today">今天</th>
+            </tr>
+            <tr>
+                <th colspan="7" class="clear" style="display: none;">清除</th>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+    <div class="datetimepicker-hours" style="display: none;">
+        <table class=" table-condensed">
+            <thead>
+            <tr>
+                <th class="prev" style="visibility: visible;"> &lt;</th>
+                <th colspan="5" class="switch">18 七月 2019</th>
+                <th class="next" style="visibility: visible;"> &gt;</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td colspan="7">
+                    <fieldset class="hour">
+                        <legend>上午</legend>
+                        <span class="hour hour_am">12</span><span class="hour hour_am">1</span><span
+                            class="hour hour_am">2</span><span class="hour hour_am">3</span><span
+                            class="hour hour_am">4</span><span class="hour hour_am">5</span><span
+                            class="hour hour_am">6</span><span class="hour hour_am">7</span><span
+                            class="hour hour_am">8</span><span class="hour hour_am">9</span><span class="hour hour_am">10</span><span
+                            class="hour hour_am">11</span></fieldset>
+                    <fieldset class="hour">
+                        <legend>下午</legend>
+                        <span class="hour hour_pm">12</span><span class="hour active hour_pm">1</span><span
+                            class="hour hour_pm">2</span><span class="hour hour_pm">3</span><span
+                            class="hour hour_pm">4</span><span class="hour hour_pm">5</span><span
+                            class="hour hour_pm">6</span><span class="hour hour_pm">7</span><span
+                            class="hour hour_pm">8</span><span class="hour hour_pm">9</span><span class="hour hour_pm">10</span><span
+                            class="hour hour_pm">11</span></fieldset>
+                </td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <th colspan="7" class="today">今天</th>
+            </tr>
+            <tr>
+                <th colspan="7" class="clear" style="display: none;">清除</th>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+    <div class="datetimepicker-days" style="display: block;">
+        <table class=" table-condensed">
+            <thead>
+            <tr>
+                <th class="prev" style="visibility: visible;"> &lt;</th>
+                <th colspan="5" class="switch">七月 2019</th>
+                <th class="next" style="visibility: visible;"> &gt;</th>
+            </tr>
+            <tr>
+                <th class="dow">一</th>
+                <th class="dow">二</th>
+                <th class="dow">三</th>
+                <th class="dow">四</th>
+                <th class="dow">五</th>
+                <th class="dow">六</th>
+                <th class="dow">日</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="day old">24</td>
+                <td class="day old">25</td>
+                <td class="day old">26</td>
+                <td class="day old">27</td>
+                <td class="day old">28</td>
+                <td class="day old">29</td>
+                <td class="day old">30</td>
+            </tr>
+            <tr>
+                <td class="day">1</td>
+                <td class="day">2</td>
+                <td class="day">3</td>
+                <td class="day">4</td>
+                <td class="day">5</td>
+                <td class="day">6</td>
+                <td class="day">7</td>
+            </tr>
+            <tr>
+                <td class="day">8</td>
+                <td class="day">9</td>
+                <td class="day">10</td>
+                <td class="day">11</td>
+                <td class="day">12</td>
+                <td class="day">13</td>
+                <td class="day">14</td>
+            </tr>
+            <tr>
+                <td class="day">15</td>
+                <td class="day">16</td>
+                <td class="day">17</td>
+                <td class="day today active">18</td>
+                <td class="day">19</td>
+                <td class="day">20</td>
+                <td class="day">21</td>
+            </tr>
+            <tr>
+                <td class="day">22</td>
+                <td class="day">23</td>
+                <td class="day">24</td>
+                <td class="day">25</td>
+                <td class="day">26</td>
+                <td class="day">27</td>
+                <td class="day">28</td>
+            </tr>
+            <tr>
+                <td class="day">29</td>
+                <td class="day">30</td>
+                <td class="day">31</td>
+                <td class="day new">1</td>
+                <td class="day new">2</td>
+                <td class="day new">3</td>
+                <td class="day new">4</td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <th colspan="7" class="today">今天</th>
+            </tr>
+            <tr>
+                <th colspan="7" class="clear" style="display: none;">清除</th>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+    <div class="datetimepicker-months" style="display: none;">
+        <table class="table-condensed">
+            <thead>
+            <tr>
+                <th class="prev" style="visibility: visible;"> &lt;</th>
+                <th colspan="5" class="switch">2019</th>
+                <th class="next" style="visibility: visible;"> &gt;</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td colspan="7"><span class="month">一</span><span class="month">二</span><span
+                        class="month">三</span><span class="month">四</span><span class="month">五</span><span
+                        class="month">六</span><span class="month active">七</span><span class="month">八</span><span
+                        class="month">九</span><span class="month">十</span><span class="month">十一</span><span
+                        class="month">十二</span></td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <th colspan="7" class="today">今天</th>
+            </tr>
+            <tr>
+                <th colspan="7" class="clear" style="display: none;">清除</th>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+    <div class="datetimepicker-years" style="display: none;">
+        <table class="table-condensed">
+            <thead>
+            <tr>
+                <th class="prev" style="visibility: visible;"> &lt;</th>
+                <th colspan="5" class="switch">2010-2019</th>
+                <th class="next" style="visibility: visible;"> &gt;</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td colspan="7"><span class="year old">2009</span><span class="year">2010</span><span
+                        class="year">2011</span><span class="year">2012</span><span class="year">2013</span><span
+                        class="year">2014</span><span class="year">2015</span><span class="year">2016</span><span
+                        class="year">2017</span><span class="year">2018</span><span class="year active">2019</span><span
+                        class="year old">2020</span></td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <th colspan="7" class="today">今天</th>
+            </tr>
+            <tr>
+                <th colspan="7" class="clear" style="display: none;">清除</th>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+<!--<div id="udesk_container">-->
+<!--<div id="udesk_btn"><a-->
+<!--style="display: block; position: fixed; box-sizing: border-box; font-size: 13px; color: rgb(255, 255, 255); text-align: center; cursor: pointer; text-decoration: none; z-index: 1000000000; border-width: 1px 1px 0px; border-top-style: solid; border-right-style: solid; border-left-style: solid; border-top-color: rgba(0, 0, 0, 0.1); border-right-color: rgba(0, 0, 0, 0.1); border-left-color: rgba(0, 0, 0, 0.1); border-image: initial; border-bottom-style: initial; border-bottom-color: initial; background-color: rgb(48, 122, 232); height: 40px; right: 0px; bottom: 0px; margin: 3px 30px;"><span-->
+<!--style="display:block;float:left;width:24px;height:24px;margin:7px 7px 0;"><img-->
+<!--src="images/msg2@68x66.png" style="width:100%;height:100%;"></span><span-->
+<!--style="display:block;float:left;width:1px;height:100%;background-color:rgba(0, 0, 0, .08);vertical-align:middle;background-color:#000\9;filter:alpha(opacity=10)\9;"></span><span-->
+<!--id="udesk_btn_text"-->
+<!--style="display:block;float:left;height:40px;margin:0 10px;line-height:40px;overflow-y:hidden; font-size: 13px; color: #fff;">联系客服，在线咨询</span><span-->
+<!--id="udesk_btn_circle"-->
+<!--style="display:none;position:absolute;top:-13px;right:-13px;width:26px;height:26px;text-align:center;line-height:26px;font-size:14px;color:#fff;border-radius:15px;background-color: #ff3b30;"></span></a>-->
+<!--</div>-->
+<!--<div id="udesk_panel"-->
+<!--style="position:fixed;bottom:-574px;right:60px;z-index:-1;width:364px;height:572px;overflow:hidden;display:none;background-color:transparent;box-shadow:0px 4px 12px 0px rgba(8,23,26,0.2);border-radius: 3px 3px 0px 0px;border:1px solid #ddd\9;transition:bottom 0.3s;-webkit-transition:bottom 0.3s;-moz-transition:bottom 0.3s;-ms-transition:bottom 0.3s;-o-transition:bottom 0.3s;">-->
+<!--<iframe id="udesk_iframe" frameborder="0" scrolling="no" allowtransparency="true"-->
+<!--style="width:100%;height:0;border:none;padding:0;margin:0;float:none;background:none;transition:height 0.1s;-webkit-transition:height 0.1s;-moz-transition:height 0.1s;-ms-transition:height 0.1s;-o-transition:height 0.1s;"-->
+<!--allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen=""-->
+<!--src="#"></iframe>-->
+<!--</div>-->
+<!--</div>-->
 </body>
 </html>
