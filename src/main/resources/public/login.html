@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+</head>
+<body>
+<h2>登录页面</h2>
+<input type="text" id="username"><br>
+<input type="password" id="password"><br>
+<button type="button" id="btn_login">登录</button>
+<script src="js/jquery-3.2.1.js"></script>
+<script src="layer/2.4/layer.js"></script>
+<script>
+
+
+    $("#btn_login").click(function () {
+        var username = $("#username").val();
+        var password = $("#password").val();
+
+        if (!username){
+            layer.msg("用户名不能为空",{icon:2,time:1000})
+            return;
+        }
+        if (!password){
+            layer.msg("密码不能为空",{icon:2,time:1000})
+            return;
+        }
+    console.log("reg")
+    $.ajax({
+        type:"post",
+        url:"queryByUsernamePwd",
+        data:{"username":username,"password":password},
+        dataType:"json",
+        success:function (data) {
+            console.log(data);
+            if (data!=null){
+                layer.msg("登录成功",{icon:1,time:1000});
+                location.href="sy_index.html";
+            } else {
+                layer.msg("用户名或密码错误",{icon:2,time:1000});
+            }
+        }
+    })
+    })
+</script>
+</body>
+</html>

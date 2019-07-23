@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>置顶测试</title>
+</head>
+<body>
+<style type="text/css">
+    #scroll {
+        width: 62px;
+        height: 50px;
+        right: 50px;
+        bottom: 50px;
+        display: none;
+        cursor: pointer;
+        position: fixed;
+        background: #000000;
+    }
+
+    img {
+        width: 100%;
+        height: 100px;
+    }
+</style>
+<div>
+    <img src="text/14.jpg" />
+    <img src="text/16.jpg" />
+    <img src="text/17.jpg" />
+    <img src="text/18.jpg" />
+    <img src="text/20.jpg" />
+    <img src="text/22.jpg" />
+    <img src="text/23.jpg" />
+    <img src="text/25.jpg" />
+    <img src="text/26.jpg" />
+    <img src="text/29.jpg" />
+    <img src="text/31.jpg" />
+    <img src="text/one01.jpg" />
+    <img src="text/one02.jpg" />
+    <img src="text/one03.jpg" />
+    <img src="text/one04.jpg" />
+    <img src="text/one05.jpg" />
+    <img src="text/one06.jpg" />
+</div>
+<div id="scroll">ppp</div>
+<script>
+    // 获取置顶对象
+    var obj = document.getElementById('scroll');
+
+    // 置顶对象点击事件
+    obj.onclick = function() {
+        var timer = setInterval(function () {
+            window.scrollBy(0, -1000);
+            if (document.body.scrollTop == 0) {
+                clearInterval(timer);
+            }
+            ;
+        }, 10);
+        //window.scrollTo(0, 0)   //直接回到顶部
+    }
+// 窗口滚动检测控制置顶对象的隐藏与显示
+        window.onscroll = function() {
+            //游览器兼容问题
+            var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+            // obj.style.display = (scrollTop >= 300) ? "block" : "none";
+
+            //游览器可视区域
+            var scrollH = window.innerHeight || window.document.clientHeight;
+
+            obj.style.display = scrollTop > scrollH ? "block" : "none";
+        }
+
+
+
+</script>
+</body>
+</html>
