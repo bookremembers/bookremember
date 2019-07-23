@@ -17,6 +17,10 @@ public class UserService {
 
     public User queryByUsernamePwd(String username,String password){
         return userMapper.queryByUsernamePwd(username,password);
+    }
 
+    /*获取验证码*/
+    public User getCode(String username,String phone){
+        return userMapper.getCode(username, phone);
     }
 }
