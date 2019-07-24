@@ -218,6 +218,195 @@
             </div>
         </div>
         <script src="js/jquery-3.2.1.js"></script>
+<script>
+$(()=>{
+    $(document).ready(function(){
+
+        var TRASH_LIST = "/v1/trash/list" ;
+        var TRASH_DELETE = "/v1/trash/delete" ;
+        var TRASH_RESTORE = "/v1/trash/restore" ;
+        var TRASH_TRUNCATE = "/v1/trash/truncate" ;
+        var current_mode = 'article';
+
+        var receive_data ;
+        var current_page  = 1;
+
+        $(document).on('click','.remove',function(e){
+            e.stopPropagation();
+            sendData({
+                is_api:true,
+                url:TRASH_DELETE,
+                method:'post',
+                data:{type:current_mode,id:$(this).attr('article_id')},
+                callback:function(data){
+
+                    clearList();
+                    getItemList();
+                },
+                errorFun:function(data){
+
+                }
+            });
+        }).on('click','.recover',function(e){
+            e.stopPropagation();
+            sendData({
+                is_api:true,
+                url:TRASH_RESTORE,
+                method:'post',
+                data:{type:current_mode,id:$(this).attr('article_id')},
+                callback:function(data){
+
+                    clearList();
+                    getItemList();
+                },
+                errorFun:function(data){
+
+                }
+            });
+        }).on('click','.article_btn',function(e){
+            e.stopPropagation();
+            $(this).addClass('selected');
+            $('.book_btn').removeClass('selected');
+            current_mode = "article" ;
+            clearList();
+            getItemList();
+        }).on('click','.book_btn',function(e){
+            e.stopPropagation();
+            $(this).addClass('selected');
+            $('.article_btn').removeClass('selected');
+            current_mode = "book" ;
+            clearList();
+            getItemList();
+        }).on('click','.clear_btn',function(e){
+            e.stopPropagation();
+            if(receive_data.length == 0)return ;
+            sendData({
+                is_api:true,
+                url:TRASH_TRUNCATE,
+                method:'post',
+                data:{type:current_mode},
+                callback:function(data){
+
+                    clearList();
+                    getItemList();
+                },
+                errorFun:function(data){
+
+                }
+            });
+        });
+
+        getItemList();
+
+        function getItemList() {
+
+            sendData({
+                is_api: true,
+                url: TRASH_LIST,
+                method: 'get',
+                data: {type: current_mode},
+                callback: function (data) {
+
+                    if(data.articles)
+                        receive_data = data.articles;
+                    else if (data.books)
+                        receive_data = data.books;
+
+                    if(receive_data.length > 0){
+                        var article_items = receive_data.slice(0, 10);
+                        addData(article_items);
+                        setPagination(receive_data);
+                    }else{
+                        clearList();
+                        $('.list_container').append("<div style='text-align: center;width:100%;line-height:400px;color:#ccc'>空空的回收站～</div>");
+                    }
+
+                },
+                errorFun: function (data) {
+
+                }
+            });
+        }
+
+
+
+        function setPagination(data){
+            $('.pagination-container').pagination({
+                items: data.length,
+                itemsOnPage: 10,
+                edges: 2,
+                currentPage: current_page,
+                cssStyle: 'light-theme',
+                prevText: '<',
+                nextText: '>',
+                onPageClick: function (pageNumber, event) {
+                    current_page = pageNumber ;
+                    clearList();
+                    var items = data.splice(pageNumber - 1 ,10) ;
+                    addData(items);
+                }
+            });
+        }
+
+        function clearList(){
+            $('.list_container').children().remove();
+        }
+
+        function addData(data){
+            if(current_mode == "article"){
+                for(var i in data){
+                    $('.list_container').append(createArticleItem(data[i]));
+                }
+            }else if(current_mode == "book"){
+                for(var i in data){
+                    $('.list_container').append(createBookItem(data[i]));
+                }
+            }
+
+        }
+
+        function createArticleItem(item_data){
+
+            var str =
+                '<div class="col-xs-12" style="position:relative;padding: 15px 0px 5px;overflow: hidden;background-color: white ;border-bottom:1px solid #eeeeee;min-height:100px">' ;
+            str += '<div class="col-xs-12 article_title" style="overflow: hidden;">' ;
+            str += '<div style="color: #2c2c2c; font-size: 20px;">'+ item_data.title +'</div> ' ;
+            str += '<div style="color: #2c2c2c; font-size: 12px;margin-top:8px">'+ item_data.ctime +'</div> ' ;
+            str += '<div>';
+            str += '<div style="position:absolute;top:0;right:10px"><div article_id="'+ item_data.id +'" class="remove sq_btn sq_btn_white" style="display:inline-block">彻底删除</div><div article_id="'+ item_data.id +'" class="recover sq_btn sq_btn_white" style="display:inline-block;margin-left: 5px">恢复</div></div>' ;
+            str += '<div style="width:80%;margin-top:8px;font-family:Helvetica, Arial, sans-serif;font-size: 14px; color: #8d8d8d;word-break: break-all">'+ item_data.abstract +'</div> ' ;
+
+            for(var i in item_data.images){
+                var url = item_data.images[i] ;
+                str += '<img src="'+ url +'" style="margin-right:10px;margin-bottom:10px;margin-top:10px;display:inline-block;max-width:100%;max-height:140px"/>' ;
+            }
+
+            str += '<div style="width:100%;overflow: hidden; margin-top:15px;font-family:Helvetica, Arial, sans-serif;font-size: 12px; color: #8d8d8d;">' +
+                '<span style="display:inline-block">删除时间:</span>' +
+                '<span style="display:inline-block">'+ item_data.deleted_at +'</span>' +
+                '<span style="display:inline-block;float:right;margin-right:10px">'+ item_data.remain_desc +'</span>' +
+                '</div>' ;
+            str += "</div>" ;
+            str += "</div>" ;
+
+            return str
+        }
+        function createBookItem(item_data){
+            var str ='<div style="float:left;overflow: hidden;width:33%;margin-top:20px;margin-bottom:20px;">' ;
+            str += '<div class="img" style="float:left;"><img src="'+ item_data.thumbnail +'" style="width:118px;height:160px;border:1px solid #eee" /></div>' ;
+            str += '<div style="float:left;margin-left:5px;margin-top:10px">' ;
+            str += '<p style="color: #2c2c2c; font-size: 16px;white-space:nowrap;;-ms-text-overflow: ellipsis;text-overflow: ellipsis;">'+ item_data.title +'</p>' ;
+            str += '<p style="color: #ccc; font-size: 12px;">'+ item_data.remain_desc +'</p>' ;
+            str += '<p style="color: #555; font-size: 12px;">删除时间:</p>' ;
+            str += '<p style="color: #555; font-size: 12px;">'+ item_data.deleted_at +'</p>' ;
+            str += '<div><div article_id="'+ item_data.id +'" class="remove sq_btn sq_btn_white" style="display:inline-block">彻底删除</div><div article_id="'+ item_data.id +'" class="recover sq_btn sq_btn_white" style="display:inline-block;margin-left: 5px">恢复</div></div>' ;
+            str += '</div>' ;
+            str += '</div>' ;
+            return str ;
+        }
+    })
+})
+</script>
 
         <!--<script src="js/jquery.simplePagination.js.下载"></script>-->
         <!--<script>-->
