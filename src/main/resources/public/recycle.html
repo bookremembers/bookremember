@@ -20,6 +20,7 @@
     <!--[if lt IE 9]>
     <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
     <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
     <![endif]-->
     <!--<script src="js/aliyun-oss-sdk.min.js.下载"></script>-->
     <!--<script src="js/FileUploadManager.js.下载"></script>-->
@@ -28,6 +29,12 @@
     <!--<script src="js/fetcher.js.下载"></script>-->
     <!--<script src="js/main.js.下载"></script>-->
     <!--<script src="js/modernizr.2.5.3.min.js.下载"></script>-->
+    <script src="AmazeUI-2.4.2/ass/js/amazeui.js"></script>
+    <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+    <link href="AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css">
+    <link href="AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css">
+
+    <script src="js/jqu.js"></script>
     <script>
         var csrf = 'EK4Xax0ANZHwuK7Ib4WTrnZQs1bnfLSpqi41MIrT';
     </script>
@@ -64,7 +71,6 @@
             cursor: pointer;
             letter-spacing: 1px;
         }
-
         input[type='radio']:after {
             width: 15px;
             height: 15px;
@@ -78,7 +84,6 @@
             visibility: visible;
             border: 1px solid #8d8d8d;
         }
-
         input[type='radio']:checked:after {
             width: 15px;
             height: 15px;
@@ -108,7 +113,7 @@
 
             <div class="col-xs-9 col-sm-9 public_head"
                  style="padding-top: 15px;text-align: right;float: right;color: #8d8d8d;">
-                	
+
                 	<span>
                 		<a class="header-btn" href="sq_index.html">个人主页</a>
                     </span>
@@ -123,7 +128,7 @@
                             <div style="background-color: #fff;border-radius: 4px;box-shadow: 0 1px 4px #ccc;margin-top: 40px">
                                 <p style="text-align: center;"><a
                                         href="integral.html">我的积分</a></p>
-                                <p style="text-align: center;"><a
+                                <p style="text-align: center;">
                                 <p style="text-align: center;" id="messagebox">我的消息</p>
                                 <p style="position: absolute;left:50%;top:20px;width:0;height: 0;border:10px solid rgba(0,0,0,0);border-bottom-color:#fff;"></p>
                 		    </div>
@@ -158,7 +163,6 @@
                 line-height: 50px;
                 padding: 0 40px 10px;
             }
-
             .selected {
                 border-bottom: 4px solid #8d8d8d;
             }
@@ -169,43 +173,78 @@
                      style="position:relative;padding:20px 20px;border-radius:5px ;background-color: white;min-height:600px">
                     <div style="overflow: hidden;border-bottom: 1px solid #eeeeee;">
                         <div class="comNav" style="float:left">
-                            <a class="selected article_btn" href="javascript:void(0)">删除的文章</a>
-                            <a class="book_btn" href="javascript:void(0)">删除的书籍</a>
+                            <div class="main-wrap">
+                                <div class="user-order">
+                            <div class="am-tabs am-tabs-d2 am-margin" data-am-tabs>
+                            <ul class="am-avg-sm-5 am-tabs-nav am-nav am-nav-tabs">
+                            <li><a href="#tab1">删除的文章</a></li>
+                            <li><a href="#tab2">删除的书籍</a></li>
+                            </ul>
+                                <div class="am-tabs-bd">
+                                    <div class="am-tab-panel am-fade" id="tab1">
+                                        <div class="list_container"
+                                             style="max-height:400px;overflow:auto;min-height:500px;margin-bottom:50px;margin-top:20px">
+
+                                            <div class="col-xs-12"
+                                                 style="position:relative;padding: 15px 0px 5px;overflow: hidden;background-color: white ;border-bottom:1px solid #eeeeee;min-height:100px">
+                                                <div class="col-xs-12 article_title" style="overflow: hidden;">
+                                                    <div style="color: #2c2c2c; font-size: 20px;">Spring</div>
+                                                    <div style="color: #2c2c2c; font-size: 12px;margin-top:8px">2019-07-09 00:00:00</div>
+                                                    <div>
+                                                        <div style="position:absolute;top:0;right:10px">
+                                                            <div article_id="116748898" class="remove sq_btn sq_btn_white"
+                                                                 style="display:inline-block">彻底删除
+                                                            </div>
+                                                            <div article_id="116748898" class="recover sq_btn sq_btn_white"
+                                                                 style="display:inline-block;margin-left: 5px">恢复
+                                                            </div>
+                                                        </div>
+                                                        <div style="width:80%;margin-top:8px;font-family:Helvetica, Arial, sans-serif;font-size: 14px; color: #8d8d8d;word-break: break-all">
+                                                            IOC&nbsp;&nbsp; AOP
+                                                        </div>
+                                                        <div style="width:100%;overflow: hidden; margin-top:15px;font-family:Helvetica, Arial, sans-serif;font-size: 12px; color: #8d8d8d;">
+                                                            <span style="display:inline-block">删除时间:</span><span
+                                                                style="display:inline-block">2019-07-12 15:34:40</span><span
+                                                                style="display:inline-block;float:right;margin-right:10px">23天后彻底删除</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="am-tab-panel am-fade" id="tab2">
+                                        <div class="list_container" style="max-height:400px;overflow:auto;min-height:500px;margin-bottom:50px;margin-top:20px">
+
+                                            <div style="float:left;overflow: hidden;width:100%;margin-top:20px;margin-bottom:20px;">
+                                                <div class="img" style="float:left;"><img src="images/6.jpg" style="width:118px;height:160px;border:1px solid #eee"></div>
+                                                <div style="float:left;margin-left:5px;margin-top:10px">
+                                                    <p style="color: #2c2c2c; font-size: 16px;white-space:nowrap;;-ms-text-overflow: ellipsis;text-overflow: ellipsis;">很高兴遇见你</p>
+                                                    <p style="color: #ccc; font-size: 12px;">29天后彻底删除</p>
+                                                    <p style="color: #555; font-size: 12px;">删除时间:</p>
+                                                    <p style="color: #555; font-size: 12px;">2019-07-24 18:57:59</p>
+                                                    <div>
+                                                        <div article_id="20980239" class="remove sq_btn sq_btn_white" style="display:inline-block">彻底删除</div>
+                                                        <div article_id="20980239" class="recover sq_btn sq_btn_white" style="display:inline-block;margin-left: 5px">恢复</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            </div>
                         </div>
                         <div style="float:right;margin-right: 20px">
                             <div class="clear_btn sq_btn sq_btn_white">清除所有</div>
                         </div>
                     </div>
 
-                    <div class="list_container"
-                         style="max-height:400px;overflow:auto;min-height:500px;margin-bottom:50px;margin-top:20px">
 
-                        <div class="col-xs-12"
-                             style="position:relative;padding: 15px 0px 5px;overflow: hidden;background-color: white ;border-bottom:1px solid #eeeeee;min-height:100px">
-                            <div class="col-xs-12 article_title" style="overflow: hidden;">
-                                <div style="color: #2c2c2c; font-size: 20px;">Spring</div>
-                                <div style="color: #2c2c2c; font-size: 12px;margin-top:8px">2019-07-09 00:00:00</div>
-                                <div>
-                                    <div style="position:absolute;top:0;right:10px">
-                                        <div article_id="116748898" class="remove sq_btn sq_btn_white"
-                                             style="display:inline-block">彻底删除
-                                        </div>
-                                        <div article_id="116748898" class="recover sq_btn sq_btn_white"
-                                             style="display:inline-block;margin-left: 5px">恢复
-                                        </div>
-                                    </div>
-                                    <div style="width:80%;margin-top:8px;font-family:Helvetica, Arial, sans-serif;font-size: 14px; color: #8d8d8d;word-break: break-all">
-                                        IOC&nbsp;&nbsp; AOP
-                                    </div>
-                                    <div style="width:100%;overflow: hidden; margin-top:15px;font-family:Helvetica, Arial, sans-serif;font-size: 12px; color: #8d8d8d;">
-                                        <span style="display:inline-block">删除时间:</span><span
-                                            style="display:inline-block">2019-07-12 15:34:40</span><span
-                                            style="display:inline-block;float:right;margin-right:10px">23天后彻底删除</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div style="position:absolute;bottom:10px;right:10px"
                          class="pagination-container light-theme simple-pagination">
                         <ul>
@@ -217,435 +256,14 @@
                 </div>
             </div>
         </div>
-        <script src="js/jquery-3.2.1.js"></script>
-<script>
-$(()=>{
-    $(document).ready(function(){
 
-        var TRASH_LIST = "/v1/trash/list" ;
-        var TRASH_DELETE = "/v1/trash/delete" ;
-        var TRASH_RESTORE = "/v1/trash/restore" ;
-        var TRASH_TRUNCATE = "/v1/trash/truncate" ;
-        var current_mode = 'article';
-
-        var receive_data ;
-        var current_page  = 1;
-
-        $(document).on('click','.remove',function(e){
-            e.stopPropagation();
-            sendData({
-                is_api:true,
-                url:TRASH_DELETE,
-                method:'post',
-                data:{type:current_mode,id:$(this).attr('article_id')},
-                callback:function(data){
-
-                    clearList();
-                    getItemList();
-                },
-                errorFun:function(data){
-
-                }
-            });
-        }).on('click','.recover',function(e){
-            e.stopPropagation();
-            sendData({
-                is_api:true,
-                url:TRASH_RESTORE,
-                method:'post',
-                data:{type:current_mode,id:$(this).attr('article_id')},
-                callback:function(data){
-
-                    clearList();
-                    getItemList();
-                },
-                errorFun:function(data){
-
-                }
-            });
-        }).on('click','.article_btn',function(e){
-            e.stopPropagation();
-            $(this).addClass('selected');
-            $('.book_btn').removeClass('selected');
-            current_mode = "article" ;
-            clearList();
-            getItemList();
-        }).on('click','.book_btn',function(e){
-            e.stopPropagation();
-            $(this).addClass('selected');
-            $('.article_btn').removeClass('selected');
-            current_mode = "book" ;
-            clearList();
-            getItemList();
-        }).on('click','.clear_btn',function(e){
-            e.stopPropagation();
-            if(receive_data.length == 0)return ;
-            sendData({
-                is_api:true,
-                url:TRASH_TRUNCATE,
-                method:'post',
-                data:{type:current_mode},
-                callback:function(data){
-
-                    clearList();
-                    getItemList();
-                },
-                errorFun:function(data){
-
-                }
-            });
-        });
-
-        getItemList();
-
-        function getItemList() {
-
-            sendData({
-                is_api: true,
-                url: TRASH_LIST,
-                method: 'get',
-                data: {type: current_mode},
-                callback: function (data) {
-
-                    if(data.articles)
-                        receive_data = data.articles;
-                    else if (data.books)
-                        receive_data = data.books;
-
-                    if(receive_data.length > 0){
-                        var article_items = receive_data.slice(0, 10);
-                        addData(article_items);
-                        setPagination(receive_data);
-                    }else{
-                        clearList();
-                        $('.list_container').append("<div style='text-align: center;width:100%;line-height:400px;color:#ccc'>空空的回收站～</div>");
-                    }
-
-                },
-                errorFun: function (data) {
-
-                }
-            });
-        }
+        <script>
 
 
 
-        function setPagination(data){
-            $('.pagination-container').pagination({
-                items: data.length,
-                itemsOnPage: 10,
-                edges: 2,
-                currentPage: current_page,
-                cssStyle: 'light-theme',
-                prevText: '<',
-                nextText: '>',
-                onPageClick: function (pageNumber, event) {
-                    current_page = pageNumber ;
-                    clearList();
-                    var items = data.splice(pageNumber - 1 ,10) ;
-                    addData(items);
-                }
-            });
-        }
-
-        function clearList(){
-            $('.list_container').children().remove();
-        }
-
-        function addData(data){
-            if(current_mode == "article"){
-                for(var i in data){
-                    $('.list_container').append(createArticleItem(data[i]));
-                }
-            }else if(current_mode == "book"){
-                for(var i in data){
-                    $('.list_container').append(createBookItem(data[i]));
-                }
-            }
-
-        }
-
-        function createArticleItem(item_data){
-
-            var str =
-                '<div class="col-xs-12" style="position:relative;padding: 15px 0px 5px;overflow: hidden;background-color: white ;border-bottom:1px solid #eeeeee;min-height:100px">' ;
-            str += '<div class="col-xs-12 article_title" style="overflow: hidden;">' ;
-            str += '<div style="color: #2c2c2c; font-size: 20px;">'+ item_data.title +'</div> ' ;
-            str += '<div style="color: #2c2c2c; font-size: 12px;margin-top:8px">'+ item_data.ctime +'</div> ' ;
-            str += '<div>';
-            str += '<div style="position:absolute;top:0;right:10px"><div article_id="'+ item_data.id +'" class="remove sq_btn sq_btn_white" style="display:inline-block">彻底删除</div><div article_id="'+ item_data.id +'" class="recover sq_btn sq_btn_white" style="display:inline-block;margin-left: 5px">恢复</div></div>' ;
-            str += '<div style="width:80%;margin-top:8px;font-family:Helvetica, Arial, sans-serif;font-size: 14px; color: #8d8d8d;word-break: break-all">'+ item_data.abstract +'</div> ' ;
-
-            for(var i in item_data.images){
-                var url = item_data.images[i] ;
-                str += '<img src="'+ url +'" style="margin-right:10px;margin-bottom:10px;margin-top:10px;display:inline-block;max-width:100%;max-height:140px"/>' ;
-            }
-
-            str += '<div style="width:100%;overflow: hidden; margin-top:15px;font-family:Helvetica, Arial, sans-serif;font-size: 12px; color: #8d8d8d;">' +
-                '<span style="display:inline-block">删除时间:</span>' +
-                '<span style="display:inline-block">'+ item_data.deleted_at +'</span>' +
-                '<span style="display:inline-block;float:right;margin-right:10px">'+ item_data.remain_desc +'</span>' +
-                '</div>' ;
-            str += "</div>" ;
-            str += "</div>" ;
-
-            return str
-        }
-        function createBookItem(item_data){
-            var str ='<div style="float:left;overflow: hidden;width:33%;margin-top:20px;margin-bottom:20px;">' ;
-            str += '<div class="img" style="float:left;"><img src="'+ item_data.thumbnail +'" style="width:118px;height:160px;border:1px solid #eee" /></div>' ;
-            str += '<div style="float:left;margin-left:5px;margin-top:10px">' ;
-            str += '<p style="color: #2c2c2c; font-size: 16px;white-space:nowrap;;-ms-text-overflow: ellipsis;text-overflow: ellipsis;">'+ item_data.title +'</p>' ;
-            str += '<p style="color: #ccc; font-size: 12px;">'+ item_data.remain_desc +'</p>' ;
-            str += '<p style="color: #555; font-size: 12px;">删除时间:</p>' ;
-            str += '<p style="color: #555; font-size: 12px;">'+ item_data.deleted_at +'</p>' ;
-            str += '<div><div article_id="'+ item_data.id +'" class="remove sq_btn sq_btn_white" style="display:inline-block">彻底删除</div><div article_id="'+ item_data.id +'" class="recover sq_btn sq_btn_white" style="display:inline-block;margin-left: 5px">恢复</div></div>' ;
-            str += '</div>' ;
-            str += '</div>' ;
-            return str ;
-        }
-    })
-})
-</script>
-
-        <!--<script src="js/jquery.simplePagination.js.下载"></script>-->
-        <!--<script>-->
-        <!--$(document).ready(function(){-->
-
-        <!--var TRASH_LIST = "/v1/trash/list" ;-->
-        <!--var TRASH_DELETE = "/v1/trash/delete" ;-->
-        <!--var TRASH_RESTORE = "/v1/trash/restore" ;-->
-        <!--var TRASH_TRUNCATE = "/v1/trash/truncate" ;-->
-        <!--var current_mode = 'article';-->
-
-        <!--var receive_data ;-->
-        <!--var current_page  = 1;-->
-
-        <!--$(document).on('click','.remove',function(e){-->
-        <!--e.stopPropagation();-->
-        <!--sendData({-->
-        <!--is_api:true,-->
-        <!--url:TRASH_DELETE,-->
-        <!--method:'post',-->
-        <!--data:{type:current_mode,id:$(this).attr('article_id')},-->
-        <!--callback:function(data){-->
-
-        <!--clearList();-->
-        <!--getItemList();-->
-        <!--},-->
-        <!--errorFun:function(data){-->
-
-        <!--}-->
-        <!--});-->
-        <!--}).on('click','.recover',function(e){-->
-        <!--e.stopPropagation();-->
-        <!--sendData({-->
-        <!--is_api:true,-->
-        <!--url:TRASH_RESTORE,-->
-        <!--method:'post',-->
-        <!--data:{type:current_mode,id:$(this).attr('article_id')},-->
-        <!--callback:function(data){-->
-
-        <!--clearList();-->
-        <!--getItemList();-->
-        <!--},-->
-        <!--errorFun:function(data){-->
-
-        <!--}-->
-        <!--});-->
-        <!--}).on('click','.article_btn',function(e){-->
-        <!--e.stopPropagation();-->
-        <!--$(this).addClass('selected');-->
-        <!--$('.book_btn').removeClass('selected');-->
-        <!--current_mode = "article" ;-->
-        <!--clearList();-->
-        <!--getItemList();-->
-        <!--}).on('click','.book_btn',function(e){-->
-        <!--e.stopPropagation();-->
-        <!--$(this).addClass('selected');-->
-        <!--$('.article_btn').removeClass('selected');-->
-        <!--current_mode = "book" ;-->
-        <!--clearList();-->
-        <!--getItemList();-->
-        <!--}).on('click','.clear_btn',function(e){-->
-        <!--e.stopPropagation();-->
-        <!--if(receive_data.length == 0)return ;-->
-        <!--sendData({-->
-        <!--is_api:true,-->
-        <!--url:TRASH_TRUNCATE,-->
-        <!--method:'post',-->
-        <!--data:{type:current_mode},-->
-        <!--callback:function(data){-->
-
-        <!--clearList();-->
-        <!--getItemList();-->
-        <!--},-->
-        <!--errorFun:function(data){-->
-
-        <!--}-->
-        <!--});-->
-        <!--});-->
-
-        <!--getItemList();-->
-
-        <!--function getItemList() {-->
-
-        <!--sendData({-->
-        <!--is_api: true,-->
-        <!--url: TRASH_LIST,-->
-        <!--method: 'get',-->
-        <!--data: {type: current_mode},-->
-        <!--callback: function (data) {-->
-
-        <!--if(data.articles)-->
-        <!--receive_data = data.articles;-->
-        <!--else if (data.books)-->
-        <!--receive_data = data.books;-->
-
-        <!--if(receive_data.length > 0){-->
-        <!--var article_items = receive_data.slice(0, 10);-->
-        <!--addData(article_items);-->
-        <!--setPagination(receive_data);-->
-        <!--}else{-->
-        <!--clearList();-->
-        <!--$('.list_container').append("<div style='text-align: center;width:100%;line-height:400px;color:#ccc'>空空的回收站～</div>");-->
-        <!--}-->
-
-        <!--},-->
-        <!--errorFun: function (data) {-->
-
-        <!--}-->
-        <!--});-->
-        <!--}-->
 
 
-        <!--function setPagination(data){-->
-        <!--$('.pagination-container').pagination({-->
-        <!--items: data.length,-->
-        <!--itemsOnPage: 10,-->
-        <!--edges: 2,-->
-        <!--currentPage: current_page,-->
-        <!--cssStyle: 'light-theme',-->
-        <!--prevText: '<',-->
-        <!--nextText: '>',-->
-        <!--onPageClick: function (pageNumber, event) {-->
-        <!--current_page = pageNumber ;-->
-        <!--clearList();-->
-        <!--var items = data.splice(pageNumber - 1 ,10) ;-->
-        <!--addData(items);-->
-        <!--}-->
-        <!--});-->
-        <!--}-->
-
-        <!--function clearList(){-->
-        <!--$('.list_container').children().remove();-->
-        <!--}-->
-
-        <!--function addData(data){-->
-        <!--if(current_mode == "article"){-->
-        <!--for(var i in data){-->
-        <!--$('.list_container').append(createArticleItem(data[i]));-->
-        <!--}-->
-        <!--}else if(current_mode == "book"){-->
-        <!--for(var i in data){-->
-        <!--$('.list_container').append(createBookItem(data[i]));-->
-        <!--}-->
-        <!--}-->
-
-        <!--}-->
-
-        <!--function createArticleItem(item_data){-->
-
-        <!--var str =-->
-        <!--'<div class="col-xs-12" style="position:relative;padding: 15px 0px 5px;overflow: hidden;background-color: white ;border-bottom:1px solid #eeeeee;min-height:100px">' ;-->
-        <!--str += '<div class="col-xs-12 article_title" style="overflow: hidden;">' ;-->
-        <!--str += '<div style="color: #2c2c2c; font-size: 20px;">'+ item_data.title +'</div> ' ;-->
-        <!--str += '<div style="color: #2c2c2c; font-size: 12px;margin-top:8px">'+ item_data.ctime +'</div> ' ;-->
-        <!--str += '<div>';-->
-        <!--str += '<div style="position:absolute;top:0;right:10px"><div article_id="'+ item_data.id +'" class="remove sq_btn sq_btn_white" style="display:inline-block">彻底删除</div><div article_id="'+ item_data.id +'" class="recover sq_btn sq_btn_white" style="display:inline-block;margin-left: 5px">恢复</div></div>' ;-->
-        <!--str += '<div style="width:80%;margin-top:8px;font-family:Helvetica, Arial, sans-serif;font-size: 14px; color: #8d8d8d;word-break: break-all">'+ item_data.abstract +'</div> ' ;-->
-
-        <!--for(var i in item_data.images){-->
-        <!--var url = item_data.images[i] ;-->
-        <!--str += '<img src="'+ url +'" style="margin-right:10px;margin-bottom:10px;margin-top:10px;display:inline-block;max-width:100%;max-height:140px"/>' ;-->
-        <!--}-->
-
-        <!--str += '<div style="width:100%;overflow: hidden; margin-top:15px;font-family:Helvetica, Arial, sans-serif;font-size: 12px; color: #8d8d8d;">' +-->
-        <!--'<span style="display:inline-block">删除时间:</span>' +-->
-        <!--'<span style="display:inline-block">'+ item_data.deleted_at +'</span>' +-->
-        <!--'<span style="display:inline-block;float:right;margin-right:10px">'+ item_data.remain_desc +'</span>' +-->
-        <!--'</div>' ;-->
-        <!--str += "</div>" ;-->
-        <!--str += "</div>" ;-->
-
-        <!--return str-->
-        <!--}-->
-        <!--function createBookItem(item_data){-->
-        <!--var str ='<div style="float:left;overflow: hidden;width:33%;margin-top:20px;margin-bottom:20px;">' ;-->
-        <!--str += '<div class="img" style="float:left;"><img src="'+ item_data.thumbnail +'" style="width:118px;height:160px;border:1px solid #eee" /></div>' ;-->
-        <!--str += '<div style="float:left;margin-left:5px;margin-top:10px">' ;-->
-        <!--str += '<p style="color: #2c2c2c; font-size: 16px;white-space:nowrap;;-ms-text-overflow: ellipsis;text-overflow: ellipsis;">'+ item_data.title +'</p>' ;-->
-        <!--str += '<p style="color: #ccc; font-size: 12px;">'+ item_data.remain_desc +'</p>' ;-->
-        <!--str += '<p style="color: #555; font-size: 12px;">删除时间:</p>' ;-->
-        <!--str += '<p style="color: #555; font-size: 12px;">'+ item_data.deleted_at +'</p>' ;-->
-        <!--str += '<div><div article_id="'+ item_data.id +'" class="remove sq_btn sq_btn_white" style="display:inline-block">彻底删除</div><div article_id="'+ item_data.id +'" class="recover sq_btn sq_btn_white" style="display:inline-block;margin-left: 5px">恢复</div></div>' ;-->
-        <!--str += '</div>' ;-->
-        <!--str += '</div>' ;-->
-        <!--return str ;-->
-        <!--}-->
-        <!--})-->
-        <!--</script>-->
-        <!--</div>-->
-
-        <!--<div class="row footer" style="border-top: 2px solid rgb(200, 200, 200); background-color: rgb(54, 54, 54); padding: 10px 0px;">-->
-        <!--<span class="col-xs-12  col-sm-12" style="text-align: center;color:#ccc;font-size: 8px;">-->
-        <!--拾柒网络技术（北京）有限公司 &gt;&gt; 京ICP备15043038-->
-        <!--</span>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="modular" style=""></div>-->
-        <!--<script src="js/login_register.js.下载"></script>-->
-        <!--<script type="text/javascript">-->
-        <!--var hostname=window.location.pathname;//获取url相对地址-->
-        <!--var iseject='N';//接收后端是否是跳转过来的状态-->
-        <!--var old_loginurl="https://www.shiqichuban.com/user/login";//旧的登录url-->
-        <!--var isjump=(document.referrer == old_loginurl)?true:false;//document.referrer上次地址是老登录地址-->
-        <!--var mouse_click;-->
-
-        <!--if(isPC()) {-->
-        <!--mouse_click = 'click';-->
-        <!--$('.header').show();-->
-        <!--$('.footer').show();-->
-        <!--} else {-->
-        <!--mouse_click = 'touchstart';-->
-        <!--}-->
-        <!---->
-        <!--if(window.document.location.pathname.indexOf('/portal/writing')>=0){-->
-        <!--$('.header-btn').css('color','#333');-->
-        <!--}-->
-        <!---->
-        <!--function isLoginView(){-->
-        <!--if(window.location.href.indexOf('popup=1')>1 || window.location.href.indexOf('agent=')>1){-->
-        <!--return true;-->
-        <!--}else{-->
-        <!--return false;-->
-        <!--}-->
-        <!--}-->
-        <!--if(hostname=='/'){//如果在首页-->
-        <!--if(isPC()){-->
-        <!--if(iseject=='Y'||isjump || isLoginView()){//如果iseject状态是Y或者由旧登录地址跳转到首页的时候  执行弹出登录层-->
-        <!--$('.login_new').trigger(mouse_click);//自动触发登录按钮-->
-        <!--}-->
-        <!--}else{-->
-        <!--window.location.href='https://www.shiqichuban.com/user/mobile_login'-->
-        <!--}-->
-        <!--}-->
-        <!--</script>-->
-        <!--<script>-->
-        <!--$(document).ready(function () {-->
-        <!--setTempleteReady();-->
-        <!--});-->
-        <!--</script>-->
+        </script>
 
 
 </body>

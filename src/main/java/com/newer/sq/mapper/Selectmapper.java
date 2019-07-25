@@ -9,6 +9,6 @@ import java.util.List;
 public interface Selectmapper {
     //查询删除的文章 绑定用户uid
   @Select("select * from Sq_recycle where Uid=#{uid}")
-    public List selesqrecycle(@Param("Uid") Integer Uid);
+    public List selesqrecycle(@Param("uid") Integer uid);
 
 }

@@ -11,11 +11,11 @@ public class Sqrecycle  {
    private String ArtphotoPath;//图片路径
    private String Artmusic	;//音乐
    private Date Artdate	;//发布时间
-
+    private String Artconten;//文章内容
     public Sqrecycle() {
     }
 
-    public Sqrecycle(Integer rid, Integer uid, Integer artid, Integer bid, String artag, String artphotoPath, String artmusic, Date artdate) {
+    public Sqrecycle(Integer rid, Integer uid, Integer artid, Integer bid, String artag, String artphotoPath, String artmusic, Date artdate, String artconten) {
         Rid = rid;
         Uid = uid;
         Artid = artid;
@@ -24,6 +24,7 @@ public class Sqrecycle  {
         ArtphotoPath = artphotoPath;
         Artmusic = artmusic;
         Artdate = artdate;
+        Artconten = artconten;
     }
 
     public Integer getRid() {
@@ -90,6 +91,14 @@ public class Sqrecycle  {
         Artdate = artdate;
     }
 
+    public String getArtconten() {
+        return Artconten;
+    }
+
+    public void setArtconten(String artconten) {
+        Artconten = artconten;
+    }
+
     @Override
     public String toString() {
         return "Sqrecycle{" +
@@ -101,6 +110,7 @@ public class Sqrecycle  {
                 ", ArtphotoPath='" + ArtphotoPath + '\'' +
                 ", Artmusic='" + Artmusic + '\'' +
                 ", Artdate=" + Artdate +
+                ", Artconten='" + Artconten + '\'' +
                 '}';
     }
 }
