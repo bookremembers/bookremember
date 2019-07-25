@@ -32,9 +32,11 @@ public class UserController {
         return count;
     }
 
+    /*登录成功，把登录用户存到session中*/
     @RequestMapping("queryByUsernamePwd")
-    public User queryByUsernamePwd(@RequestParam("username") String username, @RequestParam("password") String password) {
+    public User queryByUsernamePwd(@RequestParam("username") String username, @RequestParam("password") String password,HttpSession session) {
         User user = userService.queryByUsernamePwd(username, password);
+        session.setAttribute("loginUser",user);
         return user;
     }
 
@@ -70,6 +72,7 @@ public class UserController {
                     flag="验证码错误";
                 }else {
                     flag="1";
+                    session.setAttribute("user",user);
                 }
             }
         }
@@ -77,4 +80,32 @@ public class UserController {
         map.put("flag",flag);
         return new ResponseEntity<>(map,HttpStatus.OK);
     }
+
+    /*通过用户id修改密码*/
+    @RequestMapping("updPwdById")
+    public Integer updPwdById(@RequestParam("newPwd") String newPwd,HttpSession session){
+        User user=(User) session.getAttribute("user");
+
+        return userService.updPwdById(user.getUid(),newPwd);
+    }
+
+    /*session拿到登录用户对象返回页面*/
+    @RequestMapping("queryLoginUser")
+    public ResponseEntity<?> queryLoginUser(HttpSession session){
+        User loginUser=(User) session.getAttribute("loginUser");
+        /*修改信息后用户拿到的信息*/
+        User user=userService.selectById(loginUser.getUid());
+        session.setAttribute("loginUser",user);
+        return new ResponseEntity<>(user,HttpStatus.OK);
+    }
+
+    /*根据id修改用户名*/
+    @RequestMapping("updName")
+    public int updName(@RequestParam("newName")String newName,@RequestParam("uid") Integer uid){
+        System.out.println(newName+"---"+uid);
+        return userService.updNameById(uid,newName);
+    }
+
+    //@RequestMapping("province")
+
 }
