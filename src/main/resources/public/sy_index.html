@@ -2,11 +2,26 @@
 <!-- saved from url=(0042)https://www.shiqichuban.com/portal/writing -->
 <html class=" js csstransforms csstransforms3d"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>拾柒-REFLECT &amp; RELEARN</title>
-    
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
     <meta http-equiv="X-UA-Compatible" content="IE=9">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
+
+
+    <link rel="stylesheet" type="text/css" href="dist/bootstrap.css">
+    <link href="dist/summernote.css" rel="stylesheet">
+    <!--播放器样式-->
+    <link href="css/player.css" rel="stylesheet" type="text/css" />
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="dist/summernote.js"></script>
+    <script src="dist/lang/summernote-zh-CN.js"></script>    <!-- 中文-->
+
+    <style>
+        .m{ width: 727px; margin-left: auto; margin-right: auto; }
+    </style>
 
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/template.css">
@@ -191,7 +206,7 @@
     .sider{
 			width: 100%;
 			position: relative;
-			
+
 		}
 		#parentID{
 			position: absolute;
@@ -214,7 +229,7 @@
 			height: 30px;
 			width: 100%;
 			bottom: 0;
-			
+
 			text-align: center;
 		}
 		.list_num span{
@@ -298,21 +313,21 @@
                     <a href="https://www.shiqichuban.com/book/zone"><p style="padding:10px"><span class="circle"></span>主题<img style="position: absolute;right: 40px;" src="images/2_24.png"></p>
                     </a>
                 </div>
-                
-                
+
+
                 <div class="col-xs-12 item" style="background-color: #c8c8c8;margin-bottom:1px">
                     <a href="https://www.shiqichuban.com/user/recycle"><p style="padding:10px"><span class="circle"></span>回收站<img style="position: absolute;right: 40px;" src="images/writing_icon_recycle.png"></p>
                     </a>
                 </div>
-               
-               
+
+
               <div class="col-xs-12  left-board" style="padding:5px 0 !important;color:white">
             	<div class="sider">
 					<ul id="parentID">
 						<li><a href="https://www.shiqichuban.com/event/share2" target="_blank"><img src="images/event_index_sharebox.png"></a></li>
 					</ul>
 				</div>
-            </div>	
+            </div>
             </div>
         </div>
         <!-- 左侧边栏 end -->
@@ -344,6 +359,191 @@
                                                     <li style="text-align: left;font-size: 16px" data="情感"><a href="https://www.shiqichuban.com/portal/writing?tag=%E6%83%85%E6%84%9F">情感</a></li>
                                             </ul>
                 </div>
+                    <div class="col-xs-12  left-board"
+                         style="padding:5px 0 !important;color:white;overflow: -webkit-paged-x;">
+                        <div class="col-xs-12 toggle"
+                             style="background-color: #2c2c2c;border-top-right-radius: 5px;border-top-left-radius: 5px">
+                            <p style="padding:10px;"><span class="arrow"></span>个人中心<img
+                                    style="position: absolute;right: 40px;" src="images/icon_write.png">
+                            </p>
+                        </div>
+
+
+                        <div class="col-xs-12 item" style="background-color: #c8c8c8;margin-bottom:1px">
+                            <a href="recycle.html"><p style="padding:10px"><span class="circle"></span>回收站<img
+                                    style="position: absolute;right: 40px;" src="images/writing_icon_recycle.png"></p>
+                            </a>
+                        </div>
+              <!--音乐开始-->
+                        <!-- 左侧播放器 开始-->
+                        <div id="jp_container_N" class="jp-video jp-video-270p jp-state-playing" role="application" aria-label="media player" style="left: 0px; height: 175px; bottom: 20px;">
+                            <div class="jp-type-playlist">
+                                <div id="jquery_jplayer_N" class="jp-jplayer" style="width: 90px; height: 90px;">
+
+                                    <audio id="jp_audio_0" preload="metadata" src="http://music.163.com/song/media/outer/url?id=31473269.mp3" title="那英"></audio>
+                                    <video id="jp_video_0" preload="metadata" title="那英" style="width: 0px; height: 0px;"></video>
+                                </div>
+                                <div class="jp-gui">
+                                    <div class="jp-video-play" style="display: none;">
+                                        <button class="jp-video-play-icon" role="button" tabindex="0">播放</button>
+                                    </div>
+                                    <div class="jp-interface">
+                                        <div class="jp-progress">
+                                            <div class="jp-seek-bar" style="width: 100%;">
+                                                <div class="jp-play-bar" style="overflow: hidden; width: 97.5219%;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="jp-current-time" role="timer" aria-label="time">04:11</div>
+                                        <div class="jp-duration" role="timer" aria-label="duration">04:17</div>
+                                        <div class="jp-controls-holder">
+                                            <div class="jp-controls">
+                                                <button class="jp-previous" role="button" tabindex="0">上一曲</button>
+                                                <button class="jp-play" role="button" tabindex="0">播放</button>
+                                                <button class="jp-next" role="button" tabindex="0">下一曲</button>
+                                                <button class="jp-stop" role="button" tabindex="0">暂停</button>
+                                            </div>
+                                            <div class="jp-volume-controls">
+                                                <button class="jp-mute" role="button" tabindex="0">静音</button>
+                                                <button class="jp-volume-max" role="button" tabindex="0">最大音量</button>
+                                                <div class="jp-volume-bar">
+                                                    <div class="jp-volume-bar-value" style="width: 10%;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="jp-toggles">
+                                                <button class="jp-repeat" role="button" tabindex="0">重复</button>
+                                                <button class="jp-shuffle" role="button" tabindex="0">随机</button>
+                                                <!--<button class="jp-full-screen" role="button" tabindex="0">全屏</button>-->
+                                            </div>
+                                        </div>
+                                        <div class="jp-details" style="display: none;">
+                                            <div class="jp-title" aria-label="title">那英</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="jp-playlist">
+                                    <div class="jp-playlist-box" style="height: 80px;">
+                                        <ul style="height: 1000px; display: block; top: 0px;">
+                                            <li>
+                                                <div>
+                                                    <a href="javascript:;" class="jp-playlist-item-remove">×</a>
+                                                    <a href="javascript:;" class="jp-playlist-item" tabindex="0">默 <span class="jp-artist" style="transform: rotate(180deg);"> - 那英</span></a>
+                                                </div>
+                                            </li>
+                                            <li class="">
+                                                <div>
+                                                    <a href="javascript:;" class="jp-playlist-item-remove">×</a>
+                                                    <a href="javascript:;" class="jp-playlist-item" tabindex="0">Ellens Gesang III D839 <span class="jp-artist" style="transform: rotate(180deg);"> - Geoffrey Parsons</span></a>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div>
+                                                    <a href="javascript:;" class="jp-playlist-item-remove">×</a>
+                                                    <a href="javascript:;" class="jp-playlist-item" tabindex="0">Fire <span class="jp-artist" style="transform: rotate(180deg);"> - Said The Sky</span></a>
+                                                </div>
+                                            </li>
+                                            <li class="jp-playlist-current" style="display: list-item;">
+                                                <div>
+                                                    <a href="javascript:;" class="jp-playlist-item-remove">×</a>
+                                                    <a href="javascript:;" class="jp-playlist-item jp-playlist-current" tabindex="0">兰若词 <span class="jp-artist" style="transform: rotate(180deg);"> - 刘亦菲</span></a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="jp-no-solution" style="display: none;">
+                                    <span style="transform: rotate(180deg);">升级需要</span> 您浏览器赞不支持播放，请更新版本
+                                    <a href="http://get.adobe.com/flashplayer" target="_blank">Flash插件</a>.
+                                </div>
+                            </div>
+                            <!--歌曲列表滚动条-->
+                            <div class="scrollBar" style="display: block;">
+                                <div class="bar" style="top: 0px;"></div>
+                            </div>
+                            <!--播放器展开隐藏按钮-->
+                            <button type="button" class="folded_bt" title="点击收缩" id="btnfold" style="top: 52px;">
+                                <span style="transform: rotate(180deg);"></span>
+                            </button>
+                            <div id="listRemove" style="display: block;"></div>
+                            <!--移除全部歌曲按钮-->
+                            <div id="listClose"></div>
+                            <!--歌曲列表展开收缩按钮-->
+                        </div>
+                        <!-- 左侧播放器 结束-->
+
+
+                        <!--播放器js-->
+                        <script src="js/player.js"></script>
+                        <script src="js/playlist.js"></script>
+                        <script src="js/player_database.js"></script>
+                        <!--播放器js-->
+                        <!--音乐结束-->
+                    </div>
+                </div>
+                <!-- 左侧边栏 end -->
+                <!-- 右侧边栏 start -->
+
+                <div class="col-xs-12 col-sm-8 right-board">
+                    <div id="add_book"
+                         style="position:relative;height:50px;width:100%;padding:0 15px;background:#fff;"><span
+                            class="books_title"
+                            style="display:inline-block;border-bottom: 2px dotted #ccc;width:100%;line-height: 50px;color:#666; height: 50px;font-size: 18px;cursor:pointer;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">添加至书册</span><span
+                            style="position:absolute;right:0;top:16px;text-align:right;margin-right:20px;width:10%"><img
+                            src="images/add_bookto.icon.png"></span></div>
+                    <div id="ke-title" style="position:relative"><input id="title-input" placeholder="点击输入标题"
+                                                                        style="height:50px;"><label
+                            id="title_notice"
+                            style="position:absolute;right:15px;bottom:5px;font-size: 12px;color:#ccc">还可以输入20个字符</label>
+                    </div>
+                    <!-- 编辑器 start -->
+
+                    <div class="m">
+
+                        <div class="summernote"></div>
+                    </div>
+                    <div style="border-top:1px dotted #ccc ;clear: both;">
+                        <div class="sq_btn sq_btn_black submit_btn" style="margin: 5px;float:right;">
+                            保存文章
+                        </div>
+                    </div>
+                    <!-- 编辑器 end -->
+                    <div style="margin-top:20px;width:100%;height:36px;position:relative">
+                        <img src="images/pen_07.png" style="position:absolute;top:0;left:0;width: 100%">
+                        <p class="article_pen_title col-xs-12" style="text-align: center;font-size: 16px;">
+                            <span class="col-xs-6 col-xs-offset-3 col-sm-2 col-sm-offset-5"
+                                  style="display:inline-block;background-color: #f3f3f5">我的文章 &nbsp; <span
+                                    style="display:inline-block ;transform:rotate(90deg)">≫</span></span></p>
+                    </div>
+                    <!--搜索框 start -->
+                    <div class="col-xs-12"
+                         style="margin-top:20px;background-color: white;border:1px solid #ccc;border-radius: 5px;padding-right:0 !important;padding-left:0 !important">
+                        <div class="dropdown col-xs-6" style="padding-right:0 !important;padding-left:0 !important">
+                            <button class="btn btn-default dropdown-toggle" style="border:none;height: 40px;"
+                                    type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                <a href="https://www.shiqichuban.com/portal/writing?tag=%E5%85%A8%E9%83%A8">全部</a><span
+                                    class="caret" style="margin-left: 5px"></span>
+                            </button>
+                            <ul class="dropdown-menu tag_list" aria-labelledby="dropdownMenu1" style="padding:5px 0">
+                                <li style="text-align: left;font-size: 16px" data="全部"><a
+                                        href="https://www.shiqichuban.com/portal/writing">全部</a></li>
+                                <li style="text-align: left;font-size: 16px" data="原创"><a href="#">原创</a></li>
+                                <li style="text-align: left;font-size: 16px" data="拾柒书"><a
+                                        href="https://www.shiqichuban.com/portal/writing?tag=%E6%8B%BE%E6%9F%92%E4%B9%A6">拾柒书</a>
+                                </li>
+                                <li style="text-align: left;font-size: 16px" data="杂记"><a
+                                        href="https://www.shiqichuban.com/portal/writing?tag=%E6%9D%82%E8%AE%B0">杂记</a>
+                                </li>
+                                <li style="text-align: left;font-size: 16px" data="旅行"><a
+                                        href="https://www.shiqichuban.com/portal/writing?tag=%E6%97%85%E8%A1%8C">旅行</a>
+                                </li>
+                                <li style="text-align: left;font-size: 16px" data="亲子"><a
+                                        href="https://www.shiqichuban.com/portal/writing?tag=%E4%BA%B2%E5%AD%90">亲子</a>
+                                </li>
+                                <li style="text-align: left;font-size: 16px" data="情感"><a
+                                        href="https://www.shiqichuban.com/portal/writing?tag=%E6%83%85%E6%84%9F">情感</a>
+                                </li>
+                            </ul>
+                        </div>
 
                 <form class="col-xs-6" style="margin-top: 3px" action="https://www.shiqichuban.com/portal/article/search" method="get">
                     <!--<input type="hidden" name="_token" value="qThTzn9dsGWMeusr7GBb0D2iMhxd5sgEP2vGR5XX">-->
@@ -382,7 +582,7 @@
                             </dl>
                         </div>
                         <div class="col-xs-12 article_content" style="color: #8d8d8d;padding: 0 20px !important;">
-                            
+
                                                             <div class="col-xs-12" style="text-align: justify;overflow: hidden;word-wrap: break-word;padding:0">SDF A是的爱的afghhlioafghhlio9o&nbsp;</div>
 
                                                                                     </div>
@@ -408,7 +608,7 @@
                             </dl>
                         </div>
                         <div class="col-xs-12 article_content" style="color: #8d8d8d;padding: 0 20px !important;">
-                            
+
                                                             <div class="col-xs-12" style="text-align: justify;overflow: hidden;word-wrap: break-word;padding:0">是的上个碍事干啥的发送到</div>
 
                                                                                     </div>
@@ -434,7 +634,7 @@
                             </dl>
                         </div>
                         <div class="col-xs-12 article_content" style="color: #8d8d8d;padding: 0 20px !important;">
-                            
+
                                                             <div class="col-xs-12" style="text-align: justify;overflow: hidden;word-wrap: break-word;padding:0">客厅UK衣服涂风油精</div>
 
                                                                                     </div>
@@ -460,7 +660,7 @@
                             </dl>
                         </div>
                         <div class="col-xs-12 article_content" style="color: #8d8d8d;padding: 0 20px !important;">
-                            
+
                                                             <div class="col-xs-12" style="text-align: justify;overflow: hidden;word-wrap: break-word;padding:0">AD是高高的省电费发顺丰add杀掉对方更好海陆空</div>
 
                                                                                     </div>
@@ -486,7 +686,7 @@
                             </dl>
                         </div>
                         <div class="col-xs-12 article_content" style="color: #8d8d8d;padding: 0 20px !important;">
-                            
+
                                                             <div class="col-xs-12" style="text-align: justify;overflow: hidden;word-wrap: break-word;padding:0">SF SDF省电费的法规发生的个SFAF ADF&nbsp;</div>
 
                                                                                     </div>
@@ -544,3 +744,288 @@
     })
 </script>
 </body></html>
+    <div class="datetimepicker-hours" style="display: none;">
+        <table class=" table-condensed">
+            <thead>
+            <tr>
+                <th class="prev" style="visibility: visible;"> &lt;</th>
+                <th colspan="5" class="switch">18 七月 2019</th>
+                <th class="next" style="visibility: visible;"> &gt;</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td colspan="7">
+                    <fieldset class="hour">
+                        <legend>上午</legend>
+                        <span class="hour hour_am">12</span><span class="hour hour_am">1</span><span
+                            class="hour hour_am">2</span><span class="hour hour_am">3</span><span
+                            class="hour hour_am">4</span><span class="hour hour_am">5</span><span
+                            class="hour hour_am">6</span><span class="hour hour_am">7</span><span
+                            class="hour hour_am">8</span><span class="hour hour_am">9</span><span class="hour hour_am">10</span><span
+                            class="hour hour_am">11</span></fieldset>
+                    <fieldset class="hour">
+                        <legend>下午</legend>
+                        <span class="hour hour_pm">12</span><span class="hour active hour_pm">1</span><span
+                            class="hour hour_pm">2</span><span class="hour hour_pm">3</span><span
+                            class="hour hour_pm">4</span><span class="hour hour_pm">5</span><span
+                            class="hour hour_pm">6</span><span class="hour hour_pm">7</span><span
+                            class="hour hour_pm">8</span><span class="hour hour_pm">9</span><span class="hour hour_pm">10</span><span
+                            class="hour hour_pm">11</span></fieldset>
+                </td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <th colspan="7" class="today">今天</th>
+            </tr>
+            <tr>
+                <th colspan="7" class="clear" style="display: none;">清除</th>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+    <div class="datetimepicker-days" style="display: block;">
+        <table class=" table-condensed">
+            <thead>
+            <tr>
+                <th class="prev" style="visibility: visible;"> &lt;</th>
+                <th colspan="5" class="switch">七月 2019</th>
+                <th class="next" style="visibility: visible;"> &gt;</th>
+            </tr>
+            <tr>
+                <th class="dow">一</th>
+                <th class="dow">二</th>
+                <th class="dow">三</th>
+                <th class="dow">四</th>
+                <th class="dow">五</th>
+                <th class="dow">六</th>
+                <th class="dow">日</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="day old">24</td>
+                <td class="day old">25</td>
+                <td class="day old">26</td>
+                <td class="day old">27</td>
+                <td class="day old">28</td>
+                <td class="day old">29</td>
+                <td class="day old">30</td>
+            </tr>
+            <tr>
+                <td class="day">1</td>
+                <td class="day">2</td>
+                <td class="day">3</td>
+                <td class="day">4</td>
+                <td class="day">5</td>
+                <td class="day">6</td>
+                <td class="day">7</td>
+            </tr>
+            <tr>
+                <td class="day">8</td>
+                <td class="day">9</td>
+                <td class="day">10</td>
+                <td class="day">11</td>
+                <td class="day">12</td>
+                <td class="day">13</td>
+                <td class="day">14</td>
+            </tr>
+            <tr>
+                <td class="day">15</td>
+                <td class="day">16</td>
+                <td class="day">17</td>
+                <td class="day today active">18</td>
+                <td class="day">19</td>
+                <td class="day">20</td>
+                <td class="day">21</td>
+            </tr>
+            <tr>
+                <td class="day">22</td>
+                <td class="day">23</td>
+                <td class="day">24</td>
+                <td class="day">25</td>
+                <td class="day">26</td>
+                <td class="day">27</td>
+                <td class="day">28</td>
+            </tr>
+            <tr>
+                <td class="day">29</td>
+                <td class="day">30</td>
+                <td class="day">31</td>
+                <td class="day new">1</td>
+                <td class="day new">2</td>
+                <td class="day new">3</td>
+                <td class="day new">4</td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <th colspan="7" class="today">今天</th>
+            </tr>
+            <tr>
+                <th colspan="7" class="clear" style="display: none;">清除</th>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+    <div class="datetimepicker-months" style="display: none;">
+        <table class="table-condensed">
+            <thead>
+            <tr>
+                <th class="prev" style="visibility: visible;"> &lt;</th>
+                <th colspan="5" class="switch">2019</th>
+                <th class="next" style="visibility: visible;"> &gt;</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td colspan="7"><span class="month">一</span><span class="month">二</span><span
+                        class="month">三</span><span class="month">四</span><span class="month">五</span><span
+                        class="month">六</span><span class="month active">七</span><span class="month">八</span><span
+                        class="month">九</span><span class="month">十</span><span class="month">十一</span><span
+                        class="month">十二</span></td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <th colspan="7" class="today">今天</th>
+            </tr>
+            <tr>
+                <th colspan="7" class="clear" style="display: none;">清除</th>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+    <div class="datetimepicker-years" style="display: none;">
+        <table class="table-condensed">
+            <thead>
+            <tr>
+                <th class="prev" style="visibility: visible;"> &lt;</th>
+                <th colspan="5" class="switch">2010-2019</th>
+                <th class="next" style="visibility: visible;"> &gt;</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td colspan="7"><span class="year old">2009</span><span class="year">2010</span><span
+                        class="year">2011</span><span class="year">2012</span><span class="year">2013</span><span
+                        class="year">2014</span><span class="year">2015</span><span class="year">2016</span><span
+                        class="year">2017</span><span class="year">2018</span><span class="year active">2019</span><span
+                        class="year old">2020</span></td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <th colspan="7" class="today">今天</th>
+            </tr>
+            <tr>
+                <th colspan="7" class="clear" style="display: none;">清除</th>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+<script>
+$(()=>{
+    var title_len = 20;
+    var reset_title_len = title_len;
+    var maxLen = title_len;
+    var cpLock = false;
+    $('#title-input').off().on({
+        compositionstart: function () {//中文输入开始
+            cpLock = true;
+        },
+        compositionend: function () {//中文输入结束
+            var $this = $(this), _val = $this.val();
+            cpLock = false;
+            $this.val(subString(_val, maxLen));
+        },
+        keydown: function (e) {
+            if (e.keyCode == 13) {
+                if (!max_line) return true;
+                if ($(e.target).val().match(/[\r\n]/g) && $(e.target).val().match(/[\r\n]/g).length == max_line - 1) return false;
+            }
+        },
+        input: function () {
+            var $this = $(this), _val = $this.val();
+            if (cpLock) {
+                $this.val(_val);
+            } else {
+                if (getTextareaLen(_val) > maxLen) {
+                    $this.val(subString(_val, maxLen));
+                }
+            }
+            title = $('#title-input').val();
+
+            reset_title_len = title_len - title.length < 0 ? 0 : title_len - title.length;
+
+            $('#title_notice').text('还可以输入' + reset_title_len + '个字符');
+        }
+    });
+    function getTextareaLen(str) {
+        if (str == null || str == "") return 0;
+        var len = 0;
+        var repEnter = /[\&]/;  //  & 符号
+        str = str.replace(/[\r\n]/g, '&');
+        var strAttr = str.split('');
+        strAttr.forEach(function (val, key) {
+            if (isHalfCount(val)) {
+                len += 0.5;
+            } else if (repEnter.test(val)) {
+                maxLen++;
+            } else {
+                len += 1;
+            }
+        })
+        return len;
+    }
+    function subString(str, maxLen) {
+        var strAttr = str.split('');
+        var len = maxLen;
+        strAttr.forEach(function (val) {
+            if (isHalfCount(val)) {
+                len += 0.5;
+            }
+        });
+        return str.substring(0, len);
+    }
+    function isHalfCount(val) {
+        var repOne = /[0-9a-zA-Z|\s]/;  // 字母数字
+        var repSign = /[\x00-\xff]+/;
+        return repOne.test(val) || repSign.test(val);
+
+    }
+    $("#btn").click(function () {
+        var img=$("#title-input").val();
+
+    })
+    $('.summernote').summernote({
+        height: 200,
+        tabsize: 2,
+        lang: 'zh-CN'
+    });
+})
+
+</script>
+<!--<div id="udesk_container">-->
+<!--<div id="udesk_btn"><a-->
+<!--style="display: block; position: fixed; box-sizing: border-box; font-size: 13px; color: rgb(255, 255, 255); text-align: center; cursor: pointer; text-decoration: none; z-index: 1000000000; border-width: 1px 1px 0px; border-top-style: solid; border-right-style: solid; border-left-style: solid; border-top-color: rgba(0, 0, 0, 0.1); border-right-color: rgba(0, 0, 0, 0.1); border-left-color: rgba(0, 0, 0, 0.1); border-image: initial; border-bottom-style: initial; border-bottom-color: initial; background-color: rgb(48, 122, 232); height: 40px; right: 0px; bottom: 0px; margin: 3px 30px;"><span-->
+<!--style="display:block;float:left;width:24px;height:24px;margin:7px 7px 0;"><img-->
+<!--src="images/msg2@68x66.png" style="width:100%;height:100%;"></span><span-->
+<!--style="display:block;float:left;width:1px;height:100%;background-color:rgba(0, 0, 0, .08);vertical-align:middle;background-color:#000\9;filter:alpha(opacity=10)\9;"></span><span-->
+<!--id="udesk_btn_text"-->
+<!--style="display:block;float:left;height:40px;margin:0 10px;line-height:40px;overflow-y:hidden; font-size: 13px; color: #fff;">联系客服，在线咨询</span><span-->
+<!--id="udesk_btn_circle"-->
+<!--style="display:none;position:absolute;top:-13px;right:-13px;width:26px;height:26px;text-align:center;line-height:26px;font-size:14px;color:#fff;border-radius:15px;background-color: #ff3b30;"></span></a>-->
+<!--</div>-->
+<!--<div id="udesk_panel"-->
+<!--style="position:fixed;bottom:-574px;right:60px;z-index:-1;width:364px;height:572px;overflow:hidden;display:none;background-color:transparent;box-shadow:0px 4px 12px 0px rgba(8,23,26,0.2);border-radius: 3px 3px 0px 0px;border:1px solid #ddd\9;transition:bottom 0.3s;-webkit-transition:bottom 0.3s;-moz-transition:bottom 0.3s;-ms-transition:bottom 0.3s;-o-transition:bottom 0.3s;">-->
+<!--<iframe id="udesk_iframe" frameborder="0" scrolling="no" allowtransparency="true"-->
+<!--style="width:100%;height:0;border:none;padding:0;margin:0;float:none;background:none;transition:height 0.1s;-webkit-transition:height 0.1s;-moz-transition:height 0.1s;-ms-transition:height 0.1s;-o-transition:height 0.1s;"-->
+<!--allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen=""-->
+<!--src="#"></iframe>-->
+<!--</div>-->
+<!--</div>-->
+</body>
+</html>
