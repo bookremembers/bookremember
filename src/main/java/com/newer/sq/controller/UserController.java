@@ -26,7 +26,7 @@ public class UserController {
         User user = userService.queryByUsernamePwd(username, password);
         User getUser = userService.getCode(username, phone);
         int count = 0;
-        if (user != null && getUser != null) {
+        if (user == null && getUser == null) {
             count = userService.regUser(username, password, phone);
         }
         return count;

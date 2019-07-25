@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0062)https://www.shiqichuban.com/react_simple/app/index.html#/shelf -->
 <html lang="ch-n">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -10,7 +9,6 @@
     <title>拾柒-REFLECT &amp; RELEARN</title>
     <link rel="icon" href="https://www.shiqichuban.com/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/font.css">
-    <script>window.routerBase = "/";</script>
     <link rel="stylesheet" type="text/css" href="css/vendors.55842355.chunk.css">
     <link rel="stylesheet" type="text/css" href="css/layouts__GlobalTemplate.4a2a739e.chunk.css">
 
@@ -124,12 +122,6 @@
                                                 <div role="tab" aria-disabled="false" aria-selected="true"
                                                      class="ant-tabs-tab-active ant-tabs-tab">自己的书
                                                 </div>
-                                                <div role="tab" aria-disabled="false" aria-selected="false"
-                                                     class=" ant-tabs-tab">和朋友的书
-                                                </div>
-                                                <div role="tab" aria-disabled="false" aria-selected="false"
-                                                     class=" ant-tabs-tab">lomo卡
-                                                </div>
                                             </div>
                                             <div class="ant-tabs-ink-bar ant-tabs-ink-bar-animated"
                                                  style="display: block; transform: translate3d(0px, 0px, 0px); width: 88px;"></div>
@@ -152,53 +144,7 @@
                                             <div class="ant-list ant-list-split ant-list-grid">
                                                 <div class="ant-spin-nested-loading">
                                                     <div class="ant-spin-container">
-                                                        <div class="ant-row">
-                                                            <div class="ant-col ant-col-4">
-                                                                <div class="ant-list-item">
-                                                                    <div style="position: relative;">
-                                                                        <div style="position: relative; height: 180px;">
-                                                                            <div style="position: absolute; bottom: 0px; width: 70%; left: 15%;">
-                                                                                <img alt="封面"
-                                                                                     src="text/5e8eobmF9kYm4nRXBbXMeBgItPtgOKLf5qnmG-swqc5PmkrAF8SZZKgR6IosgxfymqW1aXh_6__HaP2hlAUY4g"
-                                                                                     style="width: 100%; box-shadow: rgb(204, 204, 204) 2px 2px 5px;">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div style="position: relative; margin-top: -10px; height: 100px;">
-                                                                            <div style="margin-top: 10px; margin-left: -3%; height: 100px; box-shadow: rgb(204, 204, 204) 0px -7px 7px -7px; background-color: white; width: 106%;"></div>
-                                                                            <div style="position: absolute; width: 100%; top: 20px; text-align: center; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
-                                                                                很高兴遇见你
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="ant-col ant-col-4">
-                                                                <div class="ant-list-item">
-                                                                    <div style="position: relative;">
-                                                                        <div style="position: relative; height: 180px;">
-                                                                            <div style="position: absolute; bottom: 0px; width: 70%; left: 15%;">
-                                                                                <img alt="封面"
-                                                                                     src="text/5e8eobmF9kYm4nRXBbXMeHJ_JXUkilADhfat_1ZQLg4UefR9r4wg0-Ayj8Expqs_5wVhrGnNt1izpRsGUdXuPw"
-                                                                                     style="width: 100%; box-shadow: rgb(204, 204, 204) 2px 2px 5px;">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div style="position: relative; margin-top: -10px; height: 100px;">
-                                                                            <div style="margin-top: 10px; margin-left: -3%; height: 100px; box-shadow: rgb(204, 204, 204) 0px -7px 7px -7px; background-color: white; width: 106%;"></div>
-                                                                            <div style="position: absolute; width: 100%; top: 20px; text-align: center; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
-                                                                                每一天都是特别的
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-
-
-
-
-
-
-
+                                                        <div class="ant-row" id="BookList">
 
                                                         </div>
                                                     </div>
@@ -218,15 +164,15 @@
                         <div tabindex="0" role="presentation"
                              style="width: 0px; height: 0px; overflow: hidden; position: absolute;"></div>
                     </div>
-                    <div style="position: absolute; top: 14px; right: 0px;">
-                        <button type="button" class="ant-btn ant-btn-primary ant-btn-sm"
-                                ant-click-animating-without-extra-node="false" style="margin-left: 10px;">
-                            <span>下 单</span></button>
-                        <button type="button" class="ant-btn ant-btn-primary ant-btn-sm" style="margin-left: 10px;">
-                            <span>复 制</span></button>
-                        <button type="button" class="ant-btn ant-btn-primary ant-btn-sm" style="margin-left: 10px;">
-                            <span>删 除</span></button>
-                    </div>
+                    <!--<div style="position: absolute; top: 14px; right: 0px;">-->
+                        <!--<button type="button" class="ant-btn ant-btn-primary ant-btn-sm"-->
+                                <!--ant-click-animating-without-extra-node="false" style="margin-left: 10px;">-->
+                            <!--<span>下 单</span></button>-->
+                        <!--<button type="button" class="ant-btn ant-btn-primary ant-btn-sm" style="margin-left: 10px;">-->
+                            <!--<span>复 制</span></button>-->
+                        <!--<button type="button" class="ant-btn ant-btn-primary ant-btn-sm" style="margin-left: 10px;">-->
+                            <!--<span>删 除</span></button>-->
+                    <!--</div>-->
                 </div>
             </div>
         </div>
@@ -240,15 +186,10 @@
         <div class="ant-menu-submenu ant-menu-submenu-popup ant-menu-light ant-menu-submenu-placement-bottomLeft  ant-menu-submenu-hidden"
              style="left: 1113.6px; top: 65px;">
             <ul id="item_4$Menu" class="ant-menu  ant-menu-sub ant-menu-vertical ant-menu-hidden" role="menu">
-                <li class="ant-menu-item" role="menuitem"
-                    style="text-align: center; font-size: 12px; height: 30px; line-height: 2.5;">我的分享
-                </li>
+
                 <li class="ant-menu-item" role="menuitem"
                     style="text-align: center; font-size: 12px; height: 30px; line-height: 2.5;">我的积分
                 </li>
-                <li class="ant-menu-item" role="menuitem"
-                    style="text-align: center; font-size: 12px; height: 30px; line-height: 2.5;"><a
-                        href="https://www.shiqichuban.com/react_simple/app/index.html#/portal/coupon">我的卡券</a></li>
                 <li class="ant-menu-item" role="menuitem"
                     style="text-align: center; font-size: 12px; height: 30px; line-height: 2.5;">我的消息
                 </li>
@@ -256,6 +197,42 @@
         </div>
     </div>
 </div>
-<style></style>
+<script src="js/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="layer/2.4/layer.js"></script>
+<script>
+    $(()=>{
+        $.ajax({
+            type:"post",
+            url:"queryAll",
+            dataType:"json",
+            success:function (data) {
+                console.log(data);
+                var temp = ``;
+                $.each(data,function (index,obj) {
+                temp+=`
+             <div class="ant-col ant-col-4">
+                  <div class="ant-list-item">
+                  <div style="position: relative;">
+                <div style="position: relative; height: 180px;">
+                <div style="position: absolute; bottom: 0px; width: 70%; left: 15%;">
+                 <a href="article.html"><img alt="封面" src="text/${obj.bookurl}" style="width: 100%; box-shadow: rgb(204, 204, 204) 2px 2px 5px;"></a>
+            </div>
+             </div>
+          <div style="position: relative; margin-top: -10px; height: 100px;">
+             <div style="margin-top: 10px; margin-left: -3%; height: 100px; box-shadow: rgb(204, 204, 204) 0px -7px 7px -7px; background-color: white; width: 106%;"></div>
+                 <div style="position: absolute; width: 100%; top: 20px; text-align: center; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
+                   ${obj.bname}
+               </div>
+              </div>
+             </div>
+           </div>
+          </div>
+                `
+                })
+                $("#BookList").html(temp)
+            }
+        })
+    })
+</script>
 </body>
 </html>
