@@ -5,6 +5,8 @@ import com.newer.sq.mapper.OrderMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class OrderService {
     @Autowired
@@ -21,5 +23,9 @@ public class OrderService {
     //减
     public int reduceNumberPrice(){
         return orderMapper.reduceNumberPrice();
+    }
+    //查询所有
+    public List<Books> queryAll(){
+        return orderMapper.queryAll();
     }
 }
