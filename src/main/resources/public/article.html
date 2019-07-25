@@ -87,7 +87,7 @@
                                                            src="images/color_book_back_icon.png"></i><span
                         style="pointer-events: none;color: #000;">返回书架</span></div>
                 <div class="top_step_btn" style="float: right; position: relative"><span class="new_print_book_btn"
-                                                                                         style="float:right;line-height: 28px;border: 1px solid #000;text-align: center;margin-left: 8px;background: #333;color: #fff;border-radius: 15px;">打印书籍</span><span
+                                                style="float:right;line-height: 28px;border: 1px solid #000;text-align: center;margin-left: 8px;background: #333;color: #fff;border-radius: 15px;" onclick="print_book(1)">打印书籍</span><span
                         class="share_book_btn"
                         style="float:right;line-height: 28px;color: #000;border: 1px solid #000;text-align: center;border-radius: 15px;">分享书籍</span>
                 </div>
@@ -834,6 +834,11 @@
     </div>
 </div>
 <script src="js/jquery-3.2.1.js"></script>
-
+<script>
+    function print_book(bid) {
+        localStorage.setItem("bid",bid);
+        location.href = "order_more.html";
+    }
+</script>
 </body>
 </html>

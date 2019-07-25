@@ -4,9 +4,8 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class User implements Serializable {
-
+    private static final long serialVersionUID = -7756421624061415332L;
     private Integer uid;
-    private Integer Artid;
     private Integer Menberid;
     private Integer Type;
     private String username;
@@ -19,9 +18,8 @@ public class User implements Serializable {
     public User() {
     }
 
-    public User(Integer uid, Integer artid, Integer menberid, Integer type, String username, String password, Integer total, String photoPath, String phone, Date regdate) {
+    public User(Integer uid, Integer menberid, Integer type, String username, String password, Integer total, String photoPath, String phone, Date regdate) {
         this.uid = uid;
-        Artid = artid;
         Menberid = menberid;
         Type = type;
         this.username = username;
@@ -38,14 +36,6 @@ public class User implements Serializable {
 
     public void setUid(Integer uid) {
         this.uid = uid;
-    }
-
-    public Integer getArtid() {
-        return Artid;
-    }
-
-    public void setArtid(Integer artid) {
-        Artid = artid;
     }
 
     public Integer getMenberid() {
@@ -116,7 +106,6 @@ public class User implements Serializable {
     public String toString() {
         return "User{" +
                 "uid=" + uid +
-                ", Artid=" + Artid +
                 ", Menberid=" + Menberid +
                 ", Type=" + Type +
                 ", username='" + username + '\'' +

@@ -276,21 +276,25 @@
                 $("#imgh").attr("src","text/"+data.imgh);
                 $("#psize").html("src",data.psize);
 
-
+                localStorage.setItem("imga","text/"+data.imga)
+                localStorage.setItem("imgb","text/"+data.imgb)
+                localStorage.setItem("imgc","text/"+data.imgc)
 
             }
         })
     })
     $("#imga2").click(function () {
-
-        $("#imga").attr("src");
+        var imga = localStorage.getItem("imga")
+        $("#imga").attr("src",imga);
     })
     $("#imgb").click(function () {
-        $("#imga").attr("src");
+       var imgb = localStorage.getItem("imgb")
+        $("#imga").attr("src",imgb);
 
     })
     $("#imgc").click(function () {
-        $("#imga").attr("src");
+        var imgc = localStorage.getItem("imgc")
+        $("#imga").attr("src",imgc);
 
     })
 </script>
