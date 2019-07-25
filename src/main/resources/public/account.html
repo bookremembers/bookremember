@@ -7,10 +7,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/response.css">
-	<script src="js/jquery-3.2.1.js"></script>
-
 </head>
-
 <body>
 	<style type="text/css">
 		.public_head span{
@@ -73,7 +70,7 @@
       <ul class="userSafe">
         <li id="ida" class="">
           <span class="tb">笔名</span>
-          <span class="tb mid">善尘难</span>
+          <span class="tb mid" id="username"></span>
           <span class="tb t_right"><a href="#" id="edit_box" class="blue edit_box">编辑</a></span>
         </li>
 
@@ -119,12 +116,13 @@
             <label class="label"><i style="color: #f00;padding-right: 5px;">*</i>所在地区</label>
             <span class="r">
               <select class="select" id="province" name="province" value="" style="width:110px;">
-              <option key="0" value="北京市">北京市</option><option key="1" value="天津市">天津市</option>
-				  <option key="2" value="河北省">河北省</option><option key="3" value="山西省">山西省</option>
-				  <option key="4" value="内蒙古自治区">内蒙古自治区</option><option key="5" value="辽宁省">辽宁省</option>
-				  <option key="6" value="吉林省">吉林省</option><option key="7" value="黑龙江省">黑龙江省</option><option key="8" value="上海市">上海市</option><option key="9" value="江苏省">江苏省</option><option key="10" value="浙江省">浙江省</option><option key="11" value="安徽省">安徽省</option><option key="12" value="福建省">福建省</option><option key="13" value="江西省">江西省</option><option key="14" value="山东省">山东省</option><option key="15" value="河南省">河南省</option><option key="16" value="湖北省">湖北省</option><option key="17" value="湖南省">湖南省</option><option key="18" value="广东省">广东省</option><option key="19" value="海南省">海南省</option><option key="20" value="广西壮族自治区">广西壮族自治区</option><option key="21" value="甘肃省">甘肃省</option><option key="22" value="陕西省">陕西省</option><option key="23" value="新疆维吾尔自治区">新疆维吾尔自治区</option><option key="24" value="青海省">青海省</option><option key="25" value="宁夏回族自治区">宁夏回族自治区</option><option key="26" value="重庆市">重庆市</option><option key="27" value="四川省">四川省</option><option key="28" value="贵州省">贵州省</option><option key="29" value="云南省">云南省</option><option key="30" value="西藏自治区">西藏自治区</option><option key="31" value="台湾省">台湾省</option><option key="32" value="澳门特别行政区">澳门特别行政区</option><option key="33" value="香港特别行政区">香港特别行政区</option></select>
-              <select class="select" name="city" id="city" value="" style="width:110px;"><option value="北京市">北京市</option></select>
-              <select class="select" name="district" id="district" value="" style="width:110px;"><option value="东城区">东城区</option><option value="西城区">西城区</option><option value="崇文区">崇文区</option><option value="宣武区">宣武区</option><option value="朝阳区">朝阳区</option><option value="丰台区">丰台区</option><option value="石景山区">石景山区</option><option value="海淀区">海淀区</option><option value="门头沟区">门头沟区</option><option value="房山区">房山区</option><option value="通州区">通州区</option><option value="顺义区">顺义区</option><option value="昌平区">昌平区</option><option value="大兴区">大兴区</option><option value="怀柔区">怀柔区</option><option value="平谷区">平谷区</option><option value="密云县">密云县</option><option value="延庆县">延庆县</option></select>
+
+			  </select>
+              <select class="select" name="city" id="city" value="" style="width:110px;">
+
+			  </select>
+              <select class="select" name="district" id="district" value="" style="width:110px;">
+				  <option value="东城区">东城区</option><option value="西城区">西城区</option><option value="崇文区">崇文区</option><option value="宣武区">宣武区</option><option value="朝阳区">朝阳区</option><option value="丰台区">丰台区</option><option value="石景山区">石景山区</option><option value="海淀区">海淀区</option><option value="门头沟区">门头沟区</option><option value="房山区">房山区</option><option value="通州区">通州区</option><option value="顺义区">顺义区</option><option value="昌平区">昌平区</option><option value="大兴区">大兴区</option><option value="怀柔区">怀柔区</option><option value="平谷区">平谷区</option><option value="密云县">密云县</option><option value="延庆县">延庆县</option></select>
             </span>
           </div>
           <div class="fmL">
@@ -276,234 +274,6 @@
 		</div>
 	</div>
 </div>
-<!--&lt;!&ndash;<script>&ndash;&gt;-->
-<!--// $.each(-->
-<!--//         PROVINCE,    function(i){-->
-<!--//             $("#province").append("<option key='"+i+"' value='" + PROVINCE[i].name + "'>" + PROVINCE[i].name + "</option>");-->
-<!--//         }-->
-<!--//     );-->
-
-    <!--$("#province").change(-->
-        <!--function () {-->
-            <!--console.log(this);-->
-            <!--var s = $("#province").val();-->
-                <!--console.log('key', s);-->
-            <!--$("#city").get(0).selectedIndex = 0 ;-->
-            <!--if (s != 0)-->
-            <!--{-->
-                <!--$("#city").empty();-->
-                <!--$('#district').empty();-->
-                <!--for(var k = 0 ; k < PROVINCE.length ; k++){-->
-                    <!--if(PROVINCE[k].name == s){-->
-                     <!--$.each(-->
-                         <!--CITY,    function(i){-->
-                            <!--if(CITY[i].ProID == PROVINCE[k].ProID)-->
-                                <!--$("#city").append("<option value='" + CITY[i].name + "'>" + CITY[i].name + "</option>");-->
-                         <!--}-->
-                     <!--);-->
-                        <!--break;-->
-                    <!--}-->
-                <!--}-->
-            <!--}-->
-            <!--$('#city').trigger('change');-->
-        <!--}-->
-    <!--);-->
-    <!--$("#city").change(-->
-        <!--function () {-->
-            <!--console.log('city change');-->
-            <!--var s = $("#city").val();-->
-            <!--console.log('key', s);-->
-            <!--$("#district").get(0).selectedIndex = 0 ;-->
-            <!--if (s != 0)-->
-            <!--{-->
-                <!--$('#district').empty();-->
-                <!--for(var k = 0 ; k < CITY.length ; k++){-->
-                    <!--if(CITY[k].name == s){-->
-                        <!--console.log(CITY[k]);-->
-                     <!--$.each(-->
-                         <!--AREA,    function(i){-->
-                            <!--if(AREA[i].CityID == CITY[k].CityID){-->
-                                <!--console.log(AREA[i]);-->
-                                <!--$("#district").append("<option value='" + AREA[i].DisName + "'>" + AREA[i].DisName + "</option>");-->
-                            <!--}-->
-                         <!--}-->
-                     <!--);-->
-                        <!--break;-->
-                    <!--}-->
-                <!--}-->
-            <!--}-->
-        <!--}-->
-    <!--);-->
-		<!--&lt;!&ndash;新增收货地址&ndash;&gt;-->
-    <!--$('.add_address_btn').on('click',function(){-->
-    	<!--$('.error_tips').hide();-->
-    <!--});-->
-		<!--&lt;!&ndash;保存新笔名&ndash;&gt;-->
-    <!--function save_nickname() {-->
-        <!--var nickname = $.trim( $("#form_nick_name").val() );-->
-        <!--if( nickname.length !== 0) {-->
-            <!--$.form2ajax('form-update-nickname', '/v1/user/update', function(result){-->
-                 <!--if(typeof result!=='object'||result.err_code!==0){-->
-                    <!--return;-->
-                <!--}-->
-                <!--var formPanel = $("#form_nick_name").parents('li');-->
-                <!--formPanel.prev().children('.mid').text(nickname);-->
-                <!--formPanel.addClass('hide');-->
-                <!--formPanel.prev().removeClass('hide');-->
-				<!--window.location=window.location;-->
-            <!--});-->
-        <!--}-->
-
-        <!--&lt;!&ndash;return;&ndash;&gt;-->
-        <!--if( nickname.length !== 0) {-->
-            <!--$('#form-update-nickname').trigger('submit');-->
-        <!--}-->
-    <!--}-->
-    <!--function defaultAddr(path, panel){-->
-        <!--$.link2ajax({-->
-            <!--method: 'post'-->
-        <!--}, path, function(result){-->
-            <!--if(typeof result!=='object'||result.err_code!==0){-->
-
-            <!--}-->
-        <!--});-->
-    <!--}-->
-    <!--function deleteAddr(path, panel){-->
-        <!--$.deleLinkAjax({-->
-            <!--method: 'get'-->
-        <!--},panel, path, function(result){-->
-            <!--if(typeof result!=='object'||result.ret!==0){-->
-
-            <!--}else{-->
-            	 <!--var formPanel = $('#'+panel);-->
-		            <!--if(formPanel.attr('isdefault')){-->
-		                <!--formPanel.parents('li').prev().children('.mid').text('您还没有添加默认收货地址');-->
-		            <!--}-->
-		            <!--formPanel.remove();-->
-            <!--}-->
-
-        <!--});-->
-    <!--}-->
-    <!--function compile_address_node(id){-->
-        <!--var tpl = $('#add_node_tpl').text(),-->
-            <!--data = {-->
-                <!--name: $("[name='name']").val(),-->
-                <!--province: $("[name='province']").val(),-->
-                <!--district: $("[name='district']").val(),-->
-                <!--city: $("[name='city']").val(),-->
-                <!--mobile: $("[name='mobile']").val(),-->
-                <!--tel: '',-->
-                <!--detail_addr: $("[name='detail_addr']").val(),-->
-                <!--zip_code: $("[name='zip_code']").val(),-->
-                <!--id: id-->
-            <!--};-->
-        <!--data.json=JSON.stringify(data);-->
-        <!--tpl = tpl.replace(/<%(\w+)%>/g, function($0, $1){-->
-            <!--return data[$1]?data[$1]:'';-->
-        <!--});-->
-        <!--return $(tpl);-->
-    <!--}-->
-    <!--function update_address_node(id){-->
-		<!--console.log('replace id', id);-->
-        <!--$('#tbAddress'+id).replaceWith(compile_address_node(id));-->
-    <!--}-->
-    <!--function add_address_node(id){-->
-        <!--$('.wrapAddrss').prepend(compile_address_node(id));-->
-    <!--}-->
-    <!--function save_user_goods_addr(id) {-->
-
-    	<!--var user_data=$("[name='name']").val();-->
-    	<!--var addr_data=$("[name='detail_addr']").val();-->
-    	<!--var mobile_data=$("[name='mobile']").val();-->
-    	<!--var zip_code=$("[name='zip_code']").val();-->
-    	<!--var showClass=$('.error_tips');-->
-    	<!--showClass.hide();-->
-			<!--var telValue='';-->
-
-	    <!--$.form2ajax('form-update-addr', '/v1/user_addr/save/'+(id||''), function(result){-->
-							<!--if(typeof result!=='object'){-->
-	            <!--return;-->
-	        <!--}-->
-	        <!--if(id!==undefined){-->
-	        	<!--console.log('cg');-->
-
-	            <!--update_address_node(id);-->
-	        <!--}else{-->
-	        		<!--console.log(id,'ixixix');-->
-
-	            <!--add_address_node(result.id);-->
-	            <!--console.log('cg1')-->
-	        <!--}-->
-	        <!--$('#form-update-addr .add_address').hide();-->
-	    <!--});-->
-	    <!--return 0;-->
-    <!--}-->
-    <!--function modifyAddr(data){-->
-        <!--console.log(data);-->
-
-        <!--$('.error_tips').hide();-->
-        <!--var formPanel = $("#form-update-addr").children('.add_address');-->
-        <!--if(typeof data === 'object'){-->
-            <!--$("[name='name']").val(data.name||'');-->
-            <!--$("[name='province']").val(data.province||'');-->
-            <!--$('#province').trigger('change');-->
-            <!--setTimeout(function(){-->
-                <!--$("[name='city']").val(data.city||'');-->
-                <!--$('#city').trigger('change');-->
-                <!--setTimeout(function(){-->
-                    <!--$("#district").val(data.district||'');-->
-                <!--},200)-->
-            <!--},100);-->
-
-            <!--$("[name='mobile']").val(data.mobile||'');-->
-            <!--$("[name='detail_addr']").val(data.detail_addr||'');-->
-            <!--$("[name='zip_code']").val(data.zip_code||'');-->
-
-
-        <!--}-->
-        <!--$('#form-update-addr .add_address h5').text('修改收货地址');-->
-        <!--$('.save_addr').attr('href', 'javascript:save_user_goods_addr('+data.id+")");-->
-        <!--formPanel.show();-->
-    <!--}-->
-
-    <!--$(document).ready(function(){-->
-        <!--$("#province").trigger('change');-->
-    <!--});-->
-    <!--function validate(user_data,addr_data,mobile_data,zip_code,showClass){-->
-
-		    <!--showClass.hide();-->
-    		<!--if(user_data.replace(/^\s*|\s*$/g,'').length<2||user_data.replace(/^\s*|\s*$/g,'').length>=25){-->
-    			<!--showClass.html('*账户名不能少数2位或者超过25位');-->
-
-    			<!--showClass.show();-->
-    			<!--return false;-->
-    		<!--}-->
-    		<!--if(addr_data.replace(/^\s*|\s*$/g,'').length<5||addr_data.replace(/^\s*|\s*$/g,'').length>132){-->
-    			<!--showClass.html('*详细地址不能少数5位或者超过25位');-->
-
-    			<!--showClass.show();-->
-    			<!--return false;-->
-    		<!--}-->
-    		<!--if(/^(((13[0-9]{1})|(15[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/.test(mobile_data)!=true){-->
-    			<!--showClass.html('*请输入正确的手机号码');-->
-
-    			<!--showClass.show();-->
-    			<!--return false;-->
-    		<!--}-->
-
-
-    		<!--if(zip_code.length>0&&tel_num!="undefined"){-->
-    			<!--if(/^[1-9][0-9]{5}$/.test(zip_code)!=true){-->
-    					<!--showClass.html('*请输入正确的邮编号码');-->
-
-		    			<!--showClass.show();-->
-		    			<!--return false;-->
-    			<!--}-->
-    		<!--}-->
-    		<!--return true;-->
-		<!--}-->
-<!--</script>-->
-
     </div>
     <footer style="height:60px;background-color: #f3f3f3;border-top:1px solid #c8c8c8">
         <div class="grid_main">
@@ -512,8 +282,53 @@
         </div>
     </footer>
 </div>
-
+<script src="js/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="layer/2.4/layer.js"></script>
 <script>
+	var uid=0;
+	$(()=>{
+	    queryName();
+	})
+	function queryName() {
+        $.ajax({
+            type:"post",
+            url:"queryLoginUser",
+            dataType:"json",
+            success:(data)=>{
+                console.log(data);
+                $("#username").html(data.username);
+                uid=data.uid;
+            }
+        })
+    }
+
+    /*保存  修改用户名*/
+    $("#save_btn").click(()=>{
+        let newName=$("#form_nick_name").val();
+        if (!newName){
+            layer.msg("新笔名不能为空",{icon:2,time:1000});
+            return;
+        }
+        $.ajax({
+            type:"post",
+            url:"updName",
+            data:{"newName":newName,"uid":uid},
+            dataType:"json",
+            success:(data)=>{
+                console.log(data);
+                if (data==1){
+                    layer.msg("修改成功",{icon:1,time:1000});
+                    queryName();
+                    $("#username").html(newName);
+                    $("#ida").show(1000);
+                    $("#idb").hide(1000);
+                }else{
+                    layer.msg("修改失败",{icon:2,time:1000});
+                }
+            }
+        })
+	})
+
 
     $('#setting').on('mouseover', function () {
     	$('.my_list').hide();
@@ -563,7 +378,6 @@
     			'-moz-transform':'rotate(90deg)',
     			'-o-transform':'rotate(90deg)',
     		})
-
        }else{
        $('.my_icon_img').removeClass('rote_v1');
        $('.my_list').hide();
@@ -579,49 +393,46 @@
 
         //笔名  编辑
         $("#edit_box").click(function () {
-            $("#ida").attr("class","hide")
-            $("#idb").attr("class","contents")
+            $("#ida").hide(1000);
+            $("#idb").show(1000);
         })
 		//收起
         $("#fewer").click(function () {
-            $("#ida").attr("class"," ")
-            $("#idb").attr("class","contents hide")
+            $("#ida").show(1000);
+            $("#idb").hide(1000);
         })
 		//关闭1
         $("#close1").click(function () {
-            $("#ida").attr("class"," ")
-            $("#idb").attr("class","contents hide")
+            $("#ida").show(1000);
+            $("#idb").hide(1000);
         })
-		//保存
-		$("#save_btn").click(function () {
-		    //发送ajax
-            $("#idg").attr("style","display:block");    //保存成功
-            //$("#idh").attr("style","display:block")   保存失败
-
-            $("#ida").attr("class"," ")
-			$("#idb").attr("class","contents hide")
-
-        })
-
-
         //地址  编辑
         $("#edit_box2").click(function () {
-            $("#idc").attr("class","hide")
-            $("#idd").attr("class","contents")
+            $("#idc").hide(1000);
+            $("#idd").show(1000);
         })
+
    	 	//新增收货地址
    		 $("#insertAddress").click(function () {
-        	$("#ide").attr("style","display:block")
+			$("#ide").show(1000);
+			$.ajax({
+				type:"post",
+				url:"",
+				dataType:"json",
+				success:(data)=>{
+				    console.log(data)
+				}
+			})
    		 })
 		//收起
         $("#fewer2").click(function () {
-            $("#idc").attr("class"," ")
-            $("#idd").attr("class","contents hide")
+            $("#idc").show(1000);
+            $("#idd").hide(1000);
         })
         //关闭2
         $("#close2").click(function () {
-            $("#idc").attr("class"," ")
-            $("#idd").attr("class","contents hide")
+            $("#idc").show(1000);
+            $("#idd").hide(1000);
         })
 		//保存2
     	$("#save_btn2").click(function () {
@@ -630,8 +441,8 @@
            // $("idf").attr("style","display:block")  //保存成功后设置
             //$("idi").attr("style","display:block")  //删除成功
            // $("idj").attr("style","display:block")  //删除失败
-       	 	$("#idc").attr("class"," ")
-        	$("#idd").attr("class","contents hide")
+       	 	$("#idc").show(1000);
+        	$("#idd").hide(1000);
     	})
 	</script>
 

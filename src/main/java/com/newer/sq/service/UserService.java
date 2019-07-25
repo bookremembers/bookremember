@@ -23,4 +23,19 @@ public class UserService {
     public User getCode(String username,String phone){
         return userMapper.getCode(username, phone);
     }
+
+    /*通过用户id修改密码*/
+    public Integer updPwdById(Integer uid,String newpwd){
+        return userMapper.updPwdById(uid, newpwd);
+    }
+
+    /*根据用户id修改用户名*/
+    public Integer updNameById(Integer uid,String newName){
+        return userMapper.updNameById(uid, newName);
+    }
+
+    /*根据用户查询uid*/
+    public User selectById(Integer uid){
+        return userMapper.selectById(uid);
+    }
 }

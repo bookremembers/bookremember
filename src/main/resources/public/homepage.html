@@ -140,12 +140,14 @@
                         <br>
                         <div class="body">
                             <p>
-                                <input type="text" id="login_username" placeholder="用户名" class="form-group">
+                                <input type="text" id="login_username" placeholder="笔名" class="form-group">
                             </p>
                             <p>
                                 <input type="password" id="login_password" placeholder="密码" class="form-group">
                             </p>
-                            <small><a href="javascript:;" onclick="forgetPwd()">忘记密码？</a></small>
+                            <small style="float: right;"><a href="javascript:;" onclick="forgetPwd()">忘记密码？</a></small>
+                            <br>
+                            <br>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -161,7 +163,7 @@
                         <br>
                         <div class="body">
                             <p>
-                                <input type="text" placeholder="用户名" class="form-group" id="name">
+                                <input type="text" placeholder="笔名" class="form-group" id="name">
                             </p>
                             <p>
                                 <input type="password" placeholder="密码" class="form-group" id="pwd">
@@ -197,10 +199,9 @@
                     <div class="modal-body">
                         <br>
                         <div class="body">
-                            <h4>请填写您的用户名和手机号码获取验证码</h4>
                             <br>
                             <p>
-                                <input type="text" placeholder="用户名" class="form-group" id="nameid">
+                                <input type="text" placeholder="笔名" class="form-group" id="nameid">
                             </p>
                             <p>
                                 <input type="text" placeholder="手机号码" class="form-group" id="mobile">
@@ -210,7 +211,7 @@
                                 <button type="button" class="btn btn-default" onclick="acquire()">获取验证码</button>
                             </p>
                             <p>
-                                <button type="button" class="btn btn-success" onclick="submitCode()" style="width: 70%;margin: auto">提交</button>
+                                <button type="button" class="btn btn-success" onclick="submitCode()" style="width: 100%;margin: auto">提交</button>
                             </p>
                         </div>
                     </div>
@@ -229,7 +230,7 @@
                                 <input type="password" placeholder="确认密码" class="form-group" id="qrResetPwd">
                             </p>
                             <p>
-                                <button type="button" class="btn btn-success" onclick="submitPwd()" style="width: 70%;margin: auto">确认</button>
+                                <button type="button" class="btn btn-success" onclick="submitPwd()" style="width: 100%;margin: auto">确认</button>
                             </p>
                         </div>
                     </div>
@@ -602,6 +603,38 @@
                 }else {
                     $("#forget").hide(1000);
                     $("#updPwd").show(1000);
+                }
+            }
+        })
+    }
+    function submitPwd() {
+        let resetPwd=$("#resetPwd").val();
+        if (!resetPwd){
+            layer.msg("密码不能为空", {icon: 2, time: 1000});
+            return;
+        }
+        let qrResetPwd=$("#qrResetPwd").val();
+        if (!qrResetPwd){
+            layer.msg("重复密码不能为空", {icon: 2, time: 1000});
+            return;
+        }
+        if (resetPwd!=qrResetPwd){
+            layer.msg("两次密码不一致", {icon: 2, time: 1000});
+            return;
+        }
+        $.ajax({
+            type:"post",
+            url:"updPwdById",
+            data:{"newPwd":resetPwd},
+            dataType:"json",
+            success:(data)=>{
+                console.log(data);
+                if (data==1){
+                    layer.msg("密码修改成功", {icon: 1, time: 1000});
+                    $("#updPwd").hide(1000);
+                    $("#login").show(1000);
+                }else {
+                    layer.msg("密码修改失败", {icon: 2, time: 1000});
                 }
             }
         })
