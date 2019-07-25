@@ -1,0 +1,177 @@
+body{
+    background-color:#f3f3f5 ;
+}
+a {
+    color: #8d8d8d;
+}
+
+a:hover {
+    text-decoration: none !important;
+    color: #8d8d8d;
+}
+
+input{
+    outline: none;
+}
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12{
+
+    padding-right: 5px ;
+    padding-left: 5px ;
+}
+
+.header{
+    background-color: white;
+}
+
+.header-btn:hover{
+    color:#2C2C2C;
+}
+
+.logo {
+
+    width: 94px;
+}
+
+.sq_btn {
+    display: inline-block;
+    padding: 1px 15px;
+    margin-bottom: 0;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1.7;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 30px;
+}
+
+.sq_btn_gray {
+
+    color: #999999 !important;
+    background-color: #e4e4e4;
+    border-color: #e4e4e4;
+
+}
+
+.sq_btn_gray:hover {
+
+    color: #e4e4e4 !important;
+    background-color: #999999;
+    border-color: #999999;
+}
+
+.sq_btn_white {
+    color: #2c2c2c !important;
+    background-color: #ffffff;
+    border-color: #cccccc;
+}
+
+.sq_btn_white:hover {
+    color: #999999 !important;
+    background-color: #cccccc;
+    border-color:  #999999;
+}
+
+.sq_btn_black {
+
+    color: #e4e4e4 !important;
+    background-color: #333333;
+    border-color: #333333;
+}
+
+.sq_btn_black:hover {
+
+    color: #cccbd0 !important;
+    background-color: #000000;
+    border-color:  #000000;
+}
+
+.sq_tag{
+    color: #8d8d8d ;
+    text-align: center;
+    padding:1px 15px;
+    min-width: 60px;
+    background-color: white;
+    border:1px solid #e4e4e4 ;
+    border-radius: 20px;
+    margin-left: 10px;
+    margin-top: 12px;
+    display: inline-block;
+}
+
+.sq_tag:hover{
+    background-color: #c8c8c8 ;
+}
+
+/**
+手机上的内容部分左右那边叽设置为5px
+**/
+@media screen and (max-width: 478px) {
+
+    /**手机上的设置**/
+    .sq_mob_container{
+        padding-left:5px ;
+        padding-right:5px ;
+    }
+}
+
+
+/**
+====================================用户设置弹出框样式=====================================================
+**/
+.tip-bubble {
+    position: relative;
+    background-color: #fff;
+    width: 120px;
+    padding: 10px 0;
+    color: rgba(0,0,0,0);
+    text-align: center;
+    border-radius: 10px;
+    margin: 0 50px;
+    box-shadow: 1px 1px 2px #202020;
+    -moz-box-shadow: 1px 1px 2px #202020;
+    -webkit-border-shadow: 1px 1px 2px #202020;
+    text-shadow: 0px 0px 15px #fff;
+}
+
+.tip-bubble:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 15px solid;
+}
+
+.tip-bubble-top:after {
+    border-bottom-color: #fff;
+    left: 75%;
+    bottom: 100%;
+    margin-left: -15px;
+}
+
+.tip-bubble:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 17px solid;
+}
+.tip-bubble-top:before {
+    border-bottom-color: #ccc;
+    left: 73%;
+    bottom: 100%;
+    margin-left: -15px;
+}
+/**
+=========================================================================================
+**/

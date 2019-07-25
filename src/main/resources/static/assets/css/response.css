@@ -1,0 +1,50 @@
+@media screen and (max-width: 1920px) {
+			    .responseHead{
+			        display:inline-block;
+					max-width:150px;
+					text-overflow:ellipsis;
+					white-space:nowrap;
+					overflow:hidden;
+					vertical-align:middle;
+			    }
+			}
+			@media screen and (max-width: 1500px) {
+			    .responseHead{
+			        display:inline-block;
+					max-width:100px;
+					text-overflow:ellipsis;
+					white-space:nowrap;
+					overflow:hidden;
+					vertical-align:middle;
+			    }
+			}
+			@media screen and (max-width: 900px) {
+			    .responseHead{
+			        display:inline-block;
+					max-width:100px;
+					text-overflow:ellipsis;
+					white-space:nowrap;
+					overflow:hidden;
+					vertical-align:middle;
+			    }
+			}
+			@media screen and (max-width: 640px) {
+			    .responseHead{
+			        display:inline-block;
+					max-width:80px;
+					text-overflow:ellipsis;
+					white-space:nowrap;
+					overflow:hidden;
+					vertical-align:middle;
+			    }
+			}
+			@media screen and (max-width: 320px) {
+			    .responseHead{
+			        display:inline-block;
+					max-width:60px;
+					text-overflow:ellipsis;
+					white-space:nowrap;
+					overflow:hidden;
+					vertical-align:middle;
+			    }
+			}
