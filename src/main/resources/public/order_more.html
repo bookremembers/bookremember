@@ -175,8 +175,7 @@
                             <div class="ant-divider ant-divider-verticle" style="height: 14px;"></div>
                             <span style="margin-left: 10px;">已选 1 件</span></div>
                         <div><span style="font-size: 18px; color: rgb(243, 134, 139);"id="total"></span>
-                            <button type="button" class="ant-btn ant-btn-primary"
-                                    style="width: 144px; height: 34px; margin-left: 100px; padding: 0px 20px; font-size: 14px;">
+                            <button type="button" class="ant-btn ant-btn-primary"style="width: 144px; height: 34px; margin-left: 100px; padding: 0px 20px; font-size: 14px;" onclick="next()">
                                 <span>下一步</span></button>
                         </div>
                     </div>
@@ -212,6 +211,7 @@
                 $("#price").html("￥"+data.bprice);
                 $("#total").html("总价:"+data.bnumber*data.bprice);
                 $("#num").val(data.bnumber);
+                localStorage.setItem("num",data.bnumber)
             }
         })
     }
@@ -250,6 +250,24 @@
             success:function (data) {
                 if (data>1){
                     queryById();
+                }
+            }
+        })
+    }
+    //点击下一步
+    function next() {
+        var bid = localStorage.getItem("bid");
+        var num = localStorage.getItem("num");
+        console.log(bid+"---"+num)
+        $.ajax({
+            type:"post",
+            url:"addOrdermore",
+            data:{"bid":bid,"ordint":num,"ordstatus":"等待付款"},
+            dataType:"json",
+            success:function (data) {
+                console.log(data);
+                if (data>0){
+                    location.href="confirm_order.html";
                 }
             }
         })
