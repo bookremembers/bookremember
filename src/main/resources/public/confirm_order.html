@@ -485,7 +485,7 @@
                                                          style="height: inherit; position: absolute; right: 0px; margin: 0px;"></div>
                                                 </div>
                                                 <div style="position: relative; height: 100%; width: 24%; padding-top: 80px; display: flex; justify-content: center;">
-                                                    <div style="font-size: 12px;">
+                                                    <div style="font-size: 12px;margin-top:-25px">
                                                         <div id="bookPage"></div>
                                                         <div style="margin-top: 10px;" id="explain"></div>
                                                     </div>
@@ -493,17 +493,17 @@
                                                          style="height: inherit; position: absolute; right: 0px;"></div>
                                                 </div>
                                                 <div style="position: relative; height: 100%; width: 15%; padding-top: 90px; display: flex; justify-content: center;">
-                                                    <div style="padding-bottom: 20px;" id="bookPrice"></div>
+                                                    <div style="padding-bottom: 20px;margin-top: -25px" id="bookPrice"></div>
                                                     <div class="ant-divider ant-divider-vertical"
                                                          style="height: inherit; position: absolute; right: 0px; margin: 0px;"></div>
                                                 </div>
                                                 <div style="position: relative; height: 100%; width: 15%; padding-top: 90px; display: flex; justify-content: center;">
-                                                    <div style="padding-bottom: 20px;" id="bookNum"></div>
+                                                    <div style="padding-bottom: 20px;margin-top:-25px" id="bookNum"></div>
                                                     <div class="ant-divider ant-divider-vertical"
                                                          style="height: inherit; position: absolute; right: 0px; margin: 0px;"></div>
                                                 </div>
                                                 <div style="height: 100%; width: 15%; padding-top: 90px; display: flex; justify-content: center;">
-                                                    <div style="padding-bottom: 20px;" id="total"></div>
+                                                    <div style="padding-bottom: 20px;margin-top:-25px" id="total"></div>
                                                 </div>
                                             </div>
                                         </li>
@@ -551,7 +551,7 @@
                         </div>
                         <div style="text-align: right; margin: 20px 0px 20px 20px;">
                             <button type="button" class="ant-btn ant-btn-primary"
-                                    style="margin: 0px; padding: 2px 20px;" id="pay"><span>去支付</span></button>
+                                    style="margin: 0px; padding: 2px 20px;" id="pay"><span>免密支付</span></button>
                         </div>
                     </div>
                     <div class="ant-divider ant-divider-horizontal" style="height: 1px;"></div>
@@ -612,7 +612,8 @@ $(()=>{
             $("#pro_price").html("￥"+data.bprice);
             $("#kuaidiMoney").html("￥8.00")
             $("#total").html("总价:"+data.bnumber*data.bprice);
-            $("#sum").html("￥"+data.bnumber*data.bprice+8);
+            var num = parseInt(data.bnumber*data.bprice)+8;
+            $("#sum").html("￥"+num);
             $("#bookNum").html(data.bnumber);
         }
     })
@@ -632,6 +633,8 @@ $(()=>{
         if(box==false && name==null || phone==null){
             layer.msg("请填写联系人信息",{icon:2,time:1000})
         }
+        // layer.msg("支付成功",{icon:1,time:1000})
+        // location.href="order.html";
     })
     //根据地址id查询信息
     function queryAddressById() {
@@ -649,7 +652,6 @@ $(()=>{
                 temp+=`
                    <div class="ant-col ant-col-6"style="padding-left: 10px; padding-right: 10px;display: none" id="addShouHuoAddress" >
                                                 <div class="ant-list-item">
-
                                                     <div>
                                                         <div style="position: relative; height: 130px; border: 1px solid rgb(51, 51, 51); border-radius: 4px; margin-top: 10px; margin-right: 5px; padding: 10px 16px; color: rgb(51, 51, 51); font-size: 12px;">
 

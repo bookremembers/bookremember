@@ -75,10 +75,10 @@
     <link href="css/shiqimini.css" rel="stylesheet">
 </head>
 <body>
-<script>
-    setHeaderStyle();
-    showLoading("加载电子书", true);
-</script>
+<!--<script>-->
+    <!--setHeaderStyle();-->
+    <!--showLoading("加载电子书", true);-->
+<!--</script>-->
 
 <div class="container-fluid" style="overflow: hidden">
     <div class="row header" style="box-shadow: rgb(238, 238, 238) 0px 10px 10px; margin-bottom: 15px; display: block;">
@@ -841,6 +841,7 @@
 <script src="js/jquery-3.2.1.js"></script>
 <script>
     function print_book(bid) {
+
         localStorage.setItem("bid",bid);
         location.href = "order_more.html";
     }
