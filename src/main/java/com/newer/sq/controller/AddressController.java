@@ -7,20 +7,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 public class AddressController {
     @Autowired
     private AddressService addressService;
-//根据地址id查询信息
-    @RequestMapping("queryAddressById")
-    public Address queryAddressById(@RequestParam("addressid")int addressid){
-        Address address = addressService.queryAddressById(addressid);
-        return address;
+
+    //根据用户id查询地址
+    @RequestMapping("queryAddressByUid")
+    public List<Address> queryAddressByUid(@RequestParam("uid") int uid) {
+        return addressService.queryAddressByUid(uid);
     }
+
     //根据地址id删除信息
     @RequestMapping("deleteByAddressId")
-    public int deleteByAddressId(@RequestParam("addressid")int addressid){
+    public int deleteByAddressId(@RequestParam("addressid") int addressid) {
         int count = addressService.deleteByAddressId(addressid);
         return count;
+    }
+
+    /*添加地址*/
+    @RequestMapping("addAddress")
+    public int addAddress(Address address) {
+        return addressService.addAddress(address);
     }
 }

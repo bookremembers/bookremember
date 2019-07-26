@@ -5,19 +5,38 @@ import java.io.Serializable;
 public class Address implements Serializable {
     private Integer addressid;
     private Integer uid;
-    private Integer provinceid;
-    private Integer cityid;
-    private Integer areaid;
+    private String provinceid;
+    private String cityid;
+    private String areaid;
     private String aname;
     private String amore;
     private Integer code;
     private String phone;
+    private Integer atype;
+    private String provinceName;
+    private String cityName;
+    private String areaName;
 
     public Address() {
     }
 
-    public Address(Integer addressid, Integer uid, Integer provinceid, Integer cityid, Integer areaid, String aname, String amore, Integer code, String phone) {
+    public Address(Integer addressid, Integer uid, String provinceid, String cityid, String areaid, String aname, String amore, Integer code, String phone, Integer atype, String provinceName, String cityName, String areaName) {
         this.addressid = addressid;
+        this.uid = uid;
+        this.provinceid = provinceid;
+        this.cityid = cityid;
+        this.areaid = areaid;
+        this.aname = aname;
+        this.amore = amore;
+        this.code = code;
+        this.phone = phone;
+        this.atype = atype;
+        this.provinceName = provinceName;
+        this.cityName = cityName;
+        this.areaName = areaName;
+    }
+
+    public Address(Integer uid, String provinceid, String cityid, String areaid, String aname, String amore, Integer code, String phone) {
         this.uid = uid;
         this.provinceid = provinceid;
         this.cityid = cityid;
@@ -44,27 +63,27 @@ public class Address implements Serializable {
         this.uid = uid;
     }
 
-    public Integer getProvinceid() {
+    public String getProvinceid() {
         return provinceid;
     }
 
-    public void setProvinceid(Integer provinceid) {
+    public void setProvinceid(String provinceid) {
         this.provinceid = provinceid;
     }
 
-    public Integer getCityid() {
+    public String getCityid() {
         return cityid;
     }
 
-    public void setCityid(Integer cityid) {
+    public void setCityid(String cityid) {
         this.cityid = cityid;
     }
 
-    public Integer getAreaid() {
+    public String getAreaid() {
         return areaid;
     }
 
-    public void setAreaid(Integer areaid) {
+    public void setAreaid(String areaid) {
         this.areaid = areaid;
     }
 
@@ -98,6 +117,38 @@ public class Address implements Serializable {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public Integer getAtype() {
+        return atype;
+    }
+
+    public void setAtype(Integer atype) {
+        this.atype = atype;
+    }
+
+    public String getProvinceName() {
+        return provinceName;
+    }
+
+    public void setProvinceName(String provinceName) {
+        this.provinceName = provinceName;
+    }
+
+    public String getCityName() {
+        return cityName;
+    }
+
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
+    }
+
+    public String getAreaName() {
+        return areaName;
+    }
+
+    public void setAreaName(String areaName) {
+        this.areaName = areaName;
     }
 
     @Override

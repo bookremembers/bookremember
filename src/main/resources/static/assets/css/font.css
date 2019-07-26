@@ -1,0 +1,80 @@
+@font-face {
+    font-family: 'DFPWaWaW5-GB';
+    src: url('https://static.shiqichuban.com/assets/fonts/WaWaTi/WaWaTi.eot');
+    src: url('https://static.shiqichuban.com/assets/fonts/WaWaTi/WaWaTi.eot?#font-spider') format('embedded-opentype'),
+    url('https://static.shiqichuban.com/assets/fonts/WaWaTi/WaWaTi-2.ttf') format('truetype'),
+    url('https://static.shiqichuban.com/assets/fonts/WaWaTi/WaWaTi.woff') format('woff'),
+    url('https://static.shiqichuban.com/assets/fonts/WaWaTi/WaWaTi.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SimSun';
+    src: url('https://static.shiqichuban.com/assets/fonts/SongTi/SongTi.eot');
+    src: url('https://static.shiqichuban.com/assets/fonts/SongTi/SongTi.eot?#font-spider') format('embedded-opentype'),
+    url('https://static.shiqichuban.com/assets/fonts/SongTi/SongTi.ttf') format('truetype'),
+    url('https://static.shiqichuban.com/assets/fonts/SongTi/SongTi.woff') format('woff'),
+    url('https://static.shiqichuban.com/assets/fonts/SongTi/SongTi.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SimHei';
+    src: url('https://static.shiqichuban.com/assets/fonts/HeiTi/HeiTi.eot');
+    src: url('https://static.shiqichuban.com/assets/fonts/HeiTi/HeiTi.eot?#font-spider') format('embedded-opentype'),
+    url('https://static.shiqichuban.com/assets/fonts/HeiTi/HeiTi.ttf') format('truetype'),
+    url('https://static.shiqichuban.com/assets/fonts/HeiTi/HeiTi.woff') format('woff'),
+    url('https://static.shiqichuban.com/assets/fonts/HeiTi/HeiTi.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'KaiTi';
+    src: url('https://static.shiqichuban.com/assets/fonts/KaiTi/KaiTi-2.eot');
+    src: url('https://static.shiqichuban.com/assets/fonts/KaiTi/KaiTi-2.eot?#font-spider') format('embedded-opentype'),
+    url('https://static.shiqichuban.com/assets/fonts/KaiTi/KaiTi-2.ttf') format('truetype'),
+    url('https://static.shiqichuban.com/assets/fonts/KaiTi/KaiTi-2.woff') format('woff'),
+    url('https://static.shiqichuban.com/assets/fonts/KaiTi/KaiTi-2.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PingFang SC';
+    src: url('https://static.shiqichuban.com/assets/fonts/PingFang/PingFang.eot');
+    src: url('https://static.shiqichuban.com/assets/fonts/PingFang/PingFang.eot?#font-spider') format('embedded-opentype'),
+    url('https://static.shiqichuban.com/assets/fonts/PingFang/PingFang.ttf') format('truetype'),
+    url('https://static.shiqichuban.com/assets/fonts/PingFang/PingFang.woff') format('woff'),
+    url('https://static.shiqichuban.com/assets/fonts/PingFang/PingFang.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: '思源黑体 Light';
+    src: url('https://static.shiqichuban.com/assets/fonts/SourceHanSansSC-Light.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: '思源黑体 Regular';
+    src: url('https://static.shiqichuban.com/assets/fonts/SourceHanSansSC-Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: '思源宋体 medium';
+    src: url('https://static.shiqichuban.com/assets/fonts/SourceHanSerifSC-Medium.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FZQingKeBenYueSongS-R-GB';
+    src: url('https://static.shiqichuban.com/assets/fonts/FZQingKeYueSong_GB_1.ttf'),
+    url('https://static.shiqichuban.com/assets/fonts/FZQingKeYueSong_GB_1.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
