@@ -18,11 +18,12 @@ public class Books implements Serializable {
     private String bway;
     private Integer bnumber;
     private Date bdate;
+    private Integer Artstatus;
 
     public Books() {
     }
 
-    public Books(Integer bid, Integer uid, Integer artid, String bname, String bookurl, Double bprice, Integer bpage, String bsize, String bway, Integer bnumber, Date bdate) {
+    public Books(Integer bid, Integer uid, Integer artid, String bname, String bookurl, Double bprice, Integer bpage, String bsize, String bway, Integer bnumber, Date bdate,Integer Artstatus) {
         this.bid = bid;
         this.uid = uid;
         this.artid = artid;
@@ -34,6 +35,7 @@ public class Books implements Serializable {
         this.bway = bway;
         this.bnumber = bnumber;
         this.bdate = bdate;
+        this.Artstatus=Artstatus;
     }
 
     public Integer getBid() {
@@ -124,6 +126,14 @@ public class Books implements Serializable {
         this.bdate = bdate;
     }
 
+    public Integer getArtstatus() {
+        return Artstatus;
+    }
+
+    public void setArtstatus(Integer artstatus) {
+        Artstatus = artstatus;
+    }
+
     @Override
     public String toString() {
         return "Books{" +
@@ -138,6 +148,7 @@ public class Books implements Serializable {
                 ", bway='" + bway + '\'' +
                 ", bnumber=" + bnumber +
                 ", bdate=" + bdate +
+                ", Artstatus=" + Artstatus +
                 '}';
     }
 }

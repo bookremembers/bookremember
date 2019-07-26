@@ -12,10 +12,11 @@ public class Sqrecycle  {
    private String Artmusic	;//音乐
    private Date Artdate	;//发布时间
     private String Artconten;//文章内容
+    private Date Artdeledata;//删除时间
     public Sqrecycle() {
     }
 
-    public Sqrecycle(Integer rid, Integer uid, Integer artid, Integer bid, String artag, String artphotoPath, String artmusic, Date artdate, String artconten) {
+    public Sqrecycle(Integer rid, Integer uid, Integer artid, Integer bid, String artag, String artphotoPath, String artmusic, Date artdate, String artconten, Date artdeledata) {
         Rid = rid;
         Uid = uid;
         Artid = artid;
@@ -25,6 +26,7 @@ public class Sqrecycle  {
         Artmusic = artmusic;
         Artdate = artdate;
         Artconten = artconten;
+        Artdeledata = artdeledata;
     }
 
     public Integer getRid() {
@@ -99,6 +101,14 @@ public class Sqrecycle  {
         Artconten = artconten;
     }
 
+    public Date getArtdeledata() {
+        return Artdeledata;
+    }
+
+    public void setArtdeledata(Date artdeledata) {
+        Artdeledata = artdeledata;
+    }
+
     @Override
     public String toString() {
         return "Sqrecycle{" +
@@ -111,6 +121,7 @@ public class Sqrecycle  {
                 ", Artmusic='" + Artmusic + '\'' +
                 ", Artdate=" + Artdate +
                 ", Artconten='" + Artconten + '\'' +
+                ", Artdeledata=" + Artdeledata +
                 '}';
     }
 }
