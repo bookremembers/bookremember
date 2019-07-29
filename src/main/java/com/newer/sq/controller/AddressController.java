@@ -1,3 +1,4 @@
+/*
 package com.newer.sq.controller;
 
 import com.newer.sq.domain.Address;
@@ -33,3 +34,4 @@ public class AddressController {
         return addressService.addAddress(address);
     }
 }
+*/

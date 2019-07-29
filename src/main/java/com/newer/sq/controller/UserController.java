@@ -1,3 +1,4 @@
+/*
 package com.newer.sq.controller;
 
 import com.newer.sq.domain.User;
@@ -32,7 +33,9 @@ public class UserController {
         return count;
     }
 
-    /*登录成功，把登录用户存到session中*/
+    */
+/*登录成功，把登录用户存到session中*//*
+
     @RequestMapping("queryByUsernamePwd")
     public User queryByUsernamePwd(@RequestParam("username") String username, @RequestParam("password") String password,HttpSession session) {
         User user = userService.queryByUsernamePwd(username, password);
@@ -40,10 +43,14 @@ public class UserController {
         return user;
     }
 
-    /*获取验证码*/
+    */
+/*获取验证码*//*
+
     @RequestMapping("getCode")
     public ResponseEntity<?> getCode(@RequestParam("username") String username, @RequestParam("phone") String phone, HttpSession session) {
-        /*随机一个验证码发送到前端*/
+        */
+/*随机一个验证码发送到前端*//*
+
         String codeNum = "";
             int[] numbers = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
             Random random = new Random();
@@ -56,7 +63,9 @@ public class UserController {
         return new ResponseEntity<>(codeNum, HttpStatus.OK);
     }
 
-    /*验证验证码*/
+    */
+/*验证验证码*//*
+
     @RequestMapping("submitCode")
     public ResponseEntity<?> submitCode(@RequestParam("username") String username, @RequestParam("phone") String phone, @RequestParam("code") String code,HttpSession session) {
         User user=userService.getCode(username, phone);
@@ -81,7 +90,9 @@ public class UserController {
         return new ResponseEntity<>(map,HttpStatus.OK);
     }
 
-    /*通过用户id修改密码*/
+    */
+/*通过用户id修改密码*//*
+
     @RequestMapping("updPwdById")
     public Integer updPwdById(@RequestParam("newPwd") String newPwd,HttpSession session){
         User user=(User) session.getAttribute("user");
@@ -89,17 +100,23 @@ public class UserController {
         return userService.updPwdById(user.getUid(),newPwd);
     }
 
-    /*session拿到登录用户对象返回页面*/
+    */
+/*session拿到登录用户对象返回页面*//*
+
     @RequestMapping("queryLoginUser")
     public ResponseEntity<?> queryLoginUser(HttpSession session){
         User loginUser=(User) session.getAttribute("loginUser");
-        /*修改信息后用户拿到的信息*/
+        */
+/*修改信息后用户拿到的信息*//*
+
         User user=userService.selectById(loginUser.getUid());
         session.setAttribute("loginUser",user);
         return new ResponseEntity<>(user,HttpStatus.OK);
     }
 
-    /*根据id修改用户名*/
+    */
+/*根据id修改用户名*//*
+
     @RequestMapping("updName")
     public int updName(@RequestParam("newName")String newName,@RequestParam("uid") Integer uid){
         System.out.println(newName+"---"+uid);
@@ -109,3 +126,4 @@ public class UserController {
     //@RequestMapping("province")
 
 }
+*/

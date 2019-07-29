@@ -1,3 +1,4 @@
+/*
 package com.newer.sq.controller;
 
 import com.newer.sq.domain.Book;
@@ -28,3 +29,4 @@ public class BookController {
         return list;
     }
 }
+*/
