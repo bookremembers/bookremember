@@ -11,20 +11,49 @@
     <link href="dist/summernote.css" rel="stylesheet">
     <!--播放器样式-->
     <link href="css/player.css" rel="stylesheet" type="text/css" />
-
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-3.2.1.js"></script>
     <script src="dist/summernote.js"></script>
-    <script src="dist/lang/summernote-zh-CN.js"></script>    <!-- 中文-->
+    <script src="dist/lang/summernote-zh-CN.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- 中文-->
     <style>
-        .a{ width: 820px; margin-left: auto; margin-right: auto; }
+        .m{ width: 727px; margin-left: auto; margin-right: auto; }
     </style>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/template.css">
     <link rel="stylesheet" href="css/font.css">
     <link href="css/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css">
     <link href="css/cropper.min.css" rel="stylesheet" type="text/css">
-
+    <!--<script>-->
+    <!--var csrf = 'qThTzn9dsGWMeusr7GBb0D2iMhxd5sgEP2vGR5XX';-->
+    <!--</script>-->
+    <!--<script>-->
+    <!--var data = {-->
+    <!--"level": parseInt('4'),   // 0为无限，1为非会员，2为普通会员，3为高级会员-->
+    <!--"level_desc": '非会员',   // 会员描述： 普通会员、高级会员-->
+    <!--"level_icon": '',          // 过期时间，自1970年以来的秒数-->
+    <!--"expire_at": '0',          // 过期时间，自1970年以来的秒数-->
+    <!--"rights": {-->
+    <!--"is_top": parseInt('0'),-->
+    <!--"images": parseInt('5'),  // 文章中上传的图片数量上限-->
+    <!--"audios": parseInt('1'),  // 文章中上传的音频数量上限-->
+    <!--"audio_duration": parseInt('600'),  // 文章中上传的单个音频时长上限-->
+    <!--"videos": parseInt('1'),  // 文章中上传的视频数量上限-->
+    <!--"video_duration": parseInt('30'),  // 文章中上传的单个视频时长实现- -->
+    <!--"pdfs": parseInt('0'),    // 赠送的免费的pdf下载次数-->
+    <!--"more_font": parseInt('0'),   // 能否用会员字体，0表示不能用，非0可用-->
+    <!--}-->
+    <!--};-->
+    <!--try {-->
+    <!--window.sessionStorage.setItem('user_member_level', JSON.stringify(data));-->
+    <!--} catch (e) {-->
+    <!--window.sessionStorage.clear();-->
+    <!--window.sessionStorage.setItem('user_member_level', JSON.stringify(data));-->
+    <!--}-->
+    <!--</script>-->
     <link rel="stylesheet" type="text/css" href="css/response.css">
     <style type="text/css">
         .public_head span {
@@ -61,13 +90,13 @@
             border: 5px solid #333;
         }
     </style>
-
+    <!--<script src="js/out_config"></script>-->
     <link href="css/default.css" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/emotion.css">
     <style type="text/css">#udesk_pop_dialog .emoji {
         background-image: url("https://shiqi.udesk.cn/im_client/images/im-emoji-big-1.png")
     }</style>
-
+    <!--<script src="js/free"></script>-->
 </head>
 <body>
 <div class="container-fluid" style="overflow: hidden">
@@ -402,24 +431,46 @@
                 <div class="col-xs-12 col-sm-8 right-board">
                     <div id="add_book"
                          style="position:relative;height:50px;width:100%;padding:0 15px;background:#fff;">
-                        <span class="books_title" style="display:inline-block;border-bottom: 2px dotted #ccc;width:100%;line-height: 50px;color:#666; height: 50px;font-size: 18px;cursor:pointer;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">添加至书册</span>
+                        <span onclick="addbook()" class="books_title" data-toggle="modal" data-target="#myModal" style="display:inline-block;border-bottom: 2px dotted #ccc;width:100%;line-height: 50px;color:#666; height: 50px;font-size: 18px;cursor:pointer;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">添加至书册</span>
                         <span style="position:absolute;right:0;top:16px;text-align:right;margin-right:20px;width:10%">
-                        <img
-                            src="images/add_bookto.icon.png"></span>
+                        <img src="images/add_bookto.icon.png">
+                    </span>
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="book_des" style="position:absolute;left: 0;top:63.1px;right: 0;width: 742px;height: 494px;padding:20px 30px 0;border-radius:8px ;margin: 0 auto;background: #fefcfd;">
+                                        <div class="book_title" style="height: 50px;">
+                                            <span style="float: left;margin-top: 20px;width: 5px;height: 14px;background-color: #333;"></span>
+                                            <h4 style="float: left;height: 50px;line-height: 50px;color: #333;font-size: 18px;font-weight:bold;margin: 0;margin-left: 10px;">可将文章添加到以下书中</h4>
+                                        </div>
+                                        <div id="real" class="book_item" style="width: 100%;height:344px;padding-left:14px;overflow: auto;">
+
+
+                                        </div>
+                                        <div class="book_footer" style="overflow: hidden;border-top:1px solid #dfddde;margin: 0 -30px;padding: 0 30px;">
+                                            <span data-dismiss="modal" class="discard" style="float:left;width: 50%;text-align:center;font-size:18px;color:#656565;font-weight: bold;line-height:78px;height:78px;cursor: pointer;margin-right:-1px;border-right: 1px solid #dfddde;">取消</span>
+                                            <span onclick="adbook()" class="ensure" style="float:left;width: 50%;text-align:center;font-size:18px;color: #101010;font-weight: bold;line-height:78px;height:78px;cursor: pointer;">确定</span>
+                                        </div>
+                                    </div>
+                                </div><!-- /.modal-content -->
+                            </div><!-- /.modal -->
+                        </div>
                     </div>
+
+
                     <div id="ke-title" style="position:relative"><input id="title-input" placeholder="点击输入标题"
                                                                         style="height:50px;"><label
                             id="title_notice"
                             style="position:absolute;right:15px;bottom:5px;font-size: 12px;color:#ccc">还可以输入20个字符</label>
                     </div>
                     <!-- 编辑器 start -->
-                    <div class="a">
+                    <div class="m">
                         <div class="summernote"></div>
                     </div>
                     <div style="border-top:1px dotted #ccc ;clear: both;">
-                        <!--<div class="sq_btn sq_btn_black submit_btn" style="margin: 5px;float:right;">-->
-                            <button id="add" class="sq_btn sq_btn_black submit_btn" style="margin: 5px;float:right;">保存文章</button>
-                        <!--</div>-->
+                        <div class="sq_btn sq_btn_black submit_btn" style="margin: 5px;float:right;">
+                            保存文章
+                        </div>
                     </div>
                     <!-- 编辑器 end -->
                     <div style="margin-top:20px;width:100%;height:36px;position:relative">
@@ -480,7 +531,36 @@
                     </div>
                     <!--搜索框 end -->
                     <!-- 文章列表 start -->
-                    <div clas="col-xs-12" id="article">
+                    <div clas="col-xs-12">
+                        <div id="artWrap117162890" class=
+                                style="padding: 15px 25px 5px;overflow: hidden;background-color: white ;border-radius: 5px ;border
+                        <div class="col-xs-12 article_title"
+                             style="overflow: hidden;padding: 0 20px !important;margin-top: 20px">
+                            <a href="https://www.shiqichuban.com/portal/article/detail/117162890">
+                                <h1 style="font-family: 宋体;font-weight: normal">2019年07月12日</h1>
+                            </a>
+                            <i class="m">/</i>
+                            <span class="dataBar">
+                                <span>2019-07-12 </span>
+                                <span><i class="icon iconSun"></i></span>
+                            </span>
+                            <dl class="col-xs-12" style="padding-left:0 !important">
+                                <dd>
+                                        <span class="sq_tag"
+                                              style="margin-left:0;margin-top: 5px;margin-right: 5px">拾柒书</span>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="col-xs-12 article_content" style="color: #8d8d8d;padding: 0 20px !important;">
+                            <div class="col-xs-12"
+                                 style="text-align: justify;overflow: hidden;word-wrap: break-word;padding:0">SDF
+                                A是的爱的afghhlioafghhlio9o&nbsp;
+                            </div>
+                        </div>
+                        <div class="col-xs-12 article_content"
+                             style="padding: 10px 25px 10px !important;text-align: right">
+                        </div>
+                    </div>
                     <div id="artWrap117162856" class="col-xs-12" weather="Sun" time="2019-07-12 16:19:37"
                          style="padding: 15px 25px 5px;overflow: hidden;background-color: white ;border-radius: 5px ;border: 1px solid #c8c8c8;margin-top: 10px">
                         <div class="col-xs-12 article_title"
@@ -510,124 +590,259 @@
                              style="padding: 10px 25px 10px !important;text-align: right">
                         </div>
                     </div>
-
                     <div class="col-xs-12 article_content"
                          style="padding: 10px 25px 10px !important;text-align: right">
                     </div>
                 </div>
-                    <div class="col-xs-12"
-                         style="margin: 10px 0;background-color: white ;padding:10px 5px ;border-radius: 5px;border :1px solid #ccc">
-                        <div class="col-xs-12 col-sm-8 pagination-container"></div>
-                        <div class="col-xs-12 col-sm-4 ">
-                            <input id="goPageBtn" type="button"
-                                   style="outline:none;text-align:center;float: right;width: 30%;height:30px;background-color:white;border-top-right-radius: 5px;border-bottom-right-radius: 5px;border:1px solid #ccc"
-                                   value="前往"/>
-                            <input id="pageInput" type="tel"
-                                   style="outline:none;text-align: center;float: right;width: 70%;line-height:30px;height:30px;border-top-left-radius: 5px;border-bottom-left-radius: 5px;border:1px solid #ccc"/>
-                        </div>
-                    </div>
                 <div class="col-xs-12 article_content"
                      style="padding: 10px 25px 10px !important;text-align: right">
                 </div>
             </div>
-
         </div>
     </div>
     <!-- 右侧边栏 start -->
 </div>
+<div class="col-sm-12 pic-bg-ul" style="position: fixed;top:0;left:0;width:100%;height:100%;display: none">
+    <div class="pic-bg-mask"
+         style="position:absolute;top:0;left:0;width:100%;height:100%;z-index: 1;"></div>
+    <div class="col-sm-12"
+         style="position:absolute;bottom:0;left:0 ;padding-top:20px;background-color: rgba(0,0,0,0.7);z-index: 2">
+        <ul class="col-sm-10 col-sm-offset-1 " style="padding:5px 5px !important;">
+            <li style="list-style: none;padding:5px 5px !important" class="col-xs-4 bg-select-item"
+                data="0"><img style="width:100%;" src="images/sq_01.jpg"></li>
+            <li style="list-style: none;padding:5px 5px !important" class="col-xs-4 bg-select-item"
+                data="0"><img style="width:100%;" src="images/sq_02.jpg"></li>
+            <li style="list-style: none;padding:5px 5px !important" class="col-xs-4 bg-select-item"
+                data="0"><img style="width:100%;" src="images/sq_03.jpg"></li>
+            <li style="list-style: none;padding:5px 5px !important" class="col-xs-4 bg-select-item"
+                data="0"><img style="width:100%;" src="images/sq_04.jpg"></li>
+            <li style="list-style: none;padding:5px 5px !important" class="col-xs-4 bg-select-item"
+                data="0"><img style="width:100%;" src="images/sq_05.jpg"></li>
+            <li style="list-style: none;padding:5px 5px !important" class="col-xs-4 bg-select-item"
+                data="0"><img style="width:100%;" src="images/sq_06.jpg"></li>
+        </ul>
+    </div>
 </div>
-<!--富文本上传图片js开始-->
-<script>
-    alert("-----");
-    $('#summernote').summernote({
-        placeholder: '千古',
-        height: 400,
-        lang: 'zh-CN',
-        focus: true,
-        callbacks:{  //回调函数，覆盖上传方法onImageUpload
-            onImageUpload: function(files) {
-                sendFile(files[0]);
-            }
-        }
-    });
-    function sendFile(files) {
-        data = new FormData();
-        data.append("files", files);
-        $.ajax({
-            data: data,
-            dataType: 'json',
-            type: "POST",
-            url: "/img",  //上传路径
-            cache: false,
-            contentType: false,
-            processData: false,
-            success: function(data) {
-                console.log(data);
-                $('#summernote').summernote('insertImage', data.filename);
-            },
-            error: function(XMLHttpRequest, textStatus, errorThrown) {
-                alert(XMLHttpRequest.status);
-                alert(XMLHttpRequest.readyState);
-                alert(textStatus);
-            }
-        });
-    }
-
-</script>
-<!--富文本上传图片js结束-->
-
-<!--富文本js开始-->
+</div>
+<div class="datetimepicker datetimepicker-dropdown-bottom-right dropdown-menu" style="left: 1198.39px; z-index: 1010;">
+    <div class="datetimepicker-minutes" style="display: none;">
+        <table class=" table-condensed">
+            <thead>
+            <tr>
+                <th class="prev" style="visibility: visible;"> &lt;</th>
+                <th colspan="5" class="switch">18 七月 2019</th>
+                <th class="next" style="visibility: visible;"> &gt;</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td colspan="7">
+                    <fieldset class="minute">
+                        <legend>下午</legend>
+                        <span class="minute">1:00</span><span class="minute">1:05</span><span class="minute">1:10</span><span
+                            class="minute">1:15</span><span class="minute active">1:20</span><span
+                            class="minute">1:25</span><span class="minute">1:30</span><span
+                            class="minute">1:35</span><span class="minute">1:40</span><span
+                            class="minute">1:45</span><span class="minute">1:50</span><span class="minute">1:55</span>
+                    </fieldset>
+                </td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <th colspan="7" class="today">今天</th>
+            </tr>
+            <tr>
+                <th colspan="7" class="clear" style="display: none;">清除</th>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+    <div class="datetimepicker-hours" style="display: none;">
+        <table class=" table-condensed">
+            <thead>
+            <tr>
+                <th class="prev" style="visibility: visible;"> &lt;</th>
+                <th colspan="5" class="switch">18 七月 2019</th>
+                <th class="next" style="visibility: visible;"> &gt;</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td colspan="7">
+                    <fieldset class="hour">
+                        <legend>上午</legend>
+                        <span class="hour hour_am">12</span><span class="hour hour_am">1</span><span
+                            class="hour hour_am">2</span><span class="hour hour_am">3</span><span
+                            class="hour hour_am">4</span><span class="hour hour_am">5</span><span
+                            class="hour hour_am">6</span><span class="hour hour_am">7</span><span
+                            class="hour hour_am">8</span><span class="hour hour_am">9</span><span class="hour hour_am">10</span><span
+                            class="hour hour_am">11</span></fieldset>
+                    <fieldset class="hour">
+                        <legend>下午</legend>
+                        <span class="hour hour_pm">12</span><span class="hour active hour_pm">1</span><span
+                            class="hour hour_pm">2</span><span class="hour hour_pm">3</span><span
+                            class="hour hour_pm">4</span><span class="hour hour_pm">5</span><span
+                            class="hour hour_pm">6</span><span class="hour hour_pm">7</span><span
+                            class="hour hour_pm">8</span><span class="hour hour_pm">9</span><span class="hour hour_pm">10</span><span
+                            class="hour hour_pm">11</span></fieldset>
+                </td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <th colspan="7" class="today">今天</th>
+            </tr>
+            <tr>
+                <th colspan="7" class="clear" style="display: none;">清除</th>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+    <div class="datetimepicker-days" style="display: block;">
+        <table class=" table-condensed">
+            <thead>
+            <tr>
+                <th class="prev" style="visibility: visible;"> &lt;</th>
+                <th colspan="5" class="switch">七月 2019</th>
+                <th class="next" style="visibility: visible;"> &gt;</th>
+            </tr>
+            <tr>
+                <th class="dow">一</th>
+                <th class="dow">二</th>
+                <th class="dow">三</th>
+                <th class="dow">四</th>
+                <th class="dow">五</th>
+                <th class="dow">六</th>
+                <th class="dow">日</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="day old">24</td>
+                <td class="day old">25</td>
+                <td class="day old">26</td>
+                <td class="day old">27</td>
+                <td class="day old">28</td>
+                <td class="day old">29</td>
+                <td class="day old">30</td>
+            </tr>
+            <tr>
+                <td class="day">1</td>
+                <td class="day">2</td>
+                <td class="day">3</td>
+                <td class="day">4</td>
+                <td class="day">5</td>
+                <td class="day">6</td>
+                <td class="day">7</td>
+            </tr>
+            <tr>
+                <td class="day">8</td>
+                <td class="day">9</td>
+                <td class="day">10</td>
+                <td class="day">11</td>
+                <td class="day">12</td>
+                <td class="day">13</td>
+                <td class="day">14</td>
+            </tr>
+            <tr>
+                <td class="day">15</td>
+                <td class="day">16</td>
+                <td class="day">17</td>
+                <td class="day today active">18</td>
+                <td class="day">19</td>
+                <td class="day">20</td>
+                <td class="day">21</td>
+            </tr>
+            <tr>
+                <td class="day">22</td>
+                <td class="day">23</td>
+                <td class="day">24</td>
+                <td class="day">25</td>
+                <td class="day">26</td>
+                <td class="day">27</td>
+                <td class="day">28</td>
+            </tr>
+            <tr>
+                <td class="day">29</td>
+                <td class="day">30</td>
+                <td class="day">31</td>
+                <td class="day new">1</td>
+                <td class="day new">2</td>
+                <td class="day new">3</td>
+                <td class="day new">4</td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <th colspan="7" class="today">今天</th>
+            </tr>
+            <tr>
+                <th colspan="7" class="clear" style="display: none;">清除</th>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+    <div class="datetimepicker-months" style="display: none;">
+        <table class="table-condensed">
+            <thead>
+            <tr>
+                <th class="prev" style="visibility: visible;"> &lt;</th>
+                <th colspan="5" class="switch">2019</th>
+                <th class="next" style="visibility: visible;"> &gt;</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td colspan="7"><span class="month">一</span><span class="month">二</span><span
+                        class="month">三</span><span class="month">四</span><span class="month">五</span><span
+                        class="month">六</span><span class="month active">七</span><span class="month">八</span><span
+                        class="month">九</span><span class="month">十</span><span class="month">十一</span><span
+                        class="month">十二</span></td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <th colspan="7" class="today">今天</th>
+            </tr>
+            <tr>
+                <th colspan="7" class="clear" style="display: none;">清除</th>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+    <div class="datetimepicker-years" style="display: none;">
+        <table class="table-condensed">
+            <thead>
+            <tr>
+                <th class="prev" style="visibility: visible;"> &lt;</th>
+                <th colspan="5" class="switch">2010-2019</th>
+                <th class="next" style="visibility: visible;"> &gt;</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td colspan="7"><span class="year old">2009</span><span class="year">2010</span><span
+                        class="year">2011</span><span class="year">2012</span><span class="year">2013</span><span
+                        class="year">2014</span><span class="year">2015</span><span class="year">2016</span><span
+                        class="year">2017</span><span class="year">2018</span><span class="year active">2019</span><span
+                        class="year old">2020</span></td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <th colspan="7" class="today">今天</th>
+            </tr>
+            <tr>
+                <th colspan="7" class="clear" style="display: none;">清除</th>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
 <script>
     $(()=>{
-        $("#add").click(()=>{
-            var text = $('.summernote').summernote('code');
-            var title = $("#title-input").val();
-            var time = new Date();
-            console.log("标题"+title);
-            console.log("内容"+text);
-            var fonts = text.split("");
-            console.log(fonts);
-            console.log("字数"+fonts.length);
-
-            var temp =`<div id="artWrap117162856" class="col-xs-12" weather="Sun" time="${time}"
-                         style="padding: 15px 25px 5px;overflow: hidden;background-color: white ;border-radius: 5px ;border: 1px solid #c8c8c8;margin-top: 10px">
-                        <div class="col-xs-12 article_title"
-                             style="overflow: hidden;padding: 0 20px !important;margin-top: 20px">
-                            <a href="https://www.shiqichuban.com/portal/article/detail/117162856">
-                                <h1 style="font-family: 宋体;font-weight: normal">${title}</h1>
-                            </a>
-                            <i class="m">/</i>
-                            <span class="dataBar">
-                                <span>${time}</span>
-                                <span><i class="icon iconSun"></i></span>
-                            </span>
-                            <dl class="col-xs-12" style="padding-left:0 !important">
-                                <dd>
-                                        <span class="sq_tag"
-                                              style="margin-left:0;margin-top: 5px;margin-right: 5px">拾柒书</span>
-                                </dd>
-                            </dl>
-                        </div>
-                        <div class="col-xs-12 article_content" style="color: #8d8d8d;padding: 0 20px !important;">
-                            <div class="col-xs-12"
-                                 style="text-align: justify;overflow: hidden;word-wrap: break-word;padding:0">
-                                ${text}
-                            </div>
-                        </div>
-                        <div class="col-xs-12 article_content"
-                             style="padding: 10px 25px 10px !important;text-align: right">
-                        </div>
-                    </div>`;
-            $("#article").append(temp);
-        })
-    })
-</script>
-<!--富文本js结束-->
-
-<script>
-    $(()=>{
-
-        var title_len = 20;
+        var title_len = 20;    //调用添加书册函数
         var reset_title_len = title_len;
         var maxLen = title_len;
         var cpLock = false;
@@ -701,6 +916,36 @@
             lang: 'zh-CN'
         });
     })
+    function addbook() {
+        $.ajax({
+            url:"selebook",
+            type:"post",
+            dataType:"json",
+            success:function (data) {
+           console.log(data)
+           var bk=``;
+           var t=``;
+           $.each(data,(index,obj)=>{
+               console.log(obj)
+               bk+=`
+
+                <div class="book_info" style="position: relative;width: 124px;padding:20px 0 0;margin-right:48px;float:left">
+                                                <img class="book_cover" style="width: 124px;height: 162px;border:1px solid #e9e9e9;box-shadow: -2px 0px 0px #ccc;border-bottom-right-radius: 10px;" src="${obj.bookurl}">
+                                                <span style="margin-top: 12px;font-size: 12px;color: #333;line-height: 44px;height: 44px; display: block; font-weight:bold;white-space: nowrap;text-overflow: ellipsis;overflow: hidden">${obj.bname}</span>
+
+                                                <input type="checkbox" name="" class="book_ischeck exclude" value="20980239" style="position: absolute; right: -10px; top: 10px; width: 20px; height: 20px; border: 1px solid;">
+                                            </div>
+               `;
+
+           })
+              var v=$("#real").append(bk);
+            }
+        })
+    }
+    function adbook() {
+
+    }
+    
 </script>
 </body>
 </html>

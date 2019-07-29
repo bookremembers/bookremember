@@ -19,8 +19,8 @@ public List<Article> selesqrecycle(Integer uid){
     return list;
 }
 
-    public List<Books> selesqbook(Integer uid){
-        return selectmapper.selesqbook(uid);
+    public List<Books> selesqbook(Integer uid,Integer art){
+        return selectmapper.selesqbook(uid,art);
     }
 
   public int delearticle(Integer artid){

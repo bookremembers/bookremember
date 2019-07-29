@@ -23,7 +23,13 @@ public class controller {
     }
     @RequestMapping("selesqbook")
     public List<Books> selesqbook(HttpSession session){
-        List<Books> recycle=sservice.selesqbook(123);
+        List<Books> recycle=sservice.selesqbook(1,1);
+        return recycle;
+    }
+
+    @RequestMapping("selebook")
+    public List<Books> selebook(HttpSession session){
+        List<Books> recycle=sservice.selesqbook(1,0);
         return recycle;
     }
 

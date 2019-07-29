@@ -16,8 +16,8 @@ public interface Selectmapper {
   @Select("select * from Sq_article where Uid=#{uid} and Artstatus=1")
     public List<Article> recycle(@Param("uid") Integer uid);
     //查询删除的书籍 绑定用户uid
-    @Select("select * from Sq_book  where Uid=#{uid} and Artstatus=1")
-    public List<Books> selesqbook(@Param("uid") Integer uid);
+    @Select("select * from Sq_book  where Uid=#{uid} and Artstatus=#{art}")
+    public List<Books> selesqbook(@Param("uid") Integer uid,@Param("art") Integer art);
     //根据id彻底删除文章
    @Delete("delete  from Sq_article where Artid=#{artid}")
     public int delearticle(@Param("artid") Integer artid);
@@ -31,4 +31,5 @@ public interface Selectmapper {
     //根据id修改被删除的文章 修改状态
     @Update("update Sq_book set Artstatus=0 where Bid=#{bid}")
     public int updabook(@Param("bid") Integer bid);
+
 }
