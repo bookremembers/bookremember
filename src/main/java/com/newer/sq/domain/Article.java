@@ -1,32 +1,22 @@
 package com.newer.sq.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.io.Serializable;
 import java.util.Date;
 
-public class Article {
-   private Integer Artid;//系统自动编码
-   private Integer Uid ;//	用户id
-   private Integer Artstatus;//状态（0-正常1-已删除）
-   private String Artitle;//文章标题
-   private String Arttext;//文章内容
-   private String Arttag;//文章标签
-   private String ArtphotoPath;//图片路径
-   private String Musicid;//音乐id
-   private Date ArtDate;//发布时间
-
-    public Article() {
-    }
-
-    public Article(Integer artid, Integer uid, Integer artstatus, String artitle, String arttext, String arttag, String artphotoPath, String musicid, Date artDate) {
-        Artid = artid;
-        Uid = uid;
-        Artstatus = artstatus;
-        Artitle = artitle;
-        Arttext = arttext;
-        Arttag = arttag;
-        ArtphotoPath = artphotoPath;
-        Musicid = musicid;
-        ArtDate = artDate;
-    }
+public class Article implements Serializable {
+    private Integer Artid;
+    private Integer Uid;
+    private Integer Artstatus;
+    private String Arttitle;
+    private String Arttext;
+    private String Arttag;
+    private String ArtphotoPath;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")
+    private Date ArtDate;
 
     public Integer getArtid() {
         return Artid;
@@ -52,12 +42,12 @@ public class Article {
         Artstatus = artstatus;
     }
 
-    public String getArtitle() {
-        return Artitle;
+    public String getArttitle() {
+        return Arttitle;
     }
 
-    public void setArtitle(String artitle) {
-        Artitle = artitle;
+    public void setArttitle(String arttitle) {
+        Arttitle = arttitle;
     }
 
     public String getArttext() {
@@ -84,14 +74,6 @@ public class Article {
         ArtphotoPath = artphotoPath;
     }
 
-    public String getMusicid() {
-        return Musicid;
-    }
-
-    public void setMusicid(String musicid) {
-        Musicid = musicid;
-    }
-
     public Date getArtDate() {
         return ArtDate;
     }
@@ -100,18 +82,17 @@ public class Article {
         ArtDate = artDate;
     }
 
-    @Override
-    public String toString() {
-        return "Article{" +
-                "Artid=" + Artid +
-                ", Uid=" + Uid +
-                ", Artstatus=" + Artstatus +
-                ", Artitle='" + Artitle + '\'' +
-                ", Arttext='" + Arttext + '\'' +
-                ", Arttag='" + Arttag + '\'' +
-                ", ArtphotoPath='" + ArtphotoPath + '\'' +
-                ", Musicid='" + Musicid + '\'' +
-                ", ArtDate=" + ArtDate +
-                '}';
+    public Article(Integer artid, Integer uid, Integer artstatus, String arttitle, String arttext, String arttag, String artphotoPath, Date artDate) {
+        Artid = artid;
+        Uid = uid;
+        Artstatus = artstatus;
+        Arttitle = arttitle;
+        Arttext = arttext;
+        Arttag = arttag;
+        ArtphotoPath = artphotoPath;
+        ArtDate = artDate;
+    }
+
+    public Article() {
     }
 }
