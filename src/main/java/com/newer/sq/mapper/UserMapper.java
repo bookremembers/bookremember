@@ -30,5 +30,6 @@ public interface UserMapper {
     /*根据id查询用户*/
     @Select("select * from sq_user where uid=#{uid}")
     public User selectById(@Param("uid") Integer uid);
+
 }
 

@@ -3,6 +3,7 @@ package com.newer.sq.domain;
 import java.io.Serializable;
 
 public class Area implements Serializable {
+
     private static final long serialVersionUID = -8475348070877195780L;
     private Integer areaId;
     private String areaCode;

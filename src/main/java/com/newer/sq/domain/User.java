@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class User implements Serializable {
+
     private static final long serialVersionUID = -7756421624061415332L;
     private Integer uid;
     private Integer Menberid;

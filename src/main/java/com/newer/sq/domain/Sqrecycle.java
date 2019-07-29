@@ -3,6 +3,7 @@ package com.newer.sq.domain;
 import java.util.Date;
 
 public class Sqrecycle  {
+
   private Integer  Rid	;//系统自动编码
   private Integer  Uid	;//用户id
   private Integer  Artid;//文章id

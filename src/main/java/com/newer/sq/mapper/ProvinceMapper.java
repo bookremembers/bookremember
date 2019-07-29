@@ -37,4 +37,5 @@ public interface ProvinceMapper {
             @Result(property = "areaName",column = "area_name")
     })
     public List<Area> allArea(@Param("cityCode") String cityCode);
+
 }

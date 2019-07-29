@@ -14,6 +14,7 @@ import java.util.List;
 
 @RestController
 public class ProvinceController {
+
     @Autowired
     private ProvinceService provinceService;
 

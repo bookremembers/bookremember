@@ -1,6 +1,6 @@
 package com.newer.sq.service;
 
-import com.newer.sq.domain.Book;
+import com.newer.sq.domain.Print;
 import com.newer.sq.mapper.BookMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,11 +11,11 @@ public class BookService {
     @Autowired
     private BookMapper bookMapper;
     //根据id查询信息
-    public Book queryBookById(int pid){
+    public Print queryBookById(int pid){
         return bookMapper.queryBookById(pid);
     }
     
-    public List<Book> queryBookAll(){
+    public List<Print> queryBookAll(){
         return bookMapper.queryBookAll();
     }
 }

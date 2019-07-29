@@ -11,6 +11,7 @@ import java.util.List;
 
 @Service
 public class Sservice {
+
     @Autowired
     private Selectmapper selectmapper;
 

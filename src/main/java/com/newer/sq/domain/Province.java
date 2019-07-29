@@ -3,6 +3,7 @@ package com.newer.sq.domain;
 import java.io.Serializable;
 
 public class Province implements Serializable {
+
     private static final long serialVersionUID = 6706827783855453103L;
     private Integer provinceId;
     private String provinceCode;

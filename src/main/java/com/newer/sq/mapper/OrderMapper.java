@@ -22,5 +22,4 @@ public interface OrderMapper {
     public int reduceNumberPrice();
 
 
-
 }

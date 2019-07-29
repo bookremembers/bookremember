@@ -7,6 +7,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class Article implements Serializable {
+
     private Integer Artid;
     private Integer Uid;
     private Integer Artstatus;
