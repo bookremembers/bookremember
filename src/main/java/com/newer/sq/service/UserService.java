@@ -4,38 +4,46 @@ import com.newer.sq.domain.User;
 import com.newer.sq.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class UserService {
     @Autowired
     private UserMapper userMapper;
 
-    public int regUser(String username,String password,String phone){
-        return userMapper.regUser(username,password,phone);
-
+    @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.DEFAULT, rollbackFor = Exception.class)
+    public int regUser(String username, String password, String phone) {
+        return userMapper.regUser(username, password, phone);
     }
 
-    public User queryByUsernamePwd(String username,String password){
-        return userMapper.queryByUsernamePwd(username,password);
+    @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.DEFAULT, rollbackFor = Exception.class)
+    public User queryByUsernamePwd(String username, String password) {
+        return userMapper.queryByUsernamePwd(username, password);
     }
 
     /*获取验证码*/
-    public User getCode(String username,String phone){
+    @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.DEFAULT, rollbackFor = Exception.class)
+    public User getCode(String username, String phone) {
         return userMapper.getCode(username, phone);
     }
 
     /*通过用户id修改密码*/
-    public Integer updPwdById(Integer uid,String newpwd){
+    @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.DEFAULT, rollbackFor = Exception.class)
+    public Integer updPwdById(Integer uid, String newpwd) {
         return userMapper.updPwdById(uid, newpwd);
     }
 
     /*根据用户id修改用户名*/
-    public Integer updNameById(Integer uid,String newName){
+    @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.DEFAULT, rollbackFor = Exception.class)
+    public Integer updNameById(Integer uid, String newName) {
         return userMapper.updNameById(uid, newName);
     }
 
     /*根据用户查询uid*/
-    public User selectById(Integer uid){
+    @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.DEFAULT, rollbackFor = Exception.class)
+    public User selectById(Integer uid) {
         return userMapper.selectById(uid);
     }
 }

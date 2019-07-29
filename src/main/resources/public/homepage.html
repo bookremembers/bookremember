@@ -297,7 +297,6 @@
     var i = 0;
     $(() => {
         var random = "";
-
         /**生成一个随机数**/
         function randomNum(min, max) {
             return Math.floor(Math.random() * (max - min) + min);
@@ -392,6 +391,7 @@
                     console.log(data);
                     if (data !=null) {
                         layer.msg("登录成功", {icon: 1, time: 1000});
+                        localStorage.setItem("loginUser",JSON.stringify(data));
                         location.href = "sy_index.html";
                     } else {
                         layer.msg("用户名或密码错误", {icon: 2, time: 1000});

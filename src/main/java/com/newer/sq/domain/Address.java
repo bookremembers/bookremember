@@ -47,6 +47,12 @@ public class Address implements Serializable {
         this.phone = phone;
     }
 
+    public Address(String provinceid, String cityid, String areaid) {
+        this.provinceid = provinceid;
+        this.cityid = cityid;
+        this.areaid = areaid;
+    }
+
     public Integer getAddressid() {
         return addressid;
     }
