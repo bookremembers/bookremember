@@ -65,4 +65,5 @@ public interface AddressMapper {
             @Result(property = "areaid", column = "AREA_CODE")
     })
     public Address saveUpdmgs(@Param("provinceName") String provinceName, @Param("cityName") String cityName, @Param("areaName") String areaName);
+
 }

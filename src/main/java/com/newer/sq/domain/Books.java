@@ -7,6 +7,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class Books implements Serializable {
+
     private Integer bid;
     private Integer uid;
     private Integer artid;

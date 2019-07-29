@@ -18,4 +18,5 @@ public interface ArticleMapper {
 
     @Select("select * from sq_article")
     public List<Article> selectAll();
+
 }

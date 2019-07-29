@@ -3,6 +3,7 @@ package com.newer.sq.domain;
 import java.io.Serializable;
 
 public class Address implements Serializable {
+
     private Integer addressid;
     private Integer uid;
     private String provinceid;

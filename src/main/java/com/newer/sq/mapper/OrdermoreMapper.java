@@ -25,5 +25,6 @@ public interface OrdermoreMapper {
     //根据id删除信息
     @Delete("delete from sq_order where ordid = #{ordid}")
     public int delOrdermore(@Param("ordid")int ordid);
+
 }
 

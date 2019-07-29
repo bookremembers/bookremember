@@ -31,4 +31,5 @@ public interface Selectmapper {
     //根据id修改被删除的文章 修改状态
     @Update("update Sq_book set Artstatus=0 where Bid=#{bid}")
     public int updabook(@Param("bid") Integer bid);
+
 }

@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class Ordermore implements Serializable {
+
     private Integer ordid;
     private Integer ordint;
     private Date orderdate;

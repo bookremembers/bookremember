@@ -14,7 +14,6 @@ import java.util.List;
 public class AddressService {
     @Autowired
     private AddressMapper addressMapper;
-
     /*根据用户id查询信息*/
     @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.DEFAULT, rollbackFor = Exception.class)
     public List<Address> queryAddressByUid(int uid) {

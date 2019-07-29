@@ -3,6 +3,7 @@ package com.newer.sq.domain;
 import java.io.Serializable;
 
 public class City implements Serializable {
+
     private static final long serialVersionUID = 6398886745938938063L;
     private Integer cityId;
     private String cityCode;

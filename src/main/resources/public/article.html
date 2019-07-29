@@ -14,10 +14,8 @@
     <link href="css/jquery.cropbox.css" rel="stylesheet" type="text/css">
     <link href="css/jquery-ui.css" rel="stylesheet" type="text/css">
     <link href="css/cropper.min.css" rel="stylesheet" type="text/css">
-
-    <script>
-        var csrf = 'ugWCGaddUHwyBKtUBVFBOfJH57pmd7kCgIQ1vuSu';
-    </script>
+    <script src="js/PreviewBookManager.js"></script>
+    <script src="js/PreviewViewController.js"></script>
 
     <style>
         html {
@@ -75,10 +73,6 @@
     <link href="css/shiqimini.css" rel="stylesheet">
 </head>
 <body>
-<!--<script>-->
-    <!--setHeaderStyle();-->
-    <!--showLoading("加载电子书", true);-->
-<!--</script>-->
 
 <div class="container-fluid" style="overflow: hidden">
     <div class="row header" style="box-shadow: rgb(238, 238, 238) 0px 10px 10px; margin-bottom: 15px; display: block;">
@@ -88,13 +82,10 @@
             <div class="col-xs-9 col-sm-10 public_head"
                  style="padding-top: 10px;text-align: right;float: right;color: #8d8d8d;">
                 <div class="back_books" style="cursor: pointer;font-size: 14px;color: #2c2c2c;float:left;"><i
-                        style="pointer-events: none;"><img style="width: 16px;height: 16px;vertical-align: middle;"
-                                                           src="images/color_book_back_icon.png"></i><span
-                        style="pointer-events: none;color: #000;">返回书架</span></div>
+                        style="pointer-events: none;"><img style="width: 16px;height: 16px;vertical-align: middle;"src="images/color_book_back_icon.png"></i><span
+                        style="pointer-events: none;color: #000;" onclick="book()">返回书架</span></div>
                 <div class="top_step_btn" style="float: right; position: relative"><span class="new_print_book_btn"
-                                                style="float:right;line-height: 28px;border: 1px solid #000;text-align: center;margin-left: 8px;background: #333;color: #fff;border-radius: 15px;" onclick="print_book(1)">打印书籍</span><span
-                        class="share_book_btn"
-                        style="float:right;line-height: 28px;color: #000;border: 1px solid #000;text-align: center;border-radius: 15px;">分享书籍</span>
+                                                                                         style="float:right;line-height: 28px;border: 1px solid #000;text-align: center;margin-left: 8px;background: #333;color: #fff;border-radius: 15px;" onclick="print_book(2)">打印书籍</span>
                 </div>
             </div>
         </div>
@@ -305,7 +296,7 @@
                                     <div page_type_val="6" content_id="-2" class="end_cover cover odd back-side page p5"
                                          style="background-color: rgb(255, 255, 255); text-align: center; cursor: pointer; float: left; width: 642px; height: 869px; position: absolute; top: 0px; left: 0px; bottom: auto; right: auto;">
                                         <img class="over_page" src="images/tianjiawenzhang_icon_05.png"
-                                             style="height:150px;margin-top:359.5px"></div>
+                                             style="height:150px;margin-top:359.5px" onclick="addArticle()"></div>
                                 </div>
                                 <div style="top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 642px; height: 869px;"></div>
                             </div>
@@ -323,13 +314,9 @@
                     <div class="shadow"></div>
                     <img id="pre_btn" style="cursor:pointer;width:44px;position:absolute;left:-100px;top:45%;"
                          src="images/icon_ebook_prepage.png" title="上一页"><img id="next_btn"
-                                                                              style="cursor:pointer;width:44px;position:absolute;right:-100px;top:45%;"
-                                                                              src="images/icon_ebook_nextpage.png"
-                                                                              title="下一页">
-                    <div class="up_step_btn"
-                         style="z-index: 80000; text-align: left; position: absolute; right: -100px; top: 0px; transform: scale(0.63092, 0.63092); transform-origin: 0% 0% 0px;"></div>
-                    <div class="down_step_btn"
-                         style="text-align: left; position: absolute; right: -100px; bottom: 0px; transform: scale(0.63092, 0.63092); transform-origin: 0% 90% 0px;">
+                                                                              style="cursor:pointer;width:44px;position:absolute;right:-100px;top:45%;"src="images/icon_ebook_nextpage.png" title="下一页">
+                    <div class="up_step_btn"style="z-index: 80000; text-align: left; position: absolute; right: -100px; top: 0px; transform: scale(0.63092, 0.63092); transform-origin: 0% 0% 0px;"></div>
+                    <div class="down_step_btn"style="text-align: left; position: absolute; right: -100px; bottom: 0px; transform: scale(0.63092, 0.63092); transform-origin: 0% 90% 0px;">
                         <div class="form-group saveDeleteBtn side_btn"
                              style="margin-bottom: 5px; visibility: hidden; position: relative;" name="保存"><a
                                 class="toSaveChange"><img src="images/icon_ebook_save.png"></a>
@@ -338,74 +325,25 @@
                                 保存
                             </div>
                         </div>
-                        <div class="form-group add_article_btn side_btn" style="position: relative;" name="添加文章"><a><img
+                        <div class="form-group add_article_btn side_btn" style="position: relative;" name="添加文章"  onclick="addArticle()"><a><img
                                 src="images/add_article_icon.png"></a>
-                            <div class="tip"
+                            <div class="tip" onclick="addArticle()"
                                  style="position:absolute;border-radius:5px;top:15px;left:60px;background-color: rgba(0,0,0,0.5);color:white;padding:3px 6px;white-space: nowrap;letter-spacing: 3px">
                                 添加文章
                             </div>
                         </div>
-                        <div class="form-group edit_book side_btn" style="position: relative;" name="修改排版"><a><img
+                        <div class="form-group edit_book side_btn" style="position: relative;" name="修改书名"><a><img
                                 src="images/icon_ebook_edit.png"></a>
                             <div class="tip"
                                  style="position:absolute;border-radius:5px;top:15px;left:60px;background-color: rgba(0,0,0,0.5);color:white;padding:3px 6px;white-space: nowrap;letter-spacing: 3px">
-                                修改排版
+                                修改书名
                             </div>
                         </div>
-                        <div class="form-group function_btn side_btn" style="margin-bottom: 5px; position: relative;"
-                             name="更多修改"><a><img src="images/icon_ebook_more_edit.png"></a>
+                        <div class="form-group edit_book side_btn" style="position: relative;" name="删除书籍"><a><img
+                                src="images/icon_ebook_more_edit.png"></a>
                             <div class="tip"
                                  style="position:absolute;border-radius:5px;top:15px;left:60px;background-color: rgba(0,0,0,0.5);color:white;padding:3px 6px;white-space: nowrap;letter-spacing: 3px">
-                                更多修改
-                            </div>
-                            <div class="function_list"
-                                 style="display:none;width:360px;padding:10px 20px;border-radius:5px;color: white;font-size:16px;position:absolute;right:80px;top:-250px;background-color:rgba(0,0,0,0.7)">
-                                <div class="design_btn_container_title"
-                                     style="font-size: 20px;color:white;margin-bottom: 10px;">设计样式
-                                </div>
-                                <div class="design_btn_container" style="width:100%;overflow: hidden;">
-                                    <div class="btn style_function_btn change_size_btn"
-                                         style="display: inline-block; float: left; margin: 5px; width: 150px; text-align: left; cursor: pointer;">
-                                        <img src="images/cebian_icon_03.png"
-                                             style="margin-right: 10px;width:14px;height:14px;vertical-align: sub">更换书籍尺寸
-                                    </div>
-                                </div>
-                                <div class="edit_btn_container_title"
-                                     style="font-size: 20px;color:white;margin-top:15px;margin-bottom: 10px;border-top: 1px solid #666666;padding-top:15px;">
-                                    内容修改
-                                </div>
-                                <div class="edit_btn_container" style="width:100%;overflow: hidden;">
-                                    <div value="undefined" action="undefined"
-                                         class="btn edit_function_btn edit_create_time_btn"
-                                         style="display: inline-block; float: left; margin: 5px; width: 150px; text-align: left; cursor: pointer;">
-                                        <img src="images/cebian_icon_12.png"
-                                             style="margin-right: 10px;width:14px;height:14px;vertical-align: sub">修改创作时间
-                                    </div>
-                                    <div value="undefined" action="undefined"
-                                         class="btn edit_function_btn edit_author_photo_btn"
-                                         style="display: inline-block; float: right; margin: 5px; width: 150px; text-align: left; cursor: pointer;">
-                                        <img src="images/cebian_icon_15.png"
-                                             style="margin-right: 10px;width:14px;height:14px;vertical-align: sub">更换扉页头像
-                                    </div>
-                                    <div value="undefined" action="undefined"
-                                         class="btn edit_function_btn edit_font_size"
-                                         style="display: inline-block; float: left; margin: 5px; width: 150px; text-align: left; cursor: pointer;">
-                                        <img src="images/zihao_23.png"
-                                             style="margin-right: 10px;width:14px;height:14px;vertical-align: sub">字号设置
-                                    </div>
-                                    <div value="undefined" action="undefined"
-                                         class="btn edit_function_btn edit_bg_music"
-                                         style="display: inline-block; float: right; margin: 5px; width: 150px; text-align: left; cursor: pointer;">
-                                        <img src="images/f_yinyue.png"
-                                             style="margin-right: 10px;width:14px;height:14px;vertical-align: sub">设置背景音乐
-                                    </div>
-                                    <div value="undefined" action="undefined"
-                                         class="btn edit_function_btn book_division"
-                                         style="display: inline-block; float: left; margin: 5px; width: 150px; text-align: left; cursor: pointer;">
-                                        <img src="images/book_division_icon.png"
-                                             style="margin-right: 10px;width:14px;height:14px;vertical-align: sub">书籍分册
-                                    </div>
-                                </div>
+                                删除书籍
                             </div>
                         </div>
                     </div>
@@ -439,31 +377,31 @@
                                 <div class="tooltip-inner"></div>
                             </div>
                         </div>
-                        <input class="col-xs-12 slider" style="display: none;" data-value="5" value="5"></div>
+                        <input class="col-xs-12 slider" style="display: none;" data-value="2" value="2"></div>
                     <input class="col-xs-1 col-sm-1 pageInput" placeholder="跳转"
                            style="font-size:12px;text-align:center;margin-left:10px;width:50px;line-height:25px;height:25px;position:absolute;border-radius: 5px;outline: none;border:1px solid #ccc;">
-                    <div class="form-group catalog_container side_btn catalog_btn"
-                         style="margin-bottom: 5px;position:relative;float:right;    border: 1px solid #999;border-radius: 5px;background:#fff;"
-                         name="目录列表"><a style="float:left;"><img class="catalog_btn"
-                                                                 style="height:12px;margin:5px 0 5px 5px;;"
-                                                                 src="images/icon_catalog.png"></a>
-                        <div class="tip"
-                             style="border-radius:5px;float: left;color:#000;font-size:12px;padding:3px 6px;white-space: nowrap;letter-spacing: 3px">
-                            目录列表
-                        </div>
-                        <div id="catalog_pan"
-                             style="display:none;z-index:99999699;position:absolute;bottom:25px;right:-300px;width:300px;height:400px;background-color:white;border-radius:5px;box-shadow: 0px 0px 10px #e8e8e8;">
-                            <p style="width:100%;height:50px;border-bottom:1px solid #ccc;font-size:16px;text-align:center;line-height:50px;">
-                                目&nbsp;&nbsp;录</p>
-                            <div id="catalog_item_container"
-                                 style="width:100%;height:75%;overflow:auto;-webkit-overflow-scrolling:touch"></div>
-                            <p style="width:100%;height:50px;border-top:1px solid #ccc;text-align:center;"><span
-                                    id="batch_catalog"
-                                    style="float:right;width:18px;height:16px;cursor:pointer;margin:4%">     <img
-                                    src="images/delete_icon.png" title="批量删除"> </span> <span id="sort_catalog"
-                                                                                             style="float:right;width:18px;height:16px;cursor:pointer;margin:4%">     <img
-                                    src="images/sort_catalog.png" title="排序"> </span></p></div>
-                    </div>
+                    <!--<div class="form-group catalog_container side_btn catalog_btn"-->
+                    <!--style="margin-bottom: 5px;position:relative;float:right;    border: 1px solid #999;border-radius: 5px;background:#fff;"-->
+                    <!--name="目录列表"><a style="float:left;"><img class="catalog_btn"-->
+                    <!--style="height:12px;margin:5px 0 5px 5px;;"-->
+                    <!--src="images/icon_catalog.png"></a>-->
+                    <!--<div class="tip"-->
+                    <!--style="border-radius:5px;float: left;color:#000;font-size:12px;padding:3px 6px;white-space: nowrap;letter-spacing: 3px">-->
+                    <!--目录列表-->
+                    <!--</div>-->
+                    <!--<div id="catalog_pan"-->
+                    <!--style="display:none;z-index:99999699;position:absolute;bottom:25px;right:-300px;width:300px;height:400px;background-color:white;border-radius:5px;box-shadow: 0px 0px 10px #e8e8e8;">-->
+                    <!--<p style="width:100%;height:50px;border-bottom:1px solid #ccc;font-size:16px;text-align:center;line-height:50px;">-->
+                    <!--目&nbsp;&nbsp;录</p>-->
+                    <!--<div id="catalog_item_container"-->
+                    <!--style="width:100%;height:75%;overflow:auto;-webkit-overflow-scrolling:touch"></div>-->
+                    <!--<p style="width:100%;height:50px;border-top:1px solid #ccc;text-align:center;"><span-->
+                    <!--id="batch_catalog"-->
+                    <!--style="float:right;width:18px;height:16px;cursor:pointer;margin:4%">     <img-->
+                    <!--src="images/delete_icon.png" title="批量删除"> </span> <span id="sort_catalog"-->
+                    <!--style="float:right;width:18px;height:16px;cursor:pointer;margin:4%">     <img-->
+                    <!--src="images/sort_catalog.png" title="排序"> </span></p></div>-->
+                    <!--</div>-->
                 </div>
             </div>
         </div>
@@ -478,16 +416,15 @@
 </div>
 <div class="modular" style=""></div>
 
-<!--<div class="ebook_msc_soure" style="display:none;">-->
-<!--<audio id="ebook_music" src="">你的浏览器不支持audio标签</audio>-->
-<!--</div>-->
 <div class="container-fluid edit_first_pan"
      style="z-index:90000;display:none;height:809px;width:100%;position:fixed;top:0;background-color: rgba(0,0,0,0.5);">
     <div id="edit_first_form" class="col-xs-12 col-sm-4 col-sm-offset-4" style="margin-top:60px">
+        <!--新建文章-->
         <div class="col-xs-12" style="position:relative;background-color: white;padding:20px 20px 0;border-radius: 5px">
-            <img class="close_edit_first_btn" style="position:absolute;right:-15px;top:-15px;width:30px;"
-                 src="images/close_land.png">
-            <div id="thumb_preview" style="display:none"></div>
+            <button onclick="print_x()" type="button"><img class="close_edit_first_btn" style="position:absolute;right:-15px;top:-15px;width:30px;"
+                                                           src="images/close_land.png" ></button>
+            <div id="thumb_preview" style="
+            display:none"></div>
             <div class="ke-container ke-container-shiqimini" style="width: 100px;">
                 <div style="display:block;" class="ke-toolbar" unselectable="on"><span class="ke-outline"
                                                                                        data-name="upload_pic"
@@ -594,225 +531,11 @@
         </div>
     </div>
 </div>
-<div class="datetimepicker datetimepicker-dropdown-bottom-right dropdown-menu" style="left: 0px; z-index: 90010;">
-    <div class="datetimepicker-minutes" style="display: none;">
-        <table class=" table-condensed">
-            <thead>
-            <tr>
-                <th class="prev" style="visibility: visible;"> &lt;</th>
-                <th colspan="5" class="switch">19 七月 2019</th>
-                <th class="next" style="visibility: visible;"> &gt;</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td colspan="7">
-                    <fieldset class="minute">
-                        <legend>下午</legend>
-                        <span class="minute">2:00</span><span class="minute">2:05</span><span class="minute">2:10</span><span
-                            class="minute">2:15</span><span class="minute">2:20</span><span
-                            class="minute">2:25</span><span class="minute">2:30</span><span
-                            class="minute">2:35</span><span class="minute">2:40</span><span
-                            class="minute active">2:45</span><span class="minute">2:50</span><span
-                            class="minute">2:55</span></fieldset>
-                </td>
-            </tr>
-            </tbody>
-            <tfoot>
-            <tr>
-                <th colspan="7" class="today">今天</th>
-            </tr>
-            <tr>
-                <th colspan="7" class="clear" style="display: none;">清除</th>
-            </tr>
-            </tfoot>
-        </table>
-    </div>
-    <div class="datetimepicker-hours" style="display: none;">
-        <table class=" table-condensed">
-            <thead>
-            <tr>
-                <th class="prev" style="visibility: visible;"> &lt;</th>
-                <th colspan="5" class="switch">19 七月 2019</th>
-                <th class="next" style="visibility: visible;"> &gt;</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td colspan="7">
-                    <fieldset class="hour">
-                        <legend>上午</legend>
-                        <span class="hour hour_am">12</span><span class="hour hour_am">1</span><span
-                            class="hour hour_am">2</span><span class="hour hour_am">3</span><span
-                            class="hour hour_am">4</span><span class="hour hour_am">5</span><span
-                            class="hour hour_am">6</span><span class="hour hour_am">7</span><span
-                            class="hour hour_am">8</span><span class="hour hour_am">9</span><span class="hour hour_am">10</span><span
-                            class="hour hour_am">11</span></fieldset>
-                    <fieldset class="hour">
-                        <legend>下午</legend>
-                        <span class="hour hour_pm">12</span><span class="hour hour_pm">1</span><span
-                            class="hour active hour_pm">2</span><span class="hour hour_pm">3</span><span
-                            class="hour hour_pm">4</span><span class="hour hour_pm">5</span><span
-                            class="hour hour_pm">6</span><span class="hour hour_pm">7</span><span
-                            class="hour hour_pm">8</span><span class="hour hour_pm">9</span><span class="hour hour_pm">10</span><span
-                            class="hour hour_pm">11</span></fieldset>
-                </td>
-            </tr>
-            </tbody>
-            <tfoot>
-            <tr>
-                <th colspan="7" class="today">今天</th>
-            </tr>
-            <tr>
-                <th colspan="7" class="clear" style="display: none;">清除</th>
-            </tr>
-            </tfoot>
-        </table>
-    </div>
-    <div class="datetimepicker-days" style="display: block;">
-        <table class=" table-condensed">
-            <thead>
-            <tr>
-                <th class="prev" style="visibility: visible;"> &lt;</th>
-                <th colspan="5" class="switch">七月 2019</th>
-                <th class="next" style="visibility: visible;"> &gt;</th>
-            </tr>
-            <tr>
-                <th class="dow">一</th>
-                <th class="dow">二</th>
-                <th class="dow">三</th>
-                <th class="dow">四</th>
-                <th class="dow">五</th>
-                <th class="dow">六</th>
-                <th class="dow">日</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td class="day old">24</td>
-                <td class="day old">25</td>
-                <td class="day old">26</td>
-                <td class="day old">27</td>
-                <td class="day old">28</td>
-                <td class="day old">29</td>
-                <td class="day old">30</td>
-            </tr>
-            <tr>
-                <td class="day">1</td>
-                <td class="day">2</td>
-                <td class="day">3</td>
-                <td class="day">4</td>
-                <td class="day">5</td>
-                <td class="day">6</td>
-                <td class="day">7</td>
-            </tr>
-            <tr>
-                <td class="day">8</td>
-                <td class="day">9</td>
-                <td class="day">10</td>
-                <td class="day">11</td>
-                <td class="day">12</td>
-                <td class="day">13</td>
-                <td class="day">14</td>
-            </tr>
-            <tr>
-                <td class="day">15</td>
-                <td class="day">16</td>
-                <td class="day">17</td>
-                <td class="day">18</td>
-                <td class="day today active">19</td>
-                <td class="day">20</td>
-                <td class="day">21</td>
-            </tr>
-            <tr>
-                <td class="day">22</td>
-                <td class="day">23</td>
-                <td class="day">24</td>
-                <td class="day">25</td>
-                <td class="day">26</td>
-                <td class="day">27</td>
-                <td class="day">28</td>
-            </tr>
-            <tr>
-                <td class="day">29</td>
-                <td class="day">30</td>
-                <td class="day">31</td>
-                <td class="day new">1</td>
-                <td class="day new">2</td>
-                <td class="day new">3</td>
-                <td class="day new">4</td>
-            </tr>
-            </tbody>
-            <tfoot>
-            <tr>
-                <th colspan="7" class="today">今天</th>
-            </tr>
-            <tr>
-                <th colspan="7" class="clear" style="display: none;">清除</th>
-            </tr>
-            </tfoot>
-        </table>
-    </div>
-    <div class="datetimepicker-months" style="display: none;">
-        <table class="table-condensed">
-            <thead>
-            <tr>
-                <th class="prev" style="visibility: visible;"> &lt;</th>
-                <th colspan="5" class="switch">2019</th>
-                <th class="next" style="visibility: visible;"> &gt;</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td colspan="7"><span class="month">一</span><span class="month">二</span><span
-                        class="month">三</span><span class="month">四</span><span class="month">五</span><span
-                        class="month">六</span><span class="month active">七</span><span class="month">八</span><span
-                        class="month">九</span><span class="month">十</span><span class="month">十一</span><span
-                        class="month">十二</span></td>
-            </tr>
-            </tbody>
-            <tfoot>
-            <tr>
-                <th colspan="7" class="today">今天</th>
-            </tr>
-            <tr>
-                <th colspan="7" class="clear" style="display: none;">清除</th>
-            </tr>
-            </tfoot>
-        </table>
-    </div>
-    <div class="datetimepicker-years" style="display: none;">
-        <table class="table-condensed">
-            <thead>
-            <tr>
-                <th class="prev" style="visibility: visible;"> &lt;</th>
-                <th colspan="5" class="switch">2010-2019</th>
-                <th class="next" style="visibility: visible;"> &gt;</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td colspan="7"><span class="year old">2009</span><span class="year">2010</span><span
-                        class="year">2011</span><span class="year">2012</span><span class="year">2013</span><span
-                        class="year">2014</span><span class="year">2015</span><span class="year">2016</span><span
-                        class="year">2017</span><span class="year">2018</span><span class="year active">2019</span><span
-                        class="year old">2020</span></td>
-            </tr>
-            </tbody>
-            <tfoot>
-            <tr>
-                <th colspan="7" class="today">今天</th>
-            </tr>
-            <tr>
-                <th colspan="7" class="clear" style="display: none;">清除</th>
-            </tr>
-            </tfoot>
-        </table>
-    </div>
-</div>
 <div class="container-fluid article_first_pan"
-     style="z-index: 9000; height: 706px; width: 100%; position: fixed; top: 0px; background-color: rgba(0, 0, 0, 0.5); display: none;">
+     style="z-index: 9000; height: 706px; width: 100%; position: fixed; top: 0px; background-color: rgba(0, 0, 0, 0.5); display: none;" id="addArticle">
     <div id="article_list_form" class="col-xs-12 col-sm-4 col-sm-offset-4" style="margin-top: 60px">
+        <!--添加文章弹框-->
+
         <div class="col-xs-12" style="position:relative;background-color: white;padding:20px 20px 0;border-radius: 5px">
             <img class="close_article_first_btn" style="position:absolute;right:-15px;top:-15px;width:30px;"
                  src="images/close_land.png">
@@ -840,11 +563,34 @@
 </div>
 <script src="js/jquery-3.2.1.js"></script>
 <script>
-    function print_book(bid) {
+    //弹框
+    function addArticle() {
+        $("#addArticle").css("display","block")
+    }
 
+    //点击叉叉
+    function print_x(){
+        alert("000")
+        $("#addArticle").css("display","none")
+    }
+
+    // $("#print_x").click(function () {
+    //     $("#addArticle").css("display","none")
+    // })
+
+    //打印书籍
+    function print_book(bid) {
+        //这个id我是写死的，记得改下
         localStorage.setItem("bid",bid);
         location.href = "order_more.html";
     }
+
+    //返回书架
+    function book(){
+        location.href="zuoping.html";
+    }
+
+
 </script>
 </body>
 </html>

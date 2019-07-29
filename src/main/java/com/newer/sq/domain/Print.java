@@ -2,7 +2,7 @@ package com.newer.sq.domain;
 
 import java.io.Serializable;
 
-public class Book implements Serializable {
+public class Print implements Serializable {
     private Integer pid;
     private String pname;
     private String introduce;
@@ -18,7 +18,7 @@ public class Book implements Serializable {
     private String videourl;
     private String bookimg;
 
-    public Book() {
+    public Print() {
     }
 
     public Integer getPid() {

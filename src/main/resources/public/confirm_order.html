@@ -56,10 +56,21 @@
                                     <span>···</span><i class="ant-menu-submenu-arrow"></i></div>
                             </li>
                             <li class="ant-menu-submenu ant-menu-submenu-horizontal" role="menuitem">
-                                <div class="ant-menu-submenu-title" aria-expanded="false" aria-haspopup="true"><span
-                                        class="submenu-title-wrapper">我的设置</span><i class="ant-menu-submenu-arrow"></i>
+                                <div class="ant-menu-submenu-title" aria-expanded="false" aria-haspopup="true" id="setting"><span
+                                        class="submenu-title-wrapper">我的设置 </span>
+                                    <i class="ant-menu-submenu-arrow"></i>
+                                    <i><img class="my_icon_img2" src="images/card_info_desc_icon.png"></i>
+                                    <div id="setting_ul"
+                                         style="position: absolute; z-index: 1000; width: 120px; right: 0px; top: 46px; background-color: rgb(255, 255, 255); padding-top: 15px; border-radius: 4px; box-shadow: rgb(204, 204, 204) 0px 1px 4px; display: none;">
+                                        <p style="text-align: center;"><a href="account.html" style="text-decoration:none;color: black">账户设置</a></p>
+                                        <p style="text-align: center;"><a href="#" style="text-decoration:none;color: black">会员中心</a></p>
+                                        <p style="text-align: center;" id="logout_btn"><a href="javascript:void(0)" style="text-decoration:none;color: black">退出登录</a></p>
+                                        <p style="position: absolute;left:50%;top:-20px;width:0;height: 0;border:10px solid rgba(0,0,0,0);border-bottom-color:#fff;"></p>
+                                    </div>
+
                                 </div>
                             </li>
+
                             <li class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu"
                                 role="menuitem"
                                 style="font-size: 12px; border: 1px solid transparent; visibility: hidden; position: absolute; display: none;">
@@ -79,35 +90,45 @@
                                 <div class="ant-menu-submenu-title" aria-expanded="false" aria-haspopup="true">
                                     <span>···</span><i class="ant-menu-submenu-arrow"></i></div>
                             </li>
-                            <li class="ant-menu-item" role="menuitem">个人主页</li>
+                            <li class="ant-menu-item" role="menuitem"><a
+                                    href="sy_index.html">个人主页</a></li>
                             <li class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu"
                                 role="menuitem" style="font-size: 12px; border: 1px solid transparent; display: none;">
                                 <div class="ant-menu-submenu-title" aria-expanded="false" aria-haspopup="true">
                                     <span>···</span><i class="ant-menu-submenu-arrow"></i></div>
                             </li>
                             <li class="ant-menu-item" role="menuitem"><a
-                                    href="https://www.shiqichuban.com/react_simple/app/index.html#/center">印制中心</a></li>
-                            <li class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu"
-                                role="menuitem" style="font-size: 12px; border: 1px solid transparent; display: none;">
-                                <div class="ant-menu-submenu-title" aria-expanded="false" aria-haspopup="true">
-                                    <span>···</span><i class="ant-menu-submenu-arrow"></i></div>
-                            </li>
-                            <li class="ant-menu-item" role="menuitem">我的订单</li>
+                                    href="sq_copy.html">印制中心</a></li>
                             <li class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu"
                                 role="menuitem" style="font-size: 12px; border: 1px solid transparent; display: none;">
                                 <div class="ant-menu-submenu-title" aria-expanded="false" aria-haspopup="true">
                                     <span>···</span><i class="ant-menu-submenu-arrow"></i></div>
                             </li>
                             <li class="ant-menu-item" role="menuitem"><a
-                                    href="https://www.shiqichuban.com/react_simple/app/index.html#/shelf">我的作品</a></li>
+                                    href="order.html">我的订单</a></li>
                             <li class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu"
                                 role="menuitem" style="font-size: 12px; border: 1px solid transparent; display: none;">
                                 <div class="ant-menu-submenu-title" aria-expanded="false" aria-haspopup="true">
                                     <span>···</span><i class="ant-menu-submenu-arrow"></i></div>
                             </li>
-                            <li class="ant-menu-submenu ant-menu-submenu-horizontal" role="menuitem">
-                                <div class="ant-menu-submenu-title" aria-expanded="false" aria-haspopup="true"><span
-                                        class="submenu-title-wrapper">我的拾柒</span><i class="ant-menu-submenu-arrow"></i>
+                            <li class="ant-menu-item" role="menuitem"><a
+                                    href="zuoping.html">我的作品</a></li>
+                            <li class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu"
+                                role="menuitem" style="font-size: 12px; border: 1px solid transparent; display: none;">
+                                <div class="ant-menu-submenu-title" aria-expanded="false" aria-haspopup="true">
+                                    <span>···</span><i class="ant-menu-submenu-arrow"></i></div>
+                            </li>
+                            <li class="ant-menu-submenu ant-menu-submenu-horizontal " role="menuitem">
+                                <div id="my_sq" class="ant-menu-submenu-title" aria-expanded="false" aria-haspopup="true" >
+                                    <span class="submenu-title-wrapper">我的拾柒</span>
+                                    <i class="ant-menu-submenu-arrow"></i>
+                                    <i><img class="my_icon_img" src="images/card_info_desc_icon.png"></i>
+                                    <div class="my_list"
+                                         style="display: none;position: absolute;z-index:1000;width: 120px;right:0px;top:46px;background-color: #fff;padding-top:15px;border-radius: 4px;box-shadow: 0px 1px 4px #ccc;">
+                                        <p style="text-align: center;"><a href="integral.html" style="text-decoration:none;color: black">我的积分</a></p>
+                                        <p style="text-align: center;" id="messagebox" style="text-decoration:none;color: black">我的消息</p>
+                                        <p style="position: absolute;left:50%;top:-20px;width:0;height: 0;border:10px solid rgba(0,0,0,0);border-bottom-color:#fff;"></p>
+                                    </div>
                                 </div>
                             </li>
                             <li class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu"
@@ -795,6 +816,46 @@
         localStorage.setItem("addressId",addressId);
         layer_show(tiltle,url,w,h);
     }
+    $("#my_sq").on('mouseover',function () {
+        $('.my_list').show();
+        $('.my_icon_img').css({
+            'transform': 'rotate(90deg)',
+            '-webkit-transform': 'rotate(90deg)',
+            '-ms-transform': 'rotate(90deg)',
+            '-moz-transform': 'rotate(90deg)',
+            '-o-transform': 'rotate(90deg)',
+        })
+    })
+    $("#my_sq").on('mouseout',function () {
+        $('.my_list').hide();
+        $('.my_icon_img').css({
+            'transform': 'rotate(0)',
+            '-webkit-transform': 'rotate(0)',
+            '-ms-transform': 'rotate(0)',
+            '-moz-transform': 'rotate(0)',
+            '-o-transform': 'rotate(0)',
+        })
+    })
+    $("#setting").on('mouseover',function () {
+        $('#setting_ul').show();
+        $('.my_icon_img2').css({
+            'transform': 'rotate(90deg)',
+            '-webkit-transform': 'rotate(90deg)',
+            '-ms-transform': 'rotate(90deg)',
+            '-moz-transform': 'rotate(90deg)',
+            '-o-transform': 'rotate(90deg)',
+        })
+    })
+    $("#setting").on('mouseout',function () {
+        $('#setting_ul').hide();
+        $('.my_icon_img2').css({
+            'transform': 'rotate(0)',
+            '-webkit-transform': 'rotate(0)',
+            '-ms-transform': 'rotate(0)',
+            '-moz-transform': 'rotate(0)',
+            '-o-transform': 'rotate(0)',
+        })
+    })
 </script>
 
 </body>
