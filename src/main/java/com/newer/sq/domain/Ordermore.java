@@ -18,10 +18,11 @@ public class Ordermore implements Serializable {
     private String Bsize;
     private String Bway;
     private String ordstatus;
+    private Integer addressid;
     public Ordermore() {
     }
 
-    public Ordermore(Integer ordid, Integer ordint, Date orderdate, String aname, String amore, String aphone, String bname, String bookurl, Double bprice, Integer bpage, String bsize, String bway, String ordstatus) {
+    public Ordermore(Integer ordid, Integer ordint, Date orderdate, String aname, String amore, String aphone, String bname, String bookurl, Double bprice, Integer bpage, String bsize, String bway, String ordstatus, Integer addressid) {
         this.ordid = ordid;
         this.ordint = ordint;
         this.orderdate = orderdate;
@@ -35,6 +36,7 @@ public class Ordermore implements Serializable {
         Bsize = bsize;
         Bway = bway;
         this.ordstatus = ordstatus;
+        this.addressid = addressid;
     }
 
     public Integer getOrdid() {
@@ -141,6 +143,14 @@ public class Ordermore implements Serializable {
         this.ordstatus = ordstatus;
     }
 
+    public Integer getAddressid() {
+        return addressid;
+    }
+
+    public void setAddressid(Integer addressid) {
+        this.addressid = addressid;
+    }
+
     @Override
     public String toString() {
         return "Ordermore{" +
@@ -157,6 +167,7 @@ public class Ordermore implements Serializable {
                 ", Bsize='" + Bsize + '\'' +
                 ", Bway='" + Bway + '\'' +
                 ", ordstatus='" + ordstatus + '\'' +
+                ", addressid=" + addressid +
                 '}';
     }
 }

@@ -11,7 +11,7 @@ import java.util.List;
 public interface OrdermoreMapper {
 
     //根据状态查询信息
-    @Select("select ordid,ordint,orderdate,aname,amore,Aphone,bname,bookurl,Bprice,Bpage,Bsize,Bway,ordstatus " +
+    @Select("select ordid,ordint,orderdate,address.addressid,aname,amore,Aphone,bname,bookurl,Bprice,Bpage,Bsize,Bway,ordstatus " +
             "from sq_order sq_ord,sq_address address,sq_book book where sq_ord.bid=book.bid and sq_ord.addressid=address.addressid and ordstatus = #{ordstatus}")
     public  List<Ordermore> queryByordstatus(@Param("ordstatus")String  ordstatus);
 
