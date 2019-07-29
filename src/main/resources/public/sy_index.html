@@ -431,7 +431,8 @@
                 <div class="col-xs-12 col-sm-8 right-board">
                     <div id="add_book"
                          style="position:relative;height:50px;width:100%;padding:0 15px;background:#fff;">
-                        <span onclick="addbook()" class="books_title" data-toggle="modal" data-target="#myModal" style="display:inline-block;border-bottom: 2px dotted #ccc;width:100%;line-height: 50px;color:#666; height: 50px;font-size: 18px;cursor:pointer;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">添加至书册</span>
+                        <input type="hidden" id="pri">
+                        <span id="bookname" onclick="addbook()" class="books_title" data-toggle="modal" data-target="#myModal" style="display:inline-block;border-bottom: 2px dotted #ccc;width:100%;line-height: 50px;color:#666; height: 50px;font-size: 18px;cursor:pointer;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">添加至书册</span>
                         <span style="position:absolute;right:0;top:16px;text-align:right;margin-right:20px;width:10%">
                         <img src="images/add_bookto.icon.png">
                     </span>
@@ -449,7 +450,7 @@
                                         </div>
                                         <div class="book_footer" style="overflow: hidden;border-top:1px solid #dfddde;margin: 0 -30px;padding: 0 30px;">
                                             <span data-dismiss="modal" class="discard" style="float:left;width: 50%;text-align:center;font-size:18px;color:#656565;font-weight: bold;line-height:78px;height:78px;cursor: pointer;margin-right:-1px;border-right: 1px solid #dfddde;">取消</span>
-                                            <span onclick="adbook()" class="ensure" style="float:left;width: 50%;text-align:center;font-size:18px;color: #101010;font-weight: bold;line-height:78px;height:78px;cursor: pointer;">确定</span>
+                                            <span onclick="adbook()" data-dismiss="modal" class="ensure" style="float:left;width: 50%;text-align:center;font-size:18px;color: #101010;font-weight: bold;line-height:78px;height:78px;cursor: pointer;">确定</span>
                                         </div>
                                     </div>
                                 </div><!-- /.modal-content -->
@@ -468,9 +469,7 @@
                         <div class="summernote"></div>
                     </div>
                     <div style="border-top:1px dotted #ccc ;clear: both;">
-                        <div class="sq_btn sq_btn_black submit_btn" style="margin: 5px;float:right;">
-                            保存文章
-                        </div>
+                        <button id="add" class="sq_btn sq_btn_black submit_btn" style="margin: 5px;float:right;">保存文章</button>
                     </div>
                     <!-- 编辑器 end -->
                     <div style="margin-top:20px;width:100%;height:36px;position:relative">
@@ -531,75 +530,29 @@
                     </div>
                     <!--搜索框 end -->
                     <!-- 文章列表 start -->
-                    <div clas="col-xs-12">
-                        <div id="artWrap117162890" class=
-                                style="padding: 15px 25px 5px;overflow: hidden;background-color: white ;border-radius: 5px ;border
-                        <div class="col-xs-12 article_title"
-                             style="overflow: hidden;padding: 0 20px !important;margin-top: 20px">
-                            <a href="https://www.shiqichuban.com/portal/article/detail/117162890">
-                                <h1 style="font-family: 宋体;font-weight: normal">2019年07月12日</h1>
-                            </a>
-                            <i class="m">/</i>
-                            <span class="dataBar">
-                                <span>2019-07-12 </span>
-                                <span><i class="icon iconSun"></i></span>
-                            </span>
-                            <dl class="col-xs-12" style="padding-left:0 !important">
-                                <dd>
-                                        <span class="sq_tag"
-                                              style="margin-left:0;margin-top: 5px;margin-right: 5px">拾柒书</span>
-                                </dd>
-                            </dl>
-                        </div>
-                        <div class="col-xs-12 article_content" style="color: #8d8d8d;padding: 0 20px !important;">
-                            <div class="col-xs-12"
-                                 style="text-align: justify;overflow: hidden;word-wrap: break-word;padding:0">SDF
-                                A是的爱的afghhlioafghhlio9o&nbsp;
-                            </div>
-                        </div>
+                    <div clas="col-xs-12" id="article">
                         <div class="col-xs-12 article_content"
                              style="padding: 10px 25px 10px !important;text-align: right">
                         </div>
                     </div>
-                    <div id="artWrap117162856" class="col-xs-12" weather="Sun" time="2019-07-12 16:19:37"
-                         style="padding: 15px 25px 5px;overflow: hidden;background-color: white ;border-radius: 5px ;border: 1px solid #c8c8c8;margin-top: 10px">
-                        <div class="col-xs-12 article_title"
-                             style="overflow: hidden;padding: 0 20px !important;margin-top: 20px">
-                            <a href="https://www.shiqichuban.com/portal/article/detail/117162856">
-                                <h1 style="font-family: 宋体;font-weight: normal">2019年07月12日</h1>
-                            </a>
-                            <i class="m">/</i>
-                            <span class="dataBar">
-                                <span>2019-07-12 </span>
-                                <span><i class="icon iconSun"></i></span>
-                            </span>
-                            <dl class="col-xs-12" style="padding-left:0 !important">
-                                <dd>
-                                        <span class="sq_tag"
-                                              style="margin-left:0;margin-top: 5px;margin-right: 5px">拾柒书</span>
-                                </dd>
-                            </dl>
-                        </div>
-                        <div class="col-xs-12 article_content" style="color: #8d8d8d;padding: 0 20px !important;">
-                            <div class="col-xs-12"
-                                 style="text-align: justify;overflow: hidden;word-wrap: break-word;padding:0">
-                                是的上个碍事干啥的发送到
-                            </div>
-                        </div>
-                        <div class="col-xs-12 article_content"
-                             style="padding: 10px 25px 10px !important;text-align: right">
+                    <div class="col-xs-12"
+                         style="margin: 10px 0;background-color: white ;padding:10px 5px ;border-radius: 5px;border :1px solid #ccc">
+                        <div class="col-xs-12 col-sm-8 pagination-container"></div>
+                        <div class="col-xs-12 col-sm-4 ">
+                            <input id="goPageBtn" type="button"
+                                   style="outline:none;text-align:center;float: right;width: 30%;height:30px;background-color:white;border-top-right-radius: 5px;border-bottom-right-radius: 5px;border:1px solid #ccc"
+                                   value="前往"/>
+                            <input id="pageInput" type="tel"
+                                   style="outline:none;text-align: center;float: right;width: 70%;line-height:30px;height:30px;border-top-left-radius: 5px;border-bottom-left-radius: 5px;border:1px solid #ccc"/>
                         </div>
                     </div>
                     <div class="col-xs-12 article_content"
                          style="padding: 10px 25px 10px !important;text-align: right">
                     </div>
                 </div>
-                <div class="col-xs-12 article_content"
-                     style="padding: 10px 25px 10px !important;text-align: right">
-                </div>
+
             </div>
         </div>
-    </div>
     <!-- 右侧边栏 start -->
 </div>
 <div class="col-sm-12 pic-bg-ul" style="position: fixed;top:0;left:0;width:100%;height:100%;display: none">
@@ -624,221 +577,7 @@
     </div>
 </div>
 </div>
-<div class="datetimepicker datetimepicker-dropdown-bottom-right dropdown-menu" style="left: 1198.39px; z-index: 1010;">
-    <div class="datetimepicker-minutes" style="display: none;">
-        <table class=" table-condensed">
-            <thead>
-            <tr>
-                <th class="prev" style="visibility: visible;"> &lt;</th>
-                <th colspan="5" class="switch">18 七月 2019</th>
-                <th class="next" style="visibility: visible;"> &gt;</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td colspan="7">
-                    <fieldset class="minute">
-                        <legend>下午</legend>
-                        <span class="minute">1:00</span><span class="minute">1:05</span><span class="minute">1:10</span><span
-                            class="minute">1:15</span><span class="minute active">1:20</span><span
-                            class="minute">1:25</span><span class="minute">1:30</span><span
-                            class="minute">1:35</span><span class="minute">1:40</span><span
-                            class="minute">1:45</span><span class="minute">1:50</span><span class="minute">1:55</span>
-                    </fieldset>
-                </td>
-            </tr>
-            </tbody>
-            <tfoot>
-            <tr>
-                <th colspan="7" class="today">今天</th>
-            </tr>
-            <tr>
-                <th colspan="7" class="clear" style="display: none;">清除</th>
-            </tr>
-            </tfoot>
-        </table>
-    </div>
-    <div class="datetimepicker-hours" style="display: none;">
-        <table class=" table-condensed">
-            <thead>
-            <tr>
-                <th class="prev" style="visibility: visible;"> &lt;</th>
-                <th colspan="5" class="switch">18 七月 2019</th>
-                <th class="next" style="visibility: visible;"> &gt;</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td colspan="7">
-                    <fieldset class="hour">
-                        <legend>上午</legend>
-                        <span class="hour hour_am">12</span><span class="hour hour_am">1</span><span
-                            class="hour hour_am">2</span><span class="hour hour_am">3</span><span
-                            class="hour hour_am">4</span><span class="hour hour_am">5</span><span
-                            class="hour hour_am">6</span><span class="hour hour_am">7</span><span
-                            class="hour hour_am">8</span><span class="hour hour_am">9</span><span class="hour hour_am">10</span><span
-                            class="hour hour_am">11</span></fieldset>
-                    <fieldset class="hour">
-                        <legend>下午</legend>
-                        <span class="hour hour_pm">12</span><span class="hour active hour_pm">1</span><span
-                            class="hour hour_pm">2</span><span class="hour hour_pm">3</span><span
-                            class="hour hour_pm">4</span><span class="hour hour_pm">5</span><span
-                            class="hour hour_pm">6</span><span class="hour hour_pm">7</span><span
-                            class="hour hour_pm">8</span><span class="hour hour_pm">9</span><span class="hour hour_pm">10</span><span
-                            class="hour hour_pm">11</span></fieldset>
-                </td>
-            </tr>
-            </tbody>
-            <tfoot>
-            <tr>
-                <th colspan="7" class="today">今天</th>
-            </tr>
-            <tr>
-                <th colspan="7" class="clear" style="display: none;">清除</th>
-            </tr>
-            </tfoot>
-        </table>
-    </div>
-    <div class="datetimepicker-days" style="display: block;">
-        <table class=" table-condensed">
-            <thead>
-            <tr>
-                <th class="prev" style="visibility: visible;"> &lt;</th>
-                <th colspan="5" class="switch">七月 2019</th>
-                <th class="next" style="visibility: visible;"> &gt;</th>
-            </tr>
-            <tr>
-                <th class="dow">一</th>
-                <th class="dow">二</th>
-                <th class="dow">三</th>
-                <th class="dow">四</th>
-                <th class="dow">五</th>
-                <th class="dow">六</th>
-                <th class="dow">日</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td class="day old">24</td>
-                <td class="day old">25</td>
-                <td class="day old">26</td>
-                <td class="day old">27</td>
-                <td class="day old">28</td>
-                <td class="day old">29</td>
-                <td class="day old">30</td>
-            </tr>
-            <tr>
-                <td class="day">1</td>
-                <td class="day">2</td>
-                <td class="day">3</td>
-                <td class="day">4</td>
-                <td class="day">5</td>
-                <td class="day">6</td>
-                <td class="day">7</td>
-            </tr>
-            <tr>
-                <td class="day">8</td>
-                <td class="day">9</td>
-                <td class="day">10</td>
-                <td class="day">11</td>
-                <td class="day">12</td>
-                <td class="day">13</td>
-                <td class="day">14</td>
-            </tr>
-            <tr>
-                <td class="day">15</td>
-                <td class="day">16</td>
-                <td class="day">17</td>
-                <td class="day today active">18</td>
-                <td class="day">19</td>
-                <td class="day">20</td>
-                <td class="day">21</td>
-            </tr>
-            <tr>
-                <td class="day">22</td>
-                <td class="day">23</td>
-                <td class="day">24</td>
-                <td class="day">25</td>
-                <td class="day">26</td>
-                <td class="day">27</td>
-                <td class="day">28</td>
-            </tr>
-            <tr>
-                <td class="day">29</td>
-                <td class="day">30</td>
-                <td class="day">31</td>
-                <td class="day new">1</td>
-                <td class="day new">2</td>
-                <td class="day new">3</td>
-                <td class="day new">4</td>
-            </tr>
-            </tbody>
-            <tfoot>
-            <tr>
-                <th colspan="7" class="today">今天</th>
-            </tr>
-            <tr>
-                <th colspan="7" class="clear" style="display: none;">清除</th>
-            </tr>
-            </tfoot>
-        </table>
-    </div>
-    <div class="datetimepicker-months" style="display: none;">
-        <table class="table-condensed">
-            <thead>
-            <tr>
-                <th class="prev" style="visibility: visible;"> &lt;</th>
-                <th colspan="5" class="switch">2019</th>
-                <th class="next" style="visibility: visible;"> &gt;</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td colspan="7"><span class="month">一</span><span class="month">二</span><span
-                        class="month">三</span><span class="month">四</span><span class="month">五</span><span
-                        class="month">六</span><span class="month active">七</span><span class="month">八</span><span
-                        class="month">九</span><span class="month">十</span><span class="month">十一</span><span
-                        class="month">十二</span></td>
-            </tr>
-            </tbody>
-            <tfoot>
-            <tr>
-                <th colspan="7" class="today">今天</th>
-            </tr>
-            <tr>
-                <th colspan="7" class="clear" style="display: none;">清除</th>
-            </tr>
-            </tfoot>
-        </table>
-    </div>
-    <div class="datetimepicker-years" style="display: none;">
-        <table class="table-condensed">
-            <thead>
-            <tr>
-                <th class="prev" style="visibility: visible;"> &lt;</th>
-                <th colspan="5" class="switch">2010-2019</th>
-                <th class="next" style="visibility: visible;"> &gt;</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td colspan="7"><span class="year old">2009</span><span class="year">2010</span><span
-                        class="year">2011</span><span class="year">2012</span><span class="year">2013</span><span
-                        class="year">2014</span><span class="year">2015</span><span class="year">2016</span><span
-                        class="year">2017</span><span class="year">2018</span><span class="year active">2019</span><span
-                        class="year old">2020</span></td>
-            </tr>
-            </tbody>
-            <tfoot>
-            <tr>
-                <th colspan="7" class="today">今天</th>
-            </tr>
-            <tr>
-                <th colspan="7" class="clear" style="display: none;">清除</th>
-            </tr>
-            </tfoot>
-        </table>
-    </div>
+
 </div>
 <script>
     $(()=>{
@@ -922,30 +661,127 @@
             type:"post",
             dataType:"json",
             success:function (data) {
-           console.log(data)
            var bk=``;
            var t=``;
            $.each(data,(index,obj)=>{
-               console.log(obj)
                bk+=`
-
                 <div class="book_info" style="position: relative;width: 124px;padding:20px 0 0;margin-right:48px;float:left">
                                                 <img class="book_cover" style="width: 124px;height: 162px;border:1px solid #e9e9e9;box-shadow: -2px 0px 0px #ccc;border-bottom-right-radius: 10px;" src="${obj.bookurl}">
-                                                <span style="margin-top: 12px;font-size: 12px;color: #333;line-height: 44px;height: 44px; display: block; font-weight:bold;white-space: nowrap;text-overflow: ellipsis;overflow: hidden">${obj.bname}</span>
-
-                                                <input type="checkbox" name="" class="book_ischeck exclude" value="20980239" style="position: absolute; right: -10px; top: 10px; width: 20px; height: 20px; border: 1px solid;">
+                                                <span  name="sp" style="margin-top: 12px;font-size: 12px;color: #333;line-height: 44px;height: 44px; display: block; font-weight:bold;white-space: nowrap;text-overflow: ellipsis;overflow: hidden">${obj.bname}</span>
+                                                <input  type="checkbox" name="dia" class="book_ischeck exclude" value="${obj.bid}" style="position: absolute; right: -10px; top: 10px; width: 20px; height: 20px; border: 1px solid;">
                                             </div>
                `;
-
            })
-              var v=$("#real").append(bk);
+              var v=$("#real").html(bk);
             }
         })
     }
     function adbook() {
 
+            var chk_value =[];
+        var bt;
+            $('input[name="dia"]:checked').each(function(){
+                chk_value.push($(this).val());
+                 bt+=$('input[name="dia"]:checked').prev().html();
+            });
+          var book=$("#bookname").text(bt);
+          console.log("bt"+bt)
+          if(book.length>0){
+              $("#bookname").text(bt,book);
+          }
+          console.log("book"+book)
+            $("#pri").val(chk_value);
     }
-    
+
 </script>
+
+
+<script>
+    $('#summernote').summernote({
+        placeholder: '千古',
+        height: 400,
+        lang: 'zh-CN',
+        focus: true,
+        callbacks:{  //回调函数，覆盖上传方法onImageUpload
+            onImageUpload: function(files) {
+                sendFile(files[0]);
+            }
+        }
+    });
+    function sendFile(files) {
+        data = new FormData();
+        data.append("files", files);
+        $.ajax({
+            data: data,
+            dataType: 'json',
+            type: "POST",
+            url: "/img",  //上传路径
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function(data) {
+                console.log(data);
+                $('#summernote').summernote('insertImage', data.filename);
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                alert(XMLHttpRequest.status);
+                alert(XMLHttpRequest.readyState);
+                alert(textStatus);
+            }
+        });
+    }
+
+</script>
+<!--富文本上传图片js结束-->
+
+<!--富文本js开始-->
+<script>
+    $(()=>{
+        $("#add").click(()=>{
+            var text = $('.summernote').summernote('code');
+            var title = $("#title-input").val();
+            var time = new Date();
+            console.log("标题"+title);
+            console.log("内容"+text);
+            var fonts = text.split("");
+            console.log(fonts);
+            console.log("字数"+fonts.length);
+
+            var temp =`<div id="artWrap117162856" class="col-xs-12" weather="Sun" time="${time}"
+                         style="padding: 15px 25px 5px;overflow: hidden;background-color: white ;border-radius: 5px ;border: 1px solid #c8c8c8;margin-top: 10px">
+                        <div class="col-xs-12 article_title"
+                             style="overflow: hidden;padding: 0 20px !important;margin-top: 20px">
+                            <a href="https://www.shiqichuban.com/portal/article/detail/117162856">
+                                <h1 style="font-family: 宋体;font-weight: normal">${title}</h1>
+                            </a>
+                            <i class="m">/</i>
+                            <span class="dataBar">
+                                <span>${time}</span>
+                                <span><i class="icon iconSun"></i></span>
+                            </span>
+                            <dl class="col-xs-12" style="padding-left:0 !important">
+                                <dd>
+                                        <span class="sq_tag"
+                                              style="margin-left:0;margin-top: 5px;margin-right: 5px">拾柒书</span>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="col-xs-12 article_content" style="color: #8d8d8d;padding: 0 20px !important;">
+                            <div class="col-xs-12"
+                                 style="text-align: justify;overflow: hidden;word-wrap: break-word;padding:0">
+                                ${text}
+                            </div>
+                        </div>
+                        <div class="col-xs-12 article_content"
+                             style="padding: 10px 25px 10px !important;text-align: right">
+                        </div>
+                    </div>`;
+            $("#article").append(temp);
+        })
+    })
+</script>
+<!--富文本js结束-->
+
+
 </body>
 </html>
