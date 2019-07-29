@@ -60,7 +60,7 @@
                 <span class="my_shiqi" style="position: relative;">
                 		<a id="my_sq">我的拾柒</a>
                 		<i><img class="my_icon_img" src="images/card_info_desc_icon.png"></i>
-                		<div class="my_list"
+                		<div class="my_list" id="my_sq2"
                              style="display: none;position: absolute;z-index:1000;width: 120px;right:0px;top:46px;background-color: #fff;padding-top:15px;border-radius: 4px;box-shadow: 0px 1px 4px #ccc;">
                 			<p style="text-align: center;"><a href="integral.html">我的积分</a></p>
                 			<p style="text-align: center;" id="messagebox">我的消息</p>
@@ -631,6 +631,66 @@
         $("#a1").removeClass("cur");
         $("#contents_box").hide(1000);
         $("#headPhoto_box").show(1000);
+    })
+    $("#my_sq").on('mouseover',function () {
+        $('.my_list').show();
+        $('.my_icon_img').css({
+            'transform': 'rotate(90deg)',
+            '-webkit-transform': 'rotate(90deg)',
+            '-ms-transform': 'rotate(90deg)',
+            '-moz-transform': 'rotate(90deg)',
+            '-o-transform': 'rotate(90deg)',
+        })
+    })
+    $("#my_sq2").on('mouseover',function () {
+        $('.my_list').show();
+        $('.my_icon_img').css({
+            'transform': 'rotate(90deg)',
+            '-webkit-transform': 'rotate(90deg)',
+            '-ms-transform': 'rotate(90deg)',
+            '-moz-transform': 'rotate(90deg)',
+            '-o-transform': 'rotate(90deg)',
+        })
+    })
+    $("#my_sq2").on('mouseout',function () {
+        $('.my_list').hide();
+        $('.my_icon_img').css({
+            'transform': 'rotate(0)',
+            '-webkit-transform': 'rotate(0)',
+            '-ms-transform': 'rotate(0)',
+            '-moz-transform': 'rotate(0)',
+            '-o-transform': 'rotate(0)',
+        })
+    })
+    $("#setting").on('mouseover',function () {
+        $('#setting_ul').show();
+        $('.my_icon_img2').css({
+            'transform': 'rotate(90deg)',
+            '-webkit-transform': 'rotate(90deg)',
+            '-ms-transform': 'rotate(90deg)',
+            '-moz-transform': 'rotate(90deg)',
+            '-o-transform': 'rotate(90deg)',
+        })
+    })
+    $("#setting_ul").on('mouseover',function () {
+        $('#setting_ul').show();
+        $('.my_icon_img2').css({
+            'transform': 'rotate(90deg)',
+            '-webkit-transform': 'rotate(90deg)',
+            '-ms-transform': 'rotate(90deg)',
+            '-moz-transform': 'rotate(90deg)',
+            '-o-transform': 'rotate(90deg)',
+        })
+    })
+    $("#setting_ul").on('mouseout',function () {
+        $('#setting_ul').hide();
+        $('.my_icon_img2').css({
+            'transform': 'rotate(0)',
+            '-webkit-transform': 'rotate(0)',
+            '-ms-transform': 'rotate(0)',
+            '-moz-transform': 'rotate(0)',
+            '-o-transform': 'rotate(0)',
+        })
     })
 </script>
 </body>

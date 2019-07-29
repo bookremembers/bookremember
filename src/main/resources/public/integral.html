@@ -1,52 +1,25 @@
 <!DOCTYPE html>
-<!-- saved from url=(0041)https://www.shiqichuban.com/user/webscore -->
-<html class=" js csstransforms csstransforms3d"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html class=" js csstransforms csstransforms3d">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>拾柒-REFLECT &amp; RELEARN</title>
-    
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
     <meta http-equiv="X-UA-Compatible" content="IE=9">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/template.css">
-            <link rel="stylesheet" href="css/font.css">
-    	<link rel="shortcut icon" href="https://www.shiqichuban.com/favicon.ico">
-    <script>
-        var csrf='ugWCGaddUHwyBKtUBVFBOfJH57pmd7kCgIQ1vuSu';
-    </script>
-            <script>
-            var data = {
-                "level": parseInt('4'),   // 0为无限，1为非会员，2为普通会员，3为高级会员
-                "level_desc": '非会员',   // 会员描述： 普通会员、高级会员
-                "level_icon": '',          // 过期时间，自1970年以来的秒数
-                "expire_at": '0',          // 过期时间，自1970年以来的秒数
-                "rights": {
-                    "is_top":parseInt('0'),
-                    "images": parseInt('5'),  // 文章中上传的图片数量上限
-                    "audios": parseInt('1'),  // 文章中上传的音频数量上限
-                    "audio_duration": parseInt('600'),  // 文章中上传的单个音频时长上限
-                    "videos": parseInt('1'),  // 文章中上传的视频数量上限
-                    "video_duration": parseInt('30'),  // 文章中上传的单个视频时长实现-
-                    "pdfs": parseInt('0'),    // 赠送的免费的pdf下载次数
-                    "more_font": parseInt('0'),   // 能否用会员字体，0表示不能用，非0可用
-                }
-            };
-            try{
-                window.sessionStorage.setItem('user_member_level',JSON.stringify(data)) ;
-            }catch(e){
-                window.sessionStorage.clear();
-                window.sessionStorage.setItem('user_member_level',JSON.stringify(data)) ;
-            }
-        </script>
-        	<link rel="stylesheet" type="text/css" href="css/response.css">
-	<style type="text/css">
-		.public_head span{
-			color: #7d7d7d;
-			font-size: 14px;
-			padding: 0 15px;
-			cursor: pointer;
-			letter-spacing: 1px;
-		}
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="shortcut icon" href="https://www.shiqichuban.com/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/response.css">
+    <style type="text/css">
+        .public_head span {
+            color: #7d7d7d;
+            font-size: 14px;
+            padding: 0 15px;
+            cursor: pointer;
+            letter-spacing: 1px;
+        }
 
         input[type='radio']:after {
             width: 15px;
@@ -75,7 +48,7 @@
             visibility: visible;
             border: 5px solid #333;
         }
-	</style>
+    </style>
 
 </head>
 <body>
@@ -83,478 +56,425 @@
     <div class="row header" style="box-shadow: rgb(238, 238, 238) 0px 10px 10px; margin-bottom: 15px;">
         <div class="col-xs-12 col-sm-10 col-sm-offset-1" style="line-height: 35px;">
             <div class="col-xs-2 col-sm-2">
-                <a href="https://www.shiqichuban.com/?fp=1" class="col-xs-12" style="padding-top: 10px;padding-bottom: 5px">
+                <a href="https://www.shiqichuban.com/?fp=1" class="col-xs-12"
+                   style="padding-top: 10px;padding-bottom: 5px">
                     <img class="logo" src="images/logo40.png" alt="拾柒">
                 </a>
             </div>
-
-                            <div class="col-xs-9 col-sm-9 public_head" style="padding-top: 15px;text-align: right;float: right;color: #8d8d8d;">
-                	
+            <div class="col-xs-9 col-sm-9 public_head"
+                 style="padding-top: 15px;text-align: right;float: right;color: #8d8d8d;">
                 	<span>
                 		<a class="header-btn" href="sq_index.html">个人主页</a>
                     </span>
-                    <span><a href="sq_copy.html">印制中心</a></span>
-                	<span><a href="order.html">我的订单</a></span>
-                    <span><a href="zuoping.html">我的作品</a></span>
-                    <span id="my_shiqi" style="position: relative;">
-                		<a>我的拾柒</a>
-                        <i><img class="my_icon_img" src="images/card_info_desc_icon.png"></i>
-                        <div id="my_list" style="display: none;position:absolute;z-index:1000;width:120px;right:0;top:0">
-                            <div style="background-color: #fff;border-radius: 4px;box-shadow: 0 1px 4px #ccc;margin-top: 40px">
-                                <p style="text-align: center;"><a href="integral.html">我的积分</a></p>
-                                <p style="text-align: center;" id="messagebox">我的消息</p>
-                                <p style="position: absolute;left:50%;top:20px;width:0;height: 0;border:10px solid rgba(0,0,0,0);border-bottom-color:#fff;"></p>
-                		    </div>
-                        </div>
+                <span><a href="sq_copy.html">印制中心</a></span>
+                <span><a href="order.html">我的订单</a></span>
+                <span><a href="zuoping.html">我的作品</a></span>
+                <span class="my_shiqi" style="position: relative;"  >
+                		<a id="my_sq">我的拾柒</a>
+                		<i><img class="my_icon_img" src="images/card_info_desc_icon.png"></i>
+                		<div class="my_list" id="my_sq2"
+                             style="display: none;position: absolute;z-index:1000;margin-top:-5px;width: 140px;right:0px;top:26px;background-color: #fff;padding-top:15px;border-radius: 4px;box-shadow: 0px 1px 4px #ccc;">
+                			<p style="text-align: center;"><a href="integral.html">我的积分</a></p>
+                			<p style="text-align: center;" id="messagebox">我的消息</p>
+                			<p style="position: absolute;left:50%;top:-20px;width:0;height: 0;border:10px solid rgba(0,0,0,0);border-bottom-color:#fff;"></p>
+                		</div>
                 	</span>
-                	<span>|</span>
-                	<span id="my_seting" style="position: relative;">
-                		<a>我的设置</a>
-                        <i><img class="my_icon_img" src="images/card_info_desc_icon.png"></i>
-                        <div id="setting_ul" style="display: none;position:absolute;z-index:1000;width:120px;right:0;top:0">
-                            <div style="background-color: #fff;border-radius: 4px;box-shadow: 0 1px 4px #ccc;margin-top: 40px">
-                                 <p style="text-align: center;"><a href="account.html">账户设置</a></p>
-                                                                            <p style="text-align: center;"><a href="https://www.shiqichuban.com/order/member">会员中心</a></p>
-                                                                        <p style="text-align: center;" id="logout_btn"><a href="javascript:void(0)">退出登录</a></p>
-                                 <p style="position: absolute;left:50%;top:20px;width:0;height: 0;border:10px solid rgba(0,0,0,0);border-bottom-color:#fff;pointer-events:none "></p>
-                		    </div>
-                        </div>
+                <span>|</span>
+                <span class="my_seting" style="position: relative;">
+                		<a id="setting">我的设置</a>
+                    	<i><img class="my_icon_img2" src="images/card_info_desc_icon.png"></i>
+                		<div id="setting_ul"
+                             style="position: absolute; z-index: 1000; width: 120px; right: 0px; top: 46px; background-color: rgb(255, 255, 255); padding-top: 15px; border-radius: 4px; box-shadow: rgb(204, 204, 204) 0px 1px 4px; display: none;">
+                			 <p style="text-align: center;"><a href="account.html">账户设置</a></p>
+							 <p style="text-align: center;"><a href="#">会员中心</a></p>
+							 <p style="text-align: center;" id="logout_btn"><a href="javascript:void(0)">退出登录</a></p>
+                			 <p style="position: absolute;left:50%;top:-20px;width:0;height: 0;border:10px solid rgba(0,0,0,0);border-bottom-color:#fff;"></p>
+                		</div>
                 	</span>
-                </div>
-                    </div>
+            </div>
+        </div>
     </div>
     <div class="row article" style="padding: 0px; margin-left: -25px; margin-right: -25px; min-height: 706px;">
         <style type="text/css">
-	.fl{
-		float: left;
-	}
-	.clearfix:after{
-		content: '';
-		display: block;
-		clear: both;
-	}
-	input::-webkit-input-placeholder{ 
-		color: #ccc; 
-	} 
-	input:-moz-placeholder{ 
-		color: #ccc; 
-	} 
-	input::-moz-placeholder{ 
-		color: #ccc; 
-	} 
-	input:-ms-input-placeholder{ 
-		color: #ccc; 
-	} 
-	.user_score{
-		font-size: 14px;
-		font-family: Microsoft yahei;
-	}
-	.user_score_head h3{
-		color: #2c2c2c;
-		margin: 0;
-		line-height: 36px;
-		height: 36px;
-		font-size: 14px;
-	}
-	.user_score_head .user_score_line{
-		height: 0;
-		border-top: 1px solid #4e4e4e;
-		border-bottom: 1px solid #9e9e9e;
-	}
-	.user_score_view{
-		margin-top: 20px;
-		border: 1px solid #ddd;
-		border-radius: 5px;
-		background-color: #f3f3f3;
-		padding: 22px 26px;
-	}
-	.user_avatar img{
-		width: 54px;
-		height: 54px;
-		border-radius: 27px;
-	}
-	.user_info{
-		padding-left: 26px;
-	}
-	.user_info div{
-		font-size: 14px;
-		color: #666;
-		line-height: 26px;
-		height: 26px;
-	}
-	.user_info .user_score_info{
-		font-size: 24px;
-		color: #fc6b6b;
-		line-height: 34px;
-		height: 34px;
-	}
-	.user_score_rule{
-		margin-top: 10px;
-		border: 1px solid #ddd;
-		border-radius: 5px;
+            .fl {
+                float: left;
+            }
 
-	}
-	.score_count{
-		margin-left:11% ;
-		padding-left: 9%;
-		border-left: 1px solid #dcdcdc;
-	}
-	
-	.count_des span{
-		color: #666666;
-		font-size: 14px;
-		display: inline-block;
-		vertical-align: bottom;
-	}
-	.count_des input{
-		border: 1px solid #e1e1e1;
-		height: 22px;
-		line-height: 22px;
-		-webkit-border-radius: 4px;
-		-moz-border-radius: 4px;
-		border-radius: 4px; 
-		padding-left: 10px;
-		width: 66px;
-		margin-left: 16px;
-		margin-right: 16px;
-		background: #f3f3f3;
-		font-size: 14px;
-		color: #fc6b6b;
-		vertical-align: middle;
-	}
-	.count_tips{
-		color: #999999;
-		font-size: 12px;
-		height: 20px;
-		line-height: 20px;
-		margin-top: 10px;
-		color: #fc6b6b;
-	}
-	.score_sub span{
-		margin-left: 58px;
-		background: #ccc;
-		color: #fff;
-		display: inline-block;
-		font-size: 14px;
-		padding: 0 25px;
-		height: 34px;
-		line-height: 34px;
-		-webkit-border-radius: 17px;
-		-moz-border-radius: 17px;
-		border-radius: 17px;
-		cursor: pointer;
-	}
-	.score_sub span:hover{
-		background: #333;
-	}
-	.user_score_rule h4{
-		background-color: #f3f3f3;
-		margin: 0;
-		font-size: 12px;
-		color: #2c2c2c;
-		padding-top: 6px;
-		line-height: 36px;
-		padding-left: 26px;
-	}
-	.user_score_list{
-		margin: 0;
-		padding: 0;
-		list-style: none;
-		padding-top: 15px;
-		padding-bottom: 17px;
-		padding-left: 26px;
+            .clearfix:after {
+                content: '';
+                display: block;
+                clear: both;
+            }
 
-	}
-	.user_score_list li{
-		font-size: 12px;
-		color: #666;
-		line-height: 25px;
-		letter-spacing: 1px;
-	}
-	.user_score_sources{
-		margin-top: 10px;
-		border: 1px solid #ddd;
-		border-radius: 5px;
+            input::-webkit-input-placeholder {
+                color: #ccc;
+            }
 
-	}
-	.user_score_sources h4{
-		background-color: #f3f3f3;
-		margin: 0;
-		font-size: 12px;
-		color: #2c2c2c;
-		padding-top: 6px;
-		line-height: 36px;
-		padding-left: 26px;
-	}
-	.user_source_list{
-		margin: 0;
-		padding: 0;
-		list-style: none;
-	}
-	.user_source_list li{
-		font-size: 0;
-	}
-	.user_source_list li span{
-		text-align: center;
-		letter-spacing: 1px;
-		font-size: 12px;
-		color: #666;
-		line-height: 43px;
-		border-bottom: 1px solid #f3f3f5;
-		display: inline-block;
-		width: 33.3%;
-		vertical-align: bottom;
-	}
-	@media  only screen and (max-width: 640px) {
-		.user_score{
-			padding: 0  !important;
-		}
-	}
-	@media  only screen and (max-width: 430px) {
-		.user_source_list li span{
-			display: inline;
-			padding-left:25px;
-		}
-	}
-	@media  only screen and (max-width: 1450px) {
-		.score_count{
-			margin-left:5% ;
-			padding-left: 4%;
-		}
-	}
-	@media  only screen and (max-width: 1300px) {
-		.score_sub {
-			float: right;
-		}
-	}
-</style>
-<div class="container-fluid">
-	<div class="col-xs-12 col-sm-10 col-sm-offset-1" style="margin-top: 10px;margin-bottom: 50px;padding-left:10px;padding-right:10px">
-		<div class="col-xs-12 user_score" style="background-color: white;border-radius:5px;min-height: 510px;padding: 28px 50px;">
-			<div class="col-xs-12 user_score_head">
-				<h3>我的积分</h3>
-				<div class="user_score_line"></div>
-				<div class="user_score_view clearfix">
-					<div class="user_avatar fl"><img src="text/LI_A5sqI_LIlNGl26lSmd5RZt7RJZSzSEdXj6upQXERt3w2vWRdEvO1I2u8scSEnWvjSUyl9kwZFbGtM1ukEFw"></div>
-					<div class="user_info fl">
-						<div>您目前的积分为：</div>
-						<div class="user_score_info">21</div>
-					</div>
-					<div class="score_count fl">
-						<div class="count_des">
-							<span>使用</span>
-							<input type="text" value="" placeholder="1000" id="count_score">
-							<span>积分 = </span>
-							<input type="text" value="" id="us_count_code" readonly="readonly">
-							<span>元优惠券（1000积分＝10元）</span>
-						</div>
-						<div class="count_tips fl">
-							(订单每满50元可使用10元优惠券)
-						</div>
-					</div>
-					<div class="score_sub fl">
-						<span>兑换</span>
-					</div>
-				</div>
-				
-			</div>
-			<div class="col-xs-12 ">
-				<div class="user_score_rule">
-					<h4>积分规则</h4>
-					<ul class="user_score_list">
-						<li>1.记&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录：每日首篇文章，奖励10积分；之后每篇文章奖励1积分。</li>
-						<li>2.分&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;享：每日首次分享奖励5积分。</li>
-						<li>3.印制/下载：按实付金额计算，每支付1元奖励1积分(不满1元时按1积分计算)。</li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-xs-12">
-				<div class="user_score_sources">
-					<h4>积分来源</h4>
-					<ul class="user_source_list">
-						                                                                                                <li>
-                                        <span>
-                                                                                            文章
-                                                                                    </span>
-                                        <span>
-                                            21积分
-                                        </span>
-                                        <span>
-                                            2019-07-09
-                                        </span>
-                                    </li>
-                                                                                                                                <li>
-                                        <span>
-                                                                                            分享
-                                                                                    </span>
-                                        <span>
-                                            0积分
-                                        </span>
-                                        <span>
-                                            
-                                        </span>
-                                    </li>
-                                                                                                                                <li>
-                                        <span>
-                                                                                            印制/下载
-                                                                                    </span>
-                                        <span>
-                                            0积分
-                                        </span>
-                                        <span>
-                                            
-                                        </span>
-                                    </li>
-                                                                                                                        											</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+            input:-moz-placeholder {
+                color: #ccc;
+            }
+
+            input::-moz-placeholder {
+                color: #ccc;
+            }
+
+            input:-ms-input-placeholder {
+                color: #ccc;
+            }
+
+            .user_score {
+                font-size: 14px;
+                font-family: Microsoft yahei;
+            }
+
+            .user_score_head h3 {
+                color: #2c2c2c;
+                margin: 0;
+                line-height: 36px;
+                height: 36px;
+                font-size: 14px;
+            }
+
+            .user_score_head .user_score_line {
+                height: 0;
+                border-top: 1px solid #4e4e4e;
+                border-bottom: 1px solid #9e9e9e;
+            }
+
+            .user_score_view {
+                margin-top: 20px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                background-color: #f3f3f3;
+                padding: 22px 26px;
+            }
+
+            .user_avatar img {
+                width: 54px;
+                height: 54px;
+                border-radius: 27px;
+            }
+
+            .user_info {
+                padding-left: 26px;
+            }
+
+            .user_info div {
+                font-size: 14px;
+                color: #666;
+                line-height: 26px;
+                height: 26px;
+            }
+
+            .user_info .user_score_info {
+                font-size: 24px;
+                color: #fc6b6b;
+                line-height: 34px;
+                height: 34px;
+            }
+
+            .user_score_rule {
+                margin-top: 10px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+
+            }
+
+            .score_count {
+                margin-left: 11%;
+                padding-left: 9%;
+                border-left: 1px solid #dcdcdc;
+            }
+
+            .count_des span {
+                color: #666666;
+                font-size: 14px;
+                display: inline-block;
+                vertical-align: bottom;
+            }
+
+            .count_des input {
+                border: 1px solid #e1e1e1;
+                height: 22px;
+                line-height: 22px;
+                -webkit-border-radius: 4px;
+                -moz-border-radius: 4px;
+                border-radius: 4px;
+                padding-left: 10px;
+                width: 66px;
+                margin-left: 16px;
+                margin-right: 16px;
+                background: #f3f3f3;
+                font-size: 14px;
+                color: #fc6b6b;
+                vertical-align: middle;
+            }
+
+            .count_tips {
+                color: #999999;
+                font-size: 12px;
+                height: 20px;
+                line-height: 20px;
+                margin-top: 10px;
+                color: #fc6b6b;
+            }
+
+            .score_sub span {
+                margin-left: 58px;
+                background: #ccc;
+                color: #fff;
+                display: inline-block;
+                font-size: 14px;
+                padding: 0 25px;
+                height: 34px;
+                line-height: 34px;
+                -webkit-border-radius: 17px;
+                -moz-border-radius: 17px;
+                border-radius: 17px;
+                cursor: pointer;
+            }
+
+            .score_sub span:hover {
+                background: #333;
+            }
+
+            .user_score_rule h4 {
+                background-color: #f3f3f3;
+                margin: 0;
+                font-size: 12px;
+                color: #2c2c2c;
+                padding-top: 6px;
+                line-height: 36px;
+                padding-left: 26px;
+            }
+
+            .user_score_list {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                padding-top: 15px;
+                padding-bottom: 17px;
+                padding-left: 26px;
+
+            }
+
+            .user_score_list li {
+                font-size: 12px;
+                color: #666;
+                line-height: 25px;
+                letter-spacing: 1px;
+            }
+
+            .user_score_sources {
+                margin-top: 10px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+
+            }
+
+            .user_score_sources h4 {
+                background-color: #f3f3f3;
+                margin: 0;
+                font-size: 12px;
+                color: #2c2c2c;
+                padding-top: 6px;
+                line-height: 36px;
+                padding-left: 26px;
+            }
+
+            .user_source_list {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+
+            .user_source_list li {
+                font-size: 0;
+            }
+
+            .user_source_list li span {
+                text-align: center;
+                letter-spacing: 1px;
+                font-size: 12px;
+                color: #666;
+                line-height: 43px;
+                border-bottom: 1px solid #f3f3f5;
+                display: inline-block;
+                width: 33.3%;
+                vertical-align: bottom;
+            }
+
+            @media only screen and (max-width: 640px) {
+                .user_score {
+                    padding: 0 !important;
+                }
+            }
+
+            @media only screen and (max-width: 430px) {
+                .user_source_list li span {
+                    display: inline;
+                    padding-left: 25px;
+                }
+            }
+
+            @media only screen and (max-width: 1450px) {
+                .score_count {
+                    margin-left: 5%;
+                    padding-left: 4%;
+                }
+            }
+
+            @media only screen and (max-width: 1300px) {
+                .score_sub {
+                    float: right;
+                }
+            }
+        </style>
+        <div class="container-fluid">
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1"
+                 style="margin-top: 10px;margin-bottom: 50px;padding-left:10px;padding-right:10px">
+                <div class="col-xs-12 user_score"
+                     style="background-color: white;border-radius:5px;min-height: 510px;padding: 28px 50px;">
+                    <div class="col-xs-12 user_score_head">
+                        <h3>我的积分</h3>
+                        <div class="user_score_line"></div>
+                        <div class="user_score_view clearfix">
+                            <div class="user_avatar fl"><img src="text/top.jpg"></div>
+                            <div class="user_info fl">
+                                <div>您目前的积分为：</div>
+                                <div class="user_score_info">21</div>
+                            </div>
+                            <div class="score_count fl">
+                                <div class="count_des">
+                                    <span>使用</span>
+                                    <input type="text" value="" placeholder="1000" id="count_score">
+                                    <span>积分 = </span>
+                                    <input type="text" value="" id="us_count_code" readonly="readonly">
+                                    <span>元优惠券（1000积分＝10元）</span>
+                                </div>
+                                <div class="count_tips fl">
+                                    (订单每满50元可使用10元优惠券)
+                                </div>
+                            </div>
+                            <div class="score_sub fl">
+                                <span>兑换</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-xs-12 ">
+                        <div class="user_score_rule">
+                            <h4>积分规则</h4>
+                            <ul class="user_score_list">
+                                <li>1.记&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录：每日首篇文章，奖励10积分；之后每篇文章奖励1积分。</li>
+                                <li>2.分&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;享：每日首次分享奖励5积分。</li>
+                                <li>3.印制/下载：按实付金额计算，每支付1元奖励1积分(不满1元时按1积分计算)。</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="user_score_sources">
+                            <h4>积分来源</h4>
+                            <ul class="user_source_list">
+                                <li>
+                                    <span>文章 </span>
+                                    <span>21积分 </span>
+                                    <span>2019-07-09</span>
+                                </li>
+                                <li>
+                                    <span>分享</span>
+                                    <span>0积分</span>
+                                    <span></span>
+                                </li>
+                                <li>
+                                    <span>印制/下载</span>
+                                    <span>0积分</span>
+                                    <span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
-<script type="text/javascript">
-if(isPC()) {
-		var mouse_click = 'click';
-	} else {
-		var mouse_click = 'touchstart';
-}
-var num=0;
-	var off=true;
-	var total_score=parseInt('21');
-	$('#count_score').focus(function(e){
-		$('#count_score').attr('placeholder','')
-	});
-	
-	$('#count_score').keyup(function(e){
-		var score= $(this).val();
-		
-		if(!isNaN(score)){
-			if(score>=1000){
-				var coupon=parseInt(score/1000)*10;
-				$('#us_count_code').val(coupon);
-				$('.count_tips').html('');
-				 num=parseInt(score/1000)*1000;
-				$('.score_sub span').css('background','#333');
-				
-			}else{
-				$('.count_tips').html('*请输入有效的积分！');
-				$('#count_code').focus();
-				$('.score_sub span').css('background','#ccc');
-				num='';
-			}
-			
-			if(score > total_score){
-				
-				$('.count_tips').html('*您的积分不足！');
-				$('#count_code').focus();
-				$('.score_sub span').css('background','#ccc');
-				num='';
-			}
-		}else{
-			$('.count_tips').html('*请输入有效的积分！');
-			$('#count_code').focus();
-			$('.score_sub span').css('background','#ccc');
-			num='';
-		}
-	});
-	
-	$(document).on(mouse_click,'.score_sub',function(e){
-		$('.score_sub span').css('background','#ccc');
-		if(num<1000 || num>total_score){
-			$('.count_tips').html('*请输入有效的积分！');
-			
-			$('#count_code').val('');
-			$('#us_count_code').val('');
-			$('#count_code').focus();
-			$('.score_sub span').css('background','#ccc');
-			num='';
-			return;
-		}
-		
-		if(off){
-			off=false;
-			var data={
-				'amount':num
-			};
-			
-			sendData({
-				is_api: true,
-				url: '/v1/user/exchange/score/coupon',
-				method: 'post',
-				data: data,
-				callback: function(data) {
-					if(data.err_code == 0) {
-						$('#us_count_score').val('');
-						$('#count_code').val('');
-						$('.count_tips').html('恭喜您，成功兑换'+data.exchange_money+'元优惠券！优惠券将会发送到您的消息中心。');
-						$('.user_score_info').html(data.user_total_score);
-						num='';
-						$('.score_sub span').css('background','#ccc');
-						off=true;
-						console.log(off)
-					}
-				},
-				errorFun: function(data) {
-					$('.count_tips').html(data.err_msg);
-					$('.score_sub span').css('background','#ccc');
-					off=true;
-					console.log(off)
-				}
-			});
-		}
-	})
-</script>
     </div>
 
-                    <div class="row footer" style="border-top: 2px solid rgb(200, 200, 200); background-color: rgb(54, 54, 54); padding: 10px 0px;">
+    <div class="row footer"
+         style="border-top: 2px solid rgb(200, 200, 200); background-color: rgb(54, 54, 54); padding: 10px 0px;">
             <span class="col-xs-12  col-sm-12" style="text-align: center;color:#ccc;font-size: 8px;">
                 拾柒网络技术（北京）有限公司 &gt;&gt; 京ICP备15043038
             </span>
-        </div>
-            </div>
+    </div>
+</div>
 <div class="modular" style=""></div>
-<script type="text/javascript">
-	var hostname=window.location.pathname;//获取url相对地址
-	var iseject='N';//接收后端是否是跳转过来的状态
-	var old_loginurl="https://www.shiqichuban.com/user/login";//旧的登录url
-	var isjump=(document.referrer == old_loginurl)?true:false;//document.referrer上次地址是老登录地址
-	var mouse_click;
 
-	if(isPC()) {
-		mouse_click = 'click';
-		$('.header').show();
-		$('.footer').show();
-	} else {
-		mouse_click = 'touchstart';
-    }
-    
-    if(window.document.location.pathname.indexOf('/portal/writing')>=0){
-    	$('.header-btn').css('color','#333');
-    }
-    
-    function isLoginView(){
-		if(window.location.href.indexOf('popup=1')>1 || window.location.href.indexOf('agent=')>1){
-			return true;
-		}else{
-			return false;
-		}
-	}
-		if(hostname=='/'){//如果在首页
-			if(isPC()){
-				if(iseject=='Y'||isjump || isLoginView()){//如果iseject状态是Y或者由旧登录地址跳转到首页的时候  执行弹出登录层
-					$('.login_new').trigger(mouse_click);//自动触发登录按钮
-				}
-			}else{
-				window.location.href='https://www.shiqichuban.com/user/mobile_login'
-			}
-		}
-</script>
+<script src="js/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="layer/2.4/layer.js"></script>
 <script>
-    $(document).ready(function () {
-        setTempleteReady();
-    });
+    $("#my_sq").on('mouseover', function () {
+        $('.my_list').show();
+        $('.my_icon_img').css({
+            'transform': 'rotate(90deg)',
+            '-webkit-transform': 'rotate(90deg)',
+            '-ms-transform': 'rotate(90deg)',
+            '-moz-transform': 'rotate(90deg)',
+            '-o-transform': 'rotate(90deg)',
+        })
+    })
+    $("#my_sq2").on('mouseover', function () {
+        $('.my_list').show();
+        $('.my_icon_img').css({
+            'transform': 'rotate(90deg)',
+            '-webkit-transform': 'rotate(90deg)',
+            '-ms-transform': 'rotate(90deg)',
+            '-moz-transform': 'rotate(90deg)',
+            '-o-transform': 'rotate(90deg)',
+        })
+    })
+    $("#my_sq2").on('mouseout', function () {
+        $('.my_list').hide();
+        $('.my_icon_img').css({
+            'transform': 'rotate(0)',
+            '-webkit-transform': 'rotate(0)',
+            '-ms-transform': 'rotate(0)',
+            '-moz-transform': 'rotate(0)',
+            '-o-transform': 'rotate(0)',
+        })
+    })
+    $("#setting").on('mouseover', function () {
+        $('#setting_ul').show();
+        $('.my_icon_img2').css({
+            'transform': 'rotate(90deg)',
+            '-webkit-transform': 'rotate(90deg)',
+            '-ms-transform': 'rotate(90deg)',
+            '-moz-transform': 'rotate(90deg)',
+            '-o-transform': 'rotate(90deg)',
+        })
+    })
+    $("#setting_ul").on('mouseover', function () {
+        $('#setting_ul').show();
+        $('.my_icon_img2').css({
+            'transform': 'rotate(90deg)',
+            '-webkit-transform': 'rotate(90deg)',
+            '-ms-transform': 'rotate(90deg)',
+            '-moz-transform': 'rotate(90deg)',
+            '-o-transform': 'rotate(90deg)',
+        })
+    })
+    $("#setting_ul").on('mouseout', function () {
+        $('#setting_ul').hide();
+        $('.my_icon_img2').css({
+            'transform': 'rotate(0)',
+            '-webkit-transform': 'rotate(0)',
+            '-ms-transform': 'rotate(0)',
+            '-moz-transform': 'rotate(0)',
+            '-o-transform': 'rotate(0)',
+        })
+    })
 </script>
 
 
-</body></html>
+</body>
+</html>

@@ -31,10 +31,21 @@
                                     <span>···</span><i class="ant-menu-submenu-arrow"></i></div>
                             </li>
                             <li class="ant-menu-submenu ant-menu-submenu-horizontal" role="menuitem">
-                                <div class="ant-menu-submenu-title" aria-expanded="false" aria-haspopup="true"><span
-                                        class="submenu-title-wrapper">我的设置</span><i class="ant-menu-submenu-arrow"></i>
+                                <div class="ant-menu-submenu-title" aria-expanded="false" aria-haspopup="true" id="setting"><span
+                                        class="submenu-title-wrapper">我的设置 </span>
+                                    <i class="ant-menu-submenu-arrow"></i>
+                                    <i><img class="my_icon_img2" src="images/card_info_desc_icon.png"></i>
+                                    <div id="setting_ul"
+                                         style="position: absolute; z-index: 1000; width: 120px; right: 0px; top: 46px; background-color: rgb(255, 255, 255); padding-top: 15px; border-radius: 4px; box-shadow: rgb(204, 204, 204) 0px 1px 4px; display: none;">
+                                        <p style="text-align: center;"><a href="account.html" style="text-decoration:none;color: black">账户设置</a></p>
+                                        <p style="text-align: center;"><a href="#" style="text-decoration:none;color: black">会员中心</a></p>
+                                        <p style="text-align: center;" id="logout_btn"><a href="javascript:void(0)" style="text-decoration:none;color: black">退出登录</a></p>
+                                        <p style="position: absolute;left:50%;top:-20px;width:0;height: 0;border:10px solid rgba(0,0,0,0);border-bottom-color:#fff;"></p>
+                                    </div>
+
                                 </div>
                             </li>
+
                             <li class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu"
                                 role="menuitem"
                                 style="font-size: 12px; border: 1px solid transparent; visibility: hidden; position: absolute; display: none;">
@@ -55,7 +66,7 @@
                                     <span>···</span><i class="ant-menu-submenu-arrow"></i></div>
                             </li>
                             <li class="ant-menu-item" role="menuitem"><a
-                                    href="sq_index.html">个人主页</a></li>
+                                    href="sy_index.html">个人主页</a></li>
                             <li class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu"
                                 role="menuitem" style="font-size: 12px; border: 1px solid transparent; display: none;">
                                 <div class="ant-menu-submenu-title" aria-expanded="false" aria-haspopup="true">
@@ -82,9 +93,17 @@
                                 <div class="ant-menu-submenu-title" aria-expanded="false" aria-haspopup="true">
                                     <span>···</span><i class="ant-menu-submenu-arrow"></i></div>
                             </li>
-                            <li class="ant-menu-submenu ant-menu-submenu-horizontal" role="menuitem">
-                                <div class="ant-menu-submenu-title" aria-expanded="false" aria-haspopup="true"><span
-                                        class="submenu-title-wrapper">我的拾柒</span><i class="ant-menu-submenu-arrow"></i>
+                            <li class="ant-menu-submenu ant-menu-submenu-horizontal " role="menuitem">
+                                <div id="my_sq" class="ant-menu-submenu-title" aria-expanded="false" aria-haspopup="true" >
+                                    <span class="submenu-title-wrapper">我的拾柒</span>
+                                    <i class="ant-menu-submenu-arrow"></i>
+                                    <i><img class="my_icon_img" src="images/card_info_desc_icon.png"></i>
+                                    <div class="my_list"
+                                         style="display: none;position: absolute;z-index:1000;width: 120px;right:0px;top:46px;background-color: #fff;padding-top:15px;border-radius: 4px;box-shadow: 0px 1px 4px #ccc;">
+                                        <p style="text-align: center;"><a href="integral.html" style="text-decoration:none;color: black">我的积分</a></p>
+                                        <p style="text-align: center;" id="messagebox" style="text-decoration:none;color: black">我的消息</p>
+                                        <p style="position: absolute;left:50%;top:-20px;width:0;height: 0;border:10px solid rgba(0,0,0,0);border-bottom-color:#fff;"></p>
+                                    </div>
                                 </div>
                             </li>
                             <li class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu"
@@ -123,138 +142,174 @@
                             <div style="width: 964px; height: 4px; background: rgb(0, 0, 0); margin: 0px auto;"></div>
                         </div>
                     </div>
-                    <div style="margin: 0px auto 70px; width: 964px;">
-                        <div style="width: 964px; height: 483px; display: flex; flex-direction: row; align-items: center;">
-                            <img src="" id="imga"
-                                 style="width: 482px; height: 482px; display: block; margin-right: 22px;">
-                            <div style="margin-right: 36px;">
-                                <div style="width: 144px; height: 482px; flex-direction: column; justify-content: space-between; align-items: center; overflow: hidden; display: flex;">
-                                    <div style="width: 171.6px; overflow: hidden;"><img
-                                            src="" id="imga2"
-                                            alt=""
-                                            style="width: 143px; height: 143px; display: block; box-sizing: border-box; border: 1px solid rgba(51, 51, 51, 0); margin: 0px auto;">
+                    <!--弹框-->
+                    <div id="tankuang" style="width: 100%; height: 100%; background: rgba(0, 0, 0, 0.35); position: fixed; top: 0px; left: 0px; overflow: hidden; z-index: 999;display: none;">
+                        <div style="width: 604px; height: 458px; overflow: hidden; position: absolute; top: 50%; left: 50%; margin-left: -302px; margin-top: -229px;">
+                            <div style="width: 100%; overflow: hidden; height: 54px;line-height: 54px; background: rgb(246, 247, 248); box-sizing: border-box; padding: 0px 32px; font: 16px/54px "PingFang SC"; color: rgb(51, 51, 51);">照片书—选择单页/批量上传</div>
+                        <div style="width: 100%; height: 340px; box-sizing: border-box; padding: 32px 0px 40px; background: rgb(255, 255, 255); overflow: auto hidden;">
+                            <div style="white-space: nowrap;">
+                                <div style="width: 154px; height: 268px; margin-left: 32px; display: inline-block; background: rgb(255, 255, 255); position: relative;">
+                                    <img src="https://static.shiqichuban.com/react_simple/app/static/single.1f90c46b.png" style="display: block; width: 154px; height: 198px;">
+                                    <div style="position: absolute; top: 10px; right: 10px; height: 18px; width: 18px; border-radius: 50%; border: 1px solid rgb(69, 69, 69);">
+                                        <div style="height: 10px; width: 10px; border-radius: 50%; background: rgb(69, 69, 69); margin: 3px auto; display: block;" id="dian"></div>
                                     </div>
-                                    <div style="width: 171.6px; overflow: hidden;"><img
-                                            src="" id="imgb"
-                                            alt=""
-                                            style="width: 143px; height: 143px; display: block; box-sizing: border-box; border: 1px solid rgba(51, 51, 51, 0); margin: 0px auto;">
-                                    </div>
-                                    <div style="width: 171.6px; overflow: hidden;"><img
-                                            src="" id="imgc"
-                                            alt=""
-                                            style="width: 143px; height: 143px; display: block; box-sizing: border-box; border: 1px solid rgba(51, 51, 51, 0); margin: 0px auto;">
-                                    </div>
-                                </div>
-                            </div>
-                            <div style="height: 100%; overflow: hidden;">
-                                <div class="antd-pro-components-product-center-product-classifications-style-classification-title" id="bookName2">
+                                    <div style="margin-top: 8px; font-size: 12px; color: rgb(51, 51, 51); text-align: center; display: block;">添加至单页</div>
+                                    <div style="margin-top: 8px; font-size: 12px; color: rgb(153, 153, 153); text-align: center; display: block;">照片数量为1-5张</div>
 
                                 </div>
-                                <div class="antd-pro-components-product-center-product-classifications-style-classification-des"
-                                     style="margin-bottom: 21px;" id="introduce">
-                                </div>
-                                <div style="display: block;">
-                                    <div class="antd-pro-components-product-center-product-classifications-style-select-text">
-                                        选择尺寸：
+                                <div style="width: 279px; height: 268px; margin-left: 32px; display: inline-block; background: rgb(255, 255, 255); position: relative;">
+                                    <img src="https://static.shiqichuban.com/react_simple/app/static/multy.a88ab7d4.png"style="display: block; width: 279px; height: 198px;">
+                                    <div style="position: absolute; top: 10px; right: 10px; height: 18px; width: 18px; border-radius: 50%; border: 1px solid rgb(69, 69, 69);">
+                                        <div style="height: 10px; width: 10px; border-radius: 50%; background: rgb(69, 69, 69); margin: 3px auto; display: none;"id="dian2"></div>
                                     </div>
-                                    <div style="margin-bottom: 59px;">
-                                        <div style="width: 198px; height: 188px; flex-direction: row; justify-content: space-between; align-items: flex-end; overflow: hidden; display: flex;">
-                                            <div style="width: 103.2px; overflow: hidden; cursor: pointer;"><img src="" style="width: 86px; height: 120px; display: block; box-sizing: border-box; border: 1px solid rgba(51, 51, 51, 0); margin: 0px auto;" id="imgd">
-                                                <div style="margin-top: 11px; text-align: center; color: rgb(0, 0, 0);">
-                                                    <div style="font-size: 14px; line-height: 20px;">简约中正</div>
-                                                    <div style="font-size: 12px; line-height: 20px;" id="psize"></div>
-                                                </div>
+                                    <div style="margin-top: 8px; font-size: 12px; color: rgb(51, 51, 51); text-align: center; display: block;">随机排版</div>
+                                    <div style="margin-top: 8px; font-size: 12px; color: rgb(153, 153, 153); text-align: center; display: block;">单次可上传多张照片</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width: 100%; height: 64px; background: rgb(255, 255, 255); box-sizing: border-box; border-top: 1px solid rgb(153, 153, 153);">
+                            <div style="width: 114px; height: 32px; border-radius: 4px; color: rgb(51, 51, 51); font: 16px/32px; text-align: center; float: left; margin-left: 100px; margin-top: 15px; border: 1px solid rgb(51, 51, 51); cursor: pointer;line-height: 32px;" id="close">取消</div>
+                            <div style="width: 114px; height: 32px; background: rgb(51, 51, 51); border-radius: 4px; color: rgb(255, 255, 255); font: 16px/32px ; text-align: center; float: right; margin-right: 100px; margin-top: 15px; cursor: pointer;line-height: 32px;">确定</div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin: 0px auto 70px; width: 964px;">
+                    <div style="width: 964px; height: 483px; display: flex; flex-direction: row; align-items: center;">
+                        <img src="" id="imga"
+                             style="width: 482px; height: 482px; display: block; margin-right: 22px;">
+                        <div style="margin-right: 36px;">
+                            <div style="width: 144px; height: 482px; flex-direction: column; justify-content: space-between; align-items: center; overflow: hidden; display: flex;">
+                                <div style="width: 171.6px; overflow: hidden;"><img
+                                        src="" id="imga2"
+                                        alt=""
+                                        style="width: 143px; height: 143px; display: block; box-sizing: border-box; border: 1px solid rgba(51, 51, 51, 0); margin: 0px auto;">
+                                </div>
+                                <div style="width: 171.6px; overflow: hidden;"><img
+                                        src="" id="imgb"
+                                        alt=""
+                                        style="width: 143px; height: 143px; display: block; box-sizing: border-box; border: 1px solid rgba(51, 51, 51, 0); margin: 0px auto;">
+                                </div>
+                                <div style="width: 171.6px; overflow: hidden;"><img
+                                        src="" id="imgc"
+                                        alt=""
+                                        style="width: 143px; height: 143px; display: block; box-sizing: border-box; border: 1px solid rgba(51, 51, 51, 0); margin: 0px auto;">
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div style="height: 100%; overflow: hidden;">
+                            <div class="antd-pro-components-product-center-product-classifications-style-classification-title" id="bookName2">
+                            </div>
+                            <div class="antd-pro-components-product-center-product-classifications-style-classification-des"
+                                 style="margin-bottom: 21px;" id="introduce">
+                            </div>
+                            <div style="display: block;">
+                                <div class="antd-pro-components-product-center-product-classifications-style-select-text">
+                                    选择尺寸：
+                                </div>
+                                <div style="margin-bottom: 59px;">
+                                    <div style="width: 198px; height: 188px; flex-direction: row; justify-content: space-between; align-items: flex-end; overflow: hidden; display: flex;">
+                                        <div style="width: 103.2px; overflow: hidden; cursor: pointer;"><img src="" style="width: 86px; height: 120px; display: block; box-sizing: border-box; border: 1px solid rgba(51, 51, 51, 0); margin: 0px auto;" id="imgd">
+                                            <div style="margin-top: 11px; text-align: center; color: rgb(0, 0, 0);">
+                                                <div style="font-size: 14px; line-height: 20px;">简约中正</div>
+                                                <div style="font-size: 12px; line-height: 20px;" id="psize"></div>
                                             </div>
-                                            <div style="width: 75.6px; overflow: hidden; cursor: pointer;"><img
-                                                    src="" id="imge"
-                                                    alt="精致唯美"
-                                                    style="width: 63px; height: 89px; display: block; box-sizing: border-box; border: 1px solid rgb(51, 51, 51); margin: 0px auto;">
-                                                <div style="margin-top: 11px; text-align: center; color: rgb(0, 0, 0);">
-                                                    <div style="font-size: 14px; line-height: 20px;">精致唯美</div>
-                                                    <div style="font-size: 12px; line-height: 20px;">140*210mm</div>
-                                                </div>
+                                        </div>
+                                        <div style="width: 75.6px; overflow: hidden; cursor: pointer;"><img
+                                                src="" id="imge"
+                                                alt="精致唯美"
+                                                style="width: 63px; height: 89px; display: block; box-sizing: border-box; border: 1px solid rgb(51, 51, 51); margin: 0px auto;">
+                                            <div style="margin-top: 11px; text-align: center; color: rgb(0, 0, 0);">
+                                                <div style="font-size: 14px; line-height: 20px;">精致唯美</div>
+                                                <div style="font-size: 12px; line-height: 20px;">140*210mm</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="antd-pro-components-product-center-product-classifications-style-confirm-btn">
-                                    <a href="article.html">立即制作</a>
-                                </div>
+                            </div>
+                            <div class="antd-pro-components-product-center-product-classifications-style-confirm-btn">
+                                <a style="color: white;" onclick="make()">立即制作</a>
                             </div>
                         </div>
                     </div>
-                    <div style="margin-bottom: 40px;">
-                        <div>
-                            <div style="width: 810px; height: 40px; overflow: hidden; display: block; text-align: center; font-size: 22px; line-height: 1.81818; color: rgb(51, 51, 51); border-bottom: 2px solid rgb(51, 51, 51); margin: 0px auto;">
-                                产品介绍
-                            </div>
-                            <div style="width: 810px; height: 17px; overflow: hidden; text-align: center; margin: 0px auto;">
-                                <span style="display: inline-block; height: 17px; line-height: 1.41667; font-size: 12px; background: rgb(51, 51, 51); padding: 0px 5px; color: rgb(254, 254, 254);">INFORMATION</span>
-                            </div>
-                        </div>
-                    </div>
+                </div>
+                <div style="margin-bottom: 40px;">
                     <div>
-                        <div style="width: 100%; height: auto; flex-direction: column; align-items: center; overflow: hidden; display: flex; justify-content: flex-start;">
-                            <div style="overflow: hidden; margin-right: 0px; margin-bottom: 55px;"><img
-                                    src="" id="imgf"
-                                    style="width: 820px; display: block; margin: 0px auto;"></div>
-                            <div style="overflow: hidden; margin-right: 0px; margin-bottom: 55px;"><img
-                                    src="" id="imgg"
-                                    style="width: 820px; display: block; margin: 0px auto;"></div>
-                            <div style="overflow: hidden; margin-right: 0px; margin-bottom: 55px;">
-                                <video src="https://stage-res.shiqichuban.com/v1/image/get/vRQaAYdP3Tpk8w0864tAV_KfLvfF7IWYP9-b6Pg4hj5kHWPbgcJJ5Ya5dcNq_VQGzMp89SzpeVFTrF43MGe05g"
-                                       poster="https://res.shiqichuban.com/v1/image/get/9_6OhitL71cOEIvRTHW_Lxamw0Kqc1-aoaBkJKEKdKhbDhHcAiMp182HvEbSeNwNM26M4xLH1PUUVXTrVPOj8Q"
-                                       controls=""
-                                       style="height: 415px; width: 820px; display: block; margin: 0px auto;"></video>
-                            </div>
-                            <div style="overflow: hidden; margin-right: 0px; margin-bottom: 55px;"><img
-                                    src="" id="imgh"
-                                    style="width: 820px; display: block; margin: 0px auto;"></div>
+                        <div style="width: 810px; height: 40px; overflow: hidden; display: block; text-align: center; font-size: 22px; line-height: 1.81818; color: rgb(51, 51, 51); border-bottom: 2px solid rgb(51, 51, 51); margin: 0px auto;">
+                            产品介绍
+                        </div>
+                        <div style="width: 810px; height: 17px; overflow: hidden; text-align: center; margin: 0px auto;">
+                            <span style="display: inline-block; height: 17px; line-height: 1.41667; font-size: 12px; background: rgb(51, 51, 51); padding: 0px 5px; color: rgb(254, 254, 254);">INFORMATION</span>
                         </div>
                     </div>
-                    <div style="margin: 0px auto 33px; width: 840px;">
-                        <div class="ant-divider ant-divider-horizontal ant-divider-with-text ant-divider-dashed"
-                             style="width: 840px;"><span class="ant-divider-inner-text"><div
-                                style="font-size: 16px; color: rgb(51, 51, 51);">你还可以做什么</div></span></div>
+                </div>
+                <div>
+                    <div style="width: 100%; height: auto; flex-direction: column; align-items: center; overflow: hidden; display: flex; justify-content: flex-start;">
+                        <div style="overflow: hidden; margin-right: 0px; margin-bottom: 55px;"><img
+                                src="" id="imgf"
+                                style="width: 820px; display: block; margin: 0px auto;"></div>
+                        <div style="overflow: hidden; margin-right: 0px; margin-bottom: 55px;"><img
+                                src="" id="imgg"
+                                style="width: 820px; display: block; margin: 0px auto;"></div>
+                        <div style="overflow: hidden; margin-right: 0px; margin-bottom: 55px;">
+                            <video src="E:/小游戏/拾柒/视频/book02.mp4" style="height: 415px; width: 820px; display: block; margin: 0px auto;"  id="shiping" autoplay="autoplay"></video>
+                        </div>
+                        <!-- poster="https://res.shiqichuban.com/v1/image/get/9_6OhitL71cOEIvRTHW_Lxamw0Kqc1-aoaBkJKEKdKhbDhHcAiMp182HvEbSeNwNM26M4xLH1PUUVXTrVPOj8Q"-->
+                        <div style="overflow: hidden; margin-right: 0px; margin-bottom: 55px;"><img
+                                src="" id="imgh"
+                                style="width: 820px; display: block; margin: 0px auto;"></div>
                     </div>
-                    <div style="margin: 0px auto 318px; width: 820px;">
-                        <div style="width: 820px; height: 196px; flex-direction: row; justify-content: space-between; align-items: center; overflow: hidden; display: flex;">
-                            <div style="width: 225.6px; overflow: hidden; cursor: pointer;"><img
-                                    src="text/17.jpg"
-                                    alt=""
-                                    style="width: 188px; height: 192px; display: block; box-sizing: border-box; border: 1px solid rgba(51, 51, 51, 0); margin: 0px auto;">
-                            </div>
-                            <div style="width: 225.6px; overflow: hidden; cursor: pointer;"><img
-                                    src="text/14.jpg"
-                                    alt=""
-                                    style="width: 188px; height: 192px; display: block; box-sizing: border-box; border: 1px solid rgba(51, 51, 51, 0); margin: 0px auto;">
-                            </div>
-                            <div style="width: 225.6px; overflow: hidden; cursor: pointer;"><img
-                                    src="text/16.jpg"
-                                    alt=""
-                                    style="width: 188px; height: 192px; display: block; box-sizing: border-box; border: 1px solid rgba(51, 51, 51, 0); margin: 0px auto;">
-                            </div>
-                            <div style="width: 225.6px; overflow: hidden; cursor: pointer;"><img
-                                    src="text/26.jpg"
-                                    alt=""
-                                    style="width: 188px; height: 192px; display: block; box-sizing: border-box; border: 1px solid rgba(51, 51, 51, 0); margin: 0px auto;">
-                            </div>
+                </div>
+                <div style="margin: 0px auto 33px; width: 840px;">
+                    <div class="ant-divider ant-divider-horizontal ant-divider-with-text ant-divider-dashed"
+                         style="width: 840px;"><span class="ant-divider-inner-text"><div
+                            style="font-size: 16px; color: rgb(51, 51, 51);">你还可以做什么</div></span></div>
+                </div>
+                <div style="margin: 0px auto 318px; width: 820px;">
+                    <div  id="doSomething" style="width: 820px; height: 196px; flex-direction: row; justify-content: space-between; align-items: center; overflow: hidden; display: flex;">
+                        <div style="width: 225.6px; overflow: hidden; cursor: pointer;" onclick="queryById(1)"><img
+                                src="text/52.jpg"
+                                alt=""
+                                style="width: 188px; height: 192px; display: block; box-sizing: border-box; border: 1px solid rgba(51, 51, 51, 0); margin: 0px auto;">
+                        </div>
+                        <div style="width: 225.6px; overflow: hidden; cursor: pointer;" onclick="queryById(2)"><img
+                                src="text/17.jpg"
+                                alt=""
+                                style="width: 188px; height: 192px; display: block; box-sizing: border-box; border: 1px solid rgba(51, 51, 51, 0); margin: 0px auto;">
+                        </div>
+                        <div style="width: 225.6px; overflow: hidden; cursor: pointer;"onclick="queryById(3)"><img
+                                src="text/16.jpg"
+                                alt=""
+                                style="width: 188px; height: 192px; display: block; box-sizing: border-box; border: 1px solid rgba(51, 51, 51, 0); margin: 0px auto;">
+                        </div>
+                        <div style="width: 225.6px; overflow: hidden; cursor: pointer;" onclick="queryById(4)"><img
+                                src="text/26.jpg"
+                                alt=""
+                                style="width: 188px; height: 192px; display: block; box-sizing: border-box; border: 1px solid rgba(51, 51, 51, 0); margin: 0px auto;">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div style="height: 60px; background: rgb(74, 74, 74); text-align: center; line-height: 5; color: rgb(255, 255, 255);">
-            拾柒网络技术（北京）有限公司 &gt;&gt; 京ICP备15043038
-        </div>
+    </div>
+    <div style="height: 60px; background: rgb(74, 74, 74); text-align: center; line-height: 5; color: rgb(255, 255, 255);">
+        拾柒网络技术（北京）有限公司 &gt;&gt; 京ICP备15043038
     </div>
 </div>
+</div>
 <script src="js/jquery-3.2.1.js"></script>
-
 <script>
     $(()=>{
         var pid = localStorage.getItem("pid")
         console.log(pid)
+        queryBookById();
+    })
+    function queryBookById (){
+        var pid = localStorage.getItem("pid")
         $.ajax({
             type:"post",
             url:"queryBookById",
@@ -274,21 +329,20 @@
                 $("#imgf").attr("src","text/"+data.imgf);
                 $("#imgg").attr("src","text/"+data.imgg);
                 $("#imgh").attr("src","text/"+data.imgh);
+                $("#shiping").attr("src","E:/小游戏/拾柒/视频/book02.mp4")
                 $("#psize").html("src",data.psize);
-
                 localStorage.setItem("imga","text/"+data.imga)
                 localStorage.setItem("imgb","text/"+data.imgb)
                 localStorage.setItem("imgc","text/"+data.imgc)
-
             }
         })
-    })
+    }
     $("#imga2").click(function () {
         var imga = localStorage.getItem("imga")
         $("#imga").attr("src",imga);
     })
     $("#imgb").click(function () {
-       var imgb = localStorage.getItem("imgb")
+        var imgb = localStorage.getItem("imgb")
         $("#imga").attr("src",imgb);
 
     })
@@ -296,6 +350,105 @@
         var imgc = localStorage.getItem("imgc")
         $("#imga").attr("src",imgc);
 
+    })
+
+    function queryById(printId){
+        console.log(printId+"-------printId")
+        $.ajax({
+            type:"post",
+            url:"queryBookById",
+            data:{"pid":printId},
+            dataType:"json",
+            success:function (data) {
+                console.log(data);
+                $("#bookName").html(data.pname);
+                $("#bookName2").html(data.pname);
+                $("#introduce").html(data.introduce);
+                $("#imga").attr("src","text/"+data.imga);
+                $("#imga2").attr("src","text/"+data.imga);
+                $("#imgb").attr("src","text/"+data.imgb);
+                $("#imgc").attr("src","text/"+data.imgc);
+                $("#imgd").attr("src","text/"+data.imgd);
+                $("#imge").attr("src","text/"+data.imge);
+                $("#imgf").attr("src","text/"+data.imgf);
+                $("#imgg").attr("src","text/"+data.imgg);
+                $("#imgh").attr("src","text/"+data.imgh);
+                $("#shiping").attr("src","E:/小游戏/拾柒/视频/book02.mp4")
+                $("#psize").html("src",data.psize);
+                localStorage.setItem("imga","text/"+data.imga)
+                localStorage.setItem("imgb","text/"+data.imgb)
+                localStorage.setItem("imgc","text/"+data.imgc)
+                // localStorage.removeItem("pid");
+                // location.href="easy_book.html"
+
+            }
+        })
+
+    }
+    //立即制止
+    function make(){
+        var pid = localStorage.getItem("pid")
+        if (pid ==1 || pid==2){
+            location.href = "article.html"
+        }else {
+            $("#tankuang").css("display","block")
+            //添加书籍信息
+        }
+    }
+    $("#close").click(function () {
+        $("#tankuang").css("display","none")
+    })
+    $("#dian").click(function () {
+        console.log("dian")
+        $("#dian").css("display","block")
+        $("#dian2").css("display","none");
+
+    })
+    $("#dian2").click(function () {
+        console.log("dian2")
+        $("#dian").css("display","none")
+        $("#dian2").css("display","block");
+
+    })
+    $("#my_sq").on('mouseover',function () {
+        $('.my_list').show();
+        $('.my_icon_img').css({
+            'transform': 'rotate(90deg)',
+            '-webkit-transform': 'rotate(90deg)',
+            '-ms-transform': 'rotate(90deg)',
+            '-moz-transform': 'rotate(90deg)',
+            '-o-transform': 'rotate(90deg)',
+        })
+    })
+    $("#my_sq").on('mouseout',function () {
+        $('.my_list').hide();
+        $('.my_icon_img').css({
+            'transform': 'rotate(0)',
+            '-webkit-transform': 'rotate(0)',
+            '-ms-transform': 'rotate(0)',
+            '-moz-transform': 'rotate(0)',
+            '-o-transform': 'rotate(0)',
+        })
+    })
+    $("#setting").on('mouseover',function () {
+        $('#setting_ul').show();
+        $('.my_icon_img2').css({
+            'transform': 'rotate(90deg)',
+            '-webkit-transform': 'rotate(90deg)',
+            '-ms-transform': 'rotate(90deg)',
+            '-moz-transform': 'rotate(90deg)',
+            '-o-transform': 'rotate(90deg)',
+        })
+    })
+    $("#setting").on('mouseout',function () {
+        $('#setting_ul').hide();
+        $('.my_icon_img2').css({
+            'transform': 'rotate(0)',
+            '-webkit-transform': 'rotate(0)',
+            '-ms-transform': 'rotate(0)',
+            '-moz-transform': 'rotate(0)',
+            '-o-transform': 'rotate(0)',
+        })
     })
 </script>
 </body>
