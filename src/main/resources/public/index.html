@@ -85,19 +85,18 @@
 				<ul>
 					<li><a data-href="ht_user_list.html" data-title="用户列表" href="javascript:;">用户列表</a></li>
 					<li><a data-href="ht_user-bear.html" data-title="禁封的用户" href="javascript:;">禁封的用户</a></li>
-					<li><a data-href="ht_user-level.html" data-title="等级管理" href="javascript:;">等级管理</a></li>
 					<li><a data-href="ht_user-integral.html" data-title="积分管理" href="javascript:;">积分管理</a></li>
-					<li><a data-href="ht_user-record-browse.html" data-title="浏览记录" href="javascript:void(0)">浏览记录</a></li>
 			</ul>
 		</dd>
 	</dl>
+
 		<dl id="ht_article">
 			<dt><i class="Hui-iconfont">&#xe62d;</i> 文章管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="article-list.html" data-title="文章列表" href="javascript:void(0)">文章列表</a></li>
-					<li><a data-href="article-bear.html" data-title="禁封的文章" href="javascript:void(0)">禁封的文章</a></li>
-					<li><a data-href="article-more.html" data-title="" href="javascript:void(0)">未知</a></li>
+					<li><a data-href="ht_article_list.html" data-title="文章列表" href="javascript:void(0)">文章列表</a></li>
+					<li><a data-href="ht_article_bear.html" data-title="禁封的文章" href="javascript:void(0)">禁封的文章</a></li>
+					<li><a data-href="ht_article_tag.html" data-title="标签列表" href="javascript:void(0)">标签列表</a></li>
 			</ul>
 		</dd>
 	</dl>
@@ -105,9 +104,8 @@
 			<dt><i class="Hui-iconfont">&#xe62d;</i> 书籍管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="book-list.html" data-title="书籍列表" href="javascript:void(0)">书籍列表</a></li>
-					<li><a data-href="book-permission.html" data-title="" href="javascript:void(0)">未知</a></li>
-					<li><a data-href="book-list.html" data-title="" href="javascript:void(0)">未知</a></li>
+					<li><a data-href="ht_book_list.html" data-title="书籍列表" href="javascript:void(0)">书籍列表</a></li>
+					<li><a data-href="ht_book_blocking.html" data-title="冻结的书籍" href="javascript:void(0)">冻结的书籍</a></li>
 				</ul>
 			</dd>
 		</dl>
@@ -115,9 +113,24 @@
 			<dt><i class="Hui-iconfont">&#xe62d;</i> 订单管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="order-role.html" data-title="订单列表" href="javascript:void(0)">订单列表</a></li>
-					<li><a data-href="order-permission.html" data-title="" href="javascript:void(0)">未知</a></li>
-					<li><a data-href="order-list.html" data-title="" href="javascript:void(0)">未知</a></li>
+					<li><a data-href="ht_order_wait.html" data-title="等待印刷" href="javascript:void(0)">等待印刷</a></li>
+					<li><a data-href="ht_order_coping.html" data-title="印刷中" href="javascript:void(0)">印刷中</a></li>
+					<li><a data-href="ht_order_running.html" data-title="物流运输中" href="javascript:void(0)">物流运输中</a></li>
+					<li><a data-href="ht_order_final.html" data-title="已完成" href="javascript:void(0)">已完成</a></li>
+
+				</ul>
+			</dd>
+		</dl>
+		<dl id="ht_level">
+			<dt><i class="Hui-iconfont">&#xe60d;</i> 等级管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a data-href="ht_manage_user.html" data-title="用户管理员" href="javascript:;">用户管理员</a></li>
+					<li><a data-href="ht_manage_article.html" data-title="文章管理员" href="javascript:;">文章管理员</a></li>
+					<li><a data-href="ht_manage_book.html" data-title="书籍管理员" href="javascript:;">书籍管理员</a></li>
+					<li><a data-href="ht_manage_order.html" data-title="订单管理员" href="javascript:;">订单管理员</a></li>
+					<li><a data-href="ht_manage_supper.html" data-title="超级管理员" href="javascript:;">超级管理员</a></li>
+
 				</ul>
 			</dd>
 		</dl>
@@ -166,6 +179,8 @@
 <script type="text/javascript" src="js/layer/2.4/layer.js"></script>
 <script type="text/javascript" src="h-ui/js/H-ui.min.js"></script>
 <script type="text/javascript" src="h-ui.admin/js/H-ui.admin.js"></script>
+
+
 <script type="text/javascript">
 
  $("#menu-system").show();
