@@ -17,28 +17,29 @@ public class OrdermoreController {
     @Autowired
     private OrdermoreService ordermoreService;
 
-    @RequestMapping("queryByordstatus")
-    public List<Ordermore> queryBystatus(@RequestParam("ordstatus")String ordstatus){
-        List<Ordermore> list = ordermoreService.queryByordstatus(ordstatus);
-        return  list;
-    }
     @RequestMapping("queryLikeBookname")
-    public List<Ordermore> queryLikeBookname(@RequestParam("bname")String bname){
-        List<Ordermore> list = ordermoreService.queryLikeBookname(bname);
+    public List<Ordermore> queryLikeBookname(@RequestParam("bname") String bname, @RequestParam("ordstatus") String ordstatus) {
+
+        if (bname == "" && ordstatus.equals("全部")) {
+            //查询所有
+            ordstatus = "";
+        }
+        System.out.println(bname + "----" + ordstatus);
+        List<Ordermore> list = ordermoreService.queryLikeBookname(bname, ordstatus);
         System.out.println(list);
         return list;
     }
 
     @RequestMapping("addOrdermore")
-    public int addOrdermore(HttpSession session,@RequestParam("bid")int bid, @RequestParam("ordint") int ordint, @RequestParam("ordstatus")String ordstatus){
+    public int addOrdermore(HttpSession session, @RequestParam("bid") int bid, @RequestParam("ordint") int ordint, @RequestParam("ordstatus") String ordstatus) {
         User user = (User) session.getAttribute("user");
-        int count = ordermoreService.addOrdermore(user.getUid(),bid,ordint,ordstatus);
+        int count = ordermoreService.addOrdermore(user.getUid(), bid, ordint, ordstatus);
         return count;
     }
 
     @RequestMapping("delOrdermore")
-    public int delOrdermore(@RequestParam("ordid")int ordid){
-    int count = ordermoreService.delOrdermore(ordid);
-    return count;
+    public int delOrdermore(@RequestParam("ordid") int ordid) {
+        int count = ordermoreService.delOrdermore(ordid);
+        return count;
     }
 }

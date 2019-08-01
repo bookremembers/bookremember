@@ -1,6 +1,8 @@
 package com.newer.sq.mapper;
 
+import com.newer.sq.domain.Books;
 import com.newer.sq.domain.Print;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
@@ -14,4 +16,8 @@ public interface BookMapper {
     
     @Select("select * from sq_print")
     public List<Print> queryBookAll();
+
+    /*添加到书籍*/
+    @Insert("insert into sq_book values()")
+    public int addBook(Books books);
 }

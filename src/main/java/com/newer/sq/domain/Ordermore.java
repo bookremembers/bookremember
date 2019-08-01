@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class Ordermore implements Serializable {
-
+    private static final long serialVersionUID = -3626040593704206900L;
     private Integer ordid;
     private Integer ordint;
     private Date orderdate;
@@ -18,6 +18,34 @@ public class Ordermore implements Serializable {
     private String Bsize;
     private String Bway;
     private String ordstatus;
+    private Integer addressid;
+    private Integer aid;
+
+    public Integer getAid() {
+        return aid;
+    }
+
+    public void setAid(Integer aid) {
+        this.aid = aid;
+    }
+
+    public Ordermore(Integer ordid, Integer ordint, Date orderdate, String aname, String amore, String aphone, String bname, String bookurl, Double bprice, Integer bpage, String bsize, String bway, String ordstatus, Integer addressid) {
+        this.ordid = ordid;
+        this.ordint = ordint;
+        this.orderdate = orderdate;
+        this.aname = aname;
+        this.amore = amore;
+        Aphone = aphone;
+        this.bname = bname;
+        this.bookurl = bookurl;
+        Bprice = bprice;
+        Bpage = bpage;
+        Bsize = bsize;
+        Bway = bway;
+        this.ordstatus = ordstatus;
+        this.addressid = addressid;
+    }
+
     public Ordermore() {
     }
 
@@ -35,6 +63,14 @@ public class Ordermore implements Serializable {
         Bsize = bsize;
         Bway = bway;
         this.ordstatus = ordstatus;
+    }
+
+    public Integer getAddressid() {
+        return addressid;
+    }
+
+    public void setAddressid(Integer addressid) {
+        this.addressid = addressid;
     }
 
     public Integer getOrdid() {
@@ -157,6 +193,7 @@ public class Ordermore implements Serializable {
                 ", Bsize='" + Bsize + '\'' +
                 ", Bway='" + Bway + '\'' +
                 ", ordstatus='" + ordstatus + '\'' +
+                ", addressid=" + addressid +
                 '}';
     }
 }

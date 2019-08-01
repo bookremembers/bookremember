@@ -499,9 +499,7 @@
 <script type="text/javascript" src="h-ui.admin/js/H-ui.admin.js"></script>
 <script>
 
-    var SUser=localStorage.getItem("loginUser");
-    var jsonUser=JSON.parse(SUser);
-    var uid=jsonUser.uid;
+    var loginUserId=localStorage.getItem("loginUserId");
     //模态框
     function addAddress() {
         $("#Address").css("margin-top", "100px");
@@ -600,7 +598,7 @@
         $.ajax({
             type: "post",
             url: "addAddress",
-            data: {"uid":uid,"provinceid":province,"cityid":city,"areaid":area,"aname":consigneeName,"amore":detailedAddress,"code":zipCode,"phone":phone},
+            data: {"uid":loginUserId,"provinceid":province,"cityid":city,"areaid":area,"aname":consigneeName,"amore":detailedAddress,"code":zipCode,"phone":phone},
             dataType: "json",
             success: (data) => {
                 console.log(data);
@@ -659,7 +657,7 @@
         $.ajax({
             type: "post",
             url: "queryAddressByUid",
-            data: {"uid": uid},
+            data: {"uid": loginUserId},
             dataType: "json",
             success: (data) => {
                 console.log(data);
