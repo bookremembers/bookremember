@@ -5,6 +5,172 @@
     <title>testCheck</title>
 </head>
 <body>
+<style>
+    .coupon {
+        position:fixed;
+        width:100%;
+        transition:all 400ms ease;
+        box-sizing:border-box;
+        background:#F8F8F8;
+        z-index:12;
+        bottom: 0;
+    p.tt {
+        line-height: 80px;
+        color: #333;
+        font-size: 24px;
+        text-align: center;
+        padding: 0 30px;
+    }
+    a {
+        font-size: 40px;
+        color: #999999;
+        float: right;
+        line-height: 80px;
+    }
+    ul {
+        padding: 0 30px;
+    li {
+        margin-bottom: 20px;
+    .cone {
+        width: 100%;
+    div.d1 {
+        padding: 30px 0;
+        display: flex;
+        background: linear-gradient(to top, #FFC875, #FABB5C);
+        border-radius: 20px;
+    div:nth-child(1) {
+        width: 230px;
+        border-right: 1px dashed #fff;
+        color: #ffffff;
+        text-align: center;
+        line-height: 90px;
+    span:nth-child(1) {
+        font-size: 90px;
+        font-weight: bold;
+        margin-right: 10px;
+    }
+    span:nth-child(2) {
+        font-size: 36px;
+    }
+    }
+    div:nth-child(2) {
+        padding: 0 0 0 40px;
+    p {
+        color: #fff;
+        font-size: 26px;
+        line-height: 45px;
+    }
+    p:nth-child(1) {
+        margin-bottom: 20px;
+    }
+    }
+    }
+    div.d2 {
+        font-size: 24px;
+        padding: 0 15px;
+        line-height: 40px;
+        color: #FFAC30;
+        background: linear-gradient(to top, #FFFDFD, #FFFFFF);
+        right: 30px;
+        position: absolute;
+        margin-top: 20px;
+        box-shadow:5px 2px 8px #FFAC30;
+    }
+    div.d2::before { // 这里写的是商品券的边角
+    content:"";
+        position: absolute;
+        right: 100%;
+        width: 0;
+        height: 0;
+        border-top: 20px solid #FFFDFD;
+        border-left: 15px solid transparent;
+        border-bottom: 20px solid #FFFDFD;
+        border-left: 15px solid transparent;
+    }
+    div.d3 {
+        background: #fff;
+        padding: 0 50px;
+    p {
+        color: #999999;
+        font-size: 20px;
+        line-height: 60px;
+    }
+    button {
+        float: right;
+        color: #55C47D;
+        border: 1px solid #55C47D;
+        line-height: 36px;
+        border-radius: 18px;
+        padding:0 20px;
+        font-size: 20px;
+        margin-top: -50px;
+    }
+    }
+    div.d3::before, div.d3::after { // 这里及以下是圆弧展示
+    content:"";
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        background: #FFFDFD;
+    }
+    div.d3::before {
+        left: 15px;
+        margin-top: -20px;
+    }
+    div.d3::after {
+        right: 15px;
+        margin-top: -80px;
+    }
+    }
+    }
+    }
+
+
+</style>
+<div class="coupon" :class="[showpop ? 'fadeup' : 'fadedown']">
+    <p class="tt">领取优惠券<a>×</a></p>
+    <ul>
+        <li>
+            <div class="cone">
+                <div class="d2">商品券</div>
+                <div class="d1">
+                    <div>
+                        <span>10</span>
+                        <span>元</span>
+                    </div>
+                    <div>
+                        <p>无门槛</p>
+                        <p>仅限购买蔬菜肉禽丹使用</p>
+                    </div>
+                </div>
+                <div class="d3">
+                    <p>【杭州一号店】有效期至2019-03-06</p>
+                    <button>立即领取</button>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="cone">
+                <div class="d2">商品券</div>
+                <div class="d1">
+                    <div>
+                        <span>10</span>
+                        <span>元</span>
+                    </div>
+                    <div>
+                        <p>无门槛</p>
+                        <p>仅限购买蔬菜肉禽丹使用</p>
+                    </div>
+                </div>
+                <div class="d3">
+                    <p>【杭州一号店】有效期至2019-03-06</p>
+                    <button>立即领取</button>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
 
 </body>
 </html>

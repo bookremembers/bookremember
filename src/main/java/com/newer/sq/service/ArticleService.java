@@ -29,4 +29,9 @@ public class ArticleService {
     public List<Article> selectAll(){
         return articleMapper.selectAll();
     }
+
+    public List<Article> queryAllByatype1(int atype){
+    return articleMapper.queryAllByatype1(atype);
+    }
+
 }

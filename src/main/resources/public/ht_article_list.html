@@ -25,7 +25,7 @@
 <script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
-<title>用户管理</title>
+<title>文章管理</title>
 </head>
 <body>
 	<nav class="breadcrumb">
@@ -52,10 +52,7 @@
 	<div class="page-container">
 
 		<div class="cl pd-5 bg-1 bk-gray mt-20">
-			<span class="l"><a href="javascript:;"
-				onclick="member_add('添加用户','member-add.html','','510')"
-				class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i>
-					添加用户</a></span> <span class="r">共有数据：<strong>88</strong> 条
+			 <span class="r">共有数据：<strong>88</strong> 条
 			</span>
 		</div>
 		<div class="mt-20">
@@ -81,7 +78,7 @@
 	$(function(){
 		var table1 = $("#adminList").dataTable({
 			"searching":false,
-			"sAjaxSource" : "api/PageServlet",
+			"sAjaxSource" : "queryAllByatype1?atype=101",
 			"fnServerData" : function(sSource, aoData, fnCallback) { // 向服务器发送请求
 				// 1.sSource -- 请求路径 2.aoData -- dataTable封装参数 3.回调函数
 				$.ajax({
@@ -100,39 +97,33 @@
 			/* "language":{url:"../js/zh_CN.txt"}, */
 			"bServerSide" : true,
 			"aoColumns" : [ {
-				mDataProp : "username",
-				sTitle : "用户名",
+				mDataProp : "artid",
+				sTitle : "文章id",
 			}, {
-				mDataProp : "sex",
-				sTitle : "性别"
+				mDataProp : "artitle",
+				sTitle : "文章标题"
 			}, {
-				mDataProp : "phone",
-				sTitle : "手机号码",
-					render : function(phone, dis, obj) {
-						var first = phone.substring(0, 1);
-						var last = phone.substring(phone.length - 1, phone.length);
-						return first + "***" + last;
-						return "<span style = 'color:red'>" + phone + "</span>";
-						return phone;
-					}
+				mDataProp : "arttext",
+				sTitle : "文章内容",
+					// render : function(phone, dis, obj) {
+					// 	var first = phone.substring(0, 1);
+					// 	var last = phone.substring(phone.length - 1, phone.length);
+					// 	return first + "***" + last;
+					// 	return "<span style = 'color:red'>" + phone + "</span>";
+					// 	return phone;
+					// }
 			}, {
-				mDataProp : "email",
-				sTitle : "邮件"
+				mDataProp : "arttag",
+				sTitle : "文章标签"
 			},  {
-				mDataProp : "regTime",
-				sTitle : "注册时间"
-			}, {
-				mDataProp : "msg",
-				sTitle : "备注",
+				mDataProp : "artdate",
+				sTitle : "创作时间"
 			},
 			]
 		});
 		});
 	
-		/* 用户-添加 */
-		function member_add(title, url, w, h) {
-			layer_show(title, url, w, h);
-		}
+
 		/* 用户-查看 */
 		function member_show(title, url, id, w, h) {
 			layer_show(title, url, w, h);

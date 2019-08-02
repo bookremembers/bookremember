@@ -323,12 +323,6 @@
 <link href="css/SimpleZero.css" rel="stylesheet">
 <link rel="stylesheet" href="css/emojify.min.css">
 
-<script type="text/javascript" src="action_js/index.js"></script>
-<script type="text/javascript" src="action_js/canvas-nest.min.js"></script>
-<script type="text/javascript" src="action_js/three.min.js"></script>
-<script type="text/javascript" src="action_js/canvas_lines.min.js"></script>
-<script type="text/javascript" src="action_js/canvas_sphere.min.js"></script>
-<script type="text/javascript" src="action_js/utils.js"></script>
 
 <script src="js/jquery-3.2.1.js"></script>
 <script>
@@ -381,6 +375,7 @@
 
     })
 
+    //你还能做什么
     function queryById(printId){
         console.log(printId+"-------printId")
         $.ajax({
@@ -407,6 +402,10 @@
                 localStorage.setItem("imga","text/"+data.imga)
                 localStorage.setItem("imgb","text/"+data.imgb)
                 localStorage.setItem("imgc","text/"+data.imgc)
+                //返回顶部
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 600);
                 // localStorage.removeItem("pid");
                 // location.href="easy_book.html"
 
@@ -424,6 +423,7 @@
             //添加书籍信息
         }
     }
+
     $("#close").click(function () {
         $("#tankuang").css("display","none")
     })

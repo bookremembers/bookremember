@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+		<head>
+		<meta charset="UTF-8">
+		<title>分页</title>
+		<link rel="stylesheet" type="text/css" href="page_css/zxf_page.css"/>
+		<script src="page_js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="page_js/zxf_page.js"></script>
+		</head>
+		<body>
+<!--翻页-->
+<div class="zxf_pagediv"></div>
+<script type="text/javascript">
+		//翻页
+		$(".zxf_pagediv").createPage({
+			pageNum: 20,
+			current: 6,
+			backfun: function(e) {
+				//console.log(e);//回调
+			}
+		});
+	</script>
+</body>
+</html>

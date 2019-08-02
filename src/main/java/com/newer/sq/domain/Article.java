@@ -11,6 +11,7 @@ public class Article implements Serializable {
     private Integer Artid;
     private Integer Uid;
     private Integer Artstatus;
+    private Integer Atype;
     private String Arttitle;
     private String Arttext;
     private String Arttag;
@@ -18,6 +19,25 @@ public class Article implements Serializable {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")
     private Date ArtDate;
+    private Integer bid;
+    private Date deleteTime;
+
+    public Article() {
+    }
+
+    public Article(Integer artid, Integer uid, Integer artstatus, Integer atype, String arttitle, String arttext, String arttag, String artphotoPath, Date artDate, Integer bid, Date deleteTime) {
+        Artid = artid;
+        Uid = uid;
+        Artstatus = artstatus;
+        Atype = atype;
+        Arttitle = arttitle;
+        Arttext = arttext;
+        Arttag = arttag;
+        ArtphotoPath = artphotoPath;
+        ArtDate = artDate;
+        this.bid = bid;
+        this.deleteTime = deleteTime;
+    }
 
     public Integer getArtid() {
         return Artid;
@@ -41,6 +61,14 @@ public class Article implements Serializable {
 
     public void setArtstatus(Integer artstatus) {
         Artstatus = artstatus;
+    }
+
+    public Integer getAtype() {
+        return Atype;
+    }
+
+    public void setAtype(Integer atype) {
+        Atype = atype;
     }
 
     public String getArttitle() {
@@ -83,17 +111,36 @@ public class Article implements Serializable {
         ArtDate = artDate;
     }
 
-    public Article(Integer artid, Integer uid, Integer artstatus, String arttitle, String arttext, String arttag, String artphotoPath, Date artDate) {
-        Artid = artid;
-        Uid = uid;
-        Artstatus = artstatus;
-        Arttitle = arttitle;
-        Arttext = arttext;
-        Arttag = arttag;
-        ArtphotoPath = artphotoPath;
-        ArtDate = artDate;
+    public Integer getBid() {
+        return bid;
     }
 
-    public Article() {
+    public void setBid(Integer bid) {
+        this.bid = bid;
+    }
+
+    public Date getDeleteTime() {
+        return deleteTime;
+    }
+
+    public void setDeleteTime(Date deleteTime) {
+        this.deleteTime = deleteTime;
+    }
+
+    @Override
+    public String toString() {
+        return "Article{" +
+                "Artid=" + Artid +
+                ", Uid=" + Uid +
+                ", Artstatus=" + Artstatus +
+                ", Atype=" + Atype +
+                ", Arttitle='" + Arttitle + '\'' +
+                ", Arttext='" + Arttext + '\'' +
+                ", Arttag='" + Arttag + '\'' +
+                ", ArtphotoPath='" + ArtphotoPath + '\'' +
+                ", ArtDate=" + ArtDate +
+                ", bid=" + bid +
+                ", deleteTime=" + deleteTime +
+                '}';
     }
 }

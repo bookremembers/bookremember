@@ -78,10 +78,10 @@
 
 	<script type="text/javascript">
 $(()=>{
-	$("#kanbuq").click(()=>{
-		$("#imageCode").attr("src","imageCodeServlet?"+Math.random());
-
-	})
+	// $("#kanbuq").click(()=>{
+	// 	$("#imageCode").attr("src","imageCodeServlet?"+Math.random());
+    //
+	// })
 	$("#btnLogin").click(()=>{
 		var username = $("#username").val();
 		if(!username){
@@ -100,14 +100,14 @@ $(()=>{
 		}
 		$.ajax({
 			type:"post",
-			url:"api/Login",
-			data:{"username":username,"password":password,"code":imageCode},
+			url:"sysuser",
+			data:{"username":username,"password":password},
 			dataType:"json",
 			success:function(data){
 				console.log(data);
-			if(data.flag){
-				localStorage.setItem("username",username);
-				localStorage.setItem("loginTime",data.loginTime);
+			if(data!=null){
+				// localStorage.setItem("username",username);
+				// localStorage.setItem("loginTime",data.loginTime);
 				location.href="index.html";
 			}else{
 				layer.msg("用户名或密码错误",{icon:2,time:1000});		

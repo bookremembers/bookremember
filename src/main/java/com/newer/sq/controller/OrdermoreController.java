@@ -31,7 +31,8 @@ public class OrdermoreController {
 
     @RequestMapping("addOrdermore")
     public int addOrdermore(HttpSession session,@RequestParam("bid")int bid, @RequestParam("ordint") int ordint, @RequestParam("ordstatus")String ordstatus){
-        User user = (User) session.getAttribute("user");
+        User user = (User) session.getAttribute("loginUser");
+        System.out.println(user+"--------"+user.getUid());
         int count = ordermoreService.addOrdermore(user.getUid(),bid,ordint,ordstatus);
         return count;
     }
