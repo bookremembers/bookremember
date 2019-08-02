@@ -498,12 +498,7 @@
 <script type="text/javascript" src="layer/2.4/layer.js"></script>
 <script type="text/javascript" src="h-ui.admin/js/H-ui.admin.js"></script>
 
-<script type="text/javascript" src="action_js/index.js"></script>
-<script type="text/javascript" src="action_js/canvas-nest.min.js"></script>
-<script type="text/javascript" src="action_js/three.min.js"></script>
-<script type="text/javascript" src="action_js/canvas_lines.min.js"></script>
-<script type="text/javascript" src="action_js/canvas_sphere.min.js"></script>
-<script type="text/javascript" src="action_js/utils.js"></script>
+
 
 <script>
 
@@ -610,6 +605,8 @@
             dataType: "json",
             success: (data) => {
                 console.log(data);
+                localStorage.setItem("aname",consigneeName);
+                localStorage.setItem("phone",phone)
                 if (data>0){
                     queryAllAddress();
                     $(".modal").modal("hide");  //关闭模态框
@@ -623,17 +620,21 @@
          queryAddressById(); //调用根据addressid查询信息的ajax   //新增成功后调用*/
     })
 
+    //收货人是否为下单人为同一人
     function box() {
+        var aname = localStorage.getItem("aname");
+        var phone = localStorage.getItem(("phone"))
         var box = $("#box").prop("checked")
         if (box == true) {
-            $("#boxname").val("CTT");
-            $("#boxphone").val("18670352059");
+            $("#boxname").val(aname);
+            $("#boxphone").val(phone);
         } else {
             $("#boxname").val(" ");
             $("#boxphone").val(" ");
         }
     }
 
+    //确定订单信息
     $(() => {
         var bid = localStorage.getItem("bid")
         console.log(bid + "-----");

@@ -43,7 +43,7 @@
 		</nav>
 		<nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
 			<ul class="cl">
-				<li id="state"></li>
+				<li id="usertype"></li>
 				<li class="dropDown dropDown_hover">
 					<a href="#" class="dropDown_A" id="username"><i class="Hui-iconfont">&#xe6d5;</i></a>
 					<ul class="dropDown-menu menu radius box-shadow">
@@ -69,7 +69,7 @@
 </div>
 </header>
 <aside class="Hui-aside">
-	<div class="menu_dropdown bk_2">
+	<div class="menu_dropdown bk_2" id="menuList">
 		<dl id="ht_picture">
 			<dt><i class="Hui-iconfont">&#xe613;</i> 图片管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
@@ -183,19 +183,86 @@
 
 <script type="text/javascript">
 
- $("#menu-system").show();
- $("#menu-article").show();
- $("#menu-picture").show();
- $("#menu-comments").show();
- $("#menu-admin").show();
- $("#menu-member").show();
- $("#menu-tongji").show();
-  $("#menu-product").show();
+    $("#ht_picture").hide();
+    $("#ht_user").hide();
+    $("#ht_article").hide();
+    $("#ht_book").hide();
+    $("#ht_level").hide();
+    $("#ht_order").hide();
+    $("#ht_system").hide();
 
 //menu-system  menu-article  menu-picture  menu-comments  menu-member  menu-admin menu-tongji  menu-system
 
 $(()=>{
+    //获取用户信息
+    $.ajax({
+        type:"post",
+        url:"getUserInfo",
+        dataType:"json",
+        success:(data)=>{
+            console.log(data);
+            $("#username").html(data.username);
 
+            if (data.usertype==0){
+                $("#usertype").html("超级管理员")
+                $("#ht_picture").show();
+                $("#ht_user").show();
+                $("#ht_article").show();
+                $("#ht_book").show();
+                $("#ht_level").show();
+                $("#ht_order").show();
+                $("#ht_system").show();
+			}else if (data.usertype==1){
+       		 	$("#usertype").html("用户管理员")
+                loadMenu(data.id);
+
+            }else if (data.usertype==2){
+                $("#usertype").html("文章管理员")
+                loadMenu(data.id);
+
+            }else if (data.usertype==3){
+                $("#usertype").html("书籍管理员")
+                loadMenu(data.id);
+
+            }else if (data.usertype==4){
+                $("#usertype").html("订单管理员")
+                loadMenu(data.id);
+
+            }
+        }
+    })
+
+    function loadMenu(id) {
+        $.ajax({
+            type:"post",
+            url:"loadMenu",
+            data:{"id":id},
+            dataType:"json",
+            success:(data)=>{
+                console.log(data);
+                var temp=``;
+                temp+=`
+			        <dl id="menu-admin">
+					<dt><i class="Hui-iconfont">&#xe62d;</i> ${data[0].topMenu.descn}<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+					<dd><ul>
+			        `;
+                $.each(data[0].childMenu,(index,obj)=>{
+                    temp+=`
+			            <li><a data-href="${obj.linkUrl}" data-title="${obj.descn}" href="javascript:void(0)">${obj.descn}</a></li>
+			            `;
+                })
+                temp+=`
+					</ul></dd></dl>
+				`;
+                $("#menuList").html(temp)
+                // 回调函数
+                $('.Hui-aside').Huifold({
+                    titCell: '.menu_dropdown dl dt',
+                    mainCell: '.menu_dropdown dl dd'
+                })
+            }
+        })
+    }
 	
 })
 //修改密码弹框

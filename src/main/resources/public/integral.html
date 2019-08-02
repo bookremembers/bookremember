@@ -339,25 +339,25 @@
                         <h3>我的积分</h3>
                         <div class="user_score_line"></div>
                         <div class="user_score_view clearfix">
-                            <div class="user_avatar fl"><img src="text/top.jpg"></div>
+                            <div class="user_avatar fl"><img src="" id="headPhoto"></div>
                             <div class="user_info fl">
                                 <div>您目前的积分为：</div>
-                                <div class="user_score_info">21</div>
+                                <div class="user_score_info" id="total"></div>
                             </div>
                             <div class="score_count fl">
                                 <div class="count_des">
                                     <span>使用</span>
-                                    <input type="text" value="" placeholder="1000" id="count_score">
+                                    <input type="text"  placeholder="1000" id="count_score" oninput="shiyong()">
                                     <span>积分 = </span>
-                                    <input type="text" value="" id="us_count_code" readonly="readonly">
+                                    <input type="text"  id="total2" readonly="readonly">
                                     <span>元优惠券（1000积分＝10元）</span>
                                 </div>
-                                <div class="count_tips fl">
+                                <div class="count_tips fl" id="msg">
                                     (订单每满50元可使用10元优惠券)
                                 </div>
                             </div>
                             <div class="score_sub fl">
-                                <span>兑换</span>
+                                <span id="convent">兑换</span>
                             </div>
                         </div>
 
@@ -366,31 +366,26 @@
                         <div class="user_score_rule">
                             <h4>积分规则</h4>
                             <ul class="user_score_list">
-                                <li>1.记&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录：每日首篇文章，奖励10积分；之后每篇文章奖励1积分。</li>
-                                <li>2.分&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;享：每日首次分享奖励5积分。</li>
-                                <li>3.印制/下载：按实付金额计算，每支付1元奖励1积分(不满1元时按1积分计算)。</li>
+
+                                <li>1.记录：每篇文章奖励5积分。</li>
+                                <li>2.兑换：满1000积分才可兑换</li>
+                                <li>3.印制：按实付金额计算，每支付1元奖励1积分(不满1元时按1积分计算)。</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 ">
+                        <div class="user_score_rule">
+                            <h4>我的优惠卷</h4>
+                            <ul class="user_score_list" id="youHuiJuan">
+
                             </ul>
                         </div>
                     </div>
                     <div class="col-xs-12">
                         <div class="user_score_sources">
                             <h4>积分来源</h4>
-                            <ul class="user_source_list">
-                                <li>
-                                    <span>文章 </span>
-                                    <span>21积分 </span>
-                                    <span>2019-07-09</span>
-                                </li>
-                                <li>
-                                    <span>分享</span>
-                                    <span>0积分</span>
-                                    <span></span>
-                                </li>
-                                <li>
-                                    <span>印制/下载</span>
-                                    <span>0积分</span>
-                                    <span></span>
-                                </li>
+                            <ul class="user_source_list" id="totalList">
+
                             </ul>
                         </div>
                     </div>
@@ -414,6 +409,100 @@
 <script type="text/javascript" src="layer/2.4/layer.js"></script>
 
 <script>
+
+    var uid = localStorage.getItem("loginUserId");
+    $(()=>{
+        queryAll();
+        queryAllIntegral()
+    })
+    function shiyong() {
+        var total = localStorage.getItem("total");
+        var score = $("#count_score").val();
+
+        if (score>=1000){
+            //可兑换
+            $("#msg").html("(订单每满50元可使用10元优惠券)")
+        }else if (score>total){
+            //积分不足
+            $("#msg").html("(*您的积分不足！)")
+        } else {
+            //不能兑换
+            $("#msg").html(" (*积分必须超过1000哦)")
+        }
+    }
+    //查询用户信息
+    function queryAll(){
+        $.ajax({
+            type:"post",
+            url:"selectUserById",
+            data:{"uid":uid},
+            dataType:"json",
+            success:function (data) {
+                console.log(data);
+                $("#headPhoto").attr("src","text/"+data.photoPath);
+                $("#total").html(data.total);
+                localStorage.setItem("total",data.total);
+            }
+        })
+    }
+    //查询积分信息
+    function queryAllIntegral(){
+        $.ajax({
+            type:"post",
+            url:"queryAllIntegral",
+            data:{"uid":uid},
+            dataType:"json",
+            success:function (data) {
+                console.log(data);
+                var temp = ``;
+                $.each(data,function (index,obj) {
+                    temp += `
+                     <li>
+                          <span>${obj.resource}</span>
+                          <span>${obj.integral}积分 </span>
+                          <span>${obj.integralTime}</span>
+                     </li>
+                    `
+
+                })
+                $("#totalList").html(temp)
+            }
+        })
+    }
+    //点击兑换
+    $("#convent").click(function () {
+        var total = localStorage.getItem("total");
+        var score = $("#count_score").val();
+        console.log(total+"ooo")
+        if (score>=1000){
+            //兑换成功      减少积分
+            var meney = score*0.01;
+            $.ajax({
+                type:"post",
+                url:"updateTotalById",
+                data:{"total":score,"uid":uid},
+                dataType:"json",
+                success:function (data) {
+                    console.log(data)
+                    if (data>0){
+                        layer.msg("兑换成功",{icon:1,time:1000})
+                        //显示money
+                        $("#total2").val(score*0.01);
+                        queryAll();
+                    }
+                }
+            })
+
+        }else if (score>total){
+            layer.msg("您的积分没有这么多哦",{icon:2,time:1000})
+
+        }
+        else {
+            //兑换失败
+            layer.msg("抱歉，您的积分不足1000",{icon:2,time:1000})
+        }
+    })
+
     $("#my_sq").on('mouseover', function () {
         $('.my_list').show();
         $('.my_icon_img').css({

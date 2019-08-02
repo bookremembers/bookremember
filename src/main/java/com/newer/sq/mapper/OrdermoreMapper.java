@@ -22,7 +22,7 @@ public interface OrdermoreMapper {
 
     //点击下一步添加订单待付款信息
     @Insert("insert into sq_order values(null,#{uid},#{bid},#{ordint},#{ordstatus},null,now())")
-    public int addOrdermore(int uid,int bid,int ordint,String ordstatus);
+    public int addOrdermore(@Param("uid") int uid,@Param("bid") int bid,@Param("ordint") int ordint,@Param("ordstatus") String ordstatus);
 
     //根据id删除信息
     @Delete("delete from sq_order where ordid = #{ordid}")

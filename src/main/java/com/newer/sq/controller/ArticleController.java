@@ -83,5 +83,9 @@ public class ArticleController {
         return map;
     }
 
-
+    @RequestMapping("queryAllByatype1")
+    public List<Article>queryAllByatype1(@RequestParam("atype")int atype){
+        List<Article> list = articleService.queryAllByatype1(atype);
+        return list;
+    }
 }

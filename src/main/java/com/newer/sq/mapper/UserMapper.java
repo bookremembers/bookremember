@@ -1,10 +1,15 @@
 package com.newer.sq.mapper;
 
+import com.newer.sq.domain.Integral;
+import com.newer.sq.domain.SysUsers;
 import com.newer.sq.domain.User;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 public interface UserMapper {
     //注册
@@ -30,6 +35,20 @@ public interface UserMapper {
     /*根据id查询用户*/
     @Select("select * from sq_user where uid=#{uid}")
     public User selectById(@Param("uid") Integer uid);
+
+    //根据UID修改用户积分
+    @Update("update sq_user set total = total - #{total} where uid = #{uid}")
+    public int updateTotalById(@Param("total")int total,@Param("uid")int uid);
+
+    //根据uid查询积分信息
+    @Select("select * from sq_integral where uid = #{uid}")
+    public List<Integral> queryAllIntegral(@Param("uid")int uid);
+
+    //后台登录
+    @Select("select * from sys_users where username=#{username} and password=#{password}")
+    public SysUsers sysuser(@Param("username") String username,@Param("password") String password);
+
+
 
 }
 

@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Select;
 import java.util.List;
 
 public interface ArticleMapper {
+
     @Insert("insert into article values(null,#{Uid},#{Artstatus},#{Arttitle},#{Arttext}," +
             "#{Arttag},#{ArtphotoPath},now())")
     public int add(Article article);
@@ -19,4 +20,7 @@ public interface ArticleMapper {
     @Select("select * from article")
     public List<Article> selectAll();
 
+    //查询未通过审批的文章
+    @Select("select * from sq_article where atype = #{atype}")
+    public List<Article> queryAllByatype1(@Param("atype")int atype);
 }

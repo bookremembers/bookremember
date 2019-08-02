@@ -1,7 +1,11 @@
 package com.newer.sq.controller;
 
+import com.newer.sq.domain.Integral;
+import com.newer.sq.domain.SysUsers;
 import com.newer.sq.domain.User;
 import com.newer.sq.service.UserService;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -107,6 +111,38 @@ public class UserController {
         return userService.updNameById(uid,newName);
     }
 
-    //@RequestMapping("province")
+    @RequestMapping("selectUserById")
+    public User selectById(@RequestParam("uid") int uid){
+        return userService.selectById(uid);
+    }
 
+    @RequestMapping("updateTotalById")
+    public int updateTotalById(@RequestParam("total")int total,@RequestParam("uid")int uid){
+    return userService.updateTotalById(total,uid);
+    }
+
+    @RequestMapping("queryAllIntegral")
+    public List<Integral> queryAllIntegral(@RequestParam("uid")int uid){
+        return userService.queryAllIntegral(uid);
+    }
+
+    @RequestMapping("sysuser")
+    public SysUsers sysUsers(@RequestParam("username")String username,@RequestParam("password")String password,HttpSession session){
+         SysUsers sysuser = userService.sysuser(username,password);
+         if (sysuser!=null){
+             session.setAttribute("sysuser",sysuser);
+         }
+         return  sysuser;
+    }
+
+    @RequestMapping("getUserInfo")
+    @ResponseBody
+    public SysUsers getUserInfo(HttpSession session){
+        SysUsers users=(SysUsers) session.getAttribute("sysuser");
+        if (users!=null){
+            //讲密码设置为空
+            users.setPassword(null);
+        }
+        return users;
+    }
 }
