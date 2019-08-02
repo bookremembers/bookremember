@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Select;
 import java.util.List;
 
 public interface ArticleMapper {
-    @Insert("insert into sq_article values(null,#{Uid},#{Artstatus},#{Arttitle},#{Arttext}," +
+    @Insert("insert into article values(null,#{Uid},#{Artstatus},#{Arttitle},#{Arttext}," +
             "#{Arttag},#{ArtphotoPath},now())")
     public int add(Article article);
 
@@ -16,7 +16,7 @@ public interface ArticleMapper {
                                        @Param("startIndex") Integer startIndex,
                                        @Param("pageSize") Integer pageSize);
 
-    @Select("select * from sq_article")
+    @Select("select * from article")
     public List<Article> selectAll();
 
 }

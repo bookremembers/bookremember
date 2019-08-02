@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
     <meta charset="UTF-8">
     <title>首页</title>
@@ -7,6 +7,22 @@
     <!-- 图标库 -->
     <link rel="stylesheet"
           href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <!--置顶-->
+    <!-- 第三方CDN加载CSS -->
+    <link rel="stylesheet" type="text/css" href="css/szgotop.css">
+    <!-- 本地css静态资源 -->
+    <link rel="stylesheet" href="css/function.min.css" type="text/css">
+    <link rel="stylesheet" href="css/handsome.min.css" type="text/css">
+    <link href="css/SimpleZero.css" rel="stylesheet">
+
+    <!--主题组件css文件加载-->
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css" type="text/css">
+    <link rel="stylesheet" href="css/custome.min.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/response.css">
+
+    <!--全站jquery-->
+    <script src="js/hm.js"></script><script src="js/jquery.min.js"></script>
+    <!--结束-->
 </head>
 <style>
     * {
@@ -103,7 +119,9 @@
     /*竖排字体样式： width: 50px; font-size: 50px; word-wrap: break-word; letter-spacing: 20px;*/
 </style>
 <body>
-<div>
+
+
+<div id="cursor">
     <div style="width: 100%;height: 70px;">
         <div style="float: right;margin-right: 200px;letter-spacing: 20px;line-height: 70px;">
             <button type="button" style="background: black;color: white;" class="btn btn-default" data-toggle="modal"
@@ -114,6 +132,11 @@
             </button>
         </div>
     </div>
+    <!--<style>-->
+        <!--#cursor{-->
+            <!--cursor:url("C:\Users\Administrator\Desktop\项目图标\aa.jpg"),auto;-->
+        <!--}-->
+    <!--</style>-->
     <!--模态框-->
     <div class="modal fade" id="loginReg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
          data-backdrop="static">
@@ -284,10 +307,25 @@
         <i class="fa fa-long-arrow-up" aria-hidden="true" style="color: red;font-size: 30px;"></i>
     </div>
 </div>
+
+<div class="back-to-top cd-top faa-float animated cd-is-visible" style="top: -200px;"></div>
+<script type="text/javascript" src="js/szgotop.js"></script>
+<link href="css/SimpleZero.css" rel="stylesheet">
+<link rel="stylesheet" href="css/emojify.min.css">
+
 <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
 <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="layer/2.4/layer.js"></script>
 <script type="text/javascript" src="h-ui.admin/js/H-ui.admin.js"></script>
+
+<script type="text/javascript" src="action_js/index.js"></script>
+<script type="text/javascript" src="action_js/canvas-nest.min.js"></script>
+<script type="text/javascript" src="action_js/three.min.js"></script>
+<script type="text/javascript" src="action_js/canvas_lines.min.js"></script>
+<script type="text/javascript" src="action_js/canvas_sphere.min.js"></script>
+<script type="text/javascript" src="action_js/utils.js"></script>
+
+
 <script type="text/javascript">
     $("#img2").hide()
     $("#img3").hide()
@@ -296,8 +334,9 @@
     $("#updPwd").hide();
     var i = 0;
     $(() => {
-        var random = "";
+        // $("#cursor").crosshair {cursor:crosshair;}
 
+        var random = "";
         /**生成一个随机数**/
         function randomNum(min, max) {
             return Math.floor(Math.random() * (max - min) + min);
