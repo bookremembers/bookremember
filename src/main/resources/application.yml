@@ -1,14 +1,19 @@
+
 server:
   port: 8086
 spring:
   datasource:
     password: root
     username: root
-    url: jdbc:mysql://localhost/newerstu?useLL=false&serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=true
+    url: jdbc:mysql://127.0.0.1:3306/demo?useSSL=false&serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8
+  http:
+    multipart:
+      max-file-size: 100mb
+      max-request-size: 100mb
+    driver-class-name: com.mysql.cj.jdbc.Driver
 mybatis:
   type-aliases-package: com.newer.sq.domain
   mapper-locations: classpath:com/newer/sq/mapper/*.xml
-
 
 
 

@@ -2,13 +2,11 @@ package com.newer.sq.mapper;
 
 import com.newer.sq.domain.Article;
 import com.newer.sq.domain.Books;
-import com.newer.sq.domain.Sqrecycle;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public interface Selectmapper {

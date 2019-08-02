@@ -4,11 +4,9 @@ import com.newer.sq.domain.Article;
 import com.newer.sq.domain.Books;
 import com.newer.sq.service.Sservice;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController

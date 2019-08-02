@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="dist/summernote.js"></script>
+    <script src="dist/lang/summernote-zh-CN.js"></script>    <!-- 中文-->
+
+    <style>
+        .m{ width: 800px; margin-left: auto; margin-right: auto; }
+    </style>
+
+</head>
+<body>
+    <!--<div id="summernote"><p>Hello Summernote</p></div>-->
+    <div class="m">
+        <div class="summernote"></div>
+    </div>
+
+
+<script>
+    $(document).ready(function() {
+            $('#summernote').summernote();
+    });
+
+    $('#summernote').summernote({
+        placeholder: '我是千古',
+        tabsize: 2,
+        height: 400,  //高度，根据需要去设
+        lang: 'zh-CN',  //zh-CN为中文文件，如果需要转换语言，注意在下载的lang文件夹中取出并加载
+        focus: true
+    });
+
+    $('#summernote').summernote({
+        placeholder: '千古',
+        height: 400,
+        lang: 'zh-CN',
+        focus: true,
+        callbacks:{  //回调函数，覆盖上传方法onImageUpload
+            onImageUpload: function(files) {
+                sendFile(files[0]);
+            }
+        }
+    });
+    function sendFile(files) {
+        data = new FormData();
+        data.append("files", files);
+        $.ajax({
+            data: data,
+            dataType: 'json',
+            type: "POST",
+            url: "/img",  //上传路径
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function(data) {
+                console.log(data);
+                $('#summernote').summernote('insertImage', data.filename);
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                alert(XMLHttpRequest.status);
+                alert(XMLHttpRequest.readyState);
+                alert(textStatus);
+            }
+        });
+    }
+
+
+</script>
+
+</body>
+</html>
