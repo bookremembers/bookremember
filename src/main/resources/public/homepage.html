@@ -427,7 +427,7 @@
                     console.log(data);
                     if (data !=null) {
                         layer.msg("登录成功", {icon: 1, time: 1000});
-                        localStorage.setItem("loginUserId",data.uid)
+                        localStorage.setItem("loginUserId",data.uid);
                         location.href = "sy_index.html";
                     } else {
                         layer.msg("用户名或密码错误", {icon: 2, time: 1000});

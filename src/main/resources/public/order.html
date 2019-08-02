@@ -252,11 +252,11 @@
                     <div class="col-xs-12">
                 <span class="col-sm-8 nav" style="white-space:nowrap">
                     <a class="order_all status_line" onclick="queryLikeBookname('全部')" id="ida">全部</a>
-                    <a class="wait_pay " onclick="orderstatus('等待付款')" id="idb">等待付款</a>
-                    <a class="wait_print "onclick="orderstatus('等待印刷')" id="idc">等待印刷</a>
-                    <a class="printing " onclick="orderstatus('印制中')" id="idd">印制中</a>
-                    <a class="trace_express_status "onclick="orderstatus('物流运输中')" id="ide">物流运输中</a>
-                    <a class="finished " onclick="orderstatus('已完成')" id="idf">已完成</a>
+                    <a class="wait_pay " onclick="queryLikeBookname('等待付款')" id="idb">等待付款</a>
+                    <a class="wait_print "onclick="queryLikeBookname('等待印刷')" id="idc">等待印刷</a>
+                    <a class="printing " onclick="queryLikeBookname('印制中')" id="idd">印制中</a>
+                    <a class="trace_express_status "onclick="queryLikeBookname('物流运输中')" id="ide">物流运输中</a>
+                    <a class="finished " onclick="queryLikeBookname('已完成')" id="idf">已完成</a>
                 </span>
 
                     </div>
@@ -299,21 +299,17 @@
 
 <script src="js/jquery-3.2.1.js"></script>
 <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="js/H-ui.admin.js"></script>
 <script type="text/javascript" src="layer/2.4/layer.js"></script>
-
-
+<script type="text/javascript" src="h-ui.admin/js/H-ui.admin.js"></script>
 <script>
     $(()=>{
-        queryLikeBookname();
+        queryLikeBookname('全部');
         $("#ida").attr("class","order_all status_line");
     })
 
     //根据状态查询订单信息
-    function orderstatus(ordstatus) {
-        if (ordstatus!='全部') {
-            $("#ida").attr("class","order_all")
-        }
+    function queryLikeBookname(ordstatus) {
+
         if (ordstatus=='等待付款'){
             $("#idb").attr("class","wait_pay status_line")
 
@@ -341,57 +337,8 @@
         }else{
             $("#idf").attr("class","finished")
         }
-        $.ajax({
-            type:"post",
-            url:"queryByordstatus",
-            data:{"ordstatus":ordstatus},
-            dataType:"json",
-            success:function (data) {
-                console.log(data);
-                var temp =``;
-                $.each(data,function (index,obj) {
-                    temp+=`
-                <table class="table" style="border-collapse: separate;border:1px solid #e4e4e4;border-radius: 5px">
-                    <tbody><tr style="background-color: #e4e4e4"><th colspan="5" style="border-top:none"><div style="float: left">
-                        <span style="display:inline-block;">订单编号:${obj.ordid}</span>
-                        <span style="display:inline-block;margin-left: 30px;color:#8d8d8d">下单时间:${obj.orderdate}</span> </div>
-                        <div style="float:right;margin-right: 30px;">总价： ¥&nbsp;${obj.bprice+8}</div></th></tr><tr><td class="col-sm-4"><div class="col-sm-12">
-                        <a class="bg"><img class="col-sm-3" src="text/${obj.bookurl}" style="max-height:160px ;padding:0;border:1px solid #e8e8e8 " alt="封面图片"></a>
-                        <div class="col-sm-9" style="padding-left:12px"><p style=";font-size: 16px;">${obj.bname}</p><p style="margin-top: 10px;font-size: 12px;">页数:${obj.bpage}</p>
-                            <p style="margin-top: 10px;font-size: 12px;">${obj.bway}</p><p style="margin-top: 10px;font-size: 12px;">书籍尺寸:${obj.bsize}</p>
-                            <p style="margin-top: 10px;font-size: 12px;">印制方式：双面印制</p></div></div></td><td class="col-sm-2" valign="middle" style="vertical-align:middle ;height:150px ;border-left:1px solid #e4e4e4;border-right:1px solid #e4e4e4">
-                        <span class="col-sm-12" style="width:100%;text-align: center;">数量 : x${obj.ordint}</span> </td><td class="col-sm-2" valign="middle" style="vertical-align:middle ;height:150px ;border-right:1px solid #e4e4e4">
-                        <span class="col-sm-12" style="text-align: center;">单价：¥ ${obj.bprice}</span></td><td class="col-sm-2" valign="middle" style="vertical-align:middle ;height:150px ;border-right:1px solid #e4e4e4">
-                        <span class="col-sm-12" style="text-align: center;">
-                        ${obj.ordstatus}</span></td><td class="col-sm-2" rowspan="1" valign="top" style="vertical-align:middle;text-align: center">
 
-                        `;
-                    if (obj.ordstatus=="等待付款") {
-                        temp+=
-                            ` <p><a href="#" onclick="pay(${obj.ordid})" data-toggle="modal"
-                    data-target="#pay"style="text-decoration:none;padding:5px 20px; background:#e4e4e4;border-radius:40px;" >立即付款</a></p><p style="margin-top:15px;">
-                        <a href="#" style="text-decoration:none">修改地址/快递</a></p>
-                      <p><a href="#" type="button" onclick="cancel_order(${obj.ordid})" class="ant-btn ant-btn-primary"style="text-decoration:none;width: 100px; height: 30px;padding:5px 20px; background:#e4e4e4;border-radius:40px;" >取消订单</a></p> </td></tr><tr><th colspan="5"><span>
-                        <span style="display:inline-block;">收货人:${obj.aname}</span><span style="display:inline-block;margin-left: 30px">联系方式:${obj.aphone}</span>
-                        <span style="display:inline-block;margin-left: 30px">地址:${obj.amore}</span></span></th></tr></tbody></table>
-                `
-                    }else {
-                        temp+=
-                            `<p style="margin-top:15px;">
-                        <a href="#">修改地址/快递</a></p>
-                       <p><a href="#" type="button" onclick="cancel_order(${obj.ordid})" class="ant-btn ant-btn-primary"style="text-decoration:none;width: 100px; height: 30px; 34px;padding:5px 20px; background:#e4e4e4;border-radius:40px;" >取消订单</a></p> </td></tr><tr><th colspan="5"><span>
-                        <span style="display:inline-block;">收货人:${obj.aname}</span><span style="display:inline-block;margin-left: 30px">联系方式:${obj.aphone}</span>
-                        <span style="display:inline-block;margin-left: 30px">地址:${obj.amore}</span></span></th></tr></tbody></table>
-                `
-                    }
-                })
-                $("#order_more_list").html(temp)
-            }
-        })
-    }
-    //根据书籍模糊查询信息
-    function queryLikeBookname(msg) {
-        if (msg=='全部') {
+        if (ordstatus=='全部') {
             $("#ida").attr("class","order_all status_line");
             $("#idb").attr("class","wait_pay")
             $("#idc").attr("class","wait_print")
@@ -401,12 +348,17 @@
 
         }else {
             $("#ida").attr("class","order_all");
+
         }
         var bookName = $("#bookName").val();
+        console.log(bookName+"----"+ordstatus)
+        if (!ordstatus){
+            ordstatus="";
+        }
         $.ajax({
             type:"post",
             url:"queryLikeBookname",
-            data:{"bname":bookName},
+            data:{"bname":bookName,"ordstatus":ordstatus},
             dataType:"json",
             success:function (data) {
                 console.log(data);
@@ -432,25 +384,35 @@
                         temp+=
                             ` <p><a href="#" onclick="pay(${obj.ordid})" data-toggle="modal"
                     data-target="#pay"style="text-decoration:none;padding:5px 20px; background:#e4e4e4;border-radius:40px;" >立即付款</a></p><p style="margin-top:15px;">
-                        <a href="#" style="text-decoration:none">修改地址/快递</a></p>
+                        <a href="#" style="text-decoration:none" onclick="updAddress('修改地址','updAddress.html',600,500,${obj.addressid})">修改地址/快递</a></p>
                        <p><a href="#" type="button" onclick="cancel_order(${obj.ordid})" class="ant-btn ant-btn-primary"style="text-decoration:none;width: 100px; height: 30px;;padding:5px 20px; background:#e4e4e4;border-radius:40px;" >取消订单</a></p> </td></tr><tr><th colspan="5"><span>
                         <span style="display:inline-block;">收货人:${obj.aname}</span><span style="display:inline-block;margin-left: 30px">联系方式:${obj.aphone}</span>
                         <span style="display:inline-block;margin-left: 30px">地址:${obj.amore}</span></span></th></tr></tbody></table>
                 `
                     }else {
-                        temp+=
-                            `<p style="margin-top:15px;">
-                        <a href="#">修改地址/快递</a></p>
+                        if (obj.ordstatus == "已完成") {
+                            temp+=
+                                `<p style="margin-top:15px;">已完成</p>
+                        </td></tr><tr><th colspan="5"><span>
+                        <span style="display:inline-block;">收货人:${obj.aname}</span><span style="display:inline-block;margin-left: 30px">联系方式:${obj.aphone}</span>
+                        <span style="display:inline-block;margin-left: 30px">地址:${obj.amore}</span></span></th></tr></tbody></table>
+                `
+                        }else {
+                            temp+=
+                                `<p style="margin-top:15px;"</p>
                         <p><a href="#" type="button" onclick="cancel_order(${obj.ordid})" class="ant-btn ant-btn-primary"style="text-decoration:none;width: 100px; height: 30px;padding:5px 20px; background: #e4e4e4;border-radius:40px;" >取消订单</a></p> </td></tr><tr><th colspan="5"><span>
                         <span style="display:inline-block;">收货人:${obj.aname}</span><span style="display:inline-block;margin-left: 30px">联系方式:${obj.aphone}</span>
                         <span style="display:inline-block;margin-left: 30px">地址:${obj.amore}</span></span></th></tr></tbody></table>
                 `
+                        }
+
                     }
                 })
                 $("#order_more_list").html(temp)
             }
         })
     }
+
     //取消订单
     function cancel_order(ordid) {
         layer.confirm("确定取消订单？",{icon:9,title:"确定"},function (index) {
@@ -558,6 +520,12 @@
             '-o-transform': 'rotate(90deg)',
         })
     })
+
+    /*修改地址*/
+    function updAddress(tiltle,url,w,h,addressId) {
+        localStorage.setItem("addressId",addressId);
+        layer_show(tiltle,url,w,h);
+    }
 </script>
 
 

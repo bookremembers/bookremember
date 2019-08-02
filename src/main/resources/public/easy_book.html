@@ -9,6 +9,8 @@
     <title>拾柒-REFLECT &amp; RELEARN</title>
     <link rel="stylesheet" href="css/font.css">
     <script>window.routerBase = "/";</script>
+    <link rel="stylesheet" type="text/css" href="css/webuploader.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/vendors.55842355.chunk.css">
     <link rel="stylesheet" type="text/css" href="css/layouts__GlobalTemplate.4a2a739e.chunk.css">
     <link rel="stylesheet" type="text/css" href="css/p__ProductCenter__ProductCenter.38633d08.chunk.css">
@@ -29,6 +31,21 @@
     <!--全站jquery-->
     <script src="js/hm.js"></script><script src="js/jquery.min.js"></script>
     <!--结束-->
+    <style>
+        #filePicker div{
+            width: 100px;
+            height: 100px;
+            line-height: 80px;
+        }
+        .imgWrap{
+            padding: 5px;
+            border: 1px solid;
+            border-radius: 8%;
+        }
+        .filelist li{
+            border-radius: 8%;
+        }
+    </style>
 </head>
 <body>
 <noscript>Sorry, we need js to run correctly!</noscript>
@@ -161,36 +178,126 @@
                     </div>
                     <!--弹框-->
                     <div id="tankuang" style="width: 100%; height: 100%; background: rgba(0, 0, 0, 0.35); position: fixed; top: 0px; left: 0px; overflow: hidden; z-index: 999;display: none;">
-                        <div style="width: 604px; height: 458px; overflow: hidden; position: absolute; top: 50%; left: 50%; margin-left: -302px; margin-top: -229px;">
-                            <div style="width: 100%; overflow: hidden; height: 54px;line-height: 54px; background: rgb(246, 247, 248); box-sizing: border-box; padding: 0px 32px; font: 16px/54px "PingFang SC"; color: rgb(51, 51, 51);">照片书—选择单页/批量上传</div>
+                        <div style="width: 604px; height: 458px; overflow: hidden; position: absolute; top: 50%; left: 50%; margin-left: -302px; margin-top: -229px;display: none;" id="choose">
+                            <div style="width: 100%; overflow: hidden; height: 54px;line-height: 54px; background: rgb(246, 247, 248); box-sizing: border-box; padding: 0px 32px; font: 16px/54px 'PingFang SC'; color: rgb(51, 51, 51);">照片书—选择单页/批量上传</div>
                         <div style="width: 100%; height: 340px; box-sizing: border-box; padding: 32px 0px 40px; background: rgb(255, 255, 255); overflow: auto hidden;">
                             <div style="white-space: nowrap;">
                                 <div style="width: 154px; height: 268px; margin-left: 32px; display: inline-block; background: rgb(255, 255, 255); position: relative;">
                                     <img src="https://static.shiqichuban.com/react_simple/app/static/single.1f90c46b.png" style="display: block; width: 154px; height: 198px;">
-                                    <div style="position: absolute; top: 10px; right: 10px; height: 18px; width: 18px; border-radius: 50%; border: 1px solid rgb(69, 69, 69);">
+                                    <div style="position: absolute; top: 10px; right: 10px; height: 18px; width: 18px; border-radius: 50%; border: 1px solid rgb(69, 69, 69);" id="ona">
                                         <div style="height: 10px; width: 10px; border-radius: 50%; background: rgb(69, 69, 69); margin: 3px auto; display: block;" id="dian"></div>
                                     </div>
                                     <div style="margin-top: 8px; font-size: 12px; color: rgb(51, 51, 51); text-align: center; display: block;">添加至单页</div>
                                     <div style="margin-top: 8px; font-size: 12px; color: rgb(153, 153, 153); text-align: center; display: block;">照片数量为1-5张</div>
-
                                 </div>
                                 <div style="width: 279px; height: 268px; margin-left: 32px; display: inline-block; background: rgb(255, 255, 255); position: relative;">
                                     <img src="https://static.shiqichuban.com/react_simple/app/static/multy.a88ab7d4.png"style="display: block; width: 279px; height: 198px;">
-                                    <div style="position: absolute; top: 10px; right: 10px; height: 18px; width: 18px; border-radius: 50%; border: 1px solid rgb(69, 69, 69);">
+                                    <div style="position: absolute; top: 10px; right: 10px; height: 18px; width: 18px; border-radius: 50%; border: 1px solid rgb(69, 69, 69);" id="onb">
                                         <div style="height: 10px; width: 10px; border-radius: 50%; background: rgb(69, 69, 69); margin: 3px auto; display: none;"id="dian2"></div>
                                     </div>
                                     <div style="margin-top: 8px; font-size: 12px; color: rgb(51, 51, 51); text-align: center; display: block;">随机排版</div>
-                                    <div style="margin-top: 8px; font-size: 12px; color: rgb(153, 153, 153); text-align: center; display: block;">单次可上传多张照片</div>
+                                    <div style="margin-top: 8px; font-size: 12px; color: rgb(153, 153, 153); text-align: center; display: block;">一次上传照片数量为1-5张</div>
                                 </div>
                             </div>
                         </div>
                         <div style="width: 100%; height: 64px; background: rgb(255, 255, 255); box-sizing: border-box; border-top: 1px solid rgb(153, 153, 153);">
-                            <div style="width: 114px; height: 32px; border-radius: 4px; color: rgb(51, 51, 51); font: 16px/32px; text-align: center; float: left; margin-left: 100px; margin-top: 15px; border: 1px solid rgb(51, 51, 51); cursor: pointer;line-height: 32px;" id="close">取消</div>
-                            <div style="width: 114px; height: 32px; background: rgb(51, 51, 51); border-radius: 4px; color: rgb(255, 255, 255); font: 16px/32px ; text-align: center; float: right; margin-right: 100px; margin-top: 15px; cursor: pointer;line-height: 32px;">确定</div>
+                            <div style="width: 114px; height: 32px; border-radius: 4px; color: rgb(51, 51, 51); font: 16px/32px; text-align: center; float: left; margin-left: 100px; margin-top: 15px; border: 1px solid rgb(51, 51, 51); cursor: pointer;line-height: 32px;" id="closea">取消</div>
+                            <div style="width: 114px; height: 32px; background: rgb(51, 51, 51); border-radius: 4px; color: rgb(255, 255, 255); font: 16px/32px ; text-align: center; float: right; margin-right: 100px; margin-top: 15px; cursor: pointer;line-height: 32px;" id="sure">确定</div>
 
                         </div>
                     </div>
+
+                    <!--关闭弹窗之后的第二个弹窗  选择图片-->
+                    <div style="width: 708px; height: 564px; overflow: hidden; position: absolute; top: 50%; left: 50%; margin-left: -302px; margin-top: -229px;display: none;" id="choosePicture">
+                        <div style="width: 100%; overflow: hidden; height: 54px;line-height: 54px; background: rgb(246, 247, 248); box-sizing: border-box; padding: 0px 32px; font: 16px/54px 'PingFang SC'; color: rgb(51, 51, 51);">上传照片</div>
+                        <div style="width: 100%; height: 340px; box-sizing: border-box; padding: 32px 0px 40px; background: rgb(255, 255, 255); overflow: auto hidden;">
+                            <div style="padding-left: 20px;padding-right: 20px">
+                                <!--上传图片-->
+                                <div style="width: 100%;overflow: hidden;height: 100%">
+                                   <!-- <span class>
+                                        <div class="ant-upload-list ant-upload-list-picture-card">
+                                            <div class="ant-upload-list-item ant-upload-list-item-undefined">
+                                                <div class="ant-upload-list-item-info">
+
+                                                    <span>
+                                                        <a class="ant-upload-list-item-thumbnail" href="" target="_blank" rel="noopener noreferrer">
+                                                            <img src="ctt_images/tu1.jpg" alt="tu1.jpg">
+                                                        </a>
+                                                        <span class="ant-upload-list-item-name" title=""></span>
+                                                    </span>
+                                                </div>
+                                                <span class="ant-upload-list-item-actions">
+                                                    <i aria-label="图标: delete" title="删除文件" tabindex="-1" class="anticon anticon-delete">
+                                                        <svg viewBox="64 64 896 896" class data-icon="delete" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false">
+                                                            <path d="M360 184h-8c4.4 0 8-3.6 8-8v8h304v-8c0 4.4 3.6 8 8 8h-8v72h72v-80c0-35.3-28.7-64-64-64H352c-35.3 0-64 28.7-64 64v80h72v-72zm504 72H160c-17.7 0-32 14.3-32 32v32c0 4.4 3.6 8 8 8h60.4l24.7 523c1.6 34.1 29.8 61 63.9 61h454c34.2 0 62.3-26.8 63.9-61l24.7-523H888c4.4 0 8-3.6 8-8v-32c0-17.7-14.3-32-32-32zM731.3 840H292.7l-24.2-512h487l-24.2 512z"></path>
+                                                        </svg>
+                                                    </i>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="ant-upload ant-upload-select ant-upload-select-picture-card">
+                                            <span tabindex="0" class="ant-upload" role="button">
+                                                <input type="file" accept=".jpg, .jpeg, .png" multiple style="display: none;" id="photo" onchange="photos()">
+                                                <div onclick="triggerFile()">
+                                                    <i aria-label="图标: plus" class="anticon anticon-plus">
+                                                        <svg viewBox="64 64 896 896" class data-icon="plus" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false">
+                                                            <path d="M482 152h60q8 0 8 8v704q0 8-8 8h-60q-8 0-8-8V160q0-8 8-8z"></path>
+                                                            <path d="M176 474h672q8 0 8 8v60q0 8-8 8H176q-8 0-8-8v-60q0-8 8-8z"></path>
+                                                        </svg>
+                                                    </i>
+                                                    <div class="ant-upload-text">上传照片</div>
+                                                </div>
+                                            </span>
+                                        </div>
+                                    </span>-->
+
+
+                                    <!--插件代码-->
+                                    <div id="container" style="height: 100%;border-radius: 5%;">
+                                        <!--头部，相册选择和格式选择-->
+                                        <div id="uploader">
+                                            <div class="queueList" style="height: 100%;">
+                                                <div id="dndArea" class="placeholder" style="height: 110px;width: 110px;border: 1px dashed #cccccc;border-radius: 5%;">
+                                                    <div id="filePicker">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--<div class="statusBar" style="display:none;">-->
+                                                <!--<div class="progress">-->
+                                                    <!--<span class="text">0%</span>-->
+                                                    <!--<span class="percentage"></span>-->
+                                                <!--</div><div class="info"></div>-->
+                                                <!--<div class="btns">-->
+                                                    <!--<div id="filePicker2"></div><div class="uploadBtn">开始上传</div>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width: 100%; height: 64px; background: rgb(255, 255, 255); box-sizing: border-box; border-top: 1px solid rgb(153, 153, 153);">
+                           <!-- <div style="width: 114px; height: 32px; border-radius: 4px; color: rgb(51, 51, 51); font: 16px/32px; text-align: center; float: left; margin-left: 100px; margin-top: 15px; border: 1px solid rgb(51, 51, 51); cursor: pointer;line-height: 32px;" id="closeb">取消</div>
+                            <div style="width: 114px; height: 32px; background: rgb(51, 51, 51); border-radius: 4px; color: rgb(255, 255, 255); font: 16px/32px ; text-align: center; float: right; margin-right: 100px; margin-top: 15px; cursor: pointer;line-height: 32px;" id="sureb">确定</div>
+                            。。-->
+                            <div class="statusBar" style="display:block;">
+                                <div class="progress">
+                                    <span class="percentage"></span>
+                                </div><div class="info"></div>
+                                <div class="btns">
+                                    <div id="filePicker2"></div>
+                                    <div onclick="uploadFile()">开始上传</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
+
+
 
                 <div style="margin: 0px auto 70px; width: 964px;">
                     <div style="width: 964px; height: 483px; display: flex; flex-direction: row; align-items: center;">
@@ -325,11 +432,36 @@
 
 
 <script src="js/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="js/webuploader.js"></script>
+<script type="text/javascript" src="js/upload.js"></script>
 <script>
     $(()=>{
         var pid = localStorage.getItem("pid")
         console.log(pid)
         queryBookById();
+
+        /*小黑点选中点击事件  选择不同进入不同的页面*/
+        $("#ona").click(()=>{
+            $("#dian2").css("display","none");
+            $("#dian").css("display","block");
+        })
+        $("#onb").click(()=>{
+            $("#dian").css("display","none");
+            $("#dian2").css("display","block");
+        })
+        /*确定之后关闭弹窗，重新弹窗选照片的页面*/
+        $("#sure").click(()=>{
+            $("#choose").hide();
+            $("#choosePicture").show(1000);
+        })
+
+        $("#closea").click(()=>{
+            $("#tankuang").css("display","none");
+        })
+        $("#closeb").click(()=>{
+            $("#tankuang").css("display","none");
+        })
+
     })
     function queryBookById (){
         var pid = localStorage.getItem("pid")
@@ -372,7 +504,6 @@
     $("#imgc").click(function () {
         var imgc = localStorage.getItem("imgc")
         $("#imga").attr("src",imgc);
-
     })
 
     //你还能做什么
@@ -420,6 +551,8 @@
             location.href = "article.html"
         }else {
             $("#tankuang").css("display","block")
+            $("#choose").show(1000);
+            $("#choosePicture").hide();
             //添加书籍信息
         }
     }
@@ -479,6 +612,26 @@
             '-o-transform': 'rotate(0)',
         })
     })
+
+    function triggerFile() {
+        //触发文件点击事件
+        $("#photo").trigger("click");
+    }
+    /*改变事件*/
+    function photos() {
+        console.log("ppp");
+    }
+    /*上传文件*/
+    function uploadFile() {
+        $.ajax({
+            type:"post",
+            url:"addPhoto",
+            dataType:"json",
+            success:(data)=>{
+                console.log(data);
+            }
+        })
+    }
 </script>
 </body>
 </html>
