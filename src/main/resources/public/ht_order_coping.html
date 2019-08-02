@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport"
+	content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5shiv.js"></script>
+<script type="text/javascript" src="js/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css"
+	href="h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css"
+	href="Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css"
+	href="h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css"
+	href="h-ui.admin/css/style.css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<title>用户管理</title>
+</head>
+<body>
+	<nav class="breadcrumb">
+		<div class="text-c">
+			日期范围： <input type="text"
+				onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'datemax\')||\'%y-%M-%d\'}' })"
+				id="datemin" class="input-text Wdate" style="width: 120px;">
+			- <input type="text"
+				onfocus="WdatePicker({ minDate:'#F{$dp.$D(\'datemin\')}',maxDate:'%y-%M-%d' })"
+				id="datemax" class="input-text Wdate" style="width: 120px;">
+			<input type="text" class="input-text" style="width: 250px"
+				placeholder="输入会员名称、电话、邮箱" id="" name="">
+			<button type="submit" class="btn btn-success radius" id="" name="">
+				<i class="Hui-iconfont">&#xe665;</i> 搜用户
+			</button>
+		</div>
+		<i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span>
+		用户中心 <span class="c-gray en">&gt;</span> 用户管理 <a
+			class="btn btn-success radius r"
+			style="line-height: 1.6em; margin-top: 3px"
+			href="javascript:location.replace(location.href);" title="刷新"><i
+			class="Hui-iconfont">&#xe68f;</i></a>
+	</nav>
+	<div class="page-container">
+
+		<div class="cl pd-5 bg-1 bk-gray mt-20">
+			<span class="l"><a href="javascript:;"
+				onclick="member_add('添加用户','member-add.html','','510')"
+				class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i>
+					添加用户</a></span> <span class="r">共有数据：<strong>88</strong> 条
+			</span>
+		</div>
+		<div class="mt-20">
+			<table id="adminList" class="table table-border table-bordered table-hover table-bg table-sort">
+
+			</table>
+		</div>
+	</div>
+
+	<!--_footer 作为公共模版分离出去-->
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/layer/2.4/layer.js"></script>
+	<script type="text/javascript" src="h-ui/js/H-ui.min.js"></script>
+	<script type="text/javascript" src="h-ui.admin/js/H-ui.admin.js"></script>
+	<!--/_footer 作为公共模版分离出去-->
+
+	<!--请在下方写此页面业务相关的脚本-->
+	<script type="text/javascript"
+		src="js/My97DatePicker/4.8/WdatePicker.js"></script>
+	<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="js/laypage.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		var table1 = $("#adminList").dataTable({
+			"searching":false,
+			"sAjaxSource" : "api/PageServlet",
+			"fnServerData" : function(sSource, aoData, fnCallback) { // 向服务器发送请求
+				// 1.sSource -- 请求路径 2.aoData -- dataTable封装参数 3.回调函数
+				$.ajax({
+					"type" : 'post',
+					"url" : sSource,
+					"dataType" : "json",
+					"data" : aoData,
+					"success" : function(data) {
+						console.log(data);
+						fnCallback(data);
+					},
+					error : function(data) {
+					}
+				});
+			},
+			/* "language":{url:"../js/zh_CN.txt"}, */
+			"bServerSide" : true,
+			"aoColumns" : [ {
+				mDataProp : "username",
+				sTitle : "用户名",
+			}, {
+				mDataProp : "sex",
+				sTitle : "性别"
+			}, {
+				mDataProp : "phone",
+				sTitle : "手机号码",
+					render : function(phone, dis, obj) {
+						var first = phone.substring(0, 1);
+						var last = phone.substring(phone.length - 1, phone.length);
+						return first + "***" + last;
+						return "<span style = 'color:red'>" + phone + "</span>";
+						return phone;
+					}
+			}, {
+				mDataProp : "email",
+				sTitle : "邮件"
+			},  {
+				mDataProp : "regTime",
+				sTitle : "注册时间"
+			}, {
+				mDataProp : "msg",
+				sTitle : "备注",
+			},
+			]
+		});
+		});
+	
+		/* 用户-添加 */
+		function member_add(title, url, w, h) {
+			layer_show(title, url, w, h);
+		}
+		/* 用户-查看 */
+		function member_show(title, url, id, w, h) {
+			layer_show(title, url, w, h);
+		}
+		
+	
+		
+	</script>
+
+</body>
+</html>

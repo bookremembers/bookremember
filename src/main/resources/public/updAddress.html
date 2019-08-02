@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改地址</title>
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/response.css">
+
+    <style>
+        *{
+            background-color: #FFFFFF;
+        }
+        .fmL{
+            margin: 20px;
+        }
+        .fmL label{
+            line-height: 32px;
+        }
+        .fmL span{
+            float: right;
+        }
+    </style>
+</head>
+<body style="background-color: #FFFFFF;">
+<div id="updAddress" tabindex="-1" style="background-color: #FFFFFF;width: 80%;margin: auto;" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+     data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!--修改地址-->
+            <div class="modal-body">
+                <br>
+                <div class="body">
+                    <div class="fmL">
+                        <label class="label"><i
+                                style="color: #f00;padding-right: 5px;">*</i>收货人姓名</label>
+                        <span class="r iptBdr " style="margin-right: 35%;width: 40%;"><input type="text" name="name" value="" class="ipt" id="consigneeName"></span>
+                        <small class="msg" ></small>
+                    </div>
+                    <div class="fmL">
+                        <label class="label"><i
+                                style="color: #f00;padding-right: 5px;">*</i>所在地区</label>
+                        <span class="r" style="width: 80%;">
+              <select class="select" name="province" value="" style="width:110px;" id="province">
+				  <!--省份-->
+			  </select>
+              <select class="select" name="city" value="" style="width:110px;" id="city">
+				  <!--城市-->
+			  </select>
+              <select class="select" name="district" value="" style="width:110px;" id="area">
+				  <!--区市-->
+			  </select>
+            </span><small class="msg" ></small>
+                    </div>
+                    <div class="fmL">
+                        <label class="label"><i
+                                style="color: #f00;padding-right: 5px;">*</i>详细地址</label>
+                        <span class="r iptBdr" style="margin-right: 35%;width: 40%;"><input type="text" name="detail_addr" value="" id="detailedAddress"
+                                                      class="ipt" ></span><small class="msg" ></small>
+                    </div>
+                    <div class="fmL">
+                        <label class="label">邮政编码</label>
+                        <span class="r iptBdr" style="margin-right: 35%;width: 40%;"><input type="text" name="zip_code" value="" class="ipt" id="zipCode"></span>
+                    </div>
+                    <div class="fmL">
+                        <label class="label"><i
+                                style="color: #f00;padding-right: 5px;">*</i>手机号码</label>
+                        <span class="r iptBdr" style="margin-right: 35%;width: 40%;"><input type="text" name="mobile" value="" class="ipt" id="phone"
+                        ></span><small class="msg" ></small>
+                    </div>
+                    <div clas
+
+                         s="fmL error_tips hide" style="color: #f00;text-align: center;height: 40px;"></div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="modal-footer">
+                <div style="width: 70%;height: 40px;border-radius: 10px;background-color: #000;color: #fff;text-align: center; letter-spacing: 8px;font-size: 14px;line-height: 40px;cursor: pointer;margin: auto" onclick="saveAddress()">
+                    保存
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="layer/2.4/layer.js"></script>
+<script>
+   function loadProvince(){
+       /*省份*/
+       $.ajax({
+           type: "post",
+           url: "allProvince",
+           dataType: "json",
+           success: (data) => {
+               console.log(data)
+               let province = ``;
+               $.each(data, (index, obj) => {
+                   province += `
+					    	<option value="${obj.provinceCode}">${obj.provinceName}</option>
+					    `;
+               })
+               $("#province").html(province);
+               getInfo();
+           }
+       })
+   }
+
+   function city(provinceCode){
+       $.ajax({
+           type: "post",
+           url: "allCity",
+           async: false,//同步
+           data: {"provinceCode": provinceCode},
+           dataType: "json",
+           success: (data) => {
+               console.log(data);
+               let city = `<option value="-1">请选择</option>`;
+               $.each(data, (index, obj) => {
+                   city += `
+			        	<option value="${obj.cityCode}">${obj.cityName}</option>
+			        `;
+               })
+               $("#city").html(city);
+           }
+       })
+   }
+
+   function area(cityCode) {
+       $.ajax({
+           type: "post",
+           url: "allArea",
+           async: false,
+           data: {"cityCode": cityCode},
+           dataType: "json",
+           success: (data) => {
+               console.log(data);
+               var district = `<option value="-1">请选择</option>`;
+               $.each(data, (index, obj) => {
+                   district += `
+			        	<option value="${obj.areaCode}">${obj.areaName}</option>
+			        `;
+               })
+               $("#area").html(district);
+           }
+       })
+   }
+
+   function getInfo(){
+       var addressId=localStorage.getItem("addressId");
+       $.ajax({
+           type:"post",
+           url:"selectById",
+           data:{"addressId":addressId},
+           dataType:"json",
+           success:(data)=>{
+               console.log(data);
+               $("#consigneeName").val(data.aname);
+               $("#province").val(data.provinceid);
+               /*触发change事件*/
+               $("#province").trigger("change");
+               $("#city").val(data.cityid);
+               $("#city").trigger("change")
+               $("#area").val(data.areaid);
+               $("#detailedAddress").val(data.amore);
+               $("#zipCode").val(data.code);
+               $("#phone").val(data.phone);
+               localStorage.setItem("addressId",data.addressid);
+           }
+       })
+   }
+    $(()=>{
+        loadProvince();
+        /*根据省份查询城市*/
+        $("#province").change(() => {
+            let provinceCode = $("#province").val();
+            city(provinceCode);
+        })
+        /*根据城市查询地区*/
+        $("#city").change(() => {
+            let cityCode = $("#city").val();
+            area(cityCode);
+        })
+
+    })
+    function saveAddress() {
+        var addressId=localStorage.getItem("addressId")
+        var province = $("#province").val();
+        var city = $("#city").val();
+        var area = $("#area").val();
+        var aname = $("#consigneeName").val();
+        var amore = $("#detailedAddress").val();
+        var code = $("#zipCode").val();
+        var phone =$("#phone").val();
+        $.ajax({
+            type:"post",
+            url:"saveUpdmgs",
+            data:{"addressId":addressId,"provinceName":province,"cityName":city,"areaName":area,"aname":aname,"amore":amore,"code":code,"phone":phone},
+            dataType:"json",
+            success:function (data) {
+                console.log(data);
+                if (data>0){
+                    layer.msg("修改成功",{icon : 1,time : 1000});
+                    //获取弹窗下标
+                    var index = parent.layer.getFrameIndex(window.name);
+                    //根据下标关闭窗口
+                    setTimeout(function() {parent.layer.close(index);}, 1000);
+                    /*刷新父窗口*/
+                    /*window.parent.location.reload();*/
+                    window.parent.queryAllAddress();
+                }
+            }
+        })
+    }
+</script>
+</body>
+</html>
