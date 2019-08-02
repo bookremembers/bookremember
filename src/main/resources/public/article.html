@@ -14,7 +14,8 @@
     <link href="css/jquery.cropbox.css" rel="stylesheet" type="text/css">
     <link href="css/jquery-ui.css" rel="stylesheet" type="text/css">
     <link href="css/cropper.min.css" rel="stylesheet" type="text/css">
-
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/jquery-3.2.1.js"></script>
     <script>
         var csrf = 'ugWCGaddUHwyBKtUBVFBOfJH57pmd7kCgIQ1vuSu';
     </script>
@@ -340,7 +341,7 @@
                         </div>
                         <div class="form-group add_article_btn side_btn" style="position: relative;" name="添加文章"><a><img
                                 src="images/add_article_icon.png"></a>
-                            <div class="tip"
+                            <div onclick="bookadd()" class="tip"
                                  style="position:absolute;border-radius:5px;top:15px;left:60px;background-color: rgba(0,0,0,0.5);color:white;padding:3px 6px;white-space: nowrap;letter-spacing: 3px">
                                 添加文章
                             </div>
@@ -840,8 +841,14 @@
 </div>
 <script src="js/jquery-3.2.1.js"></script>
 <script>
-    function print_book(bid) {
 
+
+
+
+    function bookadd() {
+        
+    }
+    function print_book(bid) {
         localStorage.setItem("bid",bid);
         location.href = "order_more.html";
     }
